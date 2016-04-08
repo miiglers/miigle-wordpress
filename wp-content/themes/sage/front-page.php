@@ -3,7 +3,7 @@
   <section id="splash" class="text-center">
     <div class="container">
 
-      <?php echo wpautop(get_post_meta(get_the_ID(), 'fp_hero_text', true)); ?>
+      <?php echo the_field('fp_hero_text'); ?>
 
     </div>
   </section>
@@ -13,7 +13,7 @@
 
       <p>Featured Brands</p>
       
-      <?php echo get_post_meta(get_the_ID(), 'fp_featured_brands', true); ?>
+      <?php echo the_field('fp_featured_brands'); ?>
 
     </div>
   </section>
@@ -21,7 +21,7 @@
   <section id="how" class="text-center">
     <div class="container">
 
-      <?php echo wpautop(get_post_meta(get_the_ID(), 'fp_how_it_works', true)); ?>
+      <?php echo the_field('fp_how_it_works'); ?>
 
     </div>
   </section>
@@ -29,7 +29,7 @@
   <section id="quote" class="text-center">
     <div class="container">
 
-      <p><?php echo get_post_meta(get_the_ID(), 'fp_quote', true); ?></p>
+      <p><?php echo the_field('fp_quote'); ?></p>
 
     </div>
   </section>
@@ -41,10 +41,10 @@
       
       <div class="row">
         <div class="col-md-6">
-          <?php echo wpautop(get_post_meta(get_the_ID(), 'fp_our_story_left', true)); ?>
+          <?php echo the_field('fp_our_story_left'); ?>
         </div>
         <div class="col-md-6">
-          <?php echo wpautop(get_post_meta(get_the_ID(), 'fp_our_story_right', true)); ?>       
+          <?php echo the_field('fp_our_story_right'); ?>       
         </div>
       </div>
 
@@ -65,10 +65,8 @@
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <div class="text-center">
-            <?php echo get_post_meta(get_the_ID(), 'fp_contact_text', true); ?>
+            <?php the_field('fp_contact_text'); ?>
           </div>
-          
-          <?php echo do_shortcode('[contact-form-7 id="28" title="Contact form 1"]'); ?>
         </div>
       </div>
 
