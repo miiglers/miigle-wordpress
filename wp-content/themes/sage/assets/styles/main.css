@@ -11,7 +11,20 @@
 .btn {
   padding: 6px 30px;
 }
+.navbar-nav>li>a {
+  padding: 6px 30px;
+}
 .btn-primary {
+  background-color: #55b7b8;
+  border-color: #55b7b8;
+}
+.navbar-default .navbar-nav>li>a.btn-primary {
+  color: white;
+}
+.navbar-default .navbar-nav>li>a:focus, 
+.navbar-default .navbar-nav>li>a:hover,
+.btn-primary:hover, 
+.btn-primary:focus {
   background-color: #55b7b8;
   border-color: #55b7b8;
 }
@@ -148,6 +161,7 @@ footer#footer .copyright {
 #front-page section#video {
   padding: 150px 0;
   background-image: url('../images/video-bg.jpg');
+  background-size: cover;
 }
 #front-page section#contact form {
   margin-top: 75px;

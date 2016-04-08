@@ -41,7 +41,7 @@
       
       <div class="row">
         <div class="col-md-6">
-          <?php echo get_post_meta(get_the_ID(), 'fp_our_story_left', true); ?>
+          <?php echo wpautop(get_post_meta(get_the_ID(), 'fp_our_story_left', true)); ?>
         </div>
         <div class="col-md-6">
           <?php echo wpautop(get_post_meta(get_the_ID(), 'fp_our_story_right', true)); ?>       
