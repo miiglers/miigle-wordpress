@@ -59,15 +59,18 @@
     </div>
   </section>
   
-  <section id="contact" class="text-center">
+  <section id="contact">
     <div class="container">
 
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
-          <?php echo get_post_meta(get_the_ID(), 'fp_contact_text', true); ?>
+          <div class="text-center">
+            <?php echo get_post_meta(get_the_ID(), 'fp_contact_text', true); ?>
+          </div>
+          
+          <?php echo do_shortcode('[contact-form-7 id="28" title="Contact form 1"]'); ?>
         </div>
       </div>
-      
 
     </div>
   </section>
