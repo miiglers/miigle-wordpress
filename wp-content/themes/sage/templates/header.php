@@ -8,7 +8,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Miigle</a>
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png">
+      </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
