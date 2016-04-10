@@ -163,6 +163,10 @@ footer#footer .copyright {
   background-image: url('../images/video-bg.jpg');
   background-size: cover;
 }
+#videoModal iframe {
+  width: 100%;
+  height: auto;
+}
 #front-page section#contact form {
   margin-top: 75px;
 }
@@ -176,5 +180,8 @@ footer#footer .copyright {
   }
   #front-page section#video h2 {
     font-size: 60px;
+  }
+  #videoModal iframe {
+    height: 320px;
   }
 }
