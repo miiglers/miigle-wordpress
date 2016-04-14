@@ -75,6 +75,17 @@ span.wpcf7-not-valid-tip {
   color: #c9302c;
   font-size: 14px;
 }
+div.wpcf7-validation-errors {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+div.wpcf7-mail-sent-ok {
+  border: 1px solid #395561;
+  background: #395561;
+  color: white;
+  border-radius: 4px;
+}
 main.main {
   margin-bottom: 100px;
 }
@@ -238,6 +249,26 @@ footer#footer .copyright {
   background-size: cover;
   background-position: center center;
   display: inline-block;
+}
+
+/*********************************************************
+|
+|  template-about.php
+|
+**********************************************************/
+
+main.main {
+  margin-bottom: 100px;
+}
+#template-about section {
+  padding: 100px 0;
+  font-size: 16px;
+  color: #888;
+}
+#template-about section#splash {
+  font-size: 18px;
+  color: white;
+  background-image: linear-gradient(to right,  #5bbbb9 0%,#84cdba 100%);
 }
 
 
