@@ -48,6 +48,7 @@ body {
   border-color: white;
 }
 h1 {
+  font-family: 'Montserrat', sans-serif;
   color: #2a404d;
   font-weight: bold;
   font-size: 55px;
@@ -162,10 +163,13 @@ footer#footer .copyright {
   font-size: 16px;
 }
 #front-page section#quote {
-  background: #6bbeb4;
+  padding: 200px 0;
   font-size: 30px;
   font-weight: bold;
   color: white;
+  background-image: url('../images/quote-bg.jpg');
+  background-size: cover;
+  background-position: center center;
 }
 #front-page section#story h2 {
   margin-bottom: 75px;
@@ -275,8 +279,11 @@ body.page-template-template-about-php main.main {
 }
 #template-about section#splash {
   font-size: 18px;
+  padding: 150px 0;
   color: white;
-  background-image: linear-gradient(to right,  #5bbbb9 0%,#84cdba 100%);
+  background-image: url('../images/quote-bg.jpg');
+  background-size: cover;
+  background-position: center center;
 }
 #template-about section#splash h2 {
   font-size: 36px;
@@ -292,5 +299,6 @@ body.page-template-template-about-php main.main {
   margin-top: 25px;
   letter-spacing: 2px;
 }
+
 
 
