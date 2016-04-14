@@ -186,6 +186,7 @@ footer#footer .copyright {
 #template-about section#video h2 {
   color: white;
   font-weight: bold;
+  margin-bottom: 30px;
 }
 #front-page section#video h3,
 #template-about section#video h3{
