@@ -8,29 +8,41 @@
   
   <section id="splash" class="text-center">
     <div class="container">
-
-      <?php echo the_field('ta_hero_text'); ?>
-
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+        
+          <?php echo the_field('ta_hero_text'); ?>
+        
+        </div>
+      </div>
     </div>
   </section>
   
   <section id="about">
     <div class="container">
-
-      <?php while (have_posts()) : the_post(); ?>
-        <?php the_content(); ?>
-      <?php endwhile; ?>
-
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          
+          <?php while (have_posts()) : the_post(); ?>
+            <?php the_content(); ?>
+          <?php endwhile; ?>
+          
+        </div>
+      </div>
     </div>
   </section>
   
   <section id="team" class="text-center">
     <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
 
-      <?php echo the_field('ta_team_header'); ?>
-      
-      <?php echo the_field('ta_team_members'); ?>
+          <?php echo the_field('ta_team_header'); ?>
 
+          <?php echo the_field('ta_team_members'); ?>
+
+        </div>
+      </div>
     </div>
   </section>
   

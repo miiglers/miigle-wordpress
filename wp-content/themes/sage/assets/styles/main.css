@@ -182,14 +182,17 @@ footer#footer .copyright {
 #front-page section#story img {
   border-radius: 5px;
 }
-#front-page section#video h2 {
+#front-page section#video h2,
+#template-about section#video h2 {
   color: white;
   font-weight: bold;
 }
-#front-page section#video h3 {
+#front-page section#video h3,
+#template-about section#video h3{
   color: white;
 }
-#front-page section#video {
+#front-page section#video,
+#template-about section#video {
   padding: 150px 0;
   background-image: url('../images/video-bg.jpg');
   background-size: cover;
@@ -209,13 +212,16 @@ footer#footer .copyright {
   #front-page section#brands img {
     margin-right: 50px;
   }
-  #front-page section#video h2 {
+  #front-page section#video h2,
+  #template-about section#video h2 {
     font-size: 60px;
   }
-  #front-page .modal-body {
+  #front-page .modal-body,
+  #template-about .modal-body {
     padding: 0;
   }
-  #front-page .modal-dialog {
+  #front-page .modal-dialog,
+  #template-about .modal-dialog {
     width: 800px;
   }
   #videoModal iframe {
@@ -257,8 +263,8 @@ footer#footer .copyright {
 |
 **********************************************************/
 
-main.main {
-  margin-bottom: 100px;
+body.page-template-template-about-php main.main {
+  margin-bottom: 0;
 }
 #template-about section {
   padding: 100px 0;
@@ -269,6 +275,20 @@ main.main {
   font-size: 18px;
   color: white;
   background-image: linear-gradient(to right,  #5bbbb9 0%,#84cdba 100%);
+}
+#template-about section#splash h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+}
+#template-about section#team {
+  background: #f9f9fb;
+  font-size: 14px;
+}
+#template-about section#team h4 {
+  margin-top: 25px;
+  letter-spacing: 2px;
 }
 
 
