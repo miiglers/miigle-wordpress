@@ -8,6 +8,7 @@
 body {
   padding-top: 70px;
   font-family: 'Open Sans', sans-serif;
+  color: #777;
 }
 .navbar {
   border: none;
@@ -53,7 +54,7 @@ h1 {
   font-weight: bold;
   font-size: 45px;
 }
-h2, h4 {
+h2, h3, h4 {
   color: #333;
 }
 a, a:visited {
@@ -72,6 +73,15 @@ a, a:visited {
   box-shadow: none;
   background-color: #F8F8F8;
   letter-spacing: 2px;
+}
+.thumbnail .caption {
+  color: #777;
+}
+.label-danger {
+  background-color: rgba(227, 30, 70, 0.7);
+}
+.label-pink {
+  background-color: rgba(203, 75, 252, 0.7);
 }
 span.wpcf7-not-valid-tip {
   color: #c9302c;
@@ -133,7 +143,6 @@ footer#footer .copyright {
 #front-page section {
   padding: 100px 0;
   font-size: 16px;
-  color: #888;
 }
 #front-page section#splash {
   font-size: 18px;
@@ -262,6 +271,9 @@ footer#footer .copyright {
 |
 **********************************************************/
 
+body.post-type-archive-mgl_product {
+  background: #f9f9fa;
+}
 #archive-mgl_product section#splash {
   font-size: 18px;
   color: white;
@@ -269,8 +281,42 @@ footer#footer .copyright {
   margin-bottom: 100px;
   background: linear-gradient(to right,  #5bbbb9 0%,#84cdba 100%);
 }
+#archive-mgl_product .main h1 {
+  font-size: 30px;
+  margin-top: 0;
+}
+#archive-mgl_product h1 small {
+  font-size: 16px;
+  line-height: 33px;
+}
+#archive-mgl_product .left h4 {
+  padding-bottom: 25px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e7e7e7;
+}
+#archive-mgl_product .left ul {
+  margin-bottom: 40px;
+}
+#archive-mgl_product .left li {
+  margin-bottom: 15px;
+}
+#archive-mgl_product .left a {
+  color: #777;
+}
+#archive-mgl_product .right .well {
+  padding: 14px;
+  background: white;
+}
+#archive-mgl_product .right h4 {
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+#archive-mgl_product .right p {
+  font-size: 15px;
+}
 #archive-mgl_product .thumbnail {
   padding: 0;
+  border: 1px solid #e4e4e4;
 }
 #archive-mgl_product .thumbnail .caption {
   padding: 15px;
@@ -281,6 +327,15 @@ footer#footer .copyright {
   background-size: cover;
   background-position: center center;
   display: inline-block;
+}
+#archive-mgl_product .label {
+  font-size: 16px;
+  font-weight: normal;
+  border-radius: 45px;
+  margin-right: 10px;
+}
+#archive-mgl_product .label:first-child {
+  margin-right: 0;
 }
 
 /*********************************************************

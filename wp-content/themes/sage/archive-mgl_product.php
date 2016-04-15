@@ -9,35 +9,45 @@
     </div>
   </section>
   
-  <div class="container">
+  <div class="container main">
+    
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+      
+        <h1>
+          This Week
+          <small class="pull-right">
+            <a href="#">Popular</a>
+            |
+            Newest
+          </small>
+        </h1>
+      
+      </div>
+    </div>
+    
     <div class="row">
 
-      <div class="col-md-2">
+      <div class="col-md-2 left">
         
         <h4>Categories</h4>
-        <ul>
-          <li>Fashion</li>
-          <li>Home Goods</li>
-          <li>Personal Care</li>
+        <ul class="list-unstyled">
+          <li><a href="#">Fashion</a></li>
+          <li><a href="#">Home Goods</a></li>
+          <li><a href="#">Personal Care</a></li>
         </ul>
         
         <h4>Directory</h4>
-        <ul>
-          <li>All Brands</li>
+        <ul class="list-unstyled">
+          <li><a href="#">All Brands</a></li>
         </ul>
 
       </div>
 
-      <div class="col-md-8">
+      <div class="col-md-8 middle">
         <div class="row">          
           <div class="col-md-12">
             
-            This Week
-            <span class="pull-right">
-              <a href="#">Popular</a>
-              |
-              <a href="#">Newest</a>
-            </span>
             
             <div class="row">
               
@@ -52,8 +62,13 @@
                     <a class="product-thumb" id="product-<?php the_ID(); ?>" href="#">&nbsp;</a>
                     <div class="caption">
                       <h3><?php the_title(); ?></h3>
-                      <p><?php the_content(); ?></p>
-                      <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                      <p><?php the_excerpt(); ?></p>
+                      <p><a href="#">productname.com</a></p>
+                      <p>
+                        <span class="label label-danger pull-right"><i class="fa fa-commenting-o"></i> 95</span>
+                        <span class="label label-pink pull-right"><i class="fa fa-star-o"></i> 4</span>
+                      </p>
+                      <div class="clearfix"></div>
                     </div>
                   </div>
                 </div>
@@ -64,7 +79,7 @@
         </div>    
       </div>
 
-      <div class="col-md-2">
+      <div class="col-md-2 right">
         <div class="well">
           
           <h4>All for 1, 1 for all.</h4>
