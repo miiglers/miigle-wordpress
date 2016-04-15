@@ -51,7 +51,7 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   color: #2a404d;
   font-weight: bold;
-  font-size: 55px;
+  font-size: 45px;
 }
 h2, h4 {
   color: #333;
@@ -94,21 +94,34 @@ main.main {
 footer#footer .links {
   background: #395561;
   padding: 75px 0;
+  margin: 0;
+}
+footer#footer .links li {
+  margin: 0 50px 50px 50px;
+}
+footer#footer .links li:last-child {
+  margin-bottom: 0;
 }
 footer#footer .links a {
   color: white;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-right: 100px;
-}
-footer#footer .links a:last-child {
-  margin-right: 0;
+  display: inline-block;
 }
 footer#footer .copyright {
   background: #314c57;
   padding: 25px 0;
   color: white;
   font-size: 12px;
+}
+@media (min-width: 992px) {
+  h1 {
+    font-size: 55px;
+  }
+  footer#footer .links li {
+    display: inline-block;
+    margin-bottom: 0;
+  }
 }
 
 /*********************************************************
@@ -137,6 +150,9 @@ footer#footer .copyright {
 #front-page section#splash p {
   margin-bottom: 40px;
 }
+#front-page section#splash .btn {
+  margin-bottom: 20px;
+}
 #front-page section#brands {
   background: #f5f5f5;
   color: #c1c1c1;
@@ -148,6 +164,7 @@ footer#footer .copyright {
 }
 #front-page section#brands img {
   margin-right: 10px;
+  margin-bottom: 15px;
 }
 #front-page section#brands img:last-child {
   margin-right: 0;
@@ -161,6 +178,9 @@ footer#footer .copyright {
 #front-page section#how p.lead {
   margin-bottom: 50px;
   font-size: 16px;
+}
+#front-page section#how p {
+  margin-bottom: 30px;
 }
 #front-page section#quote {
   padding: 200px 0;
