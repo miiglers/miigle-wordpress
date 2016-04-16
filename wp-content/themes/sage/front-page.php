@@ -3,7 +3,7 @@
   <section id="splash" class="text-center">
     <div class="container">
 
-      <?php echo the_field('fp_hero_text'); ?>
+      <?php the_field('fp_hero_text'); ?>
 
     </div>
   </section>
@@ -13,7 +13,7 @@
 
       <p>Featured Brands</p>
       
-      <?php echo the_field('fp_featured_brands'); ?>
+      <?php the_field('fp_featured_brands'); ?>
 
     </div>
   </section>
@@ -21,7 +21,7 @@
   <section id="how" class="text-center">
     <div class="container">
 
-      <?php echo the_field('fp_how_it_works'); ?>
+      <?php the_field('fp_how_it_works'); ?>
 
     </div>
   </section>
@@ -29,7 +29,7 @@
   <section id="quote" class="text-center">
     <div class="container">
 
-      <p><?php echo the_field('fp_quote'); ?></p>
+      <p><?php the_field('fp_quote'); ?></p>
 
     </div>
   </section>
@@ -41,10 +41,10 @@
       
       <div class="row">
         <div class="col-md-6">
-          <?php echo the_field('fp_our_story_left'); ?>
+          <?php the_field('fp_our_story_left'); ?>
         </div>
         <div class="col-md-6">
-          <?php echo the_field('fp_our_story_right'); ?>       
+          <?php the_field('fp_our_story_right'); ?>       
         </div>
       </div>
 
@@ -54,7 +54,7 @@
   <section id="video" class="text-center">
     <div class="container">
 
-      <?php echo get_post_meta(get_the_ID(), 'fp_video_text', true); ?>
+      <?php the_field('fp_video_text'); ?>
 
     </div>
   </section>

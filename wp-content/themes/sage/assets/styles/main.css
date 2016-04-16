@@ -41,7 +41,7 @@ body {
 }
 .btn-default {
   background-color: white;
-  border-color: white;
+  border-color: #55b7b8;
   color: #55b7b8;
 }
 .btn-transparent {
@@ -52,9 +52,10 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   color: #2a404d;
   font-weight: bold;
-  font-size: 45px;
+  font-size: 40px;
 }
 h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
   color: #333;
 }
 a, a:visited {
@@ -126,7 +127,7 @@ footer#footer .copyright {
 }
 @media (min-width: 992px) {
   h1 {
-    font-size: 55px;
+    font-size: 50px;
   }
   footer#footer .links li {
     display: inline-block;
@@ -277,8 +278,8 @@ body.post-type-archive-mgl_product {
 #archive-mgl_product section#splash {
   font-size: 18px;
   color: white;
-  padding: 100px 0;
-  margin-bottom: 100px;
+  padding: 50px 0;
+  margin-bottom: 50px;
   background: linear-gradient(to right,  #5bbbb9 0%,#84cdba 100%);
 }
 #archive-mgl_product .main h1 {
@@ -337,6 +338,12 @@ body.post-type-archive-mgl_product {
 #archive-mgl_product .label:first-child {
   margin-right: 0;
 }
+@media (min-width: 992px) {
+  #archive-mgl_product section#splash {
+    padding: 100px 0;
+    margin-bottom: 100px;
+  }
+}
 
 /*********************************************************
 |
@@ -354,7 +361,7 @@ body.page-template-template-about-php main.main {
 }
 #template-about section#splash {
   font-size: 18px;
-  padding: 150px 0;
+  padding: 75px 0;
   color: white;
   background-image: url('../images/quote-bg.jpg');
   background-size: cover;
@@ -374,6 +381,94 @@ body.page-template-template-about-php main.main {
   margin-top: 25px;
   letter-spacing: 2px;
 }
+@media (min-width: 992px) {
+  #template-about section#splash {
+    padding: 150px 0;
+  }
+}
 
+/*********************************************************
+|
+|  index.php
+|
+**********************************************************/
 
+#blog section#splash {
+  padding: 50px 0;
+  background-image: url('../images/blog-splash.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+@media (min-width: 992px) {
+  #blog section#splash {
+    padding: 100px 0;
+    margin-bottom: 50px;
+  }
+}
+
+/*********************************************************
+|
+|  blog posts
+|
+**********************************************************/
+
+article.post header {
+  margin-bottom: 15px;
+}
+article.post header h2 a {
+  color: #333;
+}
+article.post header .byline {
+  font-size: 13px;
+}
+article.post header .avatar img {
+  border-radius: 8px;
+}
+article.post header .byline a {
+  color: #777;
+}
+article.post header a.nickname {
+  margin: 0 15px;
+}
+article.post header time {
+  margin: 0 15px;
+}
+article.post header .comment-count {
+  margin-left: 15px;
+}
+article.post .entry-thumb {
+  margin-bottom: 25px;
+  border-radius: 8px;
+}
+@media (min-width: 992px) {
+  article.post header h2 {
+    font-size: 29px;
+    margin-bottom: 50px;
+  }
+}
+
+/*********************************************************
+|
+|  single.php
+|
+**********************************************************/
+
+#blog-single section#splash {
+  font-size: 18px;
+  padding: 50px 0;
+  margin-bottom: 50px;
+  color: white;
+  background-image: url('../images/single-hero.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+#blog-single section#splash h1 {
+  color: white;
+}
+@media (min-width: 992px) {
+  #blog-single section#splash {
+    padding: 100px 0;
+    margin-bottom: 75px;
+  }
+}
 
