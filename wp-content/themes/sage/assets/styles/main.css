@@ -399,6 +399,15 @@ body.page-template-template-about-php main.main {
   background-size: cover;
   background-position: center center;
 }
+#blog article {
+  padding-top: 35px;
+  border-top: 1px solid #9b9b9b;
+  margin-bottom: 55px;
+}
+#blog article:first-child {
+  padding-top: 0;
+  border-top: none;
+}
 @media (min-width: 992px) {
   #blog section#splash {
     padding: 100px 0;
@@ -443,7 +452,7 @@ article.post .entry-thumb {
 @media (min-width: 992px) {
   article.post header h2 {
     font-size: 29px;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
   }
 }
 
