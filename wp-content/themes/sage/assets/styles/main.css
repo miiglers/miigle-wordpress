@@ -481,3 +481,78 @@ article.post .entry-thumb {
   }
 }
 
+/*********************************************************
+|
+|  template-signin.php && template-login.php
+|
+**********************************************************/
+#template-signup section#signup form {
+    margin-top: 75px;
+}
+#template-login section#signup form {
+    margin-top: 75px;
+}
+#social-login .divider-new {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    font-weight: 300;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    padding: 0 15px;
+}
+#social-login .divider-new::before{
+	flex:1;
+	margin:0 .45em 0 0
+}
+#social-login .divider-new::after{
+	flex:1;
+	margin:0 0 0 .45em
+}
+#social-login .divider-new::after, .divider-new::before {
+    content: '';
+    height: 1.5px;
+    background: #9b9b9b;
+}
+#social-login .o-r {
+	width: 35px;
+	height: 34px;
+	font-family: OpenSans;
+	font-size: 25px;
+	color: #9b9b9b;
+}
+#social-login .rectangle {
+    padding: 8px 15px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom:15px;
+}
+#social-login .social-icon {
+		color:#fff !important;
+		width: 100%;
+}
+#social-login .fa {
+    font-size: 20px;
+}
+#social-login .tw-bg {
+    background-color: #55ACEE;
+}
+#social-login .fb-bg {
+    background-color: #3B5998;
+}
+#social-login .fa-twitter {
+		border-right:1px solid #1a8ac1;
+	  padding-right:10px;
+	  margin-right:15px;
+}
+#social-login .fa-facebook {
+		border-right:1px solid #274072;
+	  padding-right:10px;
+	  margin-right:15px;
+}
+
