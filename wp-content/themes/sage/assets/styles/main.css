@@ -486,9 +486,15 @@ article.post .entry-thumb {
 |  template-signin.php && template-login.php
 |
 **********************************************************/
-#template-signup section#signup form {
-    margin-top: 75px;
+#template-signup section#signup h2,
+#template-login section#signup h2 {
+	margin-bottom:22px;
 }
+#template-signup section#signup p,
+#template-login section#signup p {
+    font-size:18px;
+}
+#template-signup section#signup form,
 #template-login section#signup form {
     margin-top: 75px;
 }
@@ -520,7 +526,7 @@ article.post .entry-thumb {
 	width: 35px;
 	height: 34px;
 	font-family: OpenSans;
-	font-size: 25px;
+	font-size: 25px !important;
 	color: #9b9b9b;
 }
 #social-login .rectangle {
