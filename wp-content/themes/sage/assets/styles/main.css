@@ -494,6 +494,11 @@ article.post .entry-thumb {
 #template-login section#signup p {
     font-size:18px;
 }
+#template-signup section#signup p.small,
+#template-login section#signup p.small {
+    font-size: 15px;
+	color: #9b9b9b;
+}
 #template-signup section#signup form,
 #template-login section#signup form {
     margin-top: 75px;
