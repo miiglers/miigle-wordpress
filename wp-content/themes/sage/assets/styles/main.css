@@ -486,22 +486,59 @@ article.post .entry-thumb {
 |  template-signin.php && template-login.php
 |
 **********************************************************/
+#template-signup section#signup,
+#template-login section#signup {
+	margin-top:140px;
+}
 #template-signup section#signup h2,
 #template-login section#signup h2 {
-	margin-bottom:22px;
+	font-weight: 700;
+	margin-bottom:21px;
 }
 #template-signup section#signup p,
 #template-login section#signup p {
     font-size:18px;
+    ine-height: 1.6;
 }
 #template-signup section#signup p.small,
-#template-login section#signup p.small {
+#template-login section#signup p.small,
+#template-signup section#signup p.small a,
+#template-login section#signup p.small a {
     font-size: 15px;
-	color: #9b9b9b;
+		color: #9b9b9b;
 }
+#template-signup section#signup p.small a:hover,
+#template-login section#signup p.small a:hover,
+#template-signup section#signup p.small a:focus,
+#template-login section#signup p.small a:focus {
+		color: #337ab7;
+}
+
 #template-signup section#signup form,
 #template-login section#signup form {
-    margin-top: 75px;
+    margin-top: 55px;
+}
+#template-login section#signup .form-control,
+#template-signup section#signup .form-control  {
+	background-color: #fff;
+}
+#template-login section#signup textarea,
+#template-login section#signup input,
+#template-signup section#signup textarea,
+#template-signup section#signup input {
+	font-family: 'Open Sans', sans-serif;
+	font-weight:700;
+	font-size: 13px;
+	line-height: 1.4;
+	letter-spacing: 4px;
+	color: #777777;
+}
+#template-signup section#signup input[type="submit"],
+#template-login section#signup input[type="submit"] {
+	font-weight:400;
+	font-size: 15px;
+	color: #ffffff;
+	letter-spacing: 0;
 }
 #social-login .divider-new {
     display: flex;
@@ -566,4 +603,70 @@ article.post .entry-thumb {
 	  padding-right:10px;
 	  margin-right:15px;
 }
+
+/*********************************************************
+|
+|  template-product_post.php
+|
+**********************************************************/
+#template-product_post section#product_post {
+	margin-top:140px;
+}
+#template-product_post section#product_post h4 { 
+	font-weight:700;
+	font-size:16px;
+}
+#template-product_post section#product_post h5 { 
+	font-weight:400;
+	font-size:16px;
+	margin-top:55px;
+	margin-bottom: 34px;
+}
+#template-product_post section#product_post p { 
+	font-family: 'Montserrat', sans-serif;
+  font-weight:400;
+  color: #000;	
+	font-size: 16px;
+	line-height: 1.6;
+}
+#template-product_post section#product_post p a {
+	text-decoration:underline;
+}
+#template-product_post section#product_post hr {
+    margin-top: 160px;
+    margin-bottom: 80px;
+    border: 0;
+    border-top: 2px solid #d8d8d8;
+}
+#template-product_post section#product_post p.grey-text {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	line-height: 0.9;
+	color: #4a4a4a;
+	margin-bottom:30px;
+}
+#template-product_post section#product_post .form-control  {
+	background-color: #fff;
+}
+#template-product_post section#product_post textarea,
+#template-product_post section#product_post input,
+#template-product_post section#product_post select {
+	font-family: 'Open Sans', sans-serif;
+	font-weight:700;
+	font-size: 13px;
+	line-height: 1.4;
+	letter-spacing: 4px;
+	color: #999999;
+}
+#template-product_post section#product_post input[type="submit"] {
+	font-weight:400;
+	font-size: 25px;
+	color: #ffffff;
+	letter-spacing: 0;
+}
+
+
+
+
+
 

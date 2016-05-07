@@ -15,7 +15,7 @@
             <?php the_content(); ?>
           <?php endwhile; ?>
           <!-- Forgot PW function -->
-          <p class="small text-left">Forgot your password?</p>
+          <p class="small text-left"><a href="#">Forgot your password?</a></p>
          </div>
         
         	<section id="social-login">
