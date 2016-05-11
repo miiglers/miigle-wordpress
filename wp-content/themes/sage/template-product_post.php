@@ -22,7 +22,7 @@
         		<a href="#" target="_blank">website.com</a></div>
         	<div class="profile-social text-center">
         		<a href="#" target="_blank">Twitter</a>&nbsp;|&nbsp;<a href="#" target="_blank">Facebook</a></div>
-        	<div class="portfolio-btn text-center">
+        	<div class="profile-btn text-center">
         		<a href="#" class="btn btn-profile">Go to your profile</a></div>
         	<div class="spacer-profile"></div>
         	<div class="profile-footer text-center">
