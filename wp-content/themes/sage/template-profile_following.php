@@ -25,10 +25,10 @@
         		<a href="#" target="_blank">Facebook</a>&nbsp;|&nbsp;
         	</div>
         	<div class="profile-btn text-center">
-        		<a href="#" class="btn btn-profile upvotes"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/fill-85.png" /> 95 - Upvotes</a>
-        		<a href="#" class="btn btn-profile submitted"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/fill-114.png" /> 4 - Submitted</a>
-        		<a href="#" class="btn btn-profile following"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/fill-92.png" /> 4 - Following</a>
-        		<a href="#" class="btn btn-profile followers"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/fill-86.png" /> 4 - Followers</a>
+        		<a href="#" class="btn btn-profile upvotes"><i class="fa fa-star-o" aria-hidden="true"></i> 95 - Upvotes</a>
+        		<a href="#" class="btn btn-profile submitted"><i class="fa fa-external-link" aria-hidden="true"></i> 4 - Submitted</a>
+        		<a href="#" class="btn btn-profile following"><i class="fa fa-users" aria-hidden="true"></i> 4 - Following</a>
+        		<a href="#" class="btn btn-profile followers"><i class="fa fa-user-plus" aria-hidden="true"></i> 4 - Followers</a>
         	</div>
         </div>
       </div>
@@ -42,7 +42,7 @@
         	
         	<!-- Card Item -->
         	<div class="row">
-        		<div class="col-md-3">
+        		<div class="col-sm-3">
         			<div class="card-item">
         				<div class="profile-thumb text-center">
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/profile-thumb.png" class="img-responsive" />
@@ -58,7 +58,7 @@
         				</div>
         			</div>
         		</div>
-        		<div class="col-md-3">
+        		<div class="col-sm-3">
         			<div class="card-item">
         				<div class="profile-thumb text-center">
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/profile-thumb2.png" class="img-responsive" />
@@ -74,7 +74,7 @@
         				</div>
         			</div>
         		</div>
-        		<div class="col-md-3">
+        		<div class="col-sm-3">
         			<div class="card-item">
         				<div class="profile-thumb text-center">
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/profile-thumb3.png" class="img-responsive" />
@@ -90,7 +90,7 @@
         				</div>
         			</div>
         		</div>
-        		<div class="col-md-3">
+        		<div class="col-sm-3">
         			<div class="card-item">
         				<div class="profile-thumb text-center">
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/profile-thumb4.png" class="img-responsive" />
@@ -111,7 +111,7 @@
         	
         	<!-- Card Item -->
         	<div class="row">
-        		<div class="col-md-3">
+        		<div class="col-sm-3">
         			<div class="card-item">
         				<div class="profile-thumb text-center">
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/profile-thumb5.png" class="img-responsive" />
@@ -127,7 +127,7 @@
         				</div>
         			</div>
         		</div>
-        		<div class="col-md-3">
+        		<div class="col-sm-3">
         			<div class="card-item">
         				<div class="profile-thumb text-center">
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/profile-thumb6.png" class="img-responsive" />
@@ -143,13 +143,13 @@
         				</div>
         			</div>
         		</div>
-        		<div class="col-md-3">
+        		<div class="col-sm-3">
         			<div class="card-item">
         				<div class="profile-thumb text-center">
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/profile-thumb7.png" class="img-responsive" />
 								</div>
 								<div class="profile-fullname text-center">
-									Full name</div>
+									Product name</div>
 								<div class="profile-title text-center">
 									Company job title</div>
 								<div class="profile-username text-center">
@@ -159,7 +159,7 @@
         				</div>
         			</div>
         		</div>
-        		<div class="col-md-3">
+        		<div class="col-sm-3">
         			<div class="card-item">
         				<div class="profile-thumb text-center">
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/profile-thumb8.png" class="img-responsive" />

@@ -843,7 +843,6 @@ article.post .entry-thumb {
 	padding-bottom:25px;
 }
 #template-profile_following section#profile_following .profile-thumb img {
-	max-width: 188px;
   border-radius: 6px;
 }
 #template-profile_following section#profile_following .profile-thumb img.img-responsive {
@@ -904,6 +903,224 @@ article.post .entry-thumb {
 }
 #template-profile_following section#profile_following .btn.btn-showmore:hover,
 #template-profile_following section#profile_following .btn.btn-showmore:focus {
+	color:#fff;
+	background-color:#9b9b9b;
+}
+
+/*********************************************************
+|
+|  template-profile_product.php
+|
+**********************************************************/
+#template-profile_product section#hero {
+	background-color: #233743;
+}
+#template-profile_product section#hero a.btn.btn-follow {
+	border: 1px solid #fff;
+	color:#fff;
+	font-size:15px;
+	padding: 10px 26px;
+}
+#template-profile_product section#hero a.btn.btn-follow:hover,
+#template-profile_product section#hero a.btn.btn-follow:focus {
+	border: 1px solid #55b8b8;
+	color:#55b8b8;
+}
+#template-profile_product section#hero .btn.float-right {
+	position: absolute;
+  right: 15px;
+}
+/* Mobile user*/
+@media screen and (max-width: 580px){
+    #template-profile_product section#hero .btn.float-right {
+    display:none;
+    }
+}
+#template-profile_product section#hero .profile-thumb {
+	padding:105px 32px 26px 32px;
+}
+#template-profile_product section#hero .profile-thumb img {
+	max-width: 188px;
+	box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
+	border-radius: 6px;
+}
+#template-profile_product section#hero .profile-thumb img.img-responsive {
+	display: inline-block;
+}
+#template-profile_product section#hero .white-text {
+	color:#ffffff;
+}
+#template-profile_product section#hero .profile-fullname {
+	font-size:16px;
+	padding-bottom:10px;
+}
+#template-profile_product section#hero .profile-title {
+	font-size:16px;
+	padding-bottom:20px;
+}
+#template-profile_product section#hero .profile-social {
+	font-size:15px;
+	padding-bottom:26px;
+}
+#template-profile_product section#hero .profile-social a {
+	color:#fff;
+}
+#template-profile_product section#hero .profile-social a:hover,
+#template-profile_product section#hero .profile-social a:focus {
+	color: #55b7b8;
+}
+#template-profile_product section#hero .profile-btn {
+	padding-bottom:78px;
+}
+#template-profile_product section#hero .btn.btn-profile {
+	border-radius: 45px;
+	padding: 6px 20px;
+}
+#template-profile_product section#hero a.btn.btn-profile {
+	font-size:13px;
+	color:#fff;
+	margin:5px;
+}
+#template-profile_product section#hero a.btn.btn-profile:hover,
+#template-profile_product section#hero a.btn.btn-profile:focus {
+	opacity:0.8;
+}
+#template-profile_product section#hero .btn.btn-profile.upvotes {
+	background-color: rgba(227, 30, 70, 0.8);
+}
+#template-profile_product section#hero .btn.btn-profile.submitted {
+	background-color: #46b3df;
+}
+#template-profile_product section#hero .btn.btn-profile.following {
+	background-color: #cc4dfc;
+}
+#template-profile_product section#hero .btn.btn-profile.followers {
+	background-color: #e9df67;
+}
+
+#template-profile_product section#profile_product {
+	margin-top:80px;
+}
+#template-profile_product section#profile_product .card-item {
+	border-radius: 6px;
+	background-color: #ffffff;
+	border: solid 1px #e4e4e4;
+	margin-bottom:20px;
+}
+#template-profile_product section#profile_product .profile-thumb {
+	padding-bottom:25px;
+}
+#template-profile_product section#profile_product .profile-thumb img {
+  border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#template-profile_product section#profile_product .profile-thumb img.img-responsive {
+	display: inline-block;
+}
+#template-profile_product section#profile_product .profile-fullname {
+	font-size: 16px;
+	font-weight:700;
+	line-height: 1.1;
+	color: #333333;
+	margin:0 16px 10px 16px;
+}
+#template-profile_product section#profile_product .profile-brand {
+	font-size: 16px;
+	line-height: 1.1;
+	color: #333333;
+	margin:0 16px 10px 16px;
+}
+#template-profile_product section#profile_product .profile-description {
+	margin:0 16px;
+}
+#template-profile_product section#profile_product .profile-description p {
+	font-size: 15px;
+	line-height: 1.7;
+	color: #777777;
+}
+#template-profile_product section#profile_product .profile-website {
+	font-size: 15px;
+	line-height: 1.7;
+	margin:0 16px 11px 16px;
+}
+#template-profile_product section#profile_product .profile-meta {
+	padding:0 16px 16px 16px;
+}
+#template-profile_product section#profile_product a.btn.btn-profile {
+    font-size: 13px;
+    color: #fff;
+    margin: 5px 4px 5px 0;
+}
+#template-profile_product section#profile_product .btn.btn-profile {
+    border-radius: 45px;
+    padding: 5px 10px 7px;
+}
+#template-profile_product section#profile_product a.btn.btn-profile:hover,
+#template-profile_product section#profile_product a.btn.btn-profile:focus {
+	opacity:0.8;
+}
+#template-profile_product section#profile_product .btn.btn-profile.trend {
+	background-color: #eade66;
+	color: #afa224;
+}
+#template-profile_product section#profile_product .btn.btn-profile.upvotes {
+	background-color: rgba(227, 30, 70, 0.7);
+}
+#template-profile_product section#profile_product .btn.btn-profile.comment {
+	background-color: rgba(202, 75, 252, 0.7);
+}
+#template-profile_product section#profile_product .btn.btn-profile.disable {
+	background-color: #b1b1b1;
+	padding: 5px 20px 7px;
+}
+#template-profile_product section#profile_product .profile-follower {
+	border-top:1px solid #e7e7e7;
+	margin:0 16px;
+	padding:22px 0 19px 0;
+}
+#template-profile_product section#profile_product .profile-follower img {
+	border-radius:6px;
+	width: 36px;
+	height: 30px;
+	float:left;
+}
+#template-profile_product section#profile_product .profile-follower span.user-name {
+	display:block;
+	font-size: 13px;
+	font-weight:700;
+	line-height: 1.3;
+	color: #4a4a4a;
+	margin-left: 50px;
+}
+#template-profile_product section#profile_product .profile-follower span.user-cat {
+	display:block;
+	font-size: 13px;
+	line-height: 1.3;
+	color: #4a4a4a;
+	margin-left: 50px;
+}
+
+
+
+
+
+#template-profile_product section#profile_product .showmore {
+	padding-top:65px;
+}
+#template-profile_product section#profile_product .btn.btn-showmore {
+	border:1px solid #9b9b9b;
+	font-size: 13px;
+	line-height: 1.4;
+	color: #777777;
+	padding: 6px 20px;
+	border-radius:45px;
+}
+#template-profile_product section#profile_product .btn.btn-showmore:hover,
+#template-profile_product section#profile_product .btn.btn-showmore:focus {
 	color:#fff;
 	background-color:#9b9b9b;
 }
