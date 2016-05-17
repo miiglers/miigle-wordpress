@@ -135,6 +135,13 @@ footer#footer .copyright {
   }
 }
 
+/* Mobile user*/
+@media screen and (max-width: 580px){
+    .navbar-fixed-top {
+    position: absolute;
+    }
+}
+
 /*********************************************************
 |
 |  front-page.php
@@ -481,3 +488,639 @@ article.post .entry-thumb {
   }
 }
 
+/*********************************************************
+|
+|  template-signin.php && template-login.php
+|
+**********************************************************/
+#template-signup section#signup,
+#template-login section#signup {
+	margin-top:140px;
+}
+#template-signup section#signup h2,
+#template-login section#signup h2 {
+	font-weight: 700;
+	margin-bottom:21px;
+}
+#template-signup section#signup p,
+#template-login section#signup p {
+    font-size:18px;
+    ine-height: 1.6;
+}
+#template-signup section#signup p.small,
+#template-login section#signup p.small,
+#template-signup section#signup p.small a,
+#template-login section#signup p.small a {
+    font-size: 15px;
+		color: #9b9b9b;
+}
+#template-signup section#signup p.small a:hover,
+#template-login section#signup p.small a:hover,
+#template-signup section#signup p.small a:focus,
+#template-login section#signup p.small a:focus {
+		color: #337ab7;
+}
+
+#template-signup section#signup form,
+#template-login section#signup form {
+    margin-top: 55px;
+}
+#template-login section#signup .form-control,
+#template-signup section#signup .form-control  {
+	background-color: #fff;
+}
+#template-login section#signup textarea,
+#template-login section#signup input,
+#template-signup section#signup textarea,
+#template-signup section#signup input {
+	font-family: 'Open Sans', sans-serif;
+	font-weight:700;
+	font-size: 13px;
+	line-height: 1.4;
+	letter-spacing: 4px;
+	color: #777777;
+}
+#template-signup section#signup input[type="submit"],
+#template-login section#signup input[type="submit"] {
+	font-weight:400;
+	font-size: 15px;
+	color: #ffffff;
+	letter-spacing: 0;
+}
+#social-login .divider-new {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    font-weight: 300;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    padding: 0 15px;
+}
+#social-login .divider-new::before{
+	flex:1;
+	margin:0 .45em 0 0
+}
+#social-login .divider-new::after{
+	flex:1;
+	margin:0 0 0 .45em
+}
+#social-login .divider-new::after, .divider-new::before {
+    content: '';
+    height: 1.5px;
+    background: #9b9b9b;
+}
+#social-login .o-r {
+	width: 35px;
+	height: 34px;
+	font-family: OpenSans;
+	font-size: 25px !important;
+	color: #9b9b9b;
+}
+#social-login .rectangle {
+    padding: 8px 15px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom:15px;
+}
+#social-login .social-icon {
+		color:#fff !important;
+		width: 100%;
+}
+#social-login .fa {
+    font-size: 20px;
+}
+#social-login .tw-bg {
+    background-color: #55ACEE;
+}
+#social-login .fb-bg {
+    background-color: #3B5998;
+}
+#social-login .fa-twitter {
+		border-right:1px solid #1a8ac1;
+	  padding-right:10px;
+	  margin-right:15px;
+}
+#social-login .fa-facebook {
+		border-right:1px solid #274072;
+	  padding-right:10px;
+	  margin-right:15px;
+}
+
+/*********************************************************
+|
+|  template-product_post.php
+|
+**********************************************************/
+#template-product_post section#product_post .main {
+	margin-top:118px;
+}
+#template-product_post section#product_post h4 { 
+	font-weight:700;
+	font-size:16px;
+}
+#template-product_post section#product_post h5 { 
+	font-weight:400;
+	font-size:16px;
+	margin-top:55px;
+	margin-bottom: 34px;
+}
+#template-product_post section#product_post p { 
+  color: #000;	
+	font-size: 16px;
+	line-height: 1.6;
+}
+#template-product_post section#product_post p a {
+	text-decoration:underline;
+}
+#template-product_post section#product_post hr {
+    margin-top: 160px;
+    margin-bottom: 80px;
+    border: 0;
+    border-top: 2px solid #d8d8d8;
+}
+#template-product_post section#product_post p.grey-text {
+	font-size: 16px;
+	line-height: 0.9;
+	color: #4a4a4a;
+	margin-bottom:30px;
+}
+#template-product_post section#product_post .form-control  {
+	background-color: #fff;
+}
+#template-product_post section#product_post textarea,
+#template-product_post section#product_post input,
+#template-product_post section#product_post select {
+	font-family: 'Open Sans', sans-serif;
+	font-weight:700;
+	font-size: 13px;
+	line-height: 1.4;
+	letter-spacing: 4px;
+	color: #999999;
+}
+#template-product_post section#product_post input[type="submit"] {
+	font-weight:400;
+	font-size: 25px;
+	color: #ffffff;
+	letter-spacing: 0;
+}
+
+/* 
+| profile-sidebar
+*/
+#template-product_post .sidebar {
+    display: none;
+}
+@media (min-width: 768px) {
+	#template-product_post .sidebar {
+			position: fixed;
+			top: 51px;
+			bottom: 0;
+			left: 0;
+			z-index: 1000;
+			display: block;
+			padding: 20px;
+			overflow-x: hidden;
+			overflow-y: auto;
+			background-color:#2a414d;
+	}
+}
+#template-product_post #profile-sidebar .profile-thumb {
+	padding:32px 32px 22px 32px;
+}
+#template-product_post #profile-sidebar .profile-thumb img {
+	width: 103px;
+	height: 90px;
+	box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
+	border-radius: 6px;
+}
+#template-product_post #profile-sidebar .white-text {
+	color:#ffffff;
+}
+#template-product_post #profile-sidebar .profile-fullname {
+	font-size:16px;
+	padding-bottom:10px;
+}
+#template-product_post #profile-sidebar .profile-id {
+	font-size:16px;
+	padding-bottom:20px;
+}
+#template-product_post #profile-sidebar .profile-username {
+	padding-bottom:10px;
+}
+#template-product_post #profile-sidebar .profile-website {
+	padding-bottom:10px;
+}
+#template-product_post #profile-sidebar .profile-social {
+	padding-bottom:31px;
+}
+#template-product_post #profile-sidebar .btn.btn-profile {
+	border-radius: 45px;
+	padding: 6px 20px;
+	background-color: rgba(254, 254, 254, 0.15);
+}
+#template-product_post #profile-sidebar .btn.btn-profile:hover,
+#template-product_post #profile-sidebar .btn.btn-profile:focus {
+	color:#ffffff;
+}
+#template-product_post #profile-sidebar .spacer-profile {
+	height:220px;
+}
+#template-product_post #profile-sidebar .profile-footer {
+	padding-bottom:20px;
+}
+
+/*********************************************************
+|
+|  template-profile_following.php
+|
+**********************************************************/
+#template-profile_following section#hero {
+	background-color: #233743;
+}
+#template-profile_following section#hero a.btn.btn-follow {
+	border: 1px solid #fff;
+	color:#fff;
+	font-size:15px;
+	padding: 10px 26px;
+}
+#template-profile_following section#hero a.btn.btn-follow:hover,
+#template-profile_following section#hero a.btn.btn-follow:focus {
+	border: 1px solid #55b8b8;
+	color:#55b8b8;
+}
+#template-profile_following section#hero .btn.float-right {
+	position: absolute;
+  right: 15px;
+}
+/* Mobile user*/
+@media screen and (max-width: 580px){
+    #template-profile_following section#hero .btn.float-right {
+    display:none;
+    }
+}
+#template-profile_following section#hero .profile-thumb {
+	padding:105px 32px 26px 32px;
+}
+#template-profile_following section#hero .profile-thumb img {
+	max-width: 188px;
+	box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
+	border-radius: 6px;
+}
+#template-profile_following section#hero .profile-thumb img.img-responsive {
+	display: inline-block;
+}
+#template-profile_following section#hero .white-text {
+	color:#ffffff;
+}
+#template-profile_following section#hero .profile-fullname {
+	font-size:16px;
+	padding-bottom:10px;
+}
+#template-profile_following section#hero .profile-title {
+	font-size:16px;
+	padding-bottom:20px;
+}
+#template-profile_following section#hero .profile-social {
+	font-size:15px;
+	padding-bottom:26px;
+}
+#template-profile_following section#hero .profile-social a {
+	color:#fff;
+}
+#template-profile_following section#hero .profile-social a:hover,
+#template-profile_following section#hero .profile-social a:focus {
+	color: #55b7b8;
+}
+#template-profile_following section#hero .profile-btn {
+	padding-bottom:78px;
+}
+#template-profile_following section#hero .btn.btn-profile {
+	border-radius: 45px;
+	padding: 6px 20px;
+}
+#template-profile_following section#hero a.btn.btn-profile {
+	font-size:13px;
+	color:#fff;
+	margin:5px;
+}
+#template-profile_following section#hero a.btn.btn-profile:hover,
+#template-profile_following section#hero a.btn.btn-profile:focus {
+	opacity:0.8;
+}
+#template-profile_following section#hero .btn.btn-profile.upvotes {
+	background-color: rgba(227, 30, 70, 0.8);
+}
+#template-profile_following section#hero .btn.btn-profile.submitted {
+	background-color: #46b3df;
+}
+#template-profile_following section#hero .btn.btn-profile.following {
+	background-color: #cc4dfc;
+}
+#template-profile_following section#hero .btn.btn-profile.followers {
+	background-color: #e9df67;
+}
+
+#template-profile_following section#profile_following {
+	margin-top:80px;
+}
+#template-profile_following section#profile_following .card-item {
+	border-radius: 5px;
+	background-color: #ffffff;
+	border: solid 1px #e4e4e4;
+	padding:10px;
+	margin-bottom:20px;
+}
+#template-profile_following section#profile_following .profile-thumb {
+	padding-bottom:25px;
+}
+#template-profile_following section#profile_following .profile-thumb img {
+  border-radius: 6px;
+}
+#template-profile_following section#profile_following .profile-thumb img.img-responsive {
+	display: inline-block;
+}
+#template-profile_following section#profile_following .profile-fullname {
+	font-size: 16px;
+	line-height: 1.1;
+	letter-spacing: 4.9px;
+	color: #333333;
+	padding-bottom:10px;
+}
+#template-profile_following section#profile_following .profile-title {
+	font-size: 15px;
+	line-height: 1.7;
+	color: #777777;
+	padding-bottom:5px;
+}
+#template-profile_following section#profile_following .profile-username {
+	font-size: 15px;
+	line-height: 1.7;
+	color: #55b8b8;
+	padding-bottom:17px;
+}
+#template-profile_following section#profile_following .btn.btn-follow {
+	border:1px solid #55b8b8;
+	background-color:#55b8b8;
+	color:#ffffff;
+	padding: 8px 20px;
+	width: 100%;
+}
+#template-profile_following section#profile_following .btn.btn-follow:hover,
+#template-profile_following section#profile_following .btn.btn-follow:focus {
+	background-color:#fff;
+	color:#55b8b8;
+}
+#template-profile_following section#profile_following .btn.btn-following {
+	border:1px solid #55b8b8;
+	color:#55b8b8;
+	padding: 8px 20px;
+	width: 100%;
+}
+#template-profile_following section#profile_following .btn.btn-following:hover,
+#template-profile_following section#profile_following .btn.btn-following:focus {
+	color:#fff;
+	background-color:#55b8b8;
+}
+#template-profile_following section#profile_following .showmore {
+	padding-top:65px;
+}
+#template-profile_following section#profile_following .btn.btn-showmore {
+	border:1px solid #9b9b9b;
+	font-size: 13px;
+	line-height: 1.4;
+	color: #777777;
+	padding: 6px 20px;
+	border-radius:45px;
+}
+#template-profile_following section#profile_following .btn.btn-showmore:hover,
+#template-profile_following section#profile_following .btn.btn-showmore:focus {
+	color:#fff;
+	background-color:#9b9b9b;
+}
+
+/*********************************************************
+|
+|  template-profile_product.php
+|
+**********************************************************/
+#template-profile_product section#hero {
+	background-color: #233743;
+}
+#template-profile_product section#hero a.btn.btn-follow {
+	border: 1px solid #fff;
+	color:#fff;
+	font-size:15px;
+	padding: 10px 26px;
+}
+#template-profile_product section#hero a.btn.btn-follow:hover,
+#template-profile_product section#hero a.btn.btn-follow:focus {
+	border: 1px solid #55b8b8;
+	color:#55b8b8;
+}
+#template-profile_product section#hero .btn.float-right {
+	position: absolute;
+  right: 15px;
+}
+/* Mobile user*/
+@media screen and (max-width: 580px){
+    #template-profile_product section#hero .btn.float-right {
+    display:none;
+    }
+}
+#template-profile_product section#hero .profile-thumb {
+	padding:105px 32px 26px 32px;
+}
+#template-profile_product section#hero .profile-thumb img {
+	max-width: 188px;
+	box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
+	border-radius: 6px;
+}
+#template-profile_product section#hero .profile-thumb img.img-responsive {
+	display: inline-block;
+}
+#template-profile_product section#hero .white-text {
+	color:#ffffff;
+}
+#template-profile_product section#hero .profile-fullname {
+	font-size:16px;
+	padding-bottom:10px;
+}
+#template-profile_product section#hero .profile-title {
+	font-size:16px;
+	padding-bottom:20px;
+}
+#template-profile_product section#hero .profile-social {
+	font-size:15px;
+	padding-bottom:26px;
+}
+#template-profile_product section#hero .profile-social a {
+	color:#fff;
+}
+#template-profile_product section#hero .profile-social a:hover,
+#template-profile_product section#hero .profile-social a:focus {
+	color: #55b7b8;
+}
+#template-profile_product section#hero .profile-btn {
+	padding-bottom:78px;
+}
+#template-profile_product section#hero .btn.btn-profile {
+	border-radius: 45px;
+	padding: 6px 20px;
+}
+#template-profile_product section#hero a.btn.btn-profile {
+	font-size:13px;
+	color:#fff;
+	margin:5px;
+}
+#template-profile_product section#hero a.btn.btn-profile:hover,
+#template-profile_product section#hero a.btn.btn-profile:focus {
+	opacity:0.8;
+}
+#template-profile_product section#hero .btn.btn-profile.upvotes {
+	background-color: rgba(227, 30, 70, 0.8);
+}
+#template-profile_product section#hero .btn.btn-profile.submitted {
+	background-color: #46b3df;
+}
+#template-profile_product section#hero .btn.btn-profile.following {
+	background-color: #cc4dfc;
+}
+#template-profile_product section#hero .btn.btn-profile.followers {
+	background-color: #e9df67;
+}
+
+#template-profile_product section#profile_product {
+	margin-top:80px;
+}
+#template-profile_product section#profile_product .card-item {
+	border-radius: 6px;
+	background-color: #ffffff;
+	border: solid 1px #e4e4e4;
+	margin-bottom:20px;
+}
+#template-profile_product section#profile_product .profile-thumb {
+	padding-bottom:25px;
+}
+#template-profile_product section#profile_product .profile-thumb img {
+  border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#template-profile_product section#profile_product .profile-thumb img.img-responsive {
+	display: inline-block;
+}
+#template-profile_product section#profile_product .profile-fullname {
+	font-size: 16px;
+	font-weight:700;
+	line-height: 1.1;
+	color: #333333;
+	margin:0 16px 10px 16px;
+}
+#template-profile_product section#profile_product .profile-brand {
+	font-size: 16px;
+	line-height: 1.1;
+	color: #333333;
+	margin:0 16px 10px 16px;
+}
+#template-profile_product section#profile_product .profile-description {
+	margin:0 16px;
+}
+#template-profile_product section#profile_product .profile-description p {
+	font-size: 15px;
+	line-height: 1.7;
+	color: #777777;
+}
+#template-profile_product section#profile_product .profile-website {
+	font-size: 15px;
+	line-height: 1.7;
+	margin:0 16px 11px 16px;
+}
+#template-profile_product section#profile_product .profile-meta {
+	padding:0 16px 16px 16px;
+}
+#template-profile_product section#profile_product a.btn.btn-profile {
+    font-size: 13px;
+    color: #fff;
+    margin: 5px 4px 5px 0;
+}
+#template-profile_product section#profile_product .btn.btn-profile {
+    border-radius: 45px;
+    padding: 5px 10px 7px;
+}
+#template-profile_product section#profile_product a.btn.btn-profile:hover,
+#template-profile_product section#profile_product a.btn.btn-profile:focus {
+	opacity:0.8;
+}
+#template-profile_product section#profile_product .btn.btn-profile.trend {
+	background-color: #eade66;
+	color: #afa224;
+}
+#template-profile_product section#profile_product .btn.btn-profile.upvotes {
+	background-color: rgba(227, 30, 70, 0.7);
+}
+#template-profile_product section#profile_product .btn.btn-profile.comment {
+	background-color: rgba(202, 75, 252, 0.7);
+}
+#template-profile_product section#profile_product .btn.btn-profile.disable {
+	background-color: #b1b1b1;
+	padding: 5px 20px 7px;
+}
+#template-profile_product section#profile_product .profile-follower {
+	border-top:1px solid #e7e7e7;
+	margin:0 16px;
+	padding:22px 0 19px 0;
+}
+#template-profile_product section#profile_product .profile-follower img {
+	border-radius:6px;
+	width: 36px;
+	height: 30px;
+	float:left;
+}
+#template-profile_product section#profile_product .profile-follower span.user-name {
+	display:block;
+	font-size: 13px;
+	font-weight:700;
+	line-height: 1.3;
+	color: #4a4a4a;
+	margin-left: 50px;
+}
+#template-profile_product section#profile_product .profile-follower span.user-cat {
+	display:block;
+	font-size: 13px;
+	line-height: 1.3;
+	color: #4a4a4a;
+	margin-left: 50px;
+}
+
+
+
+
+
+#template-profile_product section#profile_product .showmore {
+	padding-top:65px;
+}
+#template-profile_product section#profile_product .btn.btn-showmore {
+	border:1px solid #9b9b9b;
+	font-size: 13px;
+	line-height: 1.4;
+	color: #777777;
+	padding: 6px 20px;
+	border-radius:45px;
+}
+#template-profile_product section#profile_product .btn.btn-showmore:hover,
+#template-profile_product section#profile_product .btn.btn-showmore:focus {
+	color:#fff;
+	background-color:#9b9b9b;
+}
