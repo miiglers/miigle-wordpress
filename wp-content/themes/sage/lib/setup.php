@@ -2,8 +2,6 @@
 
 namespace Roots\Sage\Setup;
 
-use Roots\Sage\Assets;
-
 /**
  * Theme setup
  */
@@ -46,50 +44,24 @@ function setup() {
 
   // Use main stylesheet for visual editor
   // To add custom styles edit /assets/styles/layouts/_tinymce.scss
-  add_editor_style(Assets\asset_path('styles/main.css'));
+  //add_editor_style(Assets\asset_path('styles/main.css'));
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 
 /**
- * Register sidebars
+ * Add <body> classes
  */
-function widgets_init() {
-  register_sidebar([
-    'name'          => __('Primary', 'sage'),
-    'id'            => 'sidebar-primary',
-    'before_widget' => '<section class="widget %1$s %2$s">',
-    'after_widget'  => '</section>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>'
-  ]);
+function body_class($classes) {
+  // Add page slug if it doesn't exist
+  if (is_single() || is_page() && !is_front_page()) {
+    if (!in_array(basename(get_permalink()), $classes)) {
+      $classes[] = basename(get_permalink());
+    }
+  }
 
-  register_sidebar([
-    'name'          => __('Footer', 'sage'),
-    'id'            => 'sidebar-footer',
-    'before_widget' => '<section class="widget %1$s %2$s">',
-    'after_widget'  => '</section>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>'
-  ]);
+  return $classes;
 }
-add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
-
-/**
- * Determine which pages should NOT display the sidebar
- */
-function display_sidebar() {
-  static $display;
-
-  isset($display) || $display = !in_array(true, [
-    // The sidebar will NOT be displayed if ANY of the following return true.
-    // @link https://codex.wordpress.org/Conditional_Tags
-    is_404(),
-    is_front_page(),
-    is_page_template('template-custom.php'),
-  ]);
-
-  return apply_filters('sage/display_sidebar', $display);
-}
+add_filter('body_class', __NAMESPACE__ . '\\body_class');
 
 /**
  * Theme assets
@@ -104,7 +76,9 @@ function assets() {
     wp_enqueue_script('comment-reply');
   }
 
+  wp_enqueue_script('validate', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js', ['jquery'], null, true);
   wp_enqueue_script('bootstrap/js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', ['jquery'], null, true);
-  wp_enqueue_script('sage/js', get_template_directory_uri() . '/assets/scripts/main.js', ['jquery', 'bootstrap/js'], null, true);
+  wp_enqueue_script('wp-api');
+  wp_enqueue_script('sage/js', get_template_directory_uri() . '/assets/scripts/main.js', ['jquery', 'validate', 'bootstrap/js', 'wp-api'], null, true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);

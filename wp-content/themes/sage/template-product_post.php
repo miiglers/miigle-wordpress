@@ -33,9 +33,20 @@
         </div>
         
         <div class="col-sm-7 col-sm-offset-4 col-md-6 col-md-offset-4 main"> 
-          <?php while (have_posts()) : the_post(); ?>
-            <?php the_content(); ?>
-          <?php endwhile; ?>
+          
+					<?php if(current_user_can('subscriber-approved')): ?>
+						Posting and commenting on Miigle+ is limited to a growing number of trustworthy people to maintain a healthy volume of submissions and thoughtful dialogue.
+						<h5>Request an invite</h5>
+						[contact-form-7 id="124" title="Tell us a bit about yourself"]
+
+					<?php else: ?>
+						<p class="grey-text">Here's your opportunity to shine. Make it count!</p>
+
+						<h4>Tell us about the product</h4>
+						Need help? <a href="#">Watch this video on how to post help</a>
+
+					<?php endif; ?>
+					
         </div>
       </div>
     </div>

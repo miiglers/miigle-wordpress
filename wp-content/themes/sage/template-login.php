@@ -4,21 +4,28 @@
  */
 ?>
 
+<?php if(is_user_logged_in()): ?>
+	<script>
+		window.location = "/wp-admin";
+	</script>
+<?php endif; ?>
+
 <div id="template-login">
   
   <section id="signup">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
-         <div class="text-center"> 
+         <div> 
           <?php while (have_posts()) : the_post(); ?>
             <?php the_content(); ?>
           <?php endwhile; ?>
-          <!-- Forgot PW function -->
-          <p class="small text-left"><a href="#">Forgot your password?</a></p>
+					
+					<?php wp_login_form(); ?>
+					
          </div>
         
-        	<section id="social-login">
+        	<!--<section id="social-login">
 						<div class="row">
 							<div class="divider-new">
 								<p class="o-r">OR</p>
@@ -33,7 +40,7 @@
 							</div>
 						</div>
 					</div>
-				</section>
+				</section>-->
         	
         </div>
       </div>

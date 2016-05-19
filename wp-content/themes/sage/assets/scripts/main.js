@@ -34,11 +34,54 @@
       }
     },
     // About us page, note the change from about-us to about_us.
-    'about_us': {
+    'sign_up': {
       init: function() {
-        // JavaScript to be fired on the about us page
+        var $form = $('form#signup-form');
+        $form.on('submit', function(e) {
+          e.preventDefault();
+          $form.validate();
+          
+          if($form.valid()) {
+            signup($form);
+          }
+          
+          return false;
+        });
       }
     }
+  };
+  
+  var signup = function($form) {
+    var data = {
+      username: $form.find('input[name=email]').val(),
+      email: $form.find('input[name=email]').val(),
+      first_name: $form.find('input[name=firstName]').val(),
+      last_name: $form.find('input[name=lastName]').val(),
+      password: $form.find('input[name=password]').val()
+    };
+    
+    $.ajax({
+      url:  wpApiSettings.root + 'wp/v2/users',
+      method: 'POST',
+      data: data,
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('X-WP-Nonce', wpApiSettings.nonce);
+        $form.find('[type=submit] .fa')
+          .attr('disabled', 'disabled')
+          .removeClass('hidden');
+      },
+      success: function(success) {
+        console.log(success);
+      },
+      error: function(error) {
+        console.log(error);
+      },
+      complete: function() {
+        $form.find('[type=submit] .fa')
+          .removeAttr('disabled')
+          .addClass('hidden');
+      }
+    });
   };
 
   // The routing fires all common scripts, followed by the page specific scripts.

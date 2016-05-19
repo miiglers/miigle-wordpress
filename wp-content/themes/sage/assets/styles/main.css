@@ -64,7 +64,9 @@ a, a:visited {
 .form-group {
   margin-bottom: 30px;
 }
-.form-control {
+.form-control,
+input[type=text],
+input[type=password] {
   border: 2px solid #55b7b8;
   border-top: none;
   border-right: none;
@@ -74,6 +76,11 @@ a, a:visited {
   box-shadow: none;
   background-color: #F8F8F8;
   letter-spacing: 2px;
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  background-image: none;
 }
 .thumbnail .caption {
   color: #777;
@@ -493,37 +500,72 @@ article.post .entry-thumb {
 |  template-signin.php && template-login.php
 |
 **********************************************************/
+
+#wp-submit {
+  display: inline-block;
+  padding: 6px 30px;
+  color: white;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #55b7b8;
+  border-color: #55b7b8;
+}
+.login-username label,
+.login-password label {
+  display: none;
+}
+#loginform label {
+  font-weight: normal;
+  font-size: 14px;
+}
+#loginform p {
+  margin-bottom: 20px;
+}
 #template-signup section#signup,
 #template-login section#signup {
-	margin-top:140px;
+	margin-top: 70px;
 }
 #template-signup section#signup h2,
 #template-login section#signup h2 {
 	font-weight: 700;
-	margin-bottom:21px;
+	margin-bottom: 21px;
 }
 #template-signup section#signup p,
 #template-login section#signup p {
-    font-size:18px;
-    ine-height: 1.6;
+  font-size: 18px;
+  ine-height: 1.6;
 }
 #template-signup section#signup p.small,
 #template-login section#signup p.small,
 #template-signup section#signup p.small a,
 #template-login section#signup p.small a {
-    font-size: 15px;
-		color: #9b9b9b;
+  font-size: 15px;
+  color: #9b9b9b;
 }
 #template-signup section#signup p.small a:hover,
 #template-login section#signup p.small a:hover,
 #template-signup section#signup p.small a:focus,
 #template-login section#signup p.small a:focus {
-		color: #337ab7;
+	color: #337ab7;
 }
 
 #template-signup section#signup form,
 #template-login section#signup form {
-    margin-top: 55px;
+  margin-top: 55px;
 }
 #template-login section#signup .form-control,
 #template-signup section#signup .form-control  {
@@ -548,15 +590,15 @@ article.post .entry-thumb {
 	letter-spacing: 0;
 }
 #social-login .divider-new {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 2.5em;
-    font-weight: 300;
-    margin-top: 45px;
-    margin-bottom: 45px;
-    padding: 0 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5em;
+  font-weight: 300;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  padding: 0 15px;
 }
 #social-login .divider-new::before{
 	flex:1;
@@ -567,9 +609,9 @@ article.post .entry-thumb {
 	margin:0 0 0 .45em
 }
 #social-login .divider-new::after, .divider-new::before {
-    content: '';
-    height: 1.5px;
-    background: #9b9b9b;
+  content: '';
+  height: 1.5px;
+  background: #9b9b9b;
 }
 #social-login .o-r {
 	width: 35px;
@@ -579,36 +621,43 @@ article.post .entry-thumb {
 	color: #9b9b9b;
 }
 #social-login .rectangle {
-    padding: 8px 15px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-    border-radius: 3px;
-    margin-bottom:15px;
+  padding: 8px 15px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  margin-bottom:15px;
 }
 #social-login .social-icon {
-		color:#fff !important;
-		width: 100%;
+  color:#fff !important;
+  width: 100%;
 }
 #social-login .fa {
-    font-size: 20px;
+  font-size: 20px;
 }
 #social-login .tw-bg {
-    background-color: #55ACEE;
+  background-color: #55ACEE;
 }
 #social-login .fb-bg {
-    background-color: #3B5998;
+  background-color: #3B5998;
 }
 #social-login .fa-twitter {
-		border-right:1px solid #1a8ac1;
-	  padding-right:10px;
-	  margin-right:15px;
+  border-right:1px solid #1a8ac1;
+  padding-right:10px;
+  margin-right:15px;
 }
 #social-login .fa-facebook {
-		border-right:1px solid #274072;
-	  padding-right:10px;
-	  margin-right:15px;
+  border-right:1px solid #274072;
+  padding-right:10px;
+  margin-right:15px;
+}
+
+@media (min-width: 992px) {
+	#template-signup section#signup,
+  #template-login section#signup {
+    margin-top:140px;
+  }
 }
 
 /*********************************************************
