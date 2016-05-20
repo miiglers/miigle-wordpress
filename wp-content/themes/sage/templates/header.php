@@ -23,10 +23,11 @@
         <?php if(is_front_page()): ?>
           <li><a href="#story" class="btn btn-primary navbar-btn">Read Our Story</a></li>
         <?php endif; ?>
-        <?php if(is_user_logged_in()): ?>
+        <?php if(is_user_logged_in() && !is_front_page()): ?>
           <li><a href="/product-post" class="btn btn-default navbar-btn">Post</a></li>
           <li><a href="/profile-product"><i class="fa fa-user"></i></a></li>
-        <?php else: ?>
+        <?php endif; ?>
+        <?php if(!is_user_logged_in() && !is_front_page()): ?>
           <li><a href="/login" class="btn btn-default navbar-btn">Login</a></li>
           <li><a href="/sign-up" class="btn btn-primary navbar-btn">Signup</a></li>
         <?php endif; ?>
