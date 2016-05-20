@@ -33,41 +33,79 @@
         // JavaScript to be fired on the home page, after the init JS
       }
     },
-    // About us page, note the change from about-us to about_us.
+    'login': {
+      init: function() {
+        $('input#user_login').attr('placeholder', 'Email or Username');
+        $('input#user_pass').attr('placeholder', 'Password');
+      }
+    },
     'sign_up': {
       init: function() {
-        var $form = $('form#signup-form');
+        var $form = $('form#signup-form'),
+            data;
+            
         $form.on('submit', function(e) {
           e.preventDefault();
           $form.validate();
           
           if($form.valid()) {
-            signup($form);
+            data = {
+              username: $form.find('input[name=email]').val(),
+              email: $form.find('input[name=email]').val(),
+              first_name: $form.find('input[name=firstName]').val(),
+              last_name: $form.find('input[name=lastName]').val(),
+              password: $form.find('input[name=password]').val()
+            };
+            
+            apiAjax($form, data);
           }
           
           return false;
         });
       }
+    },
+    'product_post': {
+      init: function() {
+        var $requestForm = $('form#request-invite'),
+            $productForm = $('form#product');
+            
+        $requestForm.on('submit', function(e) {
+          e.preventDefault();
+          $requestForm.validate();
+          
+          if($requestForm.valid()) {
+            apiAjax($requestForm, $requestForm.serialize());
+          }
+          
+          return false;
+        });
+        
+        $productForm.on('submit', function(e) {
+          e.preventDefault();
+          $productForm.validate();
+          
+          if($productForm.valid()) {
+            apiAjax($productForm, $productForm.serialize());
+          }
+          
+          return false;
+        });
+        
+      }
     }
+    
   };
   
-  var signup = function($form) {
-    var data = {
-      username: $form.find('input[name=email]').val(),
-      email: $form.find('input[name=email]').val(),
-      first_name: $form.find('input[name=firstName]').val(),
-      last_name: $form.find('input[name=lastName]').val(),
-      password: $form.find('input[name=password]').val()
-    };
-    
+  var apiAjax = function($form, data) {
     $.ajax({
-      url:  wpApiSettings.root + 'wp/v2/users',
-      method: 'POST',
+      url:  wpApiSettings.root + $form.attr('action'),
+      method: $form.attr('method'),
       data: data,
       beforeSend: function(xhr) {
         xhr.setRequestHeader('X-WP-Nonce', wpApiSettings.nonce);
-        $form.find('[type=submit] .fa')
+        $form.find('[type=submit]')
           .attr('disabled', 'disabled')
+          .find('.fa-spin')
           .removeClass('hidden');
       },
       success: function(success) {
@@ -77,8 +115,9 @@
         console.log(error);
       },
       complete: function() {
-        $form.find('[type=submit] .fa')
+        $form.find('[type=submit]')
           .removeAttr('disabled')
+          .find('.fa-spin')
           .addClass('hidden');
       }
     });

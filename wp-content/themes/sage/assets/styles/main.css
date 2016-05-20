@@ -17,13 +17,35 @@ body {
   padding: 10px 0;
 }
 .navbar-default {
-  background-color: #f4fafa;
+  background-color: white;
+}
+.navbar-header {
+  z-index: 1;
+}
+.navbar-center {
+  position: absolute;
+  left: 40%;
+  top: 20px;  
+  margin: auto;
+  height: 100%;
+  display: inline-block;
+}
+.navbar-collapse {
+  text-align: center;
+}
+li .navbar-btn {
+  margin-left: 15px;
 }
 .btn {
   padding: 6px 30px;
 }
 .navbar-nav>li>a {
   padding: 6px 30px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.navbar-nav>li>a>.fa {
+  font-size: 20px;
 }
 .btn-primary {
   background-color: #55b7b8;
@@ -722,21 +744,7 @@ article.post .entry-thumb {
 | profile-sidebar
 */
 #template-product_post .sidebar {
-    display: none;
-}
-@media (min-width: 768px) {
-	#template-product_post .sidebar {
-			position: fixed;
-			top: 51px;
-			bottom: 0;
-			left: 0;
-			z-index: 1000;
-			display: block;
-			padding: 20px;
-			overflow-x: hidden;
-			overflow-y: auto;
-			background-color:#2a414d;
-	}
+    background-color:#2a414d;
 }
 #template-product_post #profile-sidebar .profile-thumb {
 	padding:32px 32px 22px 32px;

@@ -16,7 +16,7 @@
 						<?php endwhile; ?>
          	</div>
 				 
-				 	<form id="signup-form">
+				 	<form id="signup-form" action="wp/v2/users" method="post">
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
