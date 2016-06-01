@@ -65,6 +65,14 @@ li .navbar-btn {
   background-color: white;
   border-color: #55b7b8;
   color: #55b7b8;
+  padding: 12px 30px;
+  font-size:15px;
+}
+.btn-default:hover,
+.btn-default:focus {
+	background-color: #55b7b8;
+	border-color: #55b7b8;
+	color:white;
 }
 .btn-transparent {
   background: none;
@@ -404,22 +412,68 @@ body.page-template-template-about-php main.main {
   background-position: center center;
 }
 #template-about section#splash h2 {
-  font-size: 36px;
-  font-weight: bold;
+  font-size: 28px;
+  font-weight:700;
   color: white;
   margin-bottom: 20px;
 }
+#template-about section#about h2 {
+  font-size: 28.8px;
+	line-height: 1.4;
+	text-align: center;
+	color: #333333;
+  margin-bottom: 29px;
+}
+#template-about section#about h3 {
+  font-weight:700;
+  font-size: 16px;
+	line-height: 1.1;
+	color: #333333;
+  margin-bottom: 13px;
+}
+#template-about section#about p {
+	font-size: 15px;
+	line-height: 1.8;
+	color: #777777;
+	margin-bottom:30px;
+}
+#template-about section#about img {
+	border-radius:5px;
+	margin:46px auto;
+}
+#template-about section#about img.logo {
+	max-height: 36px;
+	width: auto;
+  display: inline-block;
+  margin: 20px 20px 20px 0;
+}
 #template-about section#team {
   background: #f9f9fb;
-  font-size: 14px;
 }
-#template-about section#team h4 {
+#template-about section#team p {
+	font-size: 15px;
+	line-height: 1.8;
+	color: #777777;
+	margin-bottom:30px;
+}
+#template-about section#team .team {
+	margin-bottom:43px;
+}
+#template-about section#team .team img {
+  border-radius:5px;
+  width: 230px;
+  margin:0 auto;
+}
+#template-about section#team .team h4 {
   margin-top: 25px;
   letter-spacing: 2px;
 }
+#template-about section#team .team p {
+	margin-bottom:0;
+}
 @media (min-width: 992px) {
   #template-about section#splash {
-    padding: 150px 0;
+    padding: 120px 0;
   }
 }
 

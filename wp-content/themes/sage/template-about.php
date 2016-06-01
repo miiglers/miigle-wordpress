@@ -11,8 +11,12 @@
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
         
-          <?php echo the_field('ta_hero_text'); ?>
-        
+          <?php //echo the_field('ta_hero_text'); ?>
+        	<!-- -->
+        	<h2>“If not us, who? If not now, when?” – RFK</h2>
+        	<p><a class="btn btn-default" href="#">Why we are building Miigle</a></p>
+        	<!-- -->
+        	
         </div>
       </div>
     </div>
@@ -37,10 +41,91 @@
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-          <?php echo the_field('ta_team_header'); ?>
-
-          <?php echo the_field('ta_team_members'); ?>
-
+          <?php //echo the_field('ta_team_header'); ?>
+          <!-- -->
+        	<h2>Meet the team building Miigle</h2>
+        	<p>Mauris lacinia porta faucibus. Fusce eu est ac eros vulputate mollis in ac felis. Aenean commodo scelerisque mi sed imperdiet. Donec at hendrerit nisi, eget vestibulum nisi. Sed sit amet magna luctus, facilisis erat quis.</p>
+					<!-- -->
+					
+          <?php //echo the_field('ta_team_members'); ?>
+          <!-- -->
+          <div class="row">
+          	
+          	<div class="col-sm-4 team">
+          		<p><img class="img-responsive" src="https://i.ytimg.com/vi/icqDxNab3Do/maxresdefault.jpg"></p>
+          		<h4>Luc Berlin</h4>
+          		<p>Co-Founder &amp; CEO</p>
+          		<p><a href="#">@miigle_handle</a></p>
+          	</div>
+          	
+          	<div class="col-sm-4 team">
+          		<p><img class="img-responsive" src="https://miigle.com/wp-content/uploads/2016/06/team-joshfester.jpg"></p>
+          		<h4>Josh Fester</h4>
+          		<p>Co-Founder &amp; CTO</p>
+          		<p><a href="#">@miigle_handle</a></p>
+          	</div>
+          	
+          	<div class="col-sm-4 team">
+          		<p><img class="img-responsive" src="https://i.ytimg.com/vi/icqDxNab3Do/maxresdefault.jpg"></p>
+          		<h4>Michael Evans</h4>
+          		<p>COO &amp; CFO</p>
+          		<p><a href="#">@miigle_handle</a></p>
+          	</div>
+          		<div class="clearfix"></div>
+          	
+          	<div class="col-sm-4 team">
+          		<p><img class="img-responsive" src="https://miigle.com/wp-content/uploads/2016/06/team-wilianiralzabal.png"></p>
+          		<h4>Wilian Iralzabal</h4>
+          		<p>Product Design</p>
+          		<p><a href="#">@miigle_handle</a></p>
+          	</div>
+          	
+          	<div class="col-sm-4 team">
+          		<p><img class="img-responsive" src="https://miigle.com/wp-content/uploads/2016/06/team-yukirosene.png"></p>
+          		<h4>Yuki Rosene</h4>
+          		<p>Engineering</p>
+          		<p><a href="#">@miigle_handle</a></p>
+          	</div>
+          	
+          	<div class="col-sm-4 team">
+          		<p><img class="img-responsive" src="https://i.ytimg.com/vi/icqDxNab3Do/maxresdefault.jpg"></p>
+          		<h4>Jesse Alter</h4>
+          		<p>Business</p>
+          		<p><a href="#">@miigle_handle</a></p>
+          	</div>
+          		<div class="clearfix"></div>
+          	
+          	<div class="col-sm-4 team">
+          		<p><img class="img-responsive" src="https://miigle.com/wp-content/uploads/2016/06/team-aaronplaat.png"></p>
+          		<h4>Aaron Plaat</h4>
+          		<p>Marketing</p>
+          		<p><a href="#">@miigle_handle</a></p>
+          	</div>
+          	
+          	<div class="col-sm-4 team">
+          		<p><img class="img-responsive" src="https://i.ytimg.com/vi/icqDxNab3Do/maxresdefault.jpg"></p>
+          		<h4>Sarah Smith</h4>
+          		<p>Operations</p>
+          		<p><a href="#">@miigle_handle</a></p>
+          	</div>
+          	
+          	<div class="col-sm-4 team">
+          		<p><img class="img-responsive" src="https://i.ytimg.com/vi/icqDxNab3Do/maxresdefault.jpg"></p>
+          		<h4>Anitha Thenappan</h4>
+          		<p>Strategy</p>
+          		<p><a href="#">@miigle_handle</a></p>
+          	</div>
+          		<div class="clearfix"></div>
+          	
+          	<div class="col-sm-4 team">
+          		<p><img class="img-responsive" src="https://miigle.com/wp-content/uploads/2016/06/team-add.png"></p>
+          		<h4>Want to join?</h4>
+          		<p>&nbsp;</p>
+          		<p><a href="#" class="btn btn-default">Send us note</a></p>
+          	</div>
+          </div>
+					<!-- -->
+					
         </div>
       </div>
     </div>
