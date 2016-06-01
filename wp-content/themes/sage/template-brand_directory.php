@@ -34,7 +34,7 @@ $user = wp_get_current_user();
         	</div>
         </div>
         
-        <div class="col-sm-9 col-sm-offset-2 col-md-10 col-md-offset−1 main"> 
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-lg-offset-2 main"> 
         	  <section id="splash" class="text-center">
 							<h1>Introducing <span>M+</span> Products.</h1>
 							<p class="lead">The way to find the best products from environmentally and socially responsible brands worldwide.</p>
@@ -45,14 +45,13 @@ $user = wp_get_current_user();
 									<p class="small">Receive them in your inbox weekly.</p>
 								</div>
 								<button type="submit" class="btn btn-default">Yes, please</button>
-							</form>
-							
-						</section>  
+							</form>							
+						</section>
 						<section id="featured">
 							<div class="container">
 								<div class="row">
 									
-									<div class="col-md-8 col-md-offset-1">
+									<div class="col-sm-7 col-md-8 col-md-offset-1">
 										<h2>Featured Brands</h2>
 										<div class="tab pull-right">
 											<a href="#" class="active">All</a>&nbsp;|&nbsp;
@@ -202,24 +201,6 @@ $user = wp_get_current_user();
 											</div>
 										</div>
 										
-										<!-- Brand Item -->
-										<div class="card">
-											<div class="row">
-												<div class="col-md-4 text-center">
-													<img src="<?php echo get_template_directory_uri(); ?>/assets/images/buccellati-logo.jpg" class="logo img-responsive" />
-													<!--
-													<div class="prod-meta">
-														<a href="#" class="btn btn-profile trend">Rising Star</a>
-													</div>-->
-												</div>
-												<div class="col-md-8">
-													<h3>Brand name</h3>
-													<p>Discover great products from people just like you who care about our planet Discover great products from people.</p>
-													<p><a href="http://productname.com">productname.com</a></p>	
-												</div>
-											</div>
-										</div>
-										
 										<!-- Show more -->
 										<div class="row">
 											<div class="col-md-12 text-center showmore">
@@ -228,7 +209,7 @@ $user = wp_get_current_user();
 										</div>
 																		
 								</div>
-									<div class="col-md-2">
+									<div class="col-sm-3 col-md-2 hidden-xs">
 									<h4>Directory</h4>
 									<hr>
 									<ul class="directory-list">
