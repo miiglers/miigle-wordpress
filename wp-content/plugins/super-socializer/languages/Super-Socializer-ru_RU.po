@@ -1,0 +1,2312 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Super Socializer\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-18 02:15+0530\n"
+"PO-Revision-Date: 2016-05-18 02:18+0530\n"
+"Last-Translator: The Champ <lordofthechamps@gmail.com>\n"
+"Language-Team: Team Heateor <support@heateor.com>\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.7.6\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../super_socializer.php:325
+#, php-format
+msgid "Enter exactly the following url in <strong>Website</strong> and <strong>Callback Url</strong> options in your Twitter app (see step 3 %s)"
+msgstr "Введите действующую ссылку для <strong>сайта</strong> и <strong>обратную ссылку</strong> в вашем приложении Твиттера (смотрите шаг 3 %s)"
+
+#: ../super_socializer.php:328
+msgid "Make sure cURL is enabled at your website server. You may need to contact the server administrator of your website to verify this"
+msgstr "Убедитесь Curl включен в вашем веб-сайте сервера. Вы, возможно, потребуется обратиться к администратору сервера вашего сайта, чтобы убедиться, это"
+
+#: ../super_socializer.php:498
+msgid "Please verify your email address to login."
+msgstr "Пожалуйста, подтвердите ваш адрес электронной почты."
+
+#: ../super_socializer.php:498
+msgid "Your email has been verified. Now you can login to your account"
+msgstr "Ваше сообщение было проверено. Теперь вы можете войти в свой аккаунт"
+
+#: ../super_socializer.php:502
+msgid "Notification"
+msgstr "Уведомления"
+
+#: ../super_socializer.php:520
+#: ../admin/social_login.php:595
+msgid "Email required"
+msgstr "Email (Обязательно)"
+
+#: ../super_socializer.php:523
+msgid "Please check your email inbox to complete the registration."
+msgstr "Пожалуйста, проверьте свой почтовый ящик для завершения регистрации."
+
+#: ../super_socializer.php:540
+msgid "Follow steps 11 and 12 at GooglePlus app configuration page, about to open"
+msgstr "Выполните шаги 11 и 12 на странице конфигурации приложения GooglePlus, чтобы открыть"
+
+#: ../super_socializer.php:627
+msgid "Leave a reply"
+msgstr "Оставить ответ"
+
+#: ../super_socializer.php:639
+msgid "Shares"
+msgstr ""
+
+#: ../super_socializer.php:639
+msgid "Share"
+msgstr ""
+
+#: ../super_socializer.php:816
+#, fuzzy
+msgid "Super Socializer - General Options"
+msgstr "Super Socializer - Вход"
+
+#: ../super_socializer.php:816
+#: ../admin/general_options.php:11
+#: ../admin/social_commenting.php:42
+#, fuzzy
+msgid "General Options"
+msgstr "Настройки Поделиться"
+
+#: ../super_socializer.php:879
+msgid "Super Socializer - Social Avatar"
+msgstr "Super Socializer - Социальный Аватар"
+
+#: ../super_socializer.php:882
+msgid "Small Avatar Url"
+msgstr "Ссылка для маленького аватара"
+
+#: ../super_socializer.php:886
+msgid "Large Avatar Url"
+msgstr "Ссылка для большого аватара"
+
+#: ../super_socializer.php:890
+#: ../helper.php:887
+msgid "Do not fetch and update social avatar from my profile, next time I Social Login"
+msgstr ""
+
+#: ../super_socializer.php:894
+#: ../helper.php:888
+msgid "Update social avatar, next time I Social Login"
+msgstr ""
+
+#: ../super_socializer.php:967
+msgid "Login with your Social ID"
+msgstr ""
+
+#: ../super_socializer.php:968
+msgid "Email you entered is already registered or invalid"
+msgstr "Электронная почта, которую вы ввели, уже зарегистрирована или недействительна"
+
+#: ../super_socializer.php:973
+msgid "Please enter a valid email address. You might be required to verify it"
+msgstr "Пожалуйста, введите действительный адрес электронной почты. Вам, возможно, потребуется проверить его"
+
+#: ../helper.php:8
+#, fuzzy
+msgid "Settings saved"
+msgstr "Настройки"
+
+#: ../helper.php:8
+msgid "Dismiss this notice"
+msgstr "Закрыть это уведомление"
+
+#: ../helper.php:158
+msgid "Click to show help"
+msgstr "Нажмите, чтобы получить помощь"
+
+#: ../helper.php:158
+msgid "Click to hide help"
+msgstr "Нажмите, чтобы скрыть помощь"
+
+#: ../helper.php:252
+msgid "Settings"
+msgstr "Настройки"
+
+#: ../helper.php:577
+msgid "Account linked successfully"
+msgstr "Аккаунт успешно связан"
+
+#: ../helper.php:581
+msgid "Account already exists or linked"
+msgstr "Аккаунт уже существует или связан"
+
+#: ../helper.php:590
+msgid "You are already connected with"
+msgstr "Вы уже связаны с"
+
+#: ../helper.php:590
+msgid "as primary social network"
+msgstr "в качестве основной социальной сети"
+
+#: ../helper.php:605
+msgid "Link your social account to login to your account at this website"
+msgstr "Введите ссылку на ваш аккаут в социальных сетях чтобы войти в аккаунт на этом сайте"
+
+#: ../helper.php:642
+msgid "Currently"
+msgstr "На данный момент"
+
+#: ../helper.php:642
+msgid "Remove"
+msgstr "Удалить"
+
+#: ../helper.php:743
+#, fuzzy
+msgid "Disable Standard Social Sharing on this "
+msgstr "Деактивироватьвертикальные кнопки Поделиться"
+
+#: ../helper.php:748
+#, fuzzy
+msgid "Disable Floating Social Sharing on this "
+msgstr "Деактивировать горизонтальные кнопки Поделиться"
+
+#: ../helper.php:753
+#, fuzzy
+msgid "Disable Standard like buttons on this "
+msgstr "Деактивировать вертикальные кнопки Нравится"
+
+#: ../helper.php:758
+#, fuzzy
+msgid "Disable Floating like buttons on this "
+msgstr "Деактивировать горизонтальные кнопки Нравится"
+
+#: ../helper.php:763
+msgid "Disable Social Commenting on this "
+msgstr "Деактивировать социальное комментироване"
+
+#: ../helper.php:772
+#, fuzzy
+msgid "Standard Sharing Interface"
+msgstr "Интерфейс Поделиться"
+
+#: ../helper.php:778
+#: ../helper.php:797
+msgid "Starting share count for "
+msgstr "Запустить счетчик поделиться для"
+
+#: ../helper.php:791
+#, fuzzy
+msgid "Floating Sharing Interface"
+msgstr "Интерфейс Поделиться"
+
+#: ../helper.php:884
+#, fuzzy
+msgid "Social Avatar"
+msgstr "Ссылка для маленького аватара"
+
+#: ../helper.php:891
+#, fuzzy
+msgid "Small Avatar"
+msgstr "Ссылка для маленького аватара"
+
+#: ../helper.php:895
+#, fuzzy
+msgid "Large Avatar"
+msgstr "Ссылка для большого аватара"
+
+#: ../helper.php:899
+#: ../admin/general_options.php:89
+#: ../admin/social_sharing.php:1835
+#: ../admin/social_commenting.php:464
+#: ../admin/social_login.php:893
+#: ../admin/like_buttons.php:780
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+#: ../helper.php:944
+msgid "Please help us make the plugin better"
+msgstr ""
+
+#: ../helper.php:945
+#, php-format
+msgid "Please take a look at our <a href=\"%s\" target=\"_blank\">support documentation</a> before deactivating the plugin"
+msgstr ""
+
+#: ../helper.php:945
+msgid "I am deactivating the plugin because"
+msgstr ""
+
+#: ../helper.php:945
+msgid "I no longer need the plugin"
+msgstr ""
+
+#: ../helper.php:945
+msgid "I found a better plugin"
+msgstr ""
+
+#: ../helper.php:945
+msgid "I only needed the plugin for a short period"
+msgstr ""
+
+#: ../helper.php:945
+msgid "The plugin broke my site"
+msgstr ""
+
+#: ../helper.php:945
+msgid "The plugin suddenly stopped working"
+msgstr ""
+
+#: ../helper.php:945
+msgid "I couldn\\'t understand how to make it work"
+msgstr ""
+
+#: ../helper.php:945
+msgid "The plugin is great, but I need specific feature that you don\\'t support"
+msgstr ""
+
+#: ../helper.php:945
+msgid "The plugin is not working"
+msgstr ""
+
+#: ../helper.php:945
+msgid "It\\'s not what I was looking for"
+msgstr ""
+
+#: ../helper.php:945
+msgid "The plugin didn\\'t work as expected"
+msgstr ""
+
+#: ../helper.php:945
+msgid "Other"
+msgstr ""
+
+#: ../helper.php:968
+#, fuzzy
+msgid "Please specify a vaild reason"
+msgstr "Пожалуйста, подтвердите ваш адрес электронной почты."
+
+#: ../admin/general_options.php:17
+msgid "Include Javascript in website footer"
+msgstr "Включить Javascriptв подвале(футере) сайта"
+
+#: ../admin/general_options.php:27
+msgid "If enabled (recommended), Javascript files will be included in the footer of your website."
+msgstr "Если этот параметр включен (рекомендуется), Javascript файлы будут включены в нижней части вашего сайта."
+
+#: ../admin/general_options.php:35
+msgid "Load all Javascript files in single file"
+msgstr ""
+
+#: ../admin/general_options.php:45
+msgid "Loads Javascript in single request."
+msgstr ""
+
+#: ../admin/general_options.php:53
+msgid "Delete all the options on plugin deletion"
+msgstr "Удалить все настройки при удалении плагина"
+
+#: ../admin/general_options.php:63
+msgid "If enabled, plugin options will get deleted when plugin is deleted/uninstalled and you will need to reconfigure the options when you install the plugin next time."
+msgstr "Если включено, параметры плагина будет удаляются, когда плагин будет удален /переустановлен, и вы должны будете перенастроить параметры при установке плагина в следующий раз."
+
+#: ../admin/general_options.php:71
+#, fuzzy
+msgid "Custom CSS"
+msgstr "Пользовательская ссылка"
+
+#: ../admin/general_options.php:81
+msgid "You can specify any additional CSS rules (without &lt;style&gt; tag)"
+msgstr ""
+
+#: ../admin/help.php:4
+msgid "About"
+msgstr "О проекте"
+
+#: ../admin/help.php:4
+msgid "Version"
+msgstr "Версия"
+
+#: ../admin/help.php:6
+msgid "by"
+msgstr "от"
+
+#: ../admin/help.php:7
+msgid "We are a creative team with unique ideas in mind and service in heart. We love what we do. For more info join us at"
+msgstr "Мы являемся творческим коллективом с уникальными идеями в голове и обслуживанием в сердце. Мы любим то, что мы делаем. Для получения дополнительной информации присоединиться к нам на"
+
+#: ../admin/help.php:17
+msgid "Donate"
+msgstr ""
+
+#: ../admin/help.php:19
+msgid "You can help us continue the development of this free plugin by donating"
+msgstr ""
+
+#: ../admin/help.php:20
+msgid "Donate Now"
+msgstr ""
+
+#: ../admin/help.php:26
+msgid "Plugin Demo"
+msgstr "Демо плагина"
+
+#: ../admin/help.php:32
+msgid "Integrate with Google Analytics"
+msgstr ""
+
+#: ../admin/help.php:38
+msgid "Boost sharing by awarding points"
+msgstr "Повысьте обмен, наградив точек"
+
+#: ../admin/help.php:44
+msgid "Award points for Social Login"
+msgstr "Премии пунктов для социального Логин"
+
+#: ../admin/help.php:50
+#, fuzzy
+msgid "Other Add-ons"
+msgstr "Дополнения"
+
+#: ../admin/help.php:55
+msgid "Need Help?"
+msgstr "Требуется помощь?"
+
+#: ../admin/help.php:57
+msgid "If you <strong>have any query</strong>, need help regarding <strong>plugin setup</strong>, want <strong>custom features</strong> in the plugin or <strong>have any suggestion</strong> to improve the plugin, just drop an email at <a href=\"mailto:support@heateor.com\">support@heateor.com</a>"
+msgstr "Если у вас <strong>есть какой-то вопрос</strong>, вы нуждаетесь в помощи <strong>установки плагина</strong>, хотите  <strong>кастомные опции</strong> в плагине или <strong>имеете какие-то пожелания</strong> которые необходимо внести в плагин, напишите нам на почту<a href=\"mailto:support@heateor.com\">support@heateor.com</a>"
+
+#: ../admin/help.php:62
+msgid "Support Us"
+msgstr "Поддержите нас"
+
+#: ../admin/help.php:65
+#: ../admin/help.php:68
+#: ../admin/help.php:69
+#: ../admin/help.php:70
+#: ../admin/help.php:71
+#: ../admin/help.php:72
+msgid "Rate 5-star"
+msgstr "Оценить 5-бальной шкале"
+
+#: ../admin/social_sharing.php:9
+#: ../admin/social_commenting.php:8
+#: ../admin/social_login.php:8
+#: ../admin/like_buttons.php:10
+msgid "Master Control"
+msgstr ""
+
+#: ../admin/social_sharing.php:14
+msgid "Enable Social Sharing"
+msgstr "Активировать Поделиться в социальных сетях"
+
+#: ../admin/social_sharing.php:23
+#, fuzzy
+msgid "Master control to enable Social Sharing"
+msgstr "Мастер настройки включения горизонтальных кнопок Поделиться"
+
+#: ../admin/social_sharing.php:35
+msgid "Theme Selection"
+msgstr ""
+
+#: ../admin/social_sharing.php:36
+#: ../admin/like_buttons.php:37
+#, fuzzy
+msgid "Standard Interface"
+msgstr "Интерфейс Поделиться"
+
+#: ../admin/social_sharing.php:37
+#: ../admin/like_buttons.php:38
+#, fuzzy
+msgid "Floating Interface"
+msgstr "Интерфейс Поделиться"
+
+#: ../admin/social_sharing.php:38
+#: ../admin/like_buttons.php:39
+msgid "Miscellaneous"
+msgstr ""
+
+#: ../admin/social_sharing.php:39
+#: ../admin/social_sharing.php:1780
+#: ../admin/social_sharing.php:1782
+#: ../admin/social_login.php:40
+#: ../admin/social_login.php:879
+#: ../admin/like_buttons.php:40
+#: ../admin/like_buttons.php:753
+msgid "Shortcode & Widget"
+msgstr "Шорткод и виджет"
+
+#: ../admin/social_sharing.php:40
+msgid "Troubleshooter"
+msgstr "Устранение неисправностей"
+
+#: ../admin/social_sharing.php:41
+#: ../admin/social_sharing.php:1811
+#: ../admin/social_commenting.php:36
+#: ../admin/social_commenting.php:452
+#: ../admin/like_buttons.php:41
+#: ../admin/like_buttons.php:765
+msgid "FAQ"
+msgstr "Часто задаваемые вопросы (FAQ)"
+
+#: ../admin/social_sharing.php:48
+msgid "Standard interface theme"
+msgstr ""
+
+#: ../admin/social_sharing.php:53
+#: ../admin/social_sharing.php:360
+msgid "Icon Preview"
+msgstr "Превью иконок"
+
+#: ../admin/social_sharing.php:125
+#: ../admin/social_sharing.php:433
+msgid "Do not forget to save the configuration after making changes by clicking the save button below"
+msgstr "Не забудьте сохранить конфигурацию после внесения изменений, нажав ниже кнопку сохранить"
+
+#: ../admin/social_sharing.php:132
+#: ../admin/social_sharing.php:440
+msgid "Shape"
+msgstr "Форма"
+
+#: ../admin/social_sharing.php:136
+#: ../admin/social_sharing.php:444
+msgid "Round"
+msgstr "Круглая"
+
+#: ../admin/social_sharing.php:138
+#: ../admin/social_sharing.php:446
+msgid "Square"
+msgstr "Квадратная"
+
+#: ../admin/social_sharing.php:140
+#: ../admin/social_sharing.php:448
+msgid "Rectangle"
+msgstr ""
+
+#: ../admin/social_sharing.php:147
+#: ../admin/social_sharing.php:455
+msgid "Shape of the sharing icons"
+msgstr "Форма кнопок Поделиться"
+
+#: ../admin/social_sharing.php:156
+#: ../admin/social_sharing.php:464
+msgid "Size (in pixels)"
+msgstr "Размер (в пикселях)"
+
+#: ../admin/social_sharing.php:172
+#: ../admin/social_sharing.php:480
+msgid "Size of the sharing icons"
+msgstr "Размер кнопок Поделиться"
+
+#: ../admin/social_sharing.php:182
+#: ../admin/social_sharing.php:490
+#, fuzzy
+msgid "Width (in pixels)"
+msgstr "Размер (в пикселях)"
+
+#: ../admin/social_sharing.php:198
+#: ../admin/social_sharing.php:506
+#, fuzzy
+msgid "Width of the sharing icons"
+msgstr "Размер кнопок Поделиться"
+
+#: ../admin/social_sharing.php:206
+#: ../admin/social_sharing.php:514
+#, fuzzy
+msgid "Height (in pixels)"
+msgstr "Размер (в пикселях)"
+
+#: ../admin/social_sharing.php:222
+#: ../admin/social_sharing.php:530
+#, fuzzy
+msgid "Height of the sharing icons"
+msgstr "Размер кнопок Поделиться"
+
+#: ../admin/social_sharing.php:232
+#: ../admin/social_sharing.php:540
+#, fuzzy
+msgid "Border radius (in pixels)"
+msgstr "Размер (в пикселях)"
+
+#: ../admin/social_sharing.php:242
+#: ../admin/social_sharing.php:550
+msgid "Specify a value for rounded corners. More the value, more rounded will the corners be. Leave empty for sharp corners."
+msgstr ""
+
+#: ../admin/social_sharing.php:251
+#: ../admin/social_sharing.php:559
+#, fuzzy
+msgid "Logo Color"
+msgstr "Цвет фона"
+
+#: ../admin/social_sharing.php:255
+#: ../admin/social_sharing.php:276
+#: ../admin/social_sharing.php:296
+#: ../admin/social_sharing.php:563
+#: ../admin/social_sharing.php:584
+#: ../admin/social_sharing.php:603
+msgid "Default"
+msgstr ""
+
+#: ../admin/social_sharing.php:257
+#: ../admin/social_sharing.php:277
+#: ../admin/social_sharing.php:301
+#: ../admin/social_sharing.php:565
+#: ../admin/social_sharing.php:585
+#: ../admin/social_sharing.php:608
+msgid "On Hover"
+msgstr ""
+
+#: ../admin/social_sharing.php:265
+#: ../admin/social_sharing.php:573
+#, fuzzy
+msgid "Specify the color or hex code (example #cc78e0) for the logo of icon. Leave empty for default. You can get the hex code of the required color from <a href=\"http://www.colorpicker.com/\" target=\"_blank\">this link</a>"
+msgstr "Укажите цвет или шестандцатеричный код (например #cc78e0) для фона вертикального интерфейса. Оставьте пустым чтобы оставить прозрачным. Вы можете получить шестнадцатеричный код <a href=\"http://www.colorpicker.com/\" target=\"_blank\">здесь</a>"
+
+#: ../admin/social_sharing.php:273
+#: ../admin/social_sharing.php:581
+#: ../admin/social_sharing.php:1262
+#: ../admin/like_buttons.php:397
+msgid "Background Color"
+msgstr "Цвет фона"
+
+#: ../admin/social_sharing.php:284
+#: ../admin/social_sharing.php:592
+#, fuzzy
+msgid "Specify the color or hex code (example #cc78e0) for icon background. Save \"transparent\" for transparent background. Leave empty for default. You can get the hex code of the required color from <a href=\"http://www.colorpicker.com/\" target=\"_blank\">this link</a>"
+msgstr "Укажите цвет или шестандцатеричный код (например #cc78e0) для фона вертикальной колонки Поделиться. Оставьте пустым чтобы оставить прозрачным. Вы можете получить шестнадцатеричный код <a href=\"http://www.colorpicker.com/\" target=\"_blank\">здесь</a>"
+
+#: ../admin/social_sharing.php:292
+#: ../admin/social_sharing.php:600
+msgid "Border"
+msgstr ""
+
+#: ../admin/social_sharing.php:298
+#: ../admin/social_sharing.php:303
+#: ../admin/social_sharing.php:605
+#: ../admin/social_sharing.php:610
+#, fuzzy
+msgid "Border Width"
+msgstr "Шорткод и виджет"
+
+#: ../admin/social_sharing.php:299
+#: ../admin/social_sharing.php:304
+#: ../admin/social_sharing.php:606
+#: ../admin/social_sharing.php:611
+#, fuzzy
+msgid "Border Color"
+msgstr "Цвет фона"
+
+#: ../admin/social_sharing.php:311
+#: ../admin/social_sharing.php:618
+#, fuzzy
+msgid "Icon border"
+msgstr "Превью иконок"
+
+#: ../admin/social_sharing.php:319
+#: ../admin/social_sharing.php:626
+msgid "Counter Position"
+msgstr ""
+
+#: ../admin/social_sharing.php:319
+#: ../admin/social_sharing.php:626
+msgid "(applies, if counter enabled)"
+msgstr ""
+
+#: ../admin/social_sharing.php:323
+#: ../admin/social_sharing.php:630
+#: ../admin/social_sharing.php:880
+#: ../admin/social_sharing.php:1284
+#: ../admin/like_buttons.php:171
+#: ../admin/like_buttons.php:419
+msgid "Left"
+msgstr "Слева"
+
+#: ../admin/social_sharing.php:325
+#: ../admin/social_sharing.php:632
+msgid "Top"
+msgstr ""
+
+#: ../admin/social_sharing.php:327
+#: ../admin/social_sharing.php:634
+#: ../admin/social_sharing.php:882
+#: ../admin/social_sharing.php:1285
+#: ../admin/like_buttons.php:173
+#: ../admin/like_buttons.php:420
+msgid "Right"
+msgstr "Справа"
+
+#: ../admin/social_sharing.php:329
+#: ../admin/social_sharing.php:636
+msgid "Bottom"
+msgstr ""
+
+#: ../admin/social_sharing.php:331
+#: ../admin/social_sharing.php:638
+msgid "Inner Left"
+msgstr ""
+
+#: ../admin/social_sharing.php:333
+#: ../admin/social_sharing.php:640
+msgid "Inner Top"
+msgstr ""
+
+#: ../admin/social_sharing.php:335
+#: ../admin/social_sharing.php:642
+#, fuzzy
+msgid "Inner Right"
+msgstr "Справа"
+
+#: ../admin/social_sharing.php:337
+#: ../admin/social_sharing.php:644
+msgid "Inner Bottom"
+msgstr ""
+
+#: ../admin/social_sharing.php:345
+#: ../admin/social_sharing.php:652
+#, fuzzy
+msgid "Position of share counter"
+msgstr "Под содержимым"
+
+#: ../admin/social_sharing.php:355
+#, fuzzy
+msgid "Floating interface theme"
+msgstr "Интерфейс Поделиться"
+
+#: ../admin/social_sharing.php:667
+#, fuzzy
+msgid "Standard Sharing Interface Options"
+msgstr "Интерфейс настроек горизонтальных кнопок Поделиться"
+
+#: ../admin/social_sharing.php:673
+#, fuzzy
+msgid "Enable Standard sharing interface"
+msgstr "Включить интерфейс горизонтальных кнопок Поделиться"
+
+#: ../admin/social_sharing.php:683
+#, fuzzy
+msgid "Master control to enable standard sharing"
+msgstr "Мастер настройки включения горизонтальных кнопок Поделиться"
+
+#: ../admin/social_sharing.php:693
+#: ../admin/social_sharing.php:1110
+#: ../admin/like_buttons.php:74
+#: ../admin/like_buttons.php:323
+msgid "Target Url"
+msgstr "Целевой URL:"
+
+#: ../admin/social_sharing.php:697
+#: ../admin/social_sharing.php:1114
+#: ../admin/like_buttons.php:78
+#: ../admin/like_buttons.php:327
+msgid "Url of the webpage where icons are located (default)"
+msgstr "URL-адрес веб-страницы, где расположены значки (по умолчанию)"
+
+#: ../admin/social_sharing.php:699
+#: ../admin/social_sharing.php:1116
+#: ../admin/like_buttons.php:80
+#: ../admin/like_buttons.php:329
+msgid "Url of the homepage of your website"
+msgstr "URL-адрес домашней страницы вашего веб-сайта"
+
+#: ../admin/social_sharing.php:701
+#: ../admin/social_sharing.php:1118
+#: ../admin/like_buttons.php:82
+#: ../admin/like_buttons.php:331
+msgid "Custom url"
+msgstr "Пользовательская ссылка"
+
+#: ../admin/social_sharing.php:708
+#: ../admin/social_sharing.php:1125
+msgid "Url to share"
+msgstr "Ссылка чтобы Поделиться"
+
+#: ../admin/social_sharing.php:716
+#: ../admin/social_login.php:377
+#: ../admin/like_buttons.php:97
+msgid "Title"
+msgstr "Заголовок"
+
+#: ../admin/social_sharing.php:726
+msgid "The text to display above the sharing interface"
+msgstr "Текст, отображаемый над интерфейсом Поделиться"
+
+#: ../admin/social_sharing.php:744
+#: ../admin/social_sharing.php:1134
+#, fuzzy
+msgid "Instagram username"
+msgstr "Instagram"
+
+#: ../admin/social_sharing.php:754
+#: ../admin/social_sharing.php:1144
+msgid "Username of the Instagram account you want to redirect users to, on clicking the icon"
+msgstr ""
+
+#: ../admin/social_sharing.php:767
+#: ../admin/social_sharing.php:1153
+msgid "Rearrange icons"
+msgstr "Переставить иконы"
+
+#: ../admin/social_sharing.php:826
+#: ../admin/social_sharing.php:1212
+msgid "Drag the icons to rearrange in desired order"
+msgstr "Если хотите изменить порядок, просто перетащите изображения"
+
+#: ../admin/social_sharing.php:834
+#: ../admin/social_sharing.php:1220
+#, fuzzy
+msgid "Select Sharing Services"
+msgstr "Выберите и переставьте сервисы"
+
+#: ../admin/social_sharing.php:841
+#: ../admin/social_sharing.php:1227
+msgid "Select sharing services to show in social share bar"
+msgstr ""
+
+#: ../admin/social_sharing.php:876
+#: ../admin/social_sharing.php:1280
+#: ../admin/like_buttons.php:167
+#: ../admin/like_buttons.php:415
+msgid "Horizontal alignment"
+msgstr "Горизонтальное выравнивание"
+
+#: ../admin/social_sharing.php:881
+#: ../admin/like_buttons.php:172
+msgid "Center"
+msgstr "Центр"
+
+#: ../admin/social_sharing.php:890
+#: ../admin/social_sharing.php:1293
+msgid "Horizontal alignment of the sharing interface"
+msgstr "Горизонтальное выравнивание интерфейса Поделиться"
+
+#: ../admin/social_sharing.php:898
+#: ../admin/like_buttons.php:189
+msgid "Position with respect to content"
+msgstr "Позиция относительно контента"
+
+#: ../admin/social_sharing.php:902
+#: ../admin/like_buttons.php:193
+msgid "Top of the content"
+msgstr "Над содержимым"
+
+#: ../admin/social_sharing.php:904
+#: ../admin/like_buttons.php:195
+msgid "Bottom of the content"
+msgstr "Под содержимым"
+
+#: ../admin/social_sharing.php:911
+msgid "Specify position of the sharing interface with respect to the content"
+msgstr "Укажите положение интерфейса Поделиться относительно содержимого."
+
+#: ../admin/social_sharing.php:919
+#: ../admin/social_sharing.php:1359
+msgid "Placement"
+msgstr ""
+
+#: ../admin/social_sharing.php:923
+#: ../admin/social_sharing.php:1363
+#: ../admin/social_login.php:676
+#: ../admin/social_login.php:706
+#: ../admin/like_buttons.php:214
+#: ../admin/like_buttons.php:498
+msgid "Homepage"
+msgstr "Главная"
+
+#: ../admin/social_sharing.php:925
+#: ../admin/social_sharing.php:1365
+#: ../admin/like_buttons.php:216
+#: ../admin/like_buttons.php:500
+msgid "Posts"
+msgstr "Записи"
+
+#: ../admin/social_sharing.php:927
+#: ../admin/social_sharing.php:1367
+#: ../admin/like_buttons.php:218
+#: ../admin/like_buttons.php:502
+msgid "Pages"
+msgstr "Страницы"
+
+#: ../admin/social_sharing.php:929
+#: ../admin/social_sharing.php:1369
+#: ../admin/like_buttons.php:220
+#: ../admin/like_buttons.php:504
+#, fuzzy
+msgid "Excerpts and Posts page"
+msgstr "Выдержки (на страницы)"
+
+#: ../admin/social_sharing.php:931
+#: ../admin/social_sharing.php:1371
+#: ../admin/like_buttons.php:222
+#: ../admin/like_buttons.php:506
+msgid "Category Archives"
+msgstr "Архивы категорий"
+
+#: ../admin/social_sharing.php:933
+#: ../admin/social_sharing.php:1373
+#: ../admin/like_buttons.php:224
+#: ../admin/like_buttons.php:508
+msgid "Archive Pages (Category, Tag, Author or Date based pages)"
+msgstr "Архив Страницы (Категория, тегов, автор или страницы на основе дат)"
+
+#: ../admin/social_sharing.php:949
+#: ../admin/like_buttons.php:240
+#, fuzzy
+msgid "BuddyPress activity"
+msgstr "BuddyPress активность и группы"
+
+#: ../admin/social_sharing.php:951
+#: ../admin/like_buttons.php:243
+msgid "BuddyPress group (only at top of content)"
+msgstr ""
+
+#: ../admin/social_sharing.php:957
+#: ../admin/social_sharing.php:1395
+#: ../admin/like_buttons.php:250
+#: ../admin/like_buttons.php:529
+msgid "BBPress forum"
+msgstr "BBPress форум"
+
+#: ../admin/social_sharing.php:960
+#: ../admin/social_sharing.php:1398
+#: ../admin/like_buttons.php:253
+#: ../admin/like_buttons.php:532
+msgid "BBPress topic"
+msgstr "BBPress тема"
+
+#: ../admin/social_sharing.php:963
+#: ../admin/like_buttons.php:256
+msgid "BBPress reply"
+msgstr "BBPress ответ"
+
+#: ../admin/social_sharing.php:970
+#: ../admin/like_buttons.php:263
+msgid "After individual product at WooCommerce Shop page"
+msgstr "После индивидуального продукта на странице магазина"
+
+#: ../admin/social_sharing.php:973
+#: ../admin/like_buttons.php:266
+msgid "WooCommerce Product Page"
+msgstr "Продукт Woocommerce"
+
+#: ../admin/social_sharing.php:976
+#: ../admin/like_buttons.php:269
+msgid "WooCommerce Thankyou Page"
+msgstr "WooCommerce страница благодарности"
+
+#: ../admin/social_sharing.php:987
+msgid "Specify the pages where you want to enable Sharing interface"
+msgstr "Укажите страницы, где вы хотите, чтобы включить интерфейс Sharing"
+
+#: ../admin/social_sharing.php:995
+#: ../admin/social_sharing.php:1416
+msgid "Show share counts"
+msgstr "Показать счетчик кнопок Поделиться"
+
+#: ../admin/social_sharing.php:1000
+#: ../admin/social_sharing.php:1421
+msgid "Official share counts are supported for Facebook, Linkedin, GooglePlus, Delicious, Buffer, Reddit, Pinterest, Stumbleupon and Vkontakte"
+msgstr ""
+
+#: ../admin/social_sharing.php:1017
+#: ../admin/social_sharing.php:1429
+#, php-format
+msgid "Use <a href=\"%s\" target=\"_blank\">NewShareCounts</a> to show Twitter share counts"
+msgstr ""
+
+#: ../admin/social_sharing.php:1019
+#: ../admin/social_sharing.php:1431
+#, php-format
+msgid "For this to work, you have to enter your website url %s and sign in using Twitter at <a href=\"%s\" target=\"_blank\">their website</a>"
+msgstr ""
+
+#: ../admin/social_sharing.php:1021
+#: ../admin/social_sharing.php:1433
+#, php-format
+msgid "Use <a href=\"%s\" target=\"_blank\">OpenShareCount</a> to show Twitter share counts"
+msgstr ""
+
+#: ../admin/social_sharing.php:1023
+#: ../admin/social_sharing.php:1435
+#, php-format
+msgid "For this to work, you have to sign up and register your website url %s at <a href=\"%s\" target=\"_blank\">their website</a>"
+msgstr ""
+
+#: ../admin/social_sharing.php:1030
+#: ../admin/social_sharing.php:1442
+msgid "If enabled, share counts are displayed above sharing icons."
+msgstr "Если включено, счетчики отображаются выше кнопок Поделиться"
+
+#: ../admin/social_sharing.php:1039
+#: ../admin/social_sharing.php:1451
+msgid "Show total shares"
+msgstr "Включить общее количество Поделиться"
+
+#: ../admin/social_sharing.php:1049
+#: ../admin/social_sharing.php:1461
+msgid "If enabled, total shares will be displayed with sharing icons"
+msgstr "Если включено, то общее количество Поделиться будет отображаться с кнопками Поделиться"
+
+#: ../admin/social_sharing.php:1058
+#: ../admin/social_sharing.php:1470
+msgid "Enable 'More' icon"
+msgstr "Включить значок «Больше»"
+
+#: ../admin/social_sharing.php:1068
+#: ../admin/social_sharing.php:1480
+msgid "If enabled, \"More\" icon will be displayed after selected sharing icons which shows additional sharing networks in popup"
+msgstr "Если включено, «Больше» будет отображаться после кнопок Поделиться, которая показывает дополнительные сервисы в всплывающем окне"
+
+#: ../admin/social_sharing.php:1084
+#, fuzzy
+msgid "Floating Sharing Interface Options"
+msgstr "Интерфейс настроек вертикальных(плавающих) кнопок Поделиться"
+
+#: ../admin/social_sharing.php:1090
+#, fuzzy
+msgid "Enable Floating sharing interface"
+msgstr "Включить интерфейс  вертикальных(плавающих)  кнопок Поделиться"
+
+#: ../admin/social_sharing.php:1100
+#, fuzzy
+msgid "Master control to enable floating sharing widget"
+msgstr "Мастер управления для включения вертикального (плавающего) виджета Поделиться"
+
+#: ../admin/social_sharing.php:1272
+msgid "Specify the color or hex code (example #cc78e0) for the background of vertical sharing bar. Leave empty for transparent. You can get the hex code of the required color from <a href=\"http://www.colorpicker.com/\" target=\"_blank\">this link</a>"
+msgstr "Укажите цвет или шестандцатеричный код (например #cc78e0) для фона вертикальной колонки Поделиться. Оставьте пустым чтобы оставить прозрачным. Вы можете получить шестнадцатеричный код <a href=\"http://www.colorpicker.com/\" target=\"_blank\">здесь</a>"
+
+#: ../admin/social_sharing.php:1302
+#: ../admin/like_buttons.php:437
+msgid "Left offset"
+msgstr "Смещение влево"
+
+#: ../admin/social_sharing.php:1312
+msgid "Specify a number. Increase in number will shift sharing interface towards right and decrease will shift it towards left. Number can be negative too."
+msgstr "Укажите число. Увеличение числа будет сдвигать интерфейс Поделиться по отношению к правой стороне и уменьшать по отношению к правой сторону. Число может быть отрицательным."
+
+#: ../admin/social_sharing.php:1322
+#: ../admin/like_buttons.php:457
+msgid "Right offset"
+msgstr "Смещение вправо"
+
+#: ../admin/social_sharing.php:1332
+msgid "Specify a number. Increase in number will shift sharing interface towards left and decrease will shift it towards right. Number can be negative too."
+msgstr "Укажите число. Увеличение числа будет сдвигать интерфейс Поделиться по отношению к левой стороне и уменьшать по отношению к правой сторону. Число может быть отрицательным."
+
+#: ../admin/social_sharing.php:1341
+#: ../admin/like_buttons.php:476
+msgid "Top offset"
+msgstr "Верхний отступ"
+
+#: ../admin/social_sharing.php:1351
+msgid "Specify a number. Increase in number will shift sharing interface towards bottom and decrease will shift it towards top."
+msgstr "Укажите число. Увеличение числа будет сдвигать интерфейс Поделиться по отношению к низу и уменьшать по отношению к верху. "
+
+#: ../admin/social_sharing.php:1387
+#: ../admin/like_buttons.php:522
+#, fuzzy
+msgid "BuddyPress group"
+msgstr "Страница профиля BuddyPress"
+
+#: ../admin/social_sharing.php:1408
+msgid "Specify the pages where you want to enable vertical Sharing interface"
+msgstr "Укажите страницы, где вы хотите включить вертикальный интерфейс Поделиться"
+
+#: ../admin/social_sharing.php:1488
+#, fuzzy
+msgid "Vertical floating bar responsiveness"
+msgstr "Интерфейс настроек вертикальных(плавающих) кнопок Поделиться"
+
+#: ../admin/social_sharing.php:1491
+#, php-format
+msgid "Display vertical interface only when screen is wider than %s pixels"
+msgstr ""
+
+#: ../admin/social_sharing.php:1498
+msgid "Display vertical interface only when screen is wider than the width specified."
+msgstr ""
+
+#: ../admin/social_sharing.php:1506
+msgid "Horizontal floating bar responsiveness"
+msgstr ""
+
+#: ../admin/social_sharing.php:1509
+#, fuzzy, php-format
+msgid "Stick vertical floating interface horizontally at bottom only when screen is narrower than %s pixels"
+msgstr "Если включено, то вертикальный интерфейс Поделиться не будет отображаться на мобильных устройствах"
+
+#: ../admin/social_sharing.php:1516
+msgid "Stick vertical floating interface horizontally at bottom only when screen is narrower than the width specified"
+msgstr ""
+
+#: ../admin/social_sharing.php:1526
+#, fuzzy
+msgid "Horizontal floating bar position"
+msgstr "Интерфейс настроек горизонтальных кнопок Поделиться"
+
+#: ../admin/social_sharing.php:1529
+#, php-format
+msgid "%s pixels from %s"
+msgstr ""
+
+#: ../admin/social_sharing.php:1536
+msgid "Alignment of horizontal floating interface. Number can be negative too."
+msgstr ""
+
+#: ../admin/social_sharing.php:1555
+#: ../admin/like_buttons.php:578
+msgid "Url shortener"
+msgstr "Укорачивание URL"
+
+#: ../admin/social_sharing.php:1561
+msgid "Use shortlinks already installed"
+msgstr "Использование коротких ссылок уже установлено"
+
+#: ../admin/social_sharing.php:1571
+msgid "Uses default short url permalinks without using any additional plugin"
+msgstr ""
+
+#: ../admin/social_sharing.php:1579
+msgid "Enable bit.ly url shortener for sharing"
+msgstr "Активировать bit.ly для сокращения ссылок для Поделиться"
+
+#: ../admin/social_sharing.php:1589
+#: ../admin/like_buttons.php:612
+msgid "Master control to enable bit.ly url shortening for sharing"
+msgstr "Мастер управления сокращения ссылок через bit.ly для Поделиться"
+
+#: ../admin/social_sharing.php:1597
+#: ../admin/like_buttons.php:620
+msgid "bit.ly username"
+msgstr "bit.ly пользователя"
+
+#: ../admin/social_sharing.php:1607
+#: ../admin/like_buttons.php:630
+#, php-format
+msgid "Login to your bit.ly account and navigate to <a href=\"%s\" target=\"_blank\">this link</a> to get bit.ly username"
+msgstr "Войти в ваш bit.ly аккаунт и перейдите по <a href=\"%s\" target=\"_blank\">этой ссылке</a> , чтобы получить имя пользователя bit.ly"
+
+#: ../admin/social_sharing.php:1616
+#: ../admin/like_buttons.php:639
+msgid "bit.ly API Key"
+msgstr "bit.ly ключ приложения"
+
+#: ../admin/social_sharing.php:1626
+#: ../admin/like_buttons.php:649
+#, php-format
+msgid "Login to your bit.ly account and navigate to <a href=\"%s\" target=\"_blank\">this link</a> to get your API key"
+msgstr "Войти в ваш bit.ly аккаунт и перейдите по <a href=\"%s\" target=\"_blank\">этой ссылке</a> , чтобы получить ваш ключ API"
+
+#: ../admin/social_sharing.php:1635
+#: ../admin/like_buttons.php:658
+msgid "Clear Bitly Cache"
+msgstr ""
+
+#: ../admin/social_sharing.php:1639
+#: ../admin/like_buttons.php:662
+#, fuzzy
+msgid "ShortUrl cache cleared successfully."
+msgstr "Аккаунт успешно связан"
+
+#: ../admin/social_sharing.php:1646
+#: ../admin/like_buttons.php:669
+msgid "Use this to delete short urls saved in database. Handy, if urls of your website have been changed but short urls are still being generated for old urls."
+msgstr ""
+
+#: ../admin/social_sharing.php:1655
+msgid "Share Count Cache"
+msgstr ""
+
+#: ../admin/social_sharing.php:1661
+msgid "Refresh Share Count cache every"
+msgstr ""
+
+#: ../admin/social_sharing.php:1666
+msgid "Second(s)"
+msgstr "Секунд"
+
+#: ../admin/social_sharing.php:1667
+msgid "Minute(s)"
+msgstr "Минут"
+
+#: ../admin/social_sharing.php:1668
+msgid "Hour(s)"
+msgstr "Часов"
+
+#: ../admin/social_sharing.php:1669
+msgid "Day(s)"
+msgstr "Дней"
+
+#: ../admin/social_sharing.php:1677
+msgid "Frequent cache refreshing results in slower loading of pages with share counts enabled"
+msgstr ""
+
+#: ../admin/social_sharing.php:1685
+msgid "Clear Share Counts Cache"
+msgstr ""
+
+#: ../admin/social_sharing.php:1689
+#, fuzzy
+msgid "Share Counts cache cleared successfully."
+msgstr "Аккаунт успешно связан"
+
+#: ../admin/social_sharing.php:1696
+msgid "Use this to clear cached share counts"
+msgstr ""
+
+#: ../admin/social_sharing.php:1705
+#: ../admin/social_sharing.php:1711
+#: ../admin/social_commenting.php:311
+#: ../admin/like_buttons.php:678
+#: ../admin/like_buttons.php:684
+msgid "Language"
+msgstr "Язык"
+
+#: ../admin/social_sharing.php:1721
+#, fuzzy, php-format
+msgid "Enter the code of the language you want to use for like buttons. You can find the language codes at <a href=\"%s\" target=\"_blank\">this link</a>. Leave it empty for default language(English)"
+msgstr "Введите код языка если хотите использовать свой язык для показа счетчиков. Вы можете найти код своего языка по <a href=\"%s\" target=\"_blank\">этой ссылке</a>. Оставьте поле пустым чтобы оставить язык по умолчанию (English)."
+
+#: ../admin/social_sharing.php:1730
+#, fuzzy
+msgid "Username in sharing"
+msgstr "Имя пользователя Twitter чтобы Поделиться"
+
+#: ../admin/social_sharing.php:1736
+msgid "Twitter username (without @)"
+msgstr "Twitter имя пользователя (без @)"
+
+#: ../admin/social_sharing.php:1746
+#: ../admin/social_sharing.php:1765
+msgid "Provided username will be appended after the content being shared as \"via @USERNAME\". Leave empty if you do not want any username in the content being shared."
+msgstr "Добавляет имя пользователя после того как контент будет расшарен с помощью \"via @USERNAME\". Оставьте поле пустым если не хотите указывать имя."
+
+#: ../admin/social_sharing.php:1755
+#, fuzzy
+msgid "Buffer username (without @)"
+msgstr "Twitter имя пользователя (без @)"
+
+#: ../admin/social_sharing.php:1792
+msgid "Facebook Sharing Troubleshooter"
+msgstr "Устранение неисправностей Поделиться от Facebook"
+
+#: ../admin/social_sharing.php:1797
+msgid "If Facebook sharing is not working fine, click at the following link and enter the problematic url (where Facebook sharing is not working properly) of your website in the text field:"
+msgstr "Если Поделиться от Facebook не работает нормально, нажмите на следующую ссылку и введите проблематичный URL-адрес (где Поделиться от Facebook не работает должным образом) вашего сайта в текстовом поле:"
+
+#: ../admin/social_sharing.php:1813
+msgid "How can I show share counts of my website rather than of individual pages/posts?"
+msgstr "Как мне отобразить общее количество Поделиться основанное на страницах/постах?"
+
+#: ../admin/social_sharing.php:1814
+msgid "How can I disable sharing on particular page/post?"
+msgstr "Как можно отключить кнопки Поделиться на конкретной странице или в посте?"
+
+#: ../admin/social_sharing.php:1815
+msgid "How can I specify minimum sharing count for sharing networks?"
+msgstr "Как мне указать минимальное количество для Поделиться"
+
+#: ../admin/social_sharing.php:1816
+msgid "How to share specific page?"
+msgstr ""
+
+#: ../admin/social_sharing.php:1817
+msgid "How to integrate Google Analytics with sharing?"
+msgstr ""
+
+#: ../admin/social_sharing.php:1818
+msgid "How to customize the look of total share counts?"
+msgstr ""
+
+#: ../admin/social_sharing.php:1819
+#, fuzzy
+msgid "How to customize the look of individual share counts?"
+msgstr "Показать индвидуальные счетчики Поделиться"
+
+#: ../admin/social_sharing.php:1820
+#, fuzzy
+msgid "How to show Whatsapp icon only on mobile devices?"
+msgstr "Скрыть кнопки Поделиться на мобильных устройствах"
+
+#: ../admin/social_sharing.php:1821
+msgid "How to hide arrow after floating sharing bar?"
+msgstr ""
+
+#: ../admin/social_sharing.php:1822
+msgid "Why are Share Counts Not Updating?"
+msgstr ""
+
+#: ../admin/social_sharing.php:1823
+#: ../admin/like_buttons.php:767
+msgid "Why is there so much space between like buttons?"
+msgstr ""
+
+#: ../admin/social_sharing.php:1824
+#: ../admin/like_buttons.php:768
+msgid "Why are floating sharing/like buttons not appearing at homepage?"
+msgstr ""
+
+#: ../admin/social_commenting.php:13
+msgid "Enable Social Commenting"
+msgstr "Включить комментирование через социальные сети"
+
+#: ../admin/social_commenting.php:23
+msgid "Master control to enable Social Commenting"
+msgstr "Мастер настройки комментрирования через социальные сети"
+
+#: ../admin/social_commenting.php:34
+msgid "Social Commenting"
+msgstr "Комментирование через социальные сети"
+
+#: ../admin/social_commenting.php:35
+#: ../admin/social_commenting.php:440
+msgid "Shortcode"
+msgstr "Шорткод"
+
+#: ../admin/social_commenting.php:48
+msgid "Order of tabs in commenting interface"
+msgstr "Последовательность вкладок в комментировании через социальные сети"
+
+#: ../admin/social_commenting.php:58
+msgid "Order of the tabs shown in social commenting interface. Defaults to wordpress,facebook,googleplus,disqus"
+msgstr "Порядок отображения вкладок в интерфейсе комментирования через социальные сети. По умолчанию - wordpress,facebook,googleplus,disqus"
+
+#: ../admin/social_commenting.php:66
+msgid "Comment area label"
+msgstr "Поле для обозначения комментирования"
+
+#: ../admin/social_commenting.php:76
+msgid "Label for comment area"
+msgstr "Поле для области комментария"
+
+#: ../admin/social_commenting.php:89
+#, fuzzy
+msgid "Enable Social Commenting at"
+msgstr "Включить комментирование через социальные сети"
+
+#: ../admin/social_commenting.php:108
+#, fuzzy
+msgid "Specify the page/post groups where you want to enable Social Commenting"
+msgstr "Укажите страницы, где вы хотите включить интерфейс"
+
+#: ../admin/social_commenting.php:119
+msgid "HTML ID of comment form container"
+msgstr "HTML-идентификатор форма комментария контейнер"
+
+#: ../admin/social_commenting.php:129
+msgid "HTML ID of container element of the default comment form at front end. Leave empty for default ID - \"respond\". You need to specify it if default comment form is appearing and Social Commenting is not getting enabled at front-end of your website."
+msgstr "HTML-идентификатор элемента контейнера формы комментария по умолчанию на передней части. Оставьте пустым для умолчанию ID - \"ответить\". Вы должны указать, если по умолчанию комментирование появляться и социального Комментируя не получение включен в переднем конце вашего сайта."
+
+#: ../admin/social_commenting.php:139
+msgid "Labels"
+msgstr "Поля"
+
+#: ../admin/social_commenting.php:144
+msgid "Label for WordPress Commenting tab"
+msgstr "Поле для комментирование через Wordpress"
+
+#: ../admin/social_commenting.php:153
+msgid "Label for Facebook Commenting tab"
+msgstr "Поле для комментирования через Facebook"
+
+#: ../admin/social_commenting.php:162
+msgid "Label for G+ Commenting tab"
+msgstr "Поле для комментирования через Google+"
+
+#: ../admin/social_commenting.php:171
+msgid "Label for Disqus Commenting tab"
+msgstr "Поле для комментирования через Disqus"
+
+#: ../admin/social_commenting.php:182
+msgid "Facebook Commenting Options"
+msgstr "Настройки комментирования через Facebook"
+
+#: ../admin/social_commenting.php:188
+msgid "Enable Facebook Comments notification and moderation"
+msgstr "Активировать уведомления и модерацию для комментариев через Facebook"
+
+#: ../admin/social_commenting.php:196
+#: ../admin/social_commenting.php:206
+msgid "Enable Facebook Commenting"
+msgstr "Активировать комментирование через Facebook"
+
+#: ../admin/social_commenting.php:214
+#: ../admin/social_commenting.php:372
+msgid "Url to comment on"
+msgstr "Ссылка для комментария"
+
+#: ../admin/social_commenting.php:224
+msgid "The absolute URL that comments posted will be permanently associated with. Stories on Facebook about comments posted, will link to this URL.<br/>If left empty <strong>(Recommended)</strong>, url of the webpage will be used at which commenting is enabled."
+msgstr "Абсолютная ссылка  для комментариев, которые будут связаны с . В постах на Facebook о комментариях, которые будут опубликованы, будет ссылка на этот адрес.<br/>Если оставить поле пустым <strong>(Рекомендуется)</strong>, будет использоваться  адрес страницы, на которой включено комментирование через социальные ссылки."
+
+#: ../admin/social_commenting.php:232
+#: ../admin/social_commenting.php:354
+msgid "Width"
+msgstr "Ширина"
+
+#: ../admin/social_commenting.php:242
+msgid "Leave empty to auto-adjust the width. The width (in pixels) of the Comments block."
+msgstr "Оставьте поле пустым чтобы был автоподбор ширины. Ширина (в пикселях) для блока комментариев."
+
+#: ../admin/social_commenting.php:250
+msgid "Color Scheme"
+msgstr "Цветовая схема"
+
+#: ../admin/social_commenting.php:254
+msgid "Light"
+msgstr "Светлая"
+
+#: ../admin/social_commenting.php:255
+msgid "Dark"
+msgstr "Темная"
+
+#: ../admin/social_commenting.php:263
+msgid "The color scheme used by the plugin. Can be \"light\" or \"dark\"."
+msgstr "Использовать светлый или темный скин"
+
+#: ../admin/social_commenting.php:271
+msgid "Number of comments"
+msgstr "Количество комментариев"
+
+#: ../admin/social_commenting.php:281
+msgid "The number of comments to show by default. The minimum value is 1. Defaults to 10"
+msgstr "Количество комментариев для отображения по умолчанию. Минимальное значение равно 1. По умолчанию составляет 10"
+
+#: ../admin/social_commenting.php:289
+msgid "Order by"
+msgstr "Порядок сортировки:"
+
+#: ../admin/social_commenting.php:293
+msgid "Social"
+msgstr "По умолчанию"
+
+#: ../admin/social_commenting.php:294
+msgid "Reverse Time"
+msgstr "Обратному времени"
+
+#: ../admin/social_commenting.php:295
+msgid "Time"
+msgstr "Время"
+
+#: ../admin/social_commenting.php:303
+msgid "The order to use when displaying comments."
+msgstr "Этот порядок используется в отображении комментариев."
+
+#: ../admin/social_commenting.php:321
+#, php-format
+msgid "Enter the code of the language you want to use to display commenting. You can find the language codes at <a href=\"%s\" target=\"_blank\">this link</a>. Leave it empty for default language(English)"
+msgstr "Введите код на языке вы хотите использовать для отображения комментариев. Вы можете найти языковые коды на <a href=\"%s\" target=\"_blank\">эту ссылку</a> . Оставьте его пустым для языка по умолчанию (английский)"
+
+#: ../admin/social_commenting.php:330
+msgid "Google Plus Commenting Options"
+msgstr "Настройки комментирования через Google+"
+
+#: ../admin/social_commenting.php:336
+#: ../admin/social_commenting.php:346
+msgid "Enable Google Plus Commenting"
+msgstr "Включить комментирование"
+
+#: ../admin/social_commenting.php:364
+msgid "Width of GooglePlus Commenting interface. Leave empty for auto adjust"
+msgstr "Ширина вкладки комментирования через Google+. Оставьте пустым для автоподбора."
+
+#: ../admin/social_commenting.php:382
+msgid "The absolute URL that comments posted will be permanently associated with. Stories on Google Plus about comments posted, will link to this URL.<br/>If left empty <strong>(Recommended)</strong>, url of the webpage will be used at which commenting is enabled."
+msgstr "Абсолютная ссылка  для комментариев, которые будут связаны с . В постах  на Google Plus о комментариях, которые будут опубликованы, будет ссылка на этот адрес.<br/>Если оставить поле пустым <strong>(Рекомендуется)</strong>, будет использоваться  адрес страницы, на которой включено комментирование через социальные ссылки."
+
+#: ../admin/social_commenting.php:391
+msgid "Disqus Commenting Options"
+msgstr "Настройки комментирования через Disqus"
+
+#: ../admin/social_commenting.php:397
+#: ../admin/social_commenting.php:407
+msgid "Enable Disqus Commenting"
+msgstr "Активировать комментирование через Disqus"
+
+#: ../admin/social_commenting.php:415
+msgid "Disqus Shortname"
+msgstr "Короткое имя для панели Disqus (выезжает сбоку при нажатии)"
+
+#: ../admin/social_commenting.php:425
+msgid "<strong>Required to use Disqus commenting.</strong> For more info on shortname, visit following link."
+msgstr "<strong>Необходимо для использования комментирования через Disqus.</strong> Для большей информации посетите соответствующую ссылку"
+
+#: ../admin/social_commenting.php:442
+msgid "Social Commenting Shortcode"
+msgstr "Шорткод комментирования через социальные сети"
+
+#: ../admin/social_commenting.php:454
+msgid "How can I disable Social Commenting at individual page/post?"
+msgstr "Как мне отключить комментирование через социальные сети на определенных страница/постах?"
+
+#: ../admin/social_commenting.php:455
+msgid "How to disable default comment form from Social Commenting?"
+msgstr "Как мне деактивировать определенную форму из комментирования через социальные сети?"
+
+#: ../admin/social_login.php:14
+msgid "Enable Social Login"
+msgstr "Активироват вход через социальные сети"
+
+#: ../admin/social_login.php:24
+msgid "Master control for Social Login. It must be checked to enable Social Login functionality"
+msgstr "Мастер управления входа через социальные сети. Должно быть включено чтобы активировать вход через социальные сети."
+
+#: ../admin/social_login.php:35
+#: ../admin/social_login.php:46
+msgid "Basic Configuration"
+msgstr "Основные настройки"
+
+#: ../admin/social_login.php:36
+#, fuzzy
+msgid "Advanced Configuration"
+msgstr "Основные настройки"
+
+#: ../admin/social_login.php:38
+#: ../admin/social_login.php:831
+msgid "XProfile Integration"
+msgstr ""
+
+#: ../admin/social_login.php:53
+msgid "Disable user registration via Social Login"
+msgstr "Регистрация Отключить пользователя через социального Логин"
+
+#: ../admin/social_login.php:63
+msgid "After enabling this option, new users will not be able to login through social login. Only existing users will be able to social login."
+msgstr "После включения этой опции, новые пользователи не смогут войти в через социальные входе в систему. Только существующие пользователи смогут социальной входе в систему."
+
+#: ../admin/social_login.php:72
+#, fuzzy
+msgid "Redirection url"
+msgstr "Перенаправления входа"
+
+#: ../admin/social_login.php:82
+msgid "User will be redirected to this page after unsuccessful registration attempt via Social Login. You can specify the url of registration form or of a page showing message regarding disabled registration through Social Login."
+msgstr "Пользователь будет перенаправлен на этой странице после неудачной попытки регистрации через социальные Логин. Вы можете указать URL регистрационной формы или страница, показывающая сообщения о отключить регистрацию через систему социального Логин."
+
+#: ../admin/social_login.php:91
+msgid "Select providers"
+msgstr "Выберите сервисы"
+
+#: ../admin/social_login.php:96
+msgid "Facebook"
+msgstr "Facebook"
+
+#: ../admin/social_login.php:100
+msgid "Twitter"
+msgstr "Twitter"
+
+#: ../admin/social_login.php:104
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: ../admin/social_login.php:108
+msgid "Google+"
+msgstr "Google+"
+
+#: ../admin/social_login.php:112
+msgid "Vkontakte"
+msgstr "Вконтакте"
+
+#: ../admin/social_login.php:116
+msgid "Instagram"
+msgstr "Instagram"
+
+#: ../admin/social_login.php:120
+msgid "Xing"
+msgstr "Xing"
+
+#: ../admin/social_login.php:124
+msgid "Steam"
+msgstr ""
+
+#: ../admin/social_login.php:129
+#, fuzzy
+msgid "Twitch"
+msgstr "Twitter"
+
+#: ../admin/social_login.php:137
+msgid "Select Social ID provider to enable in Social Login"
+msgstr "Выберите социальные сети чтобы активировать вход через социальные сети"
+
+#: ../admin/social_login.php:145
+msgid "Facebook App ID"
+msgstr "Facebook App ID"
+
+#: ../admin/social_login.php:155
+#, php-format
+msgid "Required for Facebook Social Login to work. Please follow the documentation at <a href=\"%s\" target=\"_blank\">this link</a> to get Facebook App ID"
+msgstr "Необходимо для входа через Facebook. Пожалуйста, посмотрите документацию <a href=\"%s\" target=\"_blank\">здесь</a> для получения ID приложения Facebook."
+
+#: ../admin/social_login.php:157
+msgid "Paste following url in <strong>Site URL</strong> option at the link mentioned"
+msgstr "Вставьте следующий URL-адрес в <strong>URL-адрес сайта</strong> для упоминания ссылки."
+
+#: ../admin/social_login.php:167
+msgid "Twitter API Key"
+msgstr "Twitter API ключ"
+
+#: ../admin/social_login.php:177
+#, php-format
+msgid "Required for Twitter Social Login to work. Please follow the documentation at <a href=\"%s\" target=\"_blank\">this link</a> to get Twitter API Key"
+msgstr "Необходимо для входа через Twitter. Пожалуйста, посмотрите документацию <a href=\"%s\" target=\"_blank\">здесь</a> для получения ключа приложения Twitter."
+
+#: ../admin/social_login.php:179
+#: ../admin/social_login.php:201
+msgid "Paste following url in <strong>Website</strong> and <strong>Callback URL</strong> options at the link mentioned"
+msgstr "Вставьте следующий URL-адрес в <strong>веб-сайта</strong> и <strong>URL обратного вызова</strong> для упоминания ссылки."
+
+#: ../admin/social_login.php:189
+msgid "Twitter API Secret"
+msgstr "Twitter API секретный ключ"
+
+#: ../admin/social_login.php:199
+#, php-format
+msgid "Required for Twitter Social Login to work. Please follow the documentation at <a href=\"%s\" target=\"_blank\">this link</a> to get Twitter API Secret"
+msgstr "Необходимо для входа через Twitter. Пожалуйста, посмотрите документацию <a href=\"%s\" target=\"_blank\">здесь</a> для получения секретного ключа приложения Facebook."
+
+#: ../admin/social_login.php:211
+msgid "LinkedIn API Key"
+msgstr "Секретный ключ приложения LinkedIn"
+
+#: ../admin/social_login.php:221
+#, php-format
+msgid "Required for LinkedIn Social Login to work. Please follow the documentation at <a href=\"%s\" target=\"_blank\">this link</a> to get LinkedIn API Key"
+msgstr "Необходимо для входа через LinkedIn. Пожалуйста, посмотрите документацию <a href=\"%s\" target=\"_blank\">здесь</a> для получения ключа приложения LinkedIn."
+
+#: ../admin/social_login.php:223
+#: ../admin/social_login.php:289
+msgid "Paste following url in <strong>Website URL</strong> option at the link mentioned"
+msgstr "Вставьте следующий URL-адрес в <strong>URL веб-сайта</strong> для упоминания ссылки"
+
+#: ../admin/social_login.php:233
+msgid "Google+ Client ID"
+msgstr "Google+ ID клиента"
+
+#: ../admin/social_login.php:243
+#, php-format
+msgid "Required for GooglePlus Social Login to work. Please follow the documentation at <a href=\"%s\" target=\"_blank\">this link</a> to get GooglePlus Client ID"
+msgstr "Необходимо для входа через Google+. Пожалуйста, посмотрите документацию <a href=\"%s\" target=\"_blank\">здесь</a> для  получения ID клиента в  Google+."
+
+#: ../admin/social_login.php:245
+msgid "Paste following url in <strong>AUTHORIZED JAVASCRIPT ORIGINS</strong> and <strong>AUTHORIZED REDIRECT URI</strong> options at the link mentioned"
+msgstr "JavaScript для авторизации"
+
+#: ../admin/social_login.php:255
+msgid "Vkontakte Application ID"
+msgstr " ID приложения Vkontakte"
+
+#: ../admin/social_login.php:265
+#, php-format
+msgid "Required for Vkontakte Social Login to work. Please follow the documentation at <a href=\"%s\" target=\"_blank\">this link</a> to get Vkontakte Application ID"
+msgstr "Необходимо для входа через Vkontakte. Пожалуйста, посмотрите документацию <a href=\"%s\" target=\"_blank\">здесь</a> для получения ID приложения Vkontakte."
+
+#: ../admin/social_login.php:267
+msgid "Paste following url in <strong>Site address</strong> option at the link mentioned"
+msgstr "Вставьте следующий URL-адрес в <strong>URL-адрес сайта</strong> для упоминания ссылки."
+
+#: ../admin/social_login.php:277
+msgid "Instagram Client ID"
+msgstr "Instagram ID клиента"
+
+#: ../admin/social_login.php:287
+#, php-format
+msgid "Required for Instagram Social Login to work. Please follow the documentation at <a href=\"%s\" target=\"_blank\">this link</a> to get Instagram Client ID"
+msgstr "Необходимо для входа через Instagram. Пожалуйста, посмотрите документацию <a href=\"%s\" target=\"_blank\">здесь</a> для  получения ID клиента в  Instagram."
+
+#: ../admin/social_login.php:299
+msgid "Xing Consumer Key"
+msgstr "Ключ потребителя Xing"
+
+#: ../admin/social_login.php:309
+#, php-format
+msgid "Required for Xing Social Login to work. Please follow the documentation at <a href=\"%s\" target=\"_blank\">this link</a> to get Xing Consumer Key"
+msgstr "Необходимо для входа через Xing. Пожалуйста, посмотрите документацию <a href=\"%s\" target=\"_blank\">здесь</a> для  получения ключа потребителя Xing."
+
+#: ../admin/social_login.php:311
+#: ../admin/social_login.php:333
+msgid "Paste following url in <strong>Callback domain</strong> option at the link mentioned"
+msgstr "Вставьте следующий URL-адрес в <strong>URL веб-сайта</strong> для упоминания ссылки"
+
+#: ../admin/social_login.php:321
+msgid "Xing Consumer Secret"
+msgstr "Секретный ключ потребителя  Xing"
+
+#: ../admin/social_login.php:331
+#, php-format
+msgid "Required for Xing Social Login to work. Please follow the documentation at <a href=\"%s\" target=\"_blank\">this link</a> to get Xing Consumer Secret"
+msgstr "Необходимо для входа через Xing. Пожалуйста, посмотрите документацию <a href=\"%s\" target=\"_blank\">здесь</a> для  получения секретного ключа потребителя Xing."
+
+#: ../admin/social_login.php:343
+#, fuzzy
+msgid "Twitch Client ID"
+msgstr "Instagram ID клиента"
+
+#: ../admin/social_login.php:353
+#, fuzzy, php-format
+msgid "Required for Twitch Social Login to work. Please follow the documentation at <a href=\"%s\" target=\"_blank\">this link</a> to get Twitch Client ID"
+msgstr "Необходимо для входа через Twitter. Пожалуйста, посмотрите документацию <a href=\"%s\" target=\"_blank\">здесь</a> для получения ключа приложения Twitter."
+
+#: ../admin/social_login.php:355
+#, fuzzy
+msgid "Paste following url in <strong>Redirect URI</strong> option at the link mentioned"
+msgstr "Вставьте следующий URL-адрес в <strong>URL-адрес сайта</strong> для упоминания ссылки."
+
+#: ../admin/social_login.php:371
+#, fuzzy
+msgid "Social Login Options"
+msgstr "Вход через социальные сети"
+
+#: ../admin/social_login.php:387
+msgid "Text to display above the Social Login interface"
+msgstr "Текст, отображаемый над интерфейсом входа через социальные сети"
+
+#: ../admin/social_login.php:396
+msgid "Enable at login page"
+msgstr "Включить страницу входа"
+
+#: ../admin/social_login.php:406
+msgid "Social Login interface will get enabled at the login page of your website"
+msgstr "Интерфейс входа через социальные сети будет активирован на странице входа "
+
+#: ../admin/social_login.php:414
+msgid "Enable at register page"
+msgstr "Включить на странице регистрации"
+
+#: ../admin/social_login.php:424
+msgid "Social Login interface will get enabled at the registration page of your website"
+msgstr "Интерфейс входа через социальные сети будет активирован на странице"
+
+#: ../admin/social_login.php:432
+msgid "Enable at comment form"
+msgstr "Включить в форму комментирования"
+
+#: ../admin/social_login.php:442
+msgid "Social Login interface will get enabled at your Wordpress Comment form"
+msgstr "Интерфейс входа через социальные сети будет активирован в вашей форме комментирования Wordpress"
+
+#: ../admin/social_login.php:456
+msgid "Enable before WooCommerce Customer Login Form"
+msgstr "Активировать перед  формой входа покупателя в WooCommerce"
+
+#: ../admin/social_login.php:466
+msgid "Social Login Interface will get enabled before the customer login form at WooCommerce My Account page"
+msgstr "Интерфейс входа через социальные сети будет активирован перед формой входа для покупателя на странице Мой Аккаунт в WooCommerce"
+
+#: ../admin/social_login.php:474
+msgid "Enable after WooCommerce Customer Login Form"
+msgstr "Включить после формы входа клиента WooCommerce"
+
+#: ../admin/social_login.php:484
+msgid "Social Login Interface will get enabled after the customer login form at WooCommerce My Account page"
+msgstr "Интерфейс входа через социальные сети будет активирован после  формы входа для покупателя на странице Мой Аккаунт в WooCommerce"
+
+#: ../admin/social_login.php:492
+msgid "Enable at WooCommerce checkout page"
+msgstr "Включить на странице оформления заказа WooCommerce"
+
+#: ../admin/social_login.php:502
+msgid "Social Login Interface will get enabled at WooCommerce checkout page"
+msgstr "Интерфейс входа через социальные сети будет активирован на странице оформления заказа в WooCommerce"
+
+#: ../admin/social_login.php:513
+msgid "Auto-approve comments made by Social Login users"
+msgstr "Автоодобрение комментариев для пользователей, вошедших через социальные сети"
+
+#: ../admin/social_login.php:523
+msgid "If this option is enabled, and WordPress comment is made by Social Login user, comment will get approved immediately without keeping in moderation."
+msgstr "Если эта опция включена и комментарий в WordPress сделан пользователем, который вошел через социальные сети, то комментарий будет опубликован сразу без модерации."
+
+#: ../admin/social_login.php:524
+msgid "Note: This is not related to Facebook comments"
+msgstr "Примечание: Это не связано с комментариями от Facebook"
+
+#: ../admin/social_login.php:534
+msgid "Enable social avatar"
+msgstr "Включение социальных аватар"
+
+#: ../admin/social_login.php:544
+msgid "Social profile pictures of the logged in user will be displayed as profile avatar"
+msgstr "Изображения пользователя в социальных сетях будет использоваться как изображение профиля на сайте"
+
+#: ../admin/social_login.php:554
+msgid "Avatar quality"
+msgstr "Качество аватары"
+
+#: ../admin/social_login.php:557
+msgid "Average"
+msgstr "Среднее"
+
+#: ../admin/social_login.php:558
+msgid "Best"
+msgstr "лучший"
+
+#: ../admin/social_login.php:565
+msgid "Choose avatar quality"
+msgstr "Выберите качество аватара"
+
+#: ../admin/social_login.php:574
+#, fuzzy
+msgid "Show option for users to update social avatar at BuddyPress profile page"
+msgstr "Активируйте эту функцию чтобы интегрировать социальный аккаунт на странице профиля BuddyPress"
+
+#: ../admin/social_login.php:584
+msgid "If enabled, users would be able to update their social avatar from \"Profile photo\" section in BuddyPress profile at front-end"
+msgstr ""
+
+#: ../admin/social_login.php:605
+msgid "If enabled and Social ID provider does not provide user's email address on login, user will be asked to provide his/her email address. Otherwise, a dummy email will be generated"
+msgstr "Если опция включена и социальные сервисы не предоставляют почту пользователя для входа, пользователю потребуется ввести свою почту. В противном же случае, почта будет создана по образцу."
+
+#: ../admin/social_login.php:614
+msgid "Send post-registration email to user to set account password"
+msgstr ""
+
+#: ../admin/social_login.php:624
+msgid "If enabled, an email will be sent to user after registration through Social Login, regarding his/her login credentials (username-password to be able to login via traditional login form)"
+msgstr "Если опция включена, на почту пользователя после регистрации через социальные  сети будет отправлено письмо с именем и пароль чтобы была возможность зайти черед стандартную форму авторизации"
+
+#: ../admin/social_login.php:632
+#, fuzzy
+msgid "Send new user registration notification email to admin"
+msgstr "Регистрация Отключить пользователя через социального Логин"
+
+#: ../admin/social_login.php:642
+#, fuzzy
+msgid "If enabled, an email will be sent to admin after new user registers through Social Login, notifying admin about the new user registration"
+msgstr "Если опция включена, на почту пользователя после регистрации через социальные  сети будет отправлено письмо с именем и пароль чтобы была возможность зайти черед стандартную форму авторизации"
+
+#: ../admin/social_login.php:651
+msgid "Enable social account linking at BuddyPress profile page"
+msgstr "Интегрирует социальный аккаунт на странице профиля BuddyPress"
+
+#: ../admin/social_login.php:661
+msgid "Enable this option to show social account linking interface at BuddyPress profile page"
+msgstr "Активируйте эту функцию чтобы интегрировать социальный аккаунт на странице профиля BuddyPress"
+
+#: ../admin/social_login.php:670
+msgid "Login redirection"
+msgstr "Перенаправления входа"
+
+#: ../admin/social_login.php:674
+msgid "Same page where user logged in"
+msgstr "Та же страница, на которой пользователь произвел вход "
+
+#: ../admin/social_login.php:678
+#: ../admin/social_login.php:708
+msgid "Account dashboard"
+msgstr "Страница управления моим аккаунтом"
+
+#: ../admin/social_login.php:681
+#: ../admin/social_login.php:711
+msgid "BuddyPress profile page"
+msgstr "Страница профиля BuddyPress"
+
+#: ../admin/social_login.php:684
+#: ../admin/social_login.php:714
+msgid "Custom Url"
+msgstr "Пользовательская ссылка"
+
+#: ../admin/social_login.php:692
+msgid "User will be redirected to the selected page after Social Login"
+msgstr "Пользователь будет перенаправлен на выбранную страницу после входа через социальные сети"
+
+#: ../admin/social_login.php:700
+msgid "Registration redirection"
+msgstr "Перенаправлении регистрации"
+
+#: ../admin/social_login.php:704
+msgid "Same page from where user registered"
+msgstr "URL целевой страницы, на которой зарегистрирован пользователь"
+
+#: ../admin/social_login.php:722
+msgid "User will be redirected to the selected page after registration (first Social Login) through Social Login"
+msgstr "Пользователь будет перенаправлен на выбранную страницу после регистрации (первый вход чере социальные сети) через социальные логин"
+
+#: ../admin/social_login.php:730
+msgid "Email popup options"
+msgstr "Параметры всплывающей электронной Почты"
+
+#: ../admin/social_login.php:736
+msgid "Text on 'Email required' popup"
+msgstr "Текст на всплывающем окне «Электронная почта требуется» "
+
+#: ../admin/social_login.php:746
+msgid "This text will be displayed on email required popup. Leave empty if not required."
+msgstr "Этот текст будет отображаться на всплывающем окне. требующем почту. Оставьте поле пустым если не требуется."
+
+#: ../admin/social_login.php:755
+msgid "Error message for 'Email required' popup"
+msgstr "Сообщение ошибки во всплывающем окне \"Требуется почта\""
+
+#: ../admin/social_login.php:765
+msgid "This message will be displayed to user if it provides invalid or already registered email"
+msgstr "Это сообщение будет показано пользователю, если он предоставил неверную или уже используемую почту"
+
+#: ../admin/social_login.php:774
+msgid "Email popup height"
+msgstr "Высота высплывающего окна"
+
+#: ../admin/social_login.php:784
+msgid "If you are seeing vertical scrollbar in the \"Email required\" popup, you can increase the height of popup by specifying in this option. Leave empty for default."
+msgstr "Если вы видите вертикальную полосу в всмплывающем окне  \"Необходима почта\", то вы можете увеличить высотку всплывающего окна. Оставьте пустым для базового значения."
+
+#: ../admin/social_login.php:792
+msgid "Enable email verification"
+msgstr "Включить проверку электронной почты"
+
+#: ../admin/social_login.php:802
+msgid "If enabled, email provided by the user will be verified by sending a confirmation link to that email. User would not be able to login without verifying his/her email"
+msgstr "Если опция включена, то на почту, которую указал пользователь, придет письмо с подтверждением. Пользователь не сможет зайти без подтверждения своей почты."
+
+#: ../admin/social_login.php:881
+msgid "Social Login Shortcode & Widget"
+msgstr "Шорткод и виджет для входа через социальные сети "
+
+#: ../admin/social_login.php:882
+msgid "Social Linking Shortcode"
+msgstr "Шорткод социальных ссылок"
+
+#: ../admin/admin.php:8
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: ../admin/admin.php:10
+msgid "You are ready to Socialize your website."
+msgstr "Вы готовы социализировать ваш сайт."
+
+#: ../admin/admin.php:11
+msgid "Getting Started"
+msgstr "Давайте начнём!"
+
+#: ../admin/admin.php:12
+msgid "Start configuring the options in the sections below the <strong>Super Socializer</strong> menu in the left sidebar. <strong>Social Sharing</strong> is enabled at your website by default."
+msgstr "Начните настраивать <strong>Super Socializer</strong> в настройках ниже главной панели в левом сайдбаре.  <strong>Social Sharing</strong> включен по умолчанию на вашем сайте."
+
+#: ../admin/admin.php:13
+msgid "In <strong>Social Commenting</strong> section, you can configure Social Commenting."
+msgstr "В разделе <strong>Комментарироание через социальные сети</strong> вы можете настроить комментироватья с помощью социальных сетей и других сервисов."
+
+#: ../admin/admin.php:14
+msgid "In <strong>Social Login</strong> section, you can select Social ID provders and configure the Social Login options."
+msgstr "В разделе <strong>Вход через социальные сети</strong> вы можете выбрать профили из соцсетей чтобы настроить вход через социальные сети."
+
+#: ../admin/admin.php:15
+msgid "In <strong>Social Sharing</strong> section, you can choose the Social Networks for Sharing and configure the options for sharing."
+msgstr "В разделе <strong>Поделиться в социальных сетях</strong>вы можете выбрать социальные сети и настроить их чтобы делиться с друзьями."
+
+#: ../admin/admin.php:16
+msgid "In <strong>Like Buttons</strong> section, you can choose the like/+1 buttons and configure the options for the same"
+msgstr "В разделе <strong>Нравится</strong> вы можете выбрать нравится/+1 и настроить таким же образом как и поделиться с друзьями."
+
+#: ../admin/like_buttons.php:16
+msgid "Enable Like Buttons"
+msgstr "Активировать Кнопки Нравится"
+
+#: ../admin/like_buttons.php:26
+msgid "Master control for like buttons. It must be checked to enable like buttons functionality"
+msgstr "Панель управления кнопками Нравится. Должно быть включено чтобы активировать кнопки Нравится"
+
+#: ../admin/like_buttons.php:48
+#, fuzzy
+msgid "Standard Interface Options"
+msgstr "Интерфейс горизонтальных кнопок Поделиться"
+
+#: ../admin/like_buttons.php:54
+#, fuzzy
+msgid "Enable standard interface"
+msgstr "Активировать интерфейс горизонтальных кнопок Поделиться"
+
+#: ../admin/like_buttons.php:64
+msgid "Master control to enable horizontal like buttons"
+msgstr "Мастер настройки включения горизонтальных кнопок Нравится"
+
+#: ../admin/like_buttons.php:89
+#: ../admin/like_buttons.php:338
+msgid "Url to like/share/tweet and display like/share/tweet counts"
+msgstr "Ссылка для Нравится/Поделиться/Твитнуть и отобразить  Нравится/Поделиться/Твитнуть"
+
+#: ../admin/like_buttons.php:107
+msgid "The text to display above the interface"
+msgstr "Текст, отображаемый над интерфейсом"
+
+#: ../admin/like_buttons.php:115
+#: ../admin/like_buttons.php:346
+msgid "Select and rearrange providers"
+msgstr "Выберите и переставьте сервисы"
+
+#: ../admin/like_buttons.php:159
+#: ../admin/like_buttons.php:389
+msgid "Select the providers for interface. Drag them to rearrange."
+msgstr "Выберите сервисы для интерфейса. Переместите их чтобы изменить порядок"
+
+#: ../admin/like_buttons.php:181
+#: ../admin/like_buttons.php:428
+msgid "Horizontal alignment of the interface"
+msgstr "Горизонтальное выравнивание интерфейса"
+
+#: ../admin/like_buttons.php:202
+msgid "Specify position of the interface with respect to the content"
+msgstr "Укажите положение интерфейса в отношении содержания"
+
+#: ../admin/like_buttons.php:210
+#: ../admin/like_buttons.php:494
+msgid "Interface location"
+msgstr "Расположение интерфейса"
+
+#: ../admin/like_buttons.php:280
+msgid "Specify the pages where you want to enable interface"
+msgstr "Укажите страницы, где вы хотите включить интерфейс"
+
+#: ../admin/like_buttons.php:297
+msgid "Vertical (Floating) like buttons Options"
+msgstr "Настройки вертикальных(плавающих кнопок) Нравится"
+
+#: ../admin/like_buttons.php:303
+#, fuzzy
+msgid "Enable floating like buttons"
+msgstr "Активировать вертикальные (плавающие) кнопки Нравится"
+
+#: ../admin/like_buttons.php:313
+msgid "Master control to enable vertical (floating) counter widget"
+msgstr "Мастер управления для включения вертикального (плавающего) счетчика  виджета "
+
+#: ../admin/like_buttons.php:407
+msgid "Specify the color or hex code (example #cc78e0) for the background of vertical interface. Leave empty for transparent. You can get the hex code of the required color from <a href=\"http://www.colorpicker.com/\" target=\"_blank\">this link</a>"
+msgstr "Укажите цвет или шестандцатеричный код (например #cc78e0) для фона вертикального интерфейса. Оставьте пустым чтобы оставить прозрачным. Вы можете получить шестнадцатеричный код <a href=\"http://www.colorpicker.com/\" target=\"_blank\">здесь</a>"
+
+#: ../admin/like_buttons.php:447
+msgid "Specify a number. Increase in number will shift interface towards right and decrease will shift it towards left. Number can be negative too."
+msgstr "Укажите число. Увеличение числа будет сдвигать интерфейс по отношению к правой стороне и уменьшать по отношению к правой сторону. Число может быть отрицательным."
+
+#: ../admin/like_buttons.php:467
+msgid "Specify a number. Increase in number will shift interface towards left and decrease will shift it towards right. Number can be negative too."
+msgstr "Укажите число. Увеличение числа будет сдвигать интерфейс по отношению к правой стороне и уменьшать по отношению к правой сторону. Число может быть отрицательным."
+
+#: ../admin/like_buttons.php:486
+msgid "Specify a number. Increase in number will shift interface towards bottom and decrease will shift it towards top."
+msgstr "Укажите число. Увеличение числа будет сдвигать интерфейс по отношению к низу и уменьшать по отношению к верху. "
+
+#: ../admin/like_buttons.php:542
+msgid "Specify the pages where you want to enable vertical interface"
+msgstr "Укажите страницы, где вы хотите включить вертикальный интерфейс "
+
+#: ../admin/like_buttons.php:550
+msgid "Hide like buttons on mobile devices"
+msgstr "Скрыть кнопки нравится на мобильных устройствах"
+
+#: ../admin/like_buttons.php:560
+msgid "If enabled, vertical like buttons will not appear on mobile devices"
+msgstr "Если включено, то вертикальный интерфейс Нравится не будет отображаться на мобильных устройствах"
+
+#: ../admin/like_buttons.php:584
+msgid "Use shortlinks already installed, for tweet button"
+msgstr "Эти короткие ссылки уже установлены, для кнопки Твитнуть"
+
+#: ../admin/like_buttons.php:594
+msgid "Allows for shortened URLs to be used when sharing content if a shortening plugin is installed"
+msgstr "Позволяет использовать сокращенные ссылки если Поделиться, при условии что плагин установлен."
+
+#: ../admin/like_buttons.php:602
+msgid "Enable bit.ly url shortener for tweet button"
+msgstr "Активировать сокращение ссылок bit.ly для кнопки Твитнуть"
+
+#: ../admin/like_buttons.php:694
+#, php-format
+msgid "Enter the code of the language you want to use to render counters. You can find the language codes at <a href=\"%s\" target=\"_blank\">this link</a>. Leave it empty for default language(English)"
+msgstr "Введите код языка если хотите использовать свой язык для показа счетчиков. Вы можете найти код своего языка по <a href=\"%s\" target=\"_blank\">этой ссылке</a>. Оставьте поле пустым чтобы оставить язык по умолчанию (English)."
+
+#: ../admin/like_buttons.php:703
+msgid "Twitter Username"
+msgstr "Имя в Твитере "
+
+#: ../admin/like_buttons.php:709
+msgid "Twitter username for Tweet (without @)"
+msgstr "Имя в Твитере для Твитнуть (без @)"
+
+#: ../admin/like_buttons.php:719
+msgid "Provided username will be appended after the content being tweeted as \"via @USERNAME\". Leave empty if you do not want any username."
+msgstr "Используемое имя пользователя будет показано после твита как  \"via @USERNAME\".  Оставьте пустым если не хотите отображать имя."
+
+#: ../admin/like_buttons.php:728
+msgid "Twitter username for Buffer sharing (without @)"
+msgstr "Имя в Твитере для Поделиться в Buffer (без @)"
+
+#: ../admin/like_buttons.php:738
+msgid "Provided username will be appended after the content in Buffer sharing as \"via @USERNAME\". Leave empty if you do not want any username."
+msgstr "Используемое имя пользователя будет показано в Buffer после Поделиться как  \"via @USERNAME\".  Оставьте пустым если не хотите отображать имя."
+
+#: ../admin/like_buttons.php:755
+msgid "Like Buttons Shortcode & Widget"
+msgstr "Шорткод и виджет Нравится"
+
+#: ../inc/shortcode.php:179
+#: ../inc/widget.php:43
+msgid "Log Out"
+msgstr "Выйти"
+
+#: ../inc/shortcode.php:263
+msgid "Enable Social Login from \"Basic Configuration\" section at \"Super Socializer > Social Login\" page in admin panel"
+msgstr "Активируйте вход через социальные сети в \"Базовые настройки\" в секции на странице \"Super Socializer > Вход через социальные сети\" в панели админ-панели"
+
+#: ../inc/social_sharing.php:735
+msgid "Invalid request"
+msgstr "Неверный Запрос!"
+
+#: ../inc/social_sharing.php:742
+msgid "Providers not selected"
+msgstr "Сервисы не выбраны"
+
+#: ../inc/social_login.php:639
+msgid "Email"
+msgstr "Email"
+
+#: ../inc/social_login.php:640
+msgid "Confirm email"
+msgstr "Подтвердить e-mail"
+
+#: ../inc/social_login.php:642
+msgid "Save"
+msgstr "Сохранить"
+
+#: ../inc/social_login.php:643
+msgid "Cancel"
+msgstr "Отменить"
+
+#: ../inc/social_login.php:715
+msgid "Email Verification"
+msgstr "Подтверждение адреса электронной почты"
+
+#: ../inc/social_login.php:717
+msgid "Please click on the following link or paste it in browser to verify your email"
+msgstr ""
+
+#: ../inc/widget.php:11
+msgid "Super Socializer - Login"
+msgstr "Super Socializer - Вход"
+
+#: ../inc/widget.php:13
+msgid "Let your website users login/register using their favorite Social ID Provider, such as Facebook, Twitter, Google+, LinkedIn"
+msgstr "Дайте возможность пользователям с вашего сайта войти/зарегистрироваться используя их любимые социальные сервисы, так как Facebook, Twitter, Google+, LinkedIn"
+
+#: ../inc/widget.php:66
+msgid "Login with your Social Account"
+msgstr "Вход через соцсети"
+
+#: ../inc/widget.php:74
+#, fuzzy
+msgid "Make sure Social Login is enabled at \"Super Socializer > Social Login\" page."
+msgstr "Убедитесь что вход через социальные сети включен на странице \"Super Socializer > Вход через социальные сети\""
+
+#: ../inc/widget.php:75
+#: ../inc/widget.php:215
+#: ../inc/widget.php:520
+msgid "Title:"
+msgstr "Заголовок:"
+
+#: ../inc/widget.php:77
+#: ../inc/widget.php:229
+#: ../inc/widget.php:530
+msgid "Before widget content:"
+msgstr "Перед содержимым виджета"
+
+#: ../inc/widget.php:79
+#: ../inc/widget.php:231
+#: ../inc/widget.php:532
+msgid "After widget content:"
+msgstr "После содержимого виджета"
+
+#: ../inc/widget.php:82
+#: ../inc/widget.php:233
+#: ../inc/widget.php:397
+#: ../inc/widget.php:534
+#: ../inc/widget.php:684
+msgid "Hide for logged in users:"
+msgstr "Скрыть  для зарегистрированных пользователей"
+
+#: ../inc/widget.php:101
+#, fuzzy
+msgid "Standard sharing widget. Let your website users share content on popular Social networks like Facebook, Twitter, Tumblr, Google+ and many more"
+msgstr "Горизонтальный виджет Поделиться. Дайте пользователям вашего сайта Поделиться содержиым в популярных социальных сетях типа Facebook, Twitter, Tumblr, Google+ и многих других."
+
+#: ../inc/widget.php:214
+#, fuzzy
+msgid "Make sure \"Standard Social Sharing\" is enabled at \"Super Socializer > Social Sharing\" page."
+msgstr "Убедитесь что \"Вертикальные Кнопки Поделиться\" включены на странице  \"Super Socializer > Поделиться\""
+
+#: ../inc/widget.php:217
+#: ../inc/widget.php:366
+msgid "Show individual share counts:"
+msgstr "Показать индвидуальные счетчики Поделиться"
+
+#: ../inc/widget.php:219
+#: ../inc/widget.php:368
+msgid "Show total shares:"
+msgstr "Показать общее количество Поделиться"
+
+#: ../inc/widget.php:221
+#: ../inc/widget.php:370
+#: ../inc/widget.php:522
+#: ../inc/widget.php:657
+msgid "Target Url:"
+msgstr "Целевой URL:"
+
+#: ../inc/widget.php:223
+#: ../inc/widget.php:372
+#: ../inc/widget.php:524
+#: ../inc/widget.php:659
+msgid "Select"
+msgstr "Выбор"
+
+#: ../inc/widget.php:252
+#, fuzzy
+msgid "Floating floating sharing widget. Let your website users share content on popular Social networks like Facebook, Twitter, Tumblr, Google+ and many more"
+msgstr "Вертикальный плавающий виджет Поделиться. Дайте пользователям вашего сайта Поделиться содержиым в популярных социальных сетях типа Facebook, Twitter, Tumblr, Google+ и многих других."
+
+#: ../inc/widget.php:365
+#, fuzzy
+msgid "Make sure \"Floating Social Sharing\" is enabled at \"Super Socializer > Social Sharing\" page."
+msgstr "Убедитесь что \"Горизонтальные Кнопки Поделиться\" включены на странице  \"Super Socializer > Поделиться\""
+
+#: ../inc/widget.php:378
+#: ../inc/widget.php:665
+msgid "Alignment"
+msgstr "Выравнивание"
+
+#: ../inc/widget.php:384
+#: ../inc/widget.php:671
+msgid "Left Offset"
+msgstr "Смещение влево"
+
+#: ../inc/widget.php:388
+#: ../inc/widget.php:675
+msgid "Right Offset"
+msgstr "Смещение вправо"
+
+#: ../inc/widget.php:391
+#: ../inc/widget.php:678
+msgid "Top Offset"
+msgstr "Верхний отступ"
+
+#: ../inc/widget.php:416
+#, fuzzy
+msgid "Standard like buttons widget. Let your website users share/like content on popular Social networks like Facebook, Twitter, Google+ and many more"
+msgstr "Горизонтальный виджет Нравится. Дайте пользователям вашего сайта Поделиться содержиым в популярных социальных сетях типа Facebook, Twitter, Tumblr, Google+ и многих других."
+
+#: ../inc/widget.php:519
+#, fuzzy
+msgid "Make sure \"Standard Like Buttons\" are enabled from \"Super Socializer > Like Buttons\" page."
+msgstr "Убедитесь что \"Вертикальные Кнопки Нравится\" включены на странице  \"Super Socializer > Нравится\""
+
+#: ../inc/widget.php:553
+#, fuzzy
+msgid "Floating floating like buttons widget. Let your website users share/like content on popular Social networks like Facebook, Twitter, Google+ and many more"
+msgstr "Вертикальный плавающий виджет Нравится. Дайте пользователям вашего сайта Поделиться/Нравится содержиым в популярных социальных сетях типа Facebook, Twitter, Tumblr, Google+ и многих других."
+
+#: ../inc/widget.php:656
+#, fuzzy
+msgid "Make sure \"Floating Like Buttons\" are enabled from \"Super Socializer > Like Buttons\" page."
+msgstr "Убедитесь что \"Горизонтальные Кнопки Нравится\" включены на странице  \"Super Socializer > Нравится\""
+
+#~ msgid "Excerpts"
+#~ msgstr "Цитаты"
+
+#~ msgid "Send username-password after user registration"
+#~ msgstr "Отправить имя пользователя и пароль после регистрации пользователя"
+
+#~ msgid "Login options"
+#~ msgstr "Опции входа"
+
+#~ msgid "Horizontal sharing"
+#~ msgstr "Горизонтальное Поделиться"
+
+#~ msgid "Vertical sharing"
+#~ msgstr "Вертикальное поделиться"
+
+#~ msgid "Sharing Options"
+#~ msgstr "Настройки Поделиться"
+
+#~ msgid ""
+#~ "Master control for Social Sharing. It must be checked to enable Social "
+#~ "Sharing functionality"
+#~ msgstr ""
+#~ "Мастер управления Поделиться через социальные сети. Должно быть включено "
+#~ "чтобы активировать вход через социальные сети."
+
+#~ msgid "Horizontal interface options"
+#~ msgstr "Настройки горизонтального показа Поделиться"
+
+#~ msgid "Vertical interface options"
+#~ msgstr "Настройки вертикального показа Поделиться"
+
+#~ msgid "Modernizr"
+#~ msgstr "Modernizr"
+
+#~ msgid "Do not load Modernizr JS"
+#~ msgstr "Не загружать Modernizr JS"
+
+#~ msgid ""
+#~ "If you find the plugin breaking your theme, you can try enabling this "
+#~ "option"
+#~ msgstr ""
+#~ "Если плагин ломает вашу тему, вы можете попробовать включить эту опцию"
+
+#~ msgid "Print"
+#~ msgstr "Печать"
+
+#~ msgid "Yahoo"
+#~ msgstr "Yahoo"
+
+#~ msgid "Reddit"
+#~ msgstr "Reddit"
+
+#~ msgid "Digg"
+#~ msgstr "Digg"
+
+#~ msgid "Delicious"
+#~ msgstr "Delicious"
+
+#~ msgid "StumbleUpon"
+#~ msgstr "StumbleUpon"
+
+#~ msgid "Float it"
+#~ msgstr "Float it"
+
+#~ msgid "Tumblr"
+#~ msgstr "Tumblr"
+
+#~ msgid "Pinterest"
+#~ msgstr "Pinterest"
+
+#~ msgid "Whatsapp"
+#~ msgstr "WhatsApp"
+
+#~ msgid "Yummly"
+#~ msgstr "Yummly"
+
+#~ msgid "Buffer"
+#~ msgstr "Buffer"
+
+#~ msgid "Select the providers for sharing interface"
+#~ msgstr "Выберите сервисы для интерфейса горизонтальных кнопок Поделиться"
+
+#~ msgid "Sharing location"
+#~ msgstr "Расположение кнопок Поделиться"
+
+#, fuzzy
+#~ msgid "Stick sharing bar horizontally at bottom on mobile devices"
+#~ msgstr "Скрыть кнопки Поделиться на мобильных устройствах"
+
+#~ msgid ""
+#~ "If enabled, vertical sharing interface will not appear on mobile devices"
+#~ msgstr ""
+#~ "Если включено, то вертикальный интерфейс Поделиться не будет отображаться "
+#~ "на мобильных устройствах"
+
+#~ msgid "Social Sharing Shortcode & Widget"
+#~ msgstr "Поделиться шорткод и виджет"
+
+#~ msgid "Like Buttons"
+#~ msgstr "Кнопки Нравится"
+
+#~ msgid "Options saved successfully"
+#~ msgstr "Настройки успешно сохранены."
+
+#~ msgid "Better"
+#~ msgstr "Лучше"

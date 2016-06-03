@@ -523,6 +523,33 @@ article.post .entry-thumb {
 |
 **********************************************************/
 
+ul.the_champ_login_ul li {
+  display: block;
+  width: 45% !important;
+  margin-left: 3% !important;
+}
+ul.the_champ_login_ul li:first-child {
+  margin-left: 0 !important;
+}
+ul.the_champ_login_ul li i {
+  width: 100% !important;
+}
+ul.the_champ_login_ul li ss {
+  padding-left: 5px;
+}
+ul.the_champ_login_ul li ss:before {
+  color: white;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 35px;
+  margin-left: 35px;
+}
+ul.the_champ_login_ul li ss.theChampFacebookLoginSvg:before {
+  content: 'Login Using Facebook';
+}
+ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
+  content: 'Login Using Twitter';
+}
 #wp-submit {
   display: inline-block;
   padding: 6px 30px;

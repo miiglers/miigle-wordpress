@@ -21,7 +21,7 @@
             <?php the_content(); ?>
           <?php endwhile; ?>
 					
-					<?php wp_login_form(); ?>
+					<?php //wp_login_form(); ?>
 					
          </div>
         

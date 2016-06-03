@@ -1,0 +1,2169 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Super Socializer\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-18 02:18+0530\n"
+"PO-Revision-Date: 2016-05-18 02:18+0530\n"
+"Last-Translator: The Champ <lordofthechamps@gmail.com>\n"
+"Language-Team: Heateor <hello@heateor.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.8.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../super_socializer.php:325
+#, php-format
+msgid "Enter exactly the following url in <strong>Website</strong> and <strong>Callback Url</strong> options in your Twitter app (see step 3 %s)"
+msgstr "在Twitter 应用程序的选项中输入准确的<strong>网站</strong>和<strong>回调 Url</strong> 的url地址 (请参阅步骤 3 %s)"
+
+#: ../super_socializer.php:328
+msgid "Make sure cURL is enabled at your website server. You may need to contact the server administrator of your website to verify this"
+msgstr "请确保在您的网站服务器上启用了cURL。对此，请您与您的网站的服务器管理员核实。"
+
+#: ../super_socializer.php:498
+msgid "Please verify your email address to login."
+msgstr "请验证您的电子邮件地址以便登录。"
+
+#: ../super_socializer.php:498
+msgid "Your email has been verified. Now you can login to your account"
+msgstr "您的电子邮件已验证。现在你可以登录到您的帐户"
+
+#: ../super_socializer.php:502
+msgid "Notification"
+msgstr "通知"
+
+#: ../super_socializer.php:520
+#: ../admin/social_login.php:595
+msgid "Email required"
+msgstr "邮件地址（比选）"
+
+#: ../super_socializer.php:523
+msgid "Please check your email inbox to complete the registration."
+msgstr "请检查您的电子邮件收件箱以完成注册。"
+
+#: ../super_socializer.php:540
+msgid "Follow steps 11 and 12 at GooglePlus app configuration page, about to open"
+msgstr "在 GooglePlus 的应用程序配置页跟随步骤 11 和 12 来打开 "
+
+#: ../super_socializer.php:627
+msgid "Leave a reply"
+msgstr "回复"
+
+#: ../super_socializer.php:639
+msgid "Shares"
+msgstr ""
+
+#: ../super_socializer.php:639
+msgid "Share"
+msgstr ""
+
+#: ../super_socializer.php:816
+msgid "Super Socializer - General Options"
+msgstr "Super Socializer-常规选项"
+
+#: ../super_socializer.php:816
+#: ../admin/general_options.php:11
+#: ../admin/social_commenting.php:42
+msgid "General Options"
+msgstr "常规选项"
+
+#: ../super_socializer.php:879
+msgid "Super Socializer - Social Avatar"
+msgstr "Super Socializer -社会化头像"
+
+#: ../super_socializer.php:882
+msgid "Small Avatar Url"
+msgstr "小头像 Url"
+
+#: ../super_socializer.php:886
+msgid "Large Avatar Url"
+msgstr "大头像 Url"
+
+#: ../super_socializer.php:890
+#: ../helper.php:887
+msgid "Do not fetch and update social avatar from my profile, next time I Social Login"
+msgstr "不从我的个人资料里获取及更新社会化头像，下次社会化登录"
+
+#: ../super_socializer.php:894
+#: ../helper.php:888
+msgid "Update social avatar, next time I Social Login"
+msgstr "更新社会化头像，下次社会化登录"
+
+#: ../super_socializer.php:967
+msgid "Login with your Social ID"
+msgstr ""
+
+#: ../super_socializer.php:968
+msgid "Email you entered is already registered or invalid"
+msgstr "您输入的电子邮件已经注册或无效"
+
+#: ../super_socializer.php:973
+msgid "Please enter a valid email address. You might be required to verify it"
+msgstr "请输入一个有效的电子邮件地址。您可能需要验证它"
+
+#: ../helper.php:8
+msgid "Settings saved"
+msgstr "设置已保存"
+
+#: ../helper.php:8
+msgid "Dismiss this notice"
+msgstr "关闭该通知"
+
+#: ../helper.php:158
+msgid "Click to show help"
+msgstr "单击以显示帮助"
+
+#: ../helper.php:158
+msgid "Click to hide help"
+msgstr "单击隐藏帮助"
+
+#: ../helper.php:252
+msgid "Settings"
+msgstr "设置"
+
+#: ../helper.php:577
+msgid "Account linked successfully"
+msgstr "成功关联帐户"
+
+#: ../helper.php:581
+msgid "Account already exists or linked"
+msgstr "帐户已经存在或被链接"
+
+#: ../helper.php:590
+msgid "You are already connected with"
+msgstr "你已经连接"
+
+#: ../helper.php:590
+msgid "as primary social network"
+msgstr "作为主要的社交网络"
+
+#: ../helper.php:605
+msgid "Link your social account to login to your account at this website"
+msgstr "链接你的社会化媒体帐户登录您本站账号"
+
+#: ../helper.php:642
+msgid "Currently"
+msgstr "目前："
+
+#: ../helper.php:642
+msgid "Remove"
+msgstr "删除"
+
+#: ../helper.php:743
+msgid "Disable Standard Social Sharing on this "
+msgstr "在此禁用社会化共享"
+
+#: ../helper.php:748
+msgid "Disable Floating Social Sharing on this "
+msgstr "在此禁用社会共享的浮动效果"
+
+#: ../helper.php:753
+msgid "Disable Standard like buttons on this "
+msgstr "在此禁用喜欢按钮"
+
+#: ../helper.php:758
+msgid "Disable Floating like buttons on this "
+msgstr "在此禁用喜欢按钮的浮动效果"
+
+#: ../helper.php:763
+msgid "Disable Social Commenting on this "
+msgstr "在此禁用社会化评论"
+
+#: ../helper.php:772
+msgid "Standard Sharing Interface"
+msgstr "标准共享界面"
+
+#: ../helper.php:778
+#: ../helper.php:797
+msgid "Starting share count for "
+msgstr "开始共享计数"
+
+#: ../helper.php:791
+msgid "Floating Sharing Interface"
+msgstr "浮动共享界面"
+
+#: ../helper.php:884
+msgid "Social Avatar"
+msgstr "社会化头像"
+
+#: ../helper.php:891
+msgid "Small Avatar"
+msgstr "小头像"
+
+#: ../helper.php:895
+msgid "Large Avatar"
+msgstr "大头像"
+
+#: ../helper.php:899
+#: ../admin/general_options.php:89
+#: ../admin/social_sharing.php:1835
+#: ../admin/social_commenting.php:464
+#: ../admin/social_login.php:893
+#: ../admin/like_buttons.php:780
+msgid "Save Changes"
+msgstr "保存更改"
+
+#: ../helper.php:944
+msgid "Please help us make the plugin better"
+msgstr ""
+
+#: ../helper.php:945
+#, php-format
+msgid "Please take a look at our <a href=\"%s\" target=\"_blank\">support documentation</a> before deactivating the plugin"
+msgstr ""
+
+#: ../helper.php:945
+msgid "I am deactivating the plugin because"
+msgstr ""
+
+#: ../helper.php:945
+msgid "I no longer need the plugin"
+msgstr ""
+
+#: ../helper.php:945
+msgid "I found a better plugin"
+msgstr ""
+
+#: ../helper.php:945
+msgid "I only needed the plugin for a short period"
+msgstr ""
+
+#: ../helper.php:945
+msgid "The plugin broke my site"
+msgstr ""
+
+#: ../helper.php:945
+msgid "The plugin suddenly stopped working"
+msgstr ""
+
+#: ../helper.php:945
+msgid "I couldn\\'t understand how to make it work"
+msgstr ""
+
+#: ../helper.php:945
+msgid "The plugin is great, but I need specific feature that you don\\'t support"
+msgstr ""
+
+#: ../helper.php:945
+msgid "The plugin is not working"
+msgstr ""
+
+#: ../helper.php:945
+msgid "It\\'s not what I was looking for"
+msgstr ""
+
+#: ../helper.php:945
+msgid "The plugin didn\\'t work as expected"
+msgstr ""
+
+#: ../helper.php:945
+msgid "Other"
+msgstr ""
+
+#: ../helper.php:968
+#, fuzzy
+msgid "Please specify a vaild reason"
+msgstr "请验证您的电子邮件地址以便登录。"
+
+#: ../admin/general_options.php:17
+msgid "Include Javascript in website footer"
+msgstr "在网站页脚中包含 Javascript"
+
+#: ../admin/general_options.php:27
+msgid "If enabled (recommended), Javascript files will be included in the footer of your website."
+msgstr "如果启用 (推荐)，Javascript 文件将包含在您的网站的页脚。"
+
+#: ../admin/general_options.php:35
+msgid "Load all Javascript files in single file"
+msgstr "在单个文件中加载所有的Javascript 文件"
+
+#: ../admin/general_options.php:45
+msgid "Loads Javascript in single request."
+msgstr "在单个请求中加载 Javascript。"
+
+#: ../admin/general_options.php:53
+msgid "Delete all the options on plugin deletion"
+msgstr "插件删除时删除所有选项"
+
+#: ../admin/general_options.php:63
+msgid "If enabled, plugin options will get deleted when plugin is deleted/uninstalled and you will need to reconfigure the options when you install the plugin next time."
+msgstr "如果启用，当插件被删除或卸载，下次安装，您将需要重新配置选项."
+
+#: ../admin/general_options.php:71
+msgid "Custom CSS"
+msgstr "自定义CSS"
+
+#: ../admin/general_options.php:81
+msgid "You can specify any additional CSS rules (without &lt;style&gt; tag)"
+msgstr "您可以指定任何额外的 CSS 规则(无需 &lt;style&gt; tag)"
+
+#: ../admin/help.php:4
+msgid "About"
+msgstr "关于"
+
+#: ../admin/help.php:4
+msgid "Version"
+msgstr "版本"
+
+#: ../admin/help.php:6
+msgid "by"
+msgstr "作者"
+
+#: ../admin/help.php:7
+msgid "We are a creative team with unique ideas in mind and service in heart. We love what we do. For more info join us at"
+msgstr "我们是有独特想法与用心在服务的创意团队。我们热爱我们所做的。更多的信息请访问"
+
+#: ../admin/help.php:17
+msgid "Donate"
+msgstr "捐赠"
+
+#: ../admin/help.php:19
+msgid "You can help us continue the development of this free plugin by donating"
+msgstr "通过捐赠你能帮助我们不断发展的这个免费的插件"
+
+#: ../admin/help.php:20
+msgid "Donate Now"
+msgstr "现在捐赠"
+
+#: ../admin/help.php:26
+msgid "Plugin Demo"
+msgstr "插件演示"
+
+#: ../admin/help.php:32
+msgid "Integrate with Google Analytics"
+msgstr "谷歌分析与集成"
+
+#: ../admin/help.php:38
+msgid "Boost sharing by awarding points"
+msgstr "通过授予积分刺激共享"
+
+#: ../admin/help.php:44
+msgid "Award points for Social Login"
+msgstr "为社会登录授予积分"
+
+#: ../admin/help.php:50
+msgid "Other Add-ons"
+msgstr "其他加载项"
+
+#: ../admin/help.php:55
+msgid "Need Help?"
+msgstr "需要帮助？"
+
+#: ../admin/help.php:57
+msgid "If you <strong>have any query</strong>, need help regarding <strong>plugin setup</strong>, want <strong>custom features</strong> in the plugin or <strong>have any suggestion</strong> to improve the plugin, just drop an email at <a href=\"mailto:support@heateor.com\">support@heateor.com</a>"
+msgstr "如果您<strong>有任何疑问</strong>，需要关于<strong>插件安装</strong>的帮助，想要插件的<strong>特色功能</strong>或者有<strong>任何建议</strong>来改善该插件，只需发电子邮件<a href=“mailto:support@heateor.com”>support@heateor.com</a>"
+
+#: ../admin/help.php:62
+msgid "Support Us"
+msgstr "支持我们"
+
+#: ../admin/help.php:65
+#: ../admin/help.php:68
+#: ../admin/help.php:69
+#: ../admin/help.php:70
+#: ../admin/help.php:71
+#: ../admin/help.php:72
+msgid "Rate 5-star"
+msgstr "5-星评价"
+
+#: ../admin/social_sharing.php:9
+#: ../admin/social_commenting.php:8
+#: ../admin/social_login.php:8
+#: ../admin/like_buttons.php:10
+msgid "Master Control"
+msgstr "主控制"
+
+#: ../admin/social_sharing.php:14
+msgid "Enable Social Sharing"
+msgstr "启用社交共享"
+
+#: ../admin/social_sharing.php:23
+msgid "Master control to enable Social Sharing"
+msgstr "主控件，以使社会共享"
+
+#: ../admin/social_sharing.php:35
+msgid "Theme Selection"
+msgstr "主题选择"
+
+#: ../admin/social_sharing.php:36
+#: ../admin/like_buttons.php:37
+msgid "Standard Interface"
+msgstr "标准接口"
+
+#: ../admin/social_sharing.php:37
+#: ../admin/like_buttons.php:38
+msgid "Floating Interface"
+msgstr "浮动接口"
+
+#: ../admin/social_sharing.php:38
+#: ../admin/like_buttons.php:39
+msgid "Miscellaneous"
+msgstr "其他"
+
+#: ../admin/social_sharing.php:39
+#: ../admin/social_sharing.php:1780
+#: ../admin/social_sharing.php:1782
+#: ../admin/social_login.php:40
+#: ../admin/social_login.php:879
+#: ../admin/like_buttons.php:40
+#: ../admin/like_buttons.php:753
+msgid "Shortcode & Widget"
+msgstr "簡碼和小工具"
+
+#: ../admin/social_sharing.php:40
+msgid "Troubleshooter"
+msgstr "排错"
+
+#: ../admin/social_sharing.php:41
+#: ../admin/social_sharing.php:1811
+#: ../admin/social_commenting.php:36
+#: ../admin/social_commenting.php:452
+#: ../admin/like_buttons.php:41
+#: ../admin/like_buttons.php:765
+msgid "FAQ"
+msgstr "常见问题解答"
+
+#: ../admin/social_sharing.php:48
+msgid "Standard interface theme"
+msgstr "标准接口主题"
+
+#: ../admin/social_sharing.php:53
+#: ../admin/social_sharing.php:360
+msgid "Icon Preview"
+msgstr "图标预览"
+
+#: ../admin/social_sharing.php:125
+#: ../admin/social_sharing.php:433
+msgid "Do not forget to save the configuration after making changes by clicking the save button below"
+msgstr "更改后不要忘记单击下面的保存按钮以保存下面存配置"
+
+#: ../admin/social_sharing.php:132
+#: ../admin/social_sharing.php:440
+msgid "Shape"
+msgstr "形状"
+
+#: ../admin/social_sharing.php:136
+#: ../admin/social_sharing.php:444
+msgid "Round"
+msgstr "圆"
+
+#: ../admin/social_sharing.php:138
+#: ../admin/social_sharing.php:446
+msgid "Square"
+msgstr "正方形"
+
+#: ../admin/social_sharing.php:140
+#: ../admin/social_sharing.php:448
+msgid "Rectangle"
+msgstr "矩形"
+
+#: ../admin/social_sharing.php:147
+#: ../admin/social_sharing.php:455
+msgid "Shape of the sharing icons"
+msgstr "共享图标的形状"
+
+#: ../admin/social_sharing.php:156
+#: ../admin/social_sharing.php:464
+msgid "Size (in pixels)"
+msgstr "大小 (以像素为单位)"
+
+#: ../admin/social_sharing.php:172
+#: ../admin/social_sharing.php:480
+msgid "Size of the sharing icons"
+msgstr "共享图标的大小"
+
+#: ../admin/social_sharing.php:182
+#: ../admin/social_sharing.php:490
+msgid "Width (in pixels)"
+msgstr "宽度（px）"
+
+#: ../admin/social_sharing.php:198
+#: ../admin/social_sharing.php:506
+msgid "Width of the sharing icons"
+msgstr "共享图标宽度"
+
+#: ../admin/social_sharing.php:206
+#: ../admin/social_sharing.php:514
+msgid "Height (in pixels)"
+msgstr "高度（像素）"
+
+#: ../admin/social_sharing.php:222
+#: ../admin/social_sharing.php:530
+msgid "Height of the sharing icons"
+msgstr "共享图标高度"
+
+#: ../admin/social_sharing.php:232
+#: ../admin/social_sharing.php:540
+msgid "Border radius (in pixels)"
+msgstr "(以像素为单位) 的边界半径"
+
+#: ../admin/social_sharing.php:242
+#: ../admin/social_sharing.php:550
+msgid "Specify a value for rounded corners. More the value, more rounded will the corners be. Leave empty for sharp corners."
+msgstr "定义圆角的值。值越大，圆角越园。留空为尖角。"
+
+#: ../admin/social_sharing.php:251
+#: ../admin/social_sharing.php:559
+msgid "Logo Color"
+msgstr "logo颜色"
+
+#: ../admin/social_sharing.php:255
+#: ../admin/social_sharing.php:276
+#: ../admin/social_sharing.php:296
+#: ../admin/social_sharing.php:563
+#: ../admin/social_sharing.php:584
+#: ../admin/social_sharing.php:603
+msgid "Default"
+msgstr "默认"
+
+#: ../admin/social_sharing.php:257
+#: ../admin/social_sharing.php:277
+#: ../admin/social_sharing.php:301
+#: ../admin/social_sharing.php:565
+#: ../admin/social_sharing.php:585
+#: ../admin/social_sharing.php:608
+msgid "On Hover"
+msgstr "鼠标悬停"
+
+#: ../admin/social_sharing.php:265
+#: ../admin/social_sharing.php:573
+msgid "Specify the color or hex code (example #cc78e0) for the logo of icon. Leave empty for default. You can get the hex code of the required color from <a href=\"http://www.colorpicker.com/\" target=\"_blank\">this link</a>"
+msgstr "为logo指定颜色或徽标的十六进制代码 (例如 #cc78e0)。留空为默认。你可以从<a href=“http://www.colorpicker.com/“ target=“_blank”>这个链接</a>获得所需的颜色的十六进制代码"
+
+#: ../admin/social_sharing.php:273
+#: ../admin/social_sharing.php:581
+#: ../admin/social_sharing.php:1262
+#: ../admin/like_buttons.php:397
+msgid "Background Color"
+msgstr "背景颜色"
+
+#: ../admin/social_sharing.php:284
+#: ../admin/social_sharing.php:592
+msgid "Specify the color or hex code (example #cc78e0) for icon background. Save \"transparent\" for transparent background. Leave empty for default. You can get the hex code of the required color from <a href=\"http://www.colorpicker.com/\" target=\"_blank\">this link</a>"
+msgstr "指定的颜色或图标背景的十六进制代码 (例如 #cc78e0)。保存”透明”为透明背景。留空为默认。你可以从<a href=“http://www.colorpicker.com/“ target=“_blank”>这个链接</a>获得所需的颜色的十六进制代码"
+
+#: ../admin/social_sharing.php:292
+#: ../admin/social_sharing.php:600
+msgid "Border"
+msgstr "边框"
+
+#: ../admin/social_sharing.php:298
+#: ../admin/social_sharing.php:303
+#: ../admin/social_sharing.php:605
+#: ../admin/social_sharing.php:610
+msgid "Border Width"
+msgstr "边框宽度"
+
+#: ../admin/social_sharing.php:299
+#: ../admin/social_sharing.php:304
+#: ../admin/social_sharing.php:606
+#: ../admin/social_sharing.php:611
+msgid "Border Color"
+msgstr "边框颜色"
+
+#: ../admin/social_sharing.php:311
+#: ../admin/social_sharing.php:618
+msgid "Icon border"
+msgstr "图标边框"
+
+#: ../admin/social_sharing.php:319
+#: ../admin/social_sharing.php:626
+msgid "Counter Position"
+msgstr "计数器的位置"
+
+#: ../admin/social_sharing.php:319
+#: ../admin/social_sharing.php:626
+msgid "(applies, if counter enabled)"
+msgstr "(适用，如果启用计数器)"
+
+#: ../admin/social_sharing.php:323
+#: ../admin/social_sharing.php:630
+#: ../admin/social_sharing.php:880
+#: ../admin/social_sharing.php:1284
+#: ../admin/like_buttons.php:171
+#: ../admin/like_buttons.php:419
+msgid "Left"
+msgstr "左边"
+
+#: ../admin/social_sharing.php:325
+#: ../admin/social_sharing.php:632
+msgid "Top"
+msgstr "顶部"
+
+#: ../admin/social_sharing.php:327
+#: ../admin/social_sharing.php:634
+#: ../admin/social_sharing.php:882
+#: ../admin/social_sharing.php:1285
+#: ../admin/like_buttons.php:173
+#: ../admin/like_buttons.php:420
+msgid "Right"
+msgstr "右侧"
+
+#: ../admin/social_sharing.php:329
+#: ../admin/social_sharing.php:636
+msgid "Bottom"
+msgstr "居下"
+
+#: ../admin/social_sharing.php:331
+#: ../admin/social_sharing.php:638
+msgid "Inner Left"
+msgstr "内左"
+
+#: ../admin/social_sharing.php:333
+#: ../admin/social_sharing.php:640
+msgid "Inner Top"
+msgstr "内顶"
+
+#: ../admin/social_sharing.php:335
+#: ../admin/social_sharing.php:642
+msgid "Inner Right"
+msgstr "内右"
+
+#: ../admin/social_sharing.php:337
+#: ../admin/social_sharing.php:644
+msgid "Inner Bottom"
+msgstr "内底"
+
+#: ../admin/social_sharing.php:345
+#: ../admin/social_sharing.php:652
+msgid "Position of share counter"
+msgstr "共享计数器的位置"
+
+#: ../admin/social_sharing.php:355
+msgid "Floating interface theme"
+msgstr "浮动的界面主题"
+
+#: ../admin/social_sharing.php:667
+msgid "Standard Sharing Interface Options"
+msgstr "标准共享界面选项"
+
+#: ../admin/social_sharing.php:673
+msgid "Enable Standard sharing interface"
+msgstr "启用共享接口标准"
+
+#: ../admin/social_sharing.php:683
+msgid "Master control to enable standard sharing"
+msgstr "主控件以启用标准共享"
+
+#: ../admin/social_sharing.php:693
+#: ../admin/social_sharing.php:1110
+#: ../admin/like_buttons.php:74
+#: ../admin/like_buttons.php:323
+msgid "Target Url"
+msgstr "目标URL"
+
+#: ../admin/social_sharing.php:697
+#: ../admin/social_sharing.php:1114
+#: ../admin/like_buttons.php:78
+#: ../admin/like_buttons.php:327
+msgid "Url of the webpage where icons are located (default)"
+msgstr "图标所在网页的Url (默认值)"
+
+#: ../admin/social_sharing.php:699
+#: ../admin/social_sharing.php:1116
+#: ../admin/like_buttons.php:80
+#: ../admin/like_buttons.php:329
+msgid "Url of the homepage of your website"
+msgstr "您网站的主页的 Url"
+
+#: ../admin/social_sharing.php:701
+#: ../admin/social_sharing.php:1118
+#: ../admin/like_buttons.php:82
+#: ../admin/like_buttons.php:331
+msgid "Custom url"
+msgstr "自定义 URL"
+
+#: ../admin/social_sharing.php:708
+#: ../admin/social_sharing.php:1125
+msgid "Url to share"
+msgstr "要分享的网址"
+
+#: ../admin/social_sharing.php:716
+#: ../admin/social_login.php:377
+#: ../admin/like_buttons.php:97
+msgid "Title"
+msgstr "标题"
+
+#: ../admin/social_sharing.php:726
+msgid "The text to display above the sharing interface"
+msgstr "要共享界面上方显示的文本"
+
+#: ../admin/social_sharing.php:744
+#: ../admin/social_sharing.php:1134
+#, fuzzy
+msgid "Instagram username"
+msgstr "Instagram"
+
+#: ../admin/social_sharing.php:754
+#: ../admin/social_sharing.php:1144
+msgid "Username of the Instagram account you want to redirect users to, on clicking the icon"
+msgstr ""
+
+#: ../admin/social_sharing.php:767
+#: ../admin/social_sharing.php:1153
+msgid "Rearrange icons"
+msgstr "重新排列图标"
+
+#: ../admin/social_sharing.php:826
+#: ../admin/social_sharing.php:1212
+msgid "Drag the icons to rearrange in desired order"
+msgstr "按所需顺序拖动要重新排列的图标"
+
+#: ../admin/social_sharing.php:834
+#: ../admin/social_sharing.php:1220
+msgid "Select Sharing Services"
+msgstr "选择共享服务"
+
+#: ../admin/social_sharing.php:841
+#: ../admin/social_sharing.php:1227
+msgid "Select sharing services to show in social share bar"
+msgstr "请选择要在社会共享栏中显示的共享服务"
+
+#: ../admin/social_sharing.php:876
+#: ../admin/social_sharing.php:1280
+#: ../admin/like_buttons.php:167
+#: ../admin/like_buttons.php:415
+msgid "Horizontal alignment"
+msgstr "水平对齐"
+
+#: ../admin/social_sharing.php:881
+#: ../admin/like_buttons.php:172
+msgid "Center"
+msgstr "居中"
+
+#: ../admin/social_sharing.php:890
+#: ../admin/social_sharing.php:1293
+msgid "Horizontal alignment of the sharing interface"
+msgstr "共享界面水平对齐方式"
+
+#: ../admin/social_sharing.php:898
+#: ../admin/like_buttons.php:189
+msgid "Position with respect to content"
+msgstr "相对于内容的位置"
+
+#: ../admin/social_sharing.php:902
+#: ../admin/like_buttons.php:193
+msgid "Top of the content"
+msgstr "内容的顶部"
+
+#: ../admin/social_sharing.php:904
+#: ../admin/like_buttons.php:195
+msgid "Bottom of the content"
+msgstr "内容的底部"
+
+#: ../admin/social_sharing.php:911
+msgid "Specify position of the sharing interface with respect to the content"
+msgstr "指定相对于内容而言共享界面的位置"
+
+#: ../admin/social_sharing.php:919
+#: ../admin/social_sharing.php:1359
+msgid "Placement"
+msgstr "放置"
+
+#: ../admin/social_sharing.php:923
+#: ../admin/social_sharing.php:1363
+#: ../admin/social_login.php:676
+#: ../admin/social_login.php:706
+#: ../admin/like_buttons.php:214
+#: ../admin/like_buttons.php:498
+msgid "Homepage"
+msgstr "主页"
+
+#: ../admin/social_sharing.php:925
+#: ../admin/social_sharing.php:1365
+#: ../admin/like_buttons.php:216
+#: ../admin/like_buttons.php:500
+msgid "Posts"
+msgstr "文章"
+
+#: ../admin/social_sharing.php:927
+#: ../admin/social_sharing.php:1367
+#: ../admin/like_buttons.php:218
+#: ../admin/like_buttons.php:502
+msgid "Pages"
+msgstr "页面"
+
+#: ../admin/social_sharing.php:929
+#: ../admin/social_sharing.php:1369
+#: ../admin/like_buttons.php:220
+#: ../admin/like_buttons.php:504
+#, fuzzy
+msgid "Excerpts and Posts page"
+msgstr "摘录 (在主页)"
+
+#: ../admin/social_sharing.php:931
+#: ../admin/social_sharing.php:1371
+#: ../admin/like_buttons.php:222
+#: ../admin/like_buttons.php:506
+msgid "Category Archives"
+msgstr "目录类别"
+
+#: ../admin/social_sharing.php:933
+#: ../admin/social_sharing.php:1373
+#: ../admin/like_buttons.php:224
+#: ../admin/like_buttons.php:508
+msgid "Archive Pages (Category, Tag, Author or Date based pages)"
+msgstr "存档页 (分类、 标记、 作者或根据日期分类的页)"
+
+#: ../admin/social_sharing.php:949
+#: ../admin/like_buttons.php:240
+msgid "BuddyPress activity"
+msgstr "BuddyPress 活动"
+
+#: ../admin/social_sharing.php:951
+#: ../admin/like_buttons.php:243
+msgid "BuddyPress group (only at top of content)"
+msgstr "BuddyPress 组 (只有顶部的内容)"
+
+#: ../admin/social_sharing.php:957
+#: ../admin/social_sharing.php:1395
+#: ../admin/like_buttons.php:250
+#: ../admin/like_buttons.php:529
+msgid "BBPress forum"
+msgstr "BBPress 论坛"
+
+#: ../admin/social_sharing.php:960
+#: ../admin/social_sharing.php:1398
+#: ../admin/like_buttons.php:253
+#: ../admin/like_buttons.php:532
+msgid "BBPress topic"
+msgstr "BBPress 主题"
+
+#: ../admin/social_sharing.php:963
+#: ../admin/like_buttons.php:256
+msgid "BBPress reply"
+msgstr "BBPress 答复"
+
+#: ../admin/social_sharing.php:970
+#: ../admin/like_buttons.php:263
+msgid "After individual product at WooCommerce Shop page"
+msgstr "在Woocommerce購物頁面的单一产品之后"
+
+#: ../admin/social_sharing.php:973
+#: ../admin/like_buttons.php:266
+msgid "WooCommerce Product Page"
+msgstr "Woocommerce產品頁面"
+
+#: ../admin/social_sharing.php:976
+#: ../admin/like_buttons.php:269
+msgid "WooCommerce Thankyou Page"
+msgstr "WooCommerce 致谢页面"
+
+#: ../admin/social_sharing.php:987
+msgid "Specify the pages where you want to enable Sharing interface"
+msgstr "指定要启用共享界面的页面"
+
+#: ../admin/social_sharing.php:995
+#: ../admin/social_sharing.php:1416
+msgid "Show share counts"
+msgstr "显示共享计数"
+
+#: ../admin/social_sharing.php:1000
+#: ../admin/social_sharing.php:1421
+msgid "Official share counts are supported for Facebook, Linkedin, GooglePlus, Delicious, Buffer, Reddit, Pinterest, Stumbleupon and Vkontakte"
+msgstr "官方共享计数支持Facebook，Linkedin，GooglePlus、 Delicious、Buffe、 Reddit、 Pinterest，Stumbleupon 和 Vkontakte "
+
+#: ../admin/social_sharing.php:1017
+#: ../admin/social_sharing.php:1429
+#, php-format
+msgid "Use <a href=\"%s\" target=\"_blank\">NewShareCounts</a> to show Twitter share counts"
+msgstr "使用<a href=“%s” target=“_blank”>NewShareCounts</a>来显示 Twitter 共享计数"
+
+#: ../admin/social_sharing.php:1019
+#: ../admin/social_sharing.php:1431
+#, php-format
+msgid "For this to work, you have to enter your website url %s and sign in using Twitter at <a href=\"%s\" target=\"_blank\">their website</a>"
+msgstr "对这项工作，你必须输入网站 url %s，并在使用 Twitter在<a href=“%s” target=“_blank”> 登录他们的网站</a>"
+
+#: ../admin/social_sharing.php:1021
+#: ../admin/social_sharing.php:1433
+#, php-format
+msgid "Use <a href=\"%s\" target=\"_blank\">OpenShareCount</a> to show Twitter share counts"
+msgstr "使用<a href=“%s” target=“_blank”>OpenShareCount</a>来显示 Twitter 共享计数"
+
+#: ../admin/social_sharing.php:1023
+#: ../admin/social_sharing.php:1435
+#, php-format
+msgid "For this to work, you have to sign up and register your website url %s at <a href=\"%s\" target=\"_blank\">their website</a>"
+msgstr "这项工作，你必须在<a href=“%s” target=“_blank”>他们的网站</a>注册和登记您的网址%s "
+
+#: ../admin/social_sharing.php:1030
+#: ../admin/social_sharing.php:1442
+msgid "If enabled, share counts are displayed above sharing icons."
+msgstr "如果启用，共享计数在共享图标上面显示。"
+
+#: ../admin/social_sharing.php:1039
+#: ../admin/social_sharing.php:1451
+msgid "Show total shares"
+msgstr "分享总数"
+
+#: ../admin/social_sharing.php:1049
+#: ../admin/social_sharing.php:1461
+msgid "If enabled, total shares will be displayed with sharing icons"
+msgstr "如果启用，共享计数在共享图标上面显示。"
+
+#: ../admin/social_sharing.php:1058
+#: ../admin/social_sharing.php:1470
+msgid "Enable 'More' icon"
+msgstr "启用“更多”图标"
+
+#: ../admin/social_sharing.php:1068
+#: ../admin/social_sharing.php:1480
+msgid "If enabled, \"More\" icon will be displayed after selected sharing icons which shows additional sharing networks in popup"
+msgstr "如果启用，将选定的共享图标后，会显示“更多”图标，它显示在弹出的其他共享网络"
+
+#: ../admin/social_sharing.php:1084
+msgid "Floating Sharing Interface Options"
+msgstr "浮动共享界面选项"
+
+#: ../admin/social_sharing.php:1090
+msgid "Enable Floating sharing interface"
+msgstr "启用共享接口标准"
+
+#: ../admin/social_sharing.php:1100
+msgid "Master control to enable floating sharing widget"
+msgstr "主控，使共享浮动部件"
+
+#: ../admin/social_sharing.php:1272
+msgid "Specify the color or hex code (example #cc78e0) for the background of vertical sharing bar. Leave empty for transparent. You can get the hex code of the required color from <a href=\"http://www.colorpicker.com/\" target=\"_blank\">this link</a>"
+msgstr "指定垂直界面的背景的颜色或十六进制代码 (例如 #cc78e0)。留空为透明。你可以从<a href=“http://www.colorpicker.com/“ target=“_blank”>这个链接</a>获得所需的颜色的十六进制代码"
+
+#: ../admin/social_sharing.php:1302
+#: ../admin/like_buttons.php:437
+msgid "Left offset"
+msgstr "左偏移"
+
+#: ../admin/social_sharing.php:1312
+msgid "Specify a number. Increase in number will shift sharing interface towards right and decrease will shift it towards left. Number can be negative too."
+msgstr "指定一个数字。数目增加将朝左边移动和减少则向右。数值可以为负。"
+
+#: ../admin/social_sharing.php:1322
+#: ../admin/like_buttons.php:457
+msgid "Right offset"
+msgstr "右偏移"
+
+#: ../admin/social_sharing.php:1332
+msgid "Specify a number. Increase in number will shift sharing interface towards left and decrease will shift it towards right. Number can be negative too."
+msgstr "指定一个数字。数目增加将朝左边移动和减少则向右。数值可以为负。"
+
+#: ../admin/social_sharing.php:1341
+#: ../admin/like_buttons.php:476
+msgid "Top offset"
+msgstr "顶部偏移"
+
+#: ../admin/social_sharing.php:1351
+msgid "Specify a number. Increase in number will shift sharing interface towards bottom and decrease will shift it towards top."
+msgstr "指定一个数字。增加数目将朝底部移动和减少则为向顶部。"
+
+#: ../admin/social_sharing.php:1387
+#: ../admin/like_buttons.php:522
+msgid "BuddyPress group"
+msgstr "BuddyPress 组"
+
+#: ../admin/social_sharing.php:1408
+msgid "Specify the pages where you want to enable vertical Sharing interface"
+msgstr "指定要实现垂直共享界面的网页"
+
+#: ../admin/social_sharing.php:1488
+msgid "Vertical floating bar responsiveness"
+msgstr "立式浮栏响应能力"
+
+#: ../admin/social_sharing.php:1491
+#, php-format
+msgid "Display vertical interface only when screen is wider than %s pixels"
+msgstr "只有屏幕宽度超过 %s 像素时显示垂直界面"
+
+#: ../admin/social_sharing.php:1498
+msgid "Display vertical interface only when screen is wider than the width specified."
+msgstr "只有在指定的宽度比宽屏幕时显示垂直界面。"
+
+#: ../admin/social_sharing.php:1506
+msgid "Horizontal floating bar responsiveness"
+msgstr "水平浮动栏响应"
+
+#: ../admin/social_sharing.php:1509
+#, php-format
+msgid "Stick vertical floating interface horizontally at bottom only when screen is narrower than %s pixels"
+msgstr "只有当屏幕小于 %s 像素时，粘性垂直浮动界面底部的水平位置"
+
+#: ../admin/social_sharing.php:1516
+msgid "Stick vertical floating interface horizontally at bottom only when screen is narrower than the width specified"
+msgstr "只有当屏幕小于指定的宽度时，粘性垂直浮动界面底部的水平位置"
+
+#: ../admin/social_sharing.php:1526
+msgid "Horizontal floating bar position"
+msgstr "水平浮动栏位置"
+
+#: ../admin/social_sharing.php:1529
+#, php-format
+msgid "%s pixels from %s"
+msgstr "%s像素来自%s"
+
+#: ../admin/social_sharing.php:1536
+msgid "Alignment of horizontal floating interface. Number can be negative too."
+msgstr "对齐方式的水平浮动界面。数值可以为负。"
+
+#: ../admin/social_sharing.php:1555
+#: ../admin/like_buttons.php:578
+msgid "Url shortener"
+msgstr "短网址"
+
+#: ../admin/social_sharing.php:1561
+msgid "Use shortlinks already installed"
+msgstr "短网址已安装，发推按钮"
+
+#: ../admin/social_sharing.php:1571
+msgid "Uses default short url permalinks without using any additional plugin"
+msgstr ""
+
+#: ../admin/social_sharing.php:1579
+msgid "Enable bit.ly url shortener for sharing"
+msgstr "用于使用bit.ly url短链共享"
+
+#: ../admin/social_sharing.php:1589
+#: ../admin/like_buttons.php:612
+msgid "Master control to enable bit.ly url shortening for sharing"
+msgstr "主控件以启用 bit.ly url 短链共享"
+
+#: ../admin/social_sharing.php:1597
+#: ../admin/like_buttons.php:620
+msgid "bit.ly username"
+msgstr "Bit.ly 帳號"
+
+#: ../admin/social_sharing.php:1607
+#: ../admin/like_buttons.php:630
+#, php-format
+msgid "Login to your bit.ly account and navigate to <a href=\"%s\" target=\"_blank\">this link</a> to get bit.ly username"
+msgstr "登录到您的 bit.ly 帐户并到<a href=“%s” target=“_blank”>链接</a>以获得有关 bit.ly 用户名"
+
+#: ../admin/social_sharing.php:1616
+#: ../admin/like_buttons.php:639
+msgid "bit.ly API Key"
+msgstr "bit.ly API 密钥"
+
+#: ../admin/social_sharing.php:1626
+#: ../admin/like_buttons.php:649
+#, php-format
+msgid "Login to your bit.ly account and navigate to <a href=\"%s\" target=\"_blank\">this link</a> to get your API key"
+msgstr "登录到您的 bit.ly 帐户并到<a href=“%s” target=“_blank”>链接</a>以获得有关您的 API 密钥"
+
+#: ../admin/social_sharing.php:1635
+#: ../admin/like_buttons.php:658
+msgid "Clear Bitly Cache"
+msgstr ""
+
+#: ../admin/social_sharing.php:1639
+#: ../admin/like_buttons.php:662
+msgid "ShortUrl cache cleared successfully."
+msgstr "ShortUrl 缓存成功清除。"
+
+#: ../admin/social_sharing.php:1646
+#: ../admin/like_buttons.php:669
+msgid "Use this to delete short urls saved in database. Handy, if urls of your website have been changed but short urls are still being generated for old urls."
+msgstr "使用此选项删除保存在数据库中的短网址。如果你的网站的 url 已经改变了，但短网址仍为旧网址，手动处理。"
+
+#: ../admin/social_sharing.php:1655
+msgid "Share Count Cache"
+msgstr ""
+
+#: ../admin/social_sharing.php:1661
+msgid "Refresh Share Count cache every"
+msgstr ""
+
+#: ../admin/social_sharing.php:1666
+msgid "Second(s)"
+msgstr ""
+
+#: ../admin/social_sharing.php:1667
+msgid "Minute(s)"
+msgstr ""
+
+#: ../admin/social_sharing.php:1668
+msgid "Hour(s)"
+msgstr ""
+
+#: ../admin/social_sharing.php:1669
+msgid "Day(s)"
+msgstr ""
+
+#: ../admin/social_sharing.php:1677
+msgid "Frequent cache refreshing results in slower loading of pages with share counts enabled"
+msgstr ""
+
+#: ../admin/social_sharing.php:1685
+msgid "Clear Share Counts Cache"
+msgstr ""
+
+#: ../admin/social_sharing.php:1689
+#, fuzzy
+msgid "Share Counts cache cleared successfully."
+msgstr "ShortUrl 缓存成功清除。"
+
+#: ../admin/social_sharing.php:1696
+msgid "Use this to clear cached share counts"
+msgstr ""
+
+#: ../admin/social_sharing.php:1705
+#: ../admin/social_sharing.php:1711
+#: ../admin/social_commenting.php:311
+#: ../admin/like_buttons.php:678
+#: ../admin/like_buttons.php:684
+msgid "Language"
+msgstr "语言"
+
+#: ../admin/social_sharing.php:1721
+#, php-format
+msgid "Enter the code of the language you want to use for like buttons. You can find the language codes at <a href=\"%s\" target=\"_blank\">this link</a>. Leave it empty for default language(English)"
+msgstr "输入你想要为喜欢按钮指定的语言代码。你可以在<a href=“%s” target=“_blank”>这个链接</a>找到语言代码。留空为默认 (英语)"
+
+#: ../admin/social_sharing.php:1730
+msgid "Username in sharing"
+msgstr "共享的用户名"
+
+#: ../admin/social_sharing.php:1736
+msgid "Twitter username (without @)"
+msgstr "Twitter账号(无@)"
+
+#: ../admin/social_sharing.php:1746
+#: ../admin/social_sharing.php:1765
+msgid "Provided username will be appended after the content being shared as \"via @USERNAME\". Leave empty if you do not want any username in the content being shared."
+msgstr "提供的用户名将在”通过 @USERNAME”的内容共享后。如果你不想用户名在共享内容中，请留空。"
+
+#: ../admin/social_sharing.php:1755
+msgid "Buffer username (without @)"
+msgstr "缓冲用户名 (无 @)"
+
+#: ../admin/social_sharing.php:1792
+msgid "Facebook Sharing Troubleshooter"
+msgstr "Facebook 分享疑难解答"
+
+#: ../admin/social_sharing.php:1797
+msgid "If Facebook sharing is not working fine, click at the following link and enter the problematic url (where Facebook sharing is not working properly) of your website in the text field:"
+msgstr "如果 Facebook 分享不工作，请单击下面的链接，在文本中输入您的网站的疑难 url (指 Facebook 分享工作不正常的地址):"
+
+#: ../admin/social_sharing.php:1813
+msgid "How can I show share counts of my website rather than of individual pages/posts?"
+msgstr "怎样表示我网站的共享计数，而不是个别网页/文章?"
+
+#: ../admin/social_sharing.php:1814
+msgid "How can I disable sharing on particular page/post?"
+msgstr "如何在特定的页面文章上禁用共享？"
+
+#: ../admin/social_sharing.php:1815
+msgid "How can I specify minimum sharing count for sharing networks?"
+msgstr "如何为共享网络共享指定最少数目?"
+
+#: ../admin/social_sharing.php:1816
+msgid "How to share specific page?"
+msgstr "如何共享特定页面?"
+
+#: ../admin/social_sharing.php:1817
+msgid "How to integrate Google Analytics with sharing?"
+msgstr "谷歌分析与集成"
+
+#: ../admin/social_sharing.php:1818
+msgid "How to customize the look of total share counts?"
+msgstr "如何自定义总共享计数的外观?"
+
+#: ../admin/social_sharing.php:1819
+msgid "How to customize the look of individual share counts?"
+msgstr "如何自定义个人共享计数的外观?"
+
+#: ../admin/social_sharing.php:1820
+msgid "How to show Whatsapp icon only on mobile devices?"
+msgstr "如何仅在移动设备上显示 Whatsapp 图标?"
+
+#: ../admin/social_sharing.php:1821
+msgid "How to hide arrow after floating sharing bar?"
+msgstr ""
+
+#: ../admin/social_sharing.php:1822
+msgid "Why are Share Counts Not Updating?"
+msgstr ""
+
+#: ../admin/social_sharing.php:1823
+#: ../admin/like_buttons.php:767
+msgid "Why is there so much space between like buttons?"
+msgstr ""
+
+#: ../admin/social_sharing.php:1824
+#: ../admin/like_buttons.php:768
+msgid "Why are floating sharing/like buttons not appearing at homepage?"
+msgstr ""
+
+#: ../admin/social_commenting.php:13
+msgid "Enable Social Commenting"
+msgstr "启用社会化评论"
+
+#: ../admin/social_commenting.php:23
+msgid "Master control to enable Social Commenting"
+msgstr "主控件，以使社会共享"
+
+#: ../admin/social_commenting.php:34
+msgid "Social Commenting"
+msgstr "社会评论"
+
+#: ../admin/social_commenting.php:35
+#: ../admin/social_commenting.php:440
+msgid "Shortcode"
+msgstr "短码"
+
+#: ../admin/social_commenting.php:48
+msgid "Order of tabs in commenting interface"
+msgstr "在评论界面选项卡的顺序"
+
+#: ../admin/social_commenting.php:58
+msgid "Order of the tabs shown in social commenting interface. Defaults to wordpress,facebook,googleplus,disqus"
+msgstr "在社会评论界面中显示的选项卡的顺序。默认值为 wordpress，facebook，googleplus，disqus"
+
+#: ../admin/social_commenting.php:66
+msgid "Comment area label"
+msgstr "评论区标签"
+
+#: ../admin/social_commenting.php:76
+msgid "Label for comment area"
+msgstr "在评论表单启用"
+
+#: ../admin/social_commenting.php:89
+msgid "Enable Social Commenting at"
+msgstr "在此禁用社会化评论"
+
+#: ../admin/social_commenting.php:108
+msgid "Specify the page/post groups where you want to enable Social Commenting"
+msgstr "指定要启用社会评论的页面/文章组"
+
+#: ../admin/social_commenting.php:119
+msgid "HTML ID of comment form container"
+msgstr "评论表单容器的HTML ID"
+
+#: ../admin/social_commenting.php:129
+msgid "HTML ID of container element of the default comment form at front end. Leave empty for default ID - \"respond\". You need to specify it if default comment form is appearing and Social Commenting is not getting enabled at front-end of your website."
+msgstr "在前端默认评论表单的HTML ID 的容器元素。留空为默认 ID-“respond”。如果在您网站的前端出现默认评论形式和社会评论无法启用，您需要指定它。"
+
+#: ../admin/social_commenting.php:139
+msgid "Labels"
+msgstr "标签"
+
+#: ../admin/social_commenting.php:144
+msgid "Label for WordPress Commenting tab"
+msgstr "WordPress 评论选项卡的标签"
+
+#: ../admin/social_commenting.php:153
+msgid "Label for Facebook Commenting tab"
+msgstr "Facebook 评论选项卡的标签"
+
+#: ../admin/social_commenting.php:162
+msgid "Label for G+ Commenting tab"
+msgstr "G+ 评论选项卡的标签"
+
+#: ../admin/social_commenting.php:171
+msgid "Label for Disqus Commenting tab"
+msgstr "Disqus 评论选项卡的标签"
+
+#: ../admin/social_commenting.php:182
+msgid "Facebook Commenting Options"
+msgstr "Facebook 评论选项"
+
+#: ../admin/social_commenting.php:188
+msgid "Enable Facebook Comments notification and moderation"
+msgstr "启用 Facebook 评论通知和调节"
+
+#: ../admin/social_commenting.php:196
+#: ../admin/social_commenting.php:206
+msgid "Enable Facebook Commenting"
+msgstr "启用Facebook评论"
+
+#: ../admin/social_commenting.php:214
+#: ../admin/social_commenting.php:372
+msgid "Url to comment on"
+msgstr "评论上的 Url"
+
+#: ../admin/social_commenting.php:224
+msgid "The absolute URL that comments posted will be permanently associated with. Stories on Facebook about comments posted, will link to this URL.<br/>If left empty <strong>(Recommended)</strong>, url of the webpage will be used at which commenting is enabled."
+msgstr "以评论的绝对 URL 将与永久关联。在 Facebook 上关于已评论的事件，将链接到此 URL。<br>如果留空<strong>(推荐)</strong>，在已启用评论中，主页url将被使用。"
+
+#: ../admin/social_commenting.php:232
+#: ../admin/social_commenting.php:354
+msgid "Width"
+msgstr "宽度"
+
+#: ../admin/social_commenting.php:242
+msgid "Leave empty to auto-adjust the width. The width (in pixels) of the Comments block."
+msgstr "请留空以自动调整宽度。评论块的宽度 (以像素为单位)。"
+
+#: ../admin/social_commenting.php:250
+msgid "Color Scheme"
+msgstr "配色方案"
+
+#: ../admin/social_commenting.php:254
+msgid "Light"
+msgstr "亮度"
+
+#: ../admin/social_commenting.php:255
+msgid "Dark"
+msgstr "暗度"
+
+#: ../admin/social_commenting.php:263
+msgid "The color scheme used by the plugin. Can be \"light\" or \"dark\"."
+msgstr "该插件所使用的颜色方案。可以是”明亮”或”暗淡”。"
+
+#: ../admin/social_commenting.php:271
+msgid "Number of comments"
+msgstr "评论数量"
+
+#: ../admin/social_commenting.php:281
+msgid "The number of comments to show by default. The minimum value is 1. Defaults to 10"
+msgstr "要在默认情况下显示的评论数目。最小值是 1。默认值为 10"
+
+#: ../admin/social_commenting.php:289
+msgid "Order by"
+msgstr "排序规则"
+
+#: ../admin/social_commenting.php:293
+msgid "Social"
+msgstr "社交"
+
+#: ../admin/social_commenting.php:294
+msgid "Reverse Time"
+msgstr "反转时间"
+
+#: ../admin/social_commenting.php:295
+msgid "Time"
+msgstr "时间"
+
+#: ../admin/social_commenting.php:303
+msgid "The order to use when displaying comments."
+msgstr "显示评论时的顺序。"
+
+#: ../admin/social_commenting.php:321
+#, php-format
+msgid "Enter the code of the language you want to use to display commenting. You can find the language codes at <a href=\"%s\" target=\"_blank\">this link</a>. Leave it empty for default language(English)"
+msgstr "输入你想要为喜欢按钮指定的语言代码。你可以在<a href=“%s” target=“_blank”>这个链接</a>找到语言代码。留空为默认 (英语)"
+
+#: ../admin/social_commenting.php:330
+msgid "Google Plus Commenting Options"
+msgstr "Google + 评论选项"
+
+#: ../admin/social_commenting.php:336
+#: ../admin/social_commenting.php:346
+msgid "Enable Google Plus Commenting"
+msgstr "启用 Google + 评论"
+
+#: ../admin/social_commenting.php:364
+msgid "Width of GooglePlus Commenting interface. Leave empty for auto adjust"
+msgstr "GooglePlus 评论界面的宽度。留空自动调整"
+
+#: ../admin/social_commenting.php:382
+msgid "The absolute URL that comments posted will be permanently associated with. Stories on Google Plus about comments posted, will link to this URL.<br/>If left empty <strong>(Recommended)</strong>, url of the webpage will be used at which commenting is enabled."
+msgstr "已发评论的绝对 URL 将与之永久关联。在 Facebook 上关于已评论的事件将链接到此 URL。<br>如果留空<strong>(推荐)</strong>，在已启用评论中，主页url将被使用。"
+
+#: ../admin/social_commenting.php:391
+msgid "Disqus Commenting Options"
+msgstr "Disqus 评论选项"
+
+#: ../admin/social_commenting.php:397
+#: ../admin/social_commenting.php:407
+msgid "Enable Disqus Commenting"
+msgstr "启用 Disqus 评论"
+
+#: ../admin/social_commenting.php:415
+msgid "Disqus Shortname"
+msgstr "Disqus 短名称"
+
+#: ../admin/social_commenting.php:425
+msgid "<strong>Required to use Disqus commenting.</strong> For more info on shortname, visit following link."
+msgstr "<strong>要求使用 Disqus 评论。</strong>关于短名称的更多信息，请访问下面链接。"
+
+#: ../admin/social_commenting.php:442
+msgid "Social Commenting Shortcode"
+msgstr "社会化评论简码"
+
+#: ../admin/social_commenting.php:454
+msgid "How can I disable Social Commenting at individual page/post?"
+msgstr "如何在独立页/文章上禁用社会评论?"
+
+#: ../admin/social_commenting.php:455
+msgid "How to disable default comment form from Social Commenting?"
+msgstr "如何从社会评论禁用默认评论表单?"
+
+#: ../admin/social_login.php:14
+msgid "Enable Social Login"
+msgstr "启用社交登录"
+
+#: ../admin/social_login.php:24
+msgid "Master control for Social Login. It must be checked to enable Social Login functionality"
+msgstr "社会化登录的主控。为使用社会登录功能必须验证它。"
+
+#: ../admin/social_login.php:35
+#: ../admin/social_login.php:46
+msgid "Basic Configuration"
+msgstr "基本配置"
+
+#: ../admin/social_login.php:36
+#, fuzzy
+msgid "Advanced Configuration"
+msgstr "基本配置"
+
+#: ../admin/social_login.php:38
+#: ../admin/social_login.php:831
+msgid "XProfile Integration"
+msgstr ""
+
+#: ../admin/social_login.php:53
+msgid "Disable user registration via Social Login"
+msgstr "禁用社会登录用户注册"
+
+#: ../admin/social_login.php:63
+msgid "After enabling this option, new users will not be able to login through social login. Only existing users will be able to social login."
+msgstr "启用此选项之后，新用户不能够通过社交登录了。只有现有的用户将能够社交登录。"
+
+#: ../admin/social_login.php:72
+msgid "Redirection url"
+msgstr "重定向 url"
+
+#: ../admin/social_login.php:82
+msgid "User will be redirected to this page after unsuccessful registration attempt via Social Login. You can specify the url of registration form or of a page showing message regarding disabled registration through Social Login."
+msgstr "通过社会化登录成功的用户将重定向到此页后。您可以指定 url 的注册表单或显示有关禁止通过社交登录注册消息的页面"
+
+#: ../admin/social_login.php:91
+msgid "Select providers"
+msgstr "选择提供商"
+
+#: ../admin/social_login.php:96
+msgid "Facebook"
+msgstr "Facebook"
+
+#: ../admin/social_login.php:100
+msgid "Twitter"
+msgstr "Twitter"
+
+#: ../admin/social_login.php:104
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: ../admin/social_login.php:108
+msgid "Google+"
+msgstr "Google+"
+
+#: ../admin/social_login.php:112
+msgid "Vkontakte"
+msgstr "Vkontakte"
+
+#: ../admin/social_login.php:116
+msgid "Instagram"
+msgstr "Instagram"
+
+#: ../admin/social_login.php:120
+msgid "Xing"
+msgstr "Xing社交网站"
+
+#: ../admin/social_login.php:124
+msgid "Steam"
+msgstr ""
+
+#: ../admin/social_login.php:129
+#, fuzzy
+msgid "Twitch"
+msgstr "Twitter"
+
+#: ../admin/social_login.php:137
+msgid "Select Social ID provider to enable in Social Login"
+msgstr "选择社会ID提供商以启用社会化登录"
+
+#: ../admin/social_login.php:145
+msgid "Facebook App ID"
+msgstr "Facebook 应用 ID"
+
+#: ../admin/social_login.php:155
+#, php-format
+msgid "Required for Facebook Social Login to work. Please follow the documentation at <a href=\"%s\" target=\"_blank\">this link</a> to get Facebook App ID"
+msgstr "需要Facebook社交登录。请按照在<a href=“%s” target=“_blank”>的链接 </a>得到Facebook的应用程序ID"
+
+#: ../admin/social_login.php:157
+msgid "Paste following url in <strong>Site URL</strong> option at the link mentioned"
+msgstr "在提到的链接选项中粘贴以下url<strong>网站URL</strong>"
+
+#: ../admin/social_login.php:167
+msgid "Twitter API Key"
+msgstr "Twitter API密钥"
+
+#: ../admin/social_login.php:177
+#, php-format
+msgid "Required for Twitter Social Login to work. Please follow the documentation at <a href=\"%s\" target=\"_blank\">this link</a> to get Twitter API Key"
+msgstr "需要Twitter社交登录。请按照在<a href=“%s” target=“_blank”>的链接</a>得到Twitter的API密钥"
+
+#: ../admin/social_login.php:179
+#: ../admin/social_login.php:201
+msgid "Paste following url in <strong>Website</strong> and <strong>Callback URL</strong> options at the link mentioned"
+msgstr "在提到的链接，粘贴以下url <strong>网站</strong> 以及<strong>回调 URL</strong> 的选项"
+
+#: ../admin/social_login.php:189
+msgid "Twitter API Secret"
+msgstr "Twitter API Secret"
+
+#: ../admin/social_login.php:199
+#, php-format
+msgid "Required for Twitter Social Login to work. Please follow the documentation at <a href=\"%s\" target=\"_blank\">this link</a> to get Twitter API Secret"
+msgstr "需要Twitter社交登录。请按照在<a href=“%s” target=“_blank”>的链接</a>得到Twitter的API密钥"
+
+#: ../admin/social_login.php:211
+msgid "LinkedIn API Key"
+msgstr "LlinkedIn App 的 API 密钥:"
+
+#: ../admin/social_login.php:221
+#, php-format
+msgid "Required for LinkedIn Social Login to work. Please follow the documentation at <a href=\"%s\" target=\"_blank\">this link</a> to get LinkedIn API Key"
+msgstr "需要LinkedIn社交登录。请按照文件在<a href=“%s” target=“_blank”>这个链接</a>得到LinkedIn的API密钥"
+
+#: ../admin/social_login.php:223
+#: ../admin/social_login.php:289
+msgid "Paste following url in <strong>Website URL</strong> option at the link mentioned"
+msgstr "在提到的链接选项中粘贴以下url<strong>网站URL</strong>"
+
+#: ../admin/social_login.php:233
+msgid "Google+ Client ID"
+msgstr "Google+ 客户端ID"
+
+#: ../admin/social_login.php:243
+#, php-format
+msgid "Required for GooglePlus Social Login to work. Please follow the documentation at <a href=\"%s\" target=\"_blank\">this link</a> to get GooglePlus Client ID"
+msgstr "需要GOOGLEPLUS社会登录工作。请按照文件在<a href=“%s” target=“_blank”>这个链接</a>得到GOOGLEPLUS客户端ID"
+
+#: ../admin/social_login.php:245
+msgid "Paste following url in <strong>AUTHORIZED JAVASCRIPT ORIGINS</strong> and <strong>AUTHORIZED REDIRECT URI</strong> options at the link mentioned"
+msgstr "在<strong>授权的JAVASCRIPT ORIGINS</strong> 和 <strong>授权的重定向URI</strong>选项里（该选项在链接里提到），粘贴以下url网址"
+
+#: ../admin/social_login.php:255
+msgid "Vkontakte Application ID"
+msgstr "VKontakte应用程序ID"
+
+#: ../admin/social_login.php:265
+#, php-format
+msgid "Required for Vkontakte Social Login to work. Please follow the documentation at <a href=\"%s\" target=\"_blank\">this link</a> to get Vkontakte Application ID"
+msgstr "要求Vkontakte社会登录。请按照文件在<a href=“%s” target=“_blank”>这个环节</a>得到的Vkontakte应用程序ID"
+
+#: ../admin/social_login.php:267
+msgid "Paste following url in <strong>Site address</strong> option at the link mentioned"
+msgstr "在<strong>网站地址</strong>选项里（该选项在链接里提到）粘贴以下网址"
+
+#: ../admin/social_login.php:277
+msgid "Instagram Client ID"
+msgstr "Instagram客户端ID"
+
+#: ../admin/social_login.php:287
+#, php-format
+msgid "Required for Instagram Social Login to work. Please follow the documentation at <a href=\"%s\" target=\"_blank\">this link</a> to get Instagram Client ID"
+msgstr "需要Instagram的社交登录。请按照文件在<a href=“%s” target=“_blank”>这个环节</a>得到的Instagram客户端ID"
+
+#: ../admin/social_login.php:299
+msgid "Xing Consumer Key"
+msgstr "Xing Consumer Key"
+
+#: ../admin/social_login.php:309
+#, php-format
+msgid "Required for Xing Social Login to work. Please follow the documentation at <a href=\"%s\" target=\"_blank\">this link</a> to get Xing Consumer Key"
+msgstr "需要Xing社会化登录。请按照文件在<a href=“%s” target=“_blank”>这个环节</a>得到消费者邢重点"
+
+#: ../admin/social_login.php:311
+#: ../admin/social_login.php:333
+msgid "Paste following url in <strong>Callback domain</strong> option at the link mentioned"
+msgstr "在<strong>回调域</strong>选项（该选项在链接里提到），粘贴以下url"
+
+#: ../admin/social_login.php:321
+msgid "Xing Consumer Secret"
+msgstr "Xing Consumer Secret"
+
+#: ../admin/social_login.php:331
+#, php-format
+msgid "Required for Xing Social Login to work. Please follow the documentation at <a href=\"%s\" target=\"_blank\">this link</a> to get Xing Consumer Secret"
+msgstr "需要Xing社会化登录。请按照文件在<a href=“%s” target=“_blank”>这个环节</a>得到xing Consumer Secret"
+
+#: ../admin/social_login.php:343
+#, fuzzy
+msgid "Twitch Client ID"
+msgstr "Instagram客户端ID"
+
+#: ../admin/social_login.php:353
+#, fuzzy, php-format
+msgid "Required for Twitch Social Login to work. Please follow the documentation at <a href=\"%s\" target=\"_blank\">this link</a> to get Twitch Client ID"
+msgstr "需要Twitter社交登录。请按照在<a href=“%s” target=“_blank”>的链接</a>得到Twitter的API密钥"
+
+#: ../admin/social_login.php:355
+#, fuzzy
+msgid "Paste following url in <strong>Redirect URI</strong> option at the link mentioned"
+msgstr "在提到的链接选项中粘贴以下url<strong>网站URL</strong>"
+
+#: ../admin/social_login.php:371
+#, fuzzy
+msgid "Social Login Options"
+msgstr "社交账户登陆"
+
+#: ../admin/social_login.php:387
+msgid "Text to display above the Social Login interface"
+msgstr "文本显示社会登录界面的上方"
+
+#: ../admin/social_login.php:396
+msgid "Enable at login page"
+msgstr "在登录页面启用"
+
+#: ../admin/social_login.php:406
+msgid "Social Login interface will get enabled at the login page of your website"
+msgstr "社会登录界面会在你的网站的登录页面启用"
+
+#: ../admin/social_login.php:414
+msgid "Enable at register page"
+msgstr "在注册页面启用"
+
+#: ../admin/social_login.php:424
+msgid "Social Login interface will get enabled at the registration page of your website"
+msgstr "社会登录界面会在你的网站的注册页面启用"
+
+#: ../admin/social_login.php:432
+msgid "Enable at comment form"
+msgstr "在评论表单启用"
+
+#: ../admin/social_login.php:442
+msgid "Social Login interface will get enabled at your Wordpress Comment form"
+msgstr "社会登录界面会在您的WordPress评论的表单启用"
+
+#: ../admin/social_login.php:456
+msgid "Enable before WooCommerce Customer Login Form"
+msgstr "WooCommerce客户登录表单前启用"
+
+#: ../admin/social_login.php:466
+msgid "Social Login Interface will get enabled before the customer login form at WooCommerce My Account page"
+msgstr "社会登录界面将在WooCommerce我的帐户页面客户登录表单之前启用"
+
+#: ../admin/social_login.php:474
+msgid "Enable after WooCommerce Customer Login Form"
+msgstr "在WooCommerce客户登录表单后启用"
+
+#: ../admin/social_login.php:484
+msgid "Social Login Interface will get enabled after the customer login form at WooCommerce My Account page"
+msgstr "社会登录界面将在WooCommerce我的帐户页面客户登录表单后启用"
+
+#: ../admin/social_login.php:492
+msgid "Enable at WooCommerce checkout page"
+msgstr "在WooCommerce “结算”页面启用"
+
+#: ../admin/social_login.php:502
+msgid "Social Login Interface will get enabled at WooCommerce checkout page"
+msgstr "社会登录界面将在WooCommerce结帐页面启用"
+
+#: ../admin/social_login.php:513
+msgid "Auto-approve comments made by Social Login users"
+msgstr "自动批准社会登录用户评论"
+
+#: ../admin/social_login.php:523
+msgid "If this option is enabled, and WordPress comment is made by Social Login user, comment will get approved immediately without keeping in moderation."
+msgstr "如果启用该选项，已经WordPress评论由社会登录用户发出，评论将会在不需要批准的情况下立即批准。"
+
+#: ../admin/social_login.php:524
+msgid "Note: This is not related to Facebook comments"
+msgstr "注：这Facebook的评论无关"
+
+#: ../admin/social_login.php:534
+msgid "Enable social avatar"
+msgstr "启用社交头像"
+
+#: ../admin/social_login.php:544
+msgid "Social profile pictures of the logged in user will be displayed as profile avatar"
+msgstr "登录用户的社交资料图片将显示为个人头像"
+
+#: ../admin/social_login.php:554
+msgid "Avatar quality"
+msgstr "头像质量"
+
+#: ../admin/social_login.php:557
+msgid "Average"
+msgstr "一般"
+
+#: ../admin/social_login.php:558
+msgid "Best"
+msgstr "最好"
+
+#: ../admin/social_login.php:565
+msgid "Choose avatar quality"
+msgstr "选择头像质量"
+
+#: ../admin/social_login.php:574
+msgid "Show option for users to update social avatar at BuddyPress profile page"
+msgstr "在BuddyPress的个人资料页面显示更新显示社会化头像选项"
+
+#: ../admin/social_login.php:584
+msgid "If enabled, users would be able to update their social avatar from \"Profile photo\" section in BuddyPress profile at front-end"
+msgstr "如果启用，用户将能够在前端从BuddyPress的个人档案“个人资料照片”部分更新社会化头像"
+
+#: ../admin/social_login.php:605
+msgid "If enabled and Social ID provider does not provide user's email address on login, user will be asked to provide his/her email address. Otherwise, a dummy email will be generated"
+msgstr "如果启用，当登录时如果社会化ID提供商不提供或支持用户的电子邮件地址，用户将被要求提供他/她的电子邮件地址。否则，将产生一个虚拟的电子邮件"
+
+#: ../admin/social_login.php:614
+msgid "Send post-registration email to user to set account password"
+msgstr ""
+
+#: ../admin/social_login.php:624
+msgid "If enabled, an email will be sent to user after registration through Social Login, regarding his/her login credentials (username-password to be able to login via traditional login form)"
+msgstr "如果启用，通过社会化注册登录后，将给用户发送一封email; 包括他/她的登录凭据（用户名，密码，能够通过传统的登录表单登录）"
+
+#: ../admin/social_login.php:632
+#, fuzzy
+msgid "Send new user registration notification email to admin"
+msgstr "禁用社会登录用户注册"
+
+#: ../admin/social_login.php:642
+#, fuzzy
+msgid "If enabled, an email will be sent to admin after new user registers through Social Login, notifying admin about the new user registration"
+msgstr "如果启用，通过社会化注册登录后，将给用户发送一封email; 包括他/她的登录凭据（用户名，密码，能够通过传统的登录表单登录）"
+
+#: ../admin/social_login.php:651
+msgid "Enable social account linking at BuddyPress profile page"
+msgstr "在BuddyPress的个人资料页面启用社交帐户链接"
+
+#: ../admin/social_login.php:661
+msgid "Enable this option to show social account linking interface at BuddyPress profile page"
+msgstr "启用该选项，以在BuddyPress的个人资料页显示社交帐户连结界面"
+
+#: ../admin/social_login.php:670
+msgid "Login redirection"
+msgstr "登录重定向"
+
+#: ../admin/social_login.php:674
+msgid "Same page where user logged in"
+msgstr "用户登录同样的页面"
+
+#: ../admin/social_login.php:678
+#: ../admin/social_login.php:708
+msgid "Account dashboard"
+msgstr "帐户信息中心"
+
+#: ../admin/social_login.php:681
+#: ../admin/social_login.php:711
+msgid "BuddyPress profile page"
+msgstr "BuddyPress 档案"
+
+#: ../admin/social_login.php:684
+#: ../admin/social_login.php:714
+msgid "Custom Url"
+msgstr "自定义 URL"
+
+#: ../admin/social_login.php:692
+msgid "User will be redirected to the selected page after Social Login"
+msgstr "用户社会登录后会被重定向到选择的页面"
+
+#: ../admin/social_login.php:700
+msgid "Registration redirection"
+msgstr "注册重定向"
+
+#: ../admin/social_login.php:704
+msgid "Same page from where user registered"
+msgstr "用户注册同样的页面"
+
+#: ../admin/social_login.php:722
+msgid "User will be redirected to the selected page after registration (first Social Login) through Social Login"
+msgstr "注册之后，通过社会化登录（第一个社会化登录）后，用户将被重定向到所选择的页面"
+
+#: ../admin/social_login.php:730
+msgid "Email popup options"
+msgstr "电子邮件弹出选项"
+
+#: ../admin/social_login.php:736
+msgid "Text on 'Email required' popup"
+msgstr "在“电子邮件必填”弹出口显示的文本"
+
+#: ../admin/social_login.php:746
+msgid "This text will be displayed on email required popup. Leave empty if not required."
+msgstr "在电子邮件必填弹出口将显示的文本。如果不需要请留空。"
+
+#: ../admin/social_login.php:755
+msgid "Error message for 'Email required' popup"
+msgstr "“电子邮件必填”弹出口的错误信息"
+
+#: ../admin/social_login.php:765
+msgid "This message will be displayed to user if it provides invalid or already registered email"
+msgstr "如果无效及已经注册的email地址，这个信息将显示给用户"
+
+#: ../admin/social_login.php:774
+msgid "Email popup height"
+msgstr "电子邮件弹出口高度"
+
+#: ../admin/social_login.php:784
+msgid "If you are seeing vertical scrollbar in the \"Email required\" popup, you can increase the height of popup by specifying in this option. Leave empty for default."
+msgstr "如果在“电子邮件必填”弹出窗口中看到垂直滚动条，你可以通过这个选项指定加大弹出的高度。留空为默认。"
+
+#: ../admin/social_login.php:792
+msgid "Enable email verification"
+msgstr "启用电子邮件验证"
+
+#: ../admin/social_login.php:802
+msgid "If enabled, email provided by the user will be verified by sending a confirmation link to that email. User would not be able to login without verifying his/her email"
+msgstr "如果启用，将向用户的email地址发送一个确认链接进行验证。不验证，用户将无法登录。"
+
+#: ../admin/social_login.php:881
+msgid "Social Login Shortcode & Widget"
+msgstr "社会化登录简码＆小工具"
+
+#: ../admin/social_login.php:882
+msgid "Social Linking Shortcode"
+msgstr "社会链接简码"
+
+#: ../admin/admin.php:8
+msgid "Welcome"
+msgstr "欢迎"
+
+#: ../admin/admin.php:10
+msgid "You are ready to Socialize your website."
+msgstr "你准备好将你的网站社会化。"
+
+#: ../admin/admin.php:11
+msgid "Getting Started"
+msgstr "开始"
+
+#: ../admin/admin.php:12
+msgid "Start configuring the options in the sections below the <strong>Super Socializer</strong> menu in the left sidebar. <strong>Social Sharing</strong> is enabled at your website by default."
+msgstr "在左侧边栏<strong> Super Socializer</strong>菜单下面区域开始配置选项。 <strong>社会共享</strong>在您的网站上默认启用。"
+
+#: ../admin/admin.php:13
+msgid "In <strong>Social Commenting</strong> section, you can configure Social Commenting."
+msgstr "在<strong>社交评论</strong>部分，您可以配置社会化评论。"
+
+#: ../admin/admin.php:14
+msgid "In <strong>Social Login</strong> section, you can select Social ID provders and configure the Social Login options."
+msgstr "在<strong>社会化登录</strong>部分中，您可以选择社会ID 提供商和配置社会登录选项。"
+
+#: ../admin/admin.php:15
+msgid "In <strong>Social Sharing</strong> section, you can choose the Social Networks for Sharing and configure the options for sharing."
+msgstr "在<strong>社会化共享</strong>部分，您可以选择社交网络，并配置共享选项。"
+
+#: ../admin/admin.php:16
+msgid "In <strong>Like Buttons</strong> section, you can choose the like/+1 buttons and configure the options for the same"
+msgstr "在<strong>喜欢按钮</strong>部分，您可以选择喜欢/  ＋1按钮，以及配置一致的选项 "
+
+#: ../admin/like_buttons.php:16
+msgid "Enable Like Buttons"
+msgstr "启用喜欢按钮"
+
+#: ../admin/like_buttons.php:26
+msgid "Master control for like buttons. It must be checked to enable like buttons functionality"
+msgstr "喜欢按钮的主控。它必须被检查，以启用喜欢按钮功能"
+
+#: ../admin/like_buttons.php:48
+msgid "Standard Interface Options"
+msgstr "标准界面选项"
+
+#: ../admin/like_buttons.php:54
+msgid "Enable standard interface"
+msgstr "启用标准界面"
+
+#: ../admin/like_buttons.php:64
+msgid "Master control to enable horizontal like buttons"
+msgstr "水平喜欢按钮的主控件"
+
+#: ../admin/like_buttons.php:89
+#: ../admin/like_buttons.php:338
+msgid "Url to like/share/tweet and display like/share/tweet counts"
+msgstr "喜欢/共享/tweet的网址Url和显示喜欢/共享/tweet计数"
+
+#: ../admin/like_buttons.php:107
+msgid "The text to display above the interface"
+msgstr "在界面上方要显示的文本"
+
+#: ../admin/like_buttons.php:115
+#: ../admin/like_buttons.php:346
+msgid "Select and rearrange providers"
+msgstr "选择和排列提供商"
+
+#: ../admin/like_buttons.php:159
+#: ../admin/like_buttons.php:389
+msgid "Select the providers for interface. Drag them to rearrange."
+msgstr "选择接口提供商。拖动对其进行重新排列。"
+
+#: ../admin/like_buttons.php:181
+#: ../admin/like_buttons.php:428
+msgid "Horizontal alignment of the interface"
+msgstr "接口的水平对齐方式"
+
+#: ../admin/like_buttons.php:202
+msgid "Specify position of the interface with respect to the content"
+msgstr "相对于内容的的界面位置"
+
+#: ../admin/like_buttons.php:210
+#: ../admin/like_buttons.php:494
+msgid "Interface location"
+msgstr "界面位置"
+
+#: ../admin/like_buttons.php:280
+msgid "Specify the pages where you want to enable interface"
+msgstr "指定要启用界面的页面"
+
+#: ../admin/like_buttons.php:297
+msgid "Vertical (Floating) like buttons Options"
+msgstr "垂直 (浮动) 喜欢按钮选项"
+
+#: ../admin/like_buttons.php:303
+msgid "Enable floating like buttons"
+msgstr "启用浮动喜欢按钮"
+
+#: ../admin/like_buttons.php:313
+msgid "Master control to enable vertical (floating) counter widget"
+msgstr "启用垂直 (浮动) 计数器部件的主控件"
+
+#: ../admin/like_buttons.php:407
+msgid "Specify the color or hex code (example #cc78e0) for the background of vertical interface. Leave empty for transparent. You can get the hex code of the required color from <a href=\"http://www.colorpicker.com/\" target=\"_blank\">this link</a>"
+msgstr "指定垂直界面的背景的颜色或十六进制代码 (例如 #cc78e0)。留空为透明。你可以从<a href=“http://www.colorpicker.com/“ target=“_blank”>这个链接</a>获得所需的颜色的十六进制代码"
+
+#: ../admin/like_buttons.php:447
+msgid "Specify a number. Increase in number will shift interface towards right and decrease will shift it towards left. Number can be negative too."
+msgstr "指定一个数字。数目增加将朝左边移动和减少则向右。数值可以为负。"
+
+#: ../admin/like_buttons.php:467
+msgid "Specify a number. Increase in number will shift interface towards left and decrease will shift it towards right. Number can be negative too."
+msgstr "指定一个数字。数目增加将朝左边移动和减少则向右。数值可以为负。"
+
+#: ../admin/like_buttons.php:486
+msgid "Specify a number. Increase in number will shift interface towards bottom and decrease will shift it towards top."
+msgstr "指定一个数字。增加数目将朝底部移动和减少则为向顶部。"
+
+#: ../admin/like_buttons.php:542
+msgid "Specify the pages where you want to enable vertical interface"
+msgstr "指定要启用垂直界面的页面"
+
+#: ../admin/like_buttons.php:550
+msgid "Hide like buttons on mobile devices"
+msgstr "隐藏在移动设备上的按喜欢钮"
+
+#: ../admin/like_buttons.php:560
+msgid "If enabled, vertical like buttons will not appear on mobile devices"
+msgstr "如果启用，垂直头像按钮不会显示在移动设备上"
+
+#: ../admin/like_buttons.php:584
+msgid "Use shortlinks already installed, for tweet button"
+msgstr "短网址已安装，发推按钮"
+
+#: ../admin/like_buttons.php:594
+msgid "Allows for shortened URLs to be used when sharing content if a shortening plugin is installed"
+msgstr "如果安装了一个用于缩短url的插件时，允许使用短链接用于内容共享"
+
+#: ../admin/like_buttons.php:602
+msgid "Enable bit.ly url shortener for tweet button"
+msgstr "为Tween按钮启用 bit.ly 缩短网址"
+
+#: ../admin/like_buttons.php:694
+#, php-format
+msgid "Enter the code of the language you want to use to render counters. You can find the language codes at <a href=\"%s\" target=\"_blank\">this link</a>. Leave it empty for default language(English)"
+msgstr "输入你想要为喜欢按钮指定的语言代码。你可以在<a href=“%s” target=“_blank”>这个链接</a>找到语言代码。留空为默认 (英语)"
+
+#: ../admin/like_buttons.php:703
+msgid "Twitter Username"
+msgstr "Twitter用户名"
+
+#: ../admin/like_buttons.php:709
+msgid "Twitter username for Tweet (without @)"
+msgstr "Twitter用户名 (没有 @)"
+
+#: ../admin/like_buttons.php:719
+msgid "Provided username will be appended after the content being tweeted as \"via @USERNAME\". Leave empty if you do not want any username."
+msgstr "“通过 @USERNAME”，将在缓冲区共享内容之后追加提供的用户名。如果你不想用任何用户名为空。"
+
+#: ../admin/like_buttons.php:728
+msgid "Twitter username for Buffer sharing (without @)"
+msgstr "缓冲区共享的Twitter 用户名 (没有 @)"
+
+#: ../admin/like_buttons.php:738
+msgid "Provided username will be appended after the content in Buffer sharing as \"via @USERNAME\". Leave empty if you do not want any username."
+msgstr "“通过 @USERNAME”，将在缓冲区共享内容之后追加提供的用户名。如果你不想任何用户名为空。"
+
+#: ../admin/like_buttons.php:755
+msgid "Like Buttons Shortcode & Widget"
+msgstr "喜欢按钮简码 & 小部件"
+
+#: ../inc/shortcode.php:179
+#: ../inc/widget.php:43
+msgid "Log Out"
+msgstr "注销"
+
+#: ../inc/shortcode.php:263
+msgid "Enable Social Login from \"Basic Configuration\" section at \"Super Socializer > Social Login\" page in admin panel"
+msgstr "在管理员控制面板中的”Super Socializer > 社会登录”页，从”基本配置”启用社会化登录。"
+
+#: ../inc/social_sharing.php:735
+msgid "Invalid request"
+msgstr "无效请求。"
+
+#: ../inc/social_sharing.php:742
+msgid "Providers not selected"
+msgstr "未选定的供应商"
+
+#: ../inc/social_login.php:639
+msgid "Email"
+msgstr ""
+
+#: ../inc/social_login.php:640
+msgid "Confirm email"
+msgstr ""
+
+#: ../inc/social_login.php:642
+msgid "Save"
+msgstr ""
+
+#: ../inc/social_login.php:643
+msgid "Cancel"
+msgstr ""
+
+#: ../inc/social_login.php:715
+#, fuzzy
+msgid "Email Verification"
+msgstr "启用电子邮件验证"
+
+#: ../inc/social_login.php:717
+msgid "Please click on the following link or paste it in browser to verify your email"
+msgstr ""
+
+#: ../inc/widget.php:11
+msgid "Super Socializer - Login"
+msgstr "Super Socializer-登录"
+
+#: ../inc/widget.php:13
+msgid "Let your website users login/register using their favorite Social ID Provider, such as Facebook, Twitter, Google+, LinkedIn"
+msgstr "让您的网站用户使用他们最喜欢的社会化 ID ，例如 Facebook，Twitter，Google +，LinkedIn 登录/注册"
+
+#: ../inc/widget.php:66
+msgid "Login with your Social Account"
+msgstr ""
+
+#: ../inc/widget.php:74
+msgid "Make sure Social Login is enabled at \"Super Socializer > Social Login\" page."
+msgstr "请确保在”Super Socializer > 社会登录”页上启用社会登录。"
+
+#: ../inc/widget.php:75
+#: ../inc/widget.php:215
+#: ../inc/widget.php:520
+msgid "Title:"
+msgstr "标题："
+
+#: ../inc/widget.php:77
+#: ../inc/widget.php:229
+#: ../inc/widget.php:530
+msgid "Before widget content:"
+msgstr "小工具内容之前:"
+
+#: ../inc/widget.php:79
+#: ../inc/widget.php:231
+#: ../inc/widget.php:532
+msgid "After widget content:"
+msgstr "小工具内容之后:"
+
+#: ../inc/widget.php:82
+#: ../inc/widget.php:233
+#: ../inc/widget.php:397
+#: ../inc/widget.php:534
+#: ../inc/widget.php:684
+msgid "Hide for logged in users:"
+msgstr "隐藏登入客戶"
+
+#: ../inc/widget.php:101
+#, fuzzy
+msgid "Standard sharing widget. Let your website users share content on popular Social networks like Facebook, Twitter, Tumblr, Google+ and many more"
+msgstr "水平浮动喜欢按钮小工具。让您的网站用户在社交网络，像 Facebook，Twitter，Google + 和更多的网站上共享内容"
+
+#: ../inc/widget.php:214
+#, fuzzy
+msgid "Make sure \"Standard Social Sharing\" is enabled at \"Super Socializer > Social Sharing\" page."
+msgstr "请确保在”Super Socializer > 社会共享”页面，启用了”垂直社会共享”。"
+
+#: ../inc/widget.php:217
+#: ../inc/widget.php:366
+msgid "Show individual share counts:"
+msgstr "显示单个共享计数:"
+
+#: ../inc/widget.php:219
+#: ../inc/widget.php:368
+msgid "Show total shares:"
+msgstr "分享总数"
+
+#: ../inc/widget.php:221
+#: ../inc/widget.php:370
+#: ../inc/widget.php:522
+#: ../inc/widget.php:657
+msgid "Target Url:"
+msgstr "目标URL"
+
+#: ../inc/widget.php:223
+#: ../inc/widget.php:372
+#: ../inc/widget.php:524
+#: ../inc/widget.php:659
+msgid "Select"
+msgstr "选择"
+
+#: ../inc/widget.php:252
+#, fuzzy
+msgid "Floating floating sharing widget. Let your website users share content on popular Social networks like Facebook, Twitter, Tumblr, Google+ and many more"
+msgstr "立式浮动喜欢按钮小工具。让您的网站用户在社交网络，像 Facebook，Twitter，Google + 和更多的网站上共享内容"
+
+#: ../inc/widget.php:365
+#, fuzzy
+msgid "Make sure \"Floating Social Sharing\" is enabled at \"Super Socializer > Social Sharing\" page."
+msgstr "请确保在”Super Socializer > 社会共享”页面，启用了”水平社会共享”。"
+
+#: ../inc/widget.php:378
+#: ../inc/widget.php:665
+msgid "Alignment"
+msgstr "对齐"
+
+#: ../inc/widget.php:384
+#: ../inc/widget.php:671
+msgid "Left Offset"
+msgstr "左偏移"
+
+#: ../inc/widget.php:388
+#: ../inc/widget.php:675
+msgid "Right Offset"
+msgstr "右偏移"
+
+#: ../inc/widget.php:391
+#: ../inc/widget.php:678
+msgid "Top Offset"
+msgstr "顶部偏移"
+
+#: ../inc/widget.php:416
+#, fuzzy
+msgid "Standard like buttons widget. Let your website users share/like content on popular Social networks like Facebook, Twitter, Google+ and many more"
+msgstr "水平浮动喜欢按钮小工具。让您的网站用户在社交网络，像 Facebook，Twitter，Google + 和更多的网站上使用共享/喜欢内容"
+
+#: ../inc/widget.php:519
+#, fuzzy
+msgid "Make sure \"Standard Like Buttons\" are enabled from \"Super Socializer > Like Buttons\" page."
+msgstr "确保垂直“喜欢按钮”从“Super Socializer“>喜欢按钮”页面启用。"
+
+#: ../inc/widget.php:553
+#, fuzzy
+msgid "Floating floating like buttons widget. Let your website users share/like content on popular Social networks like Facebook, Twitter, Google+ and many more"
+msgstr "立式浮动喜欢按钮小工具。让您的网站用户在社交网络，像 Facebook，Twitter，Google + 和更多的网站上共享/喜欢"
+
+#: ../inc/widget.php:656
+#, fuzzy
+msgid "Make sure \"Floating Like Buttons\" are enabled from \"Super Socializer > Like Buttons\" page."
+msgstr "请确保”水平喜欢按钮”在”Super Socializer > 喜欢按钮”页已经启动。"
+
+#~ msgid "Username: %s"
+#~ msgstr "用户名： %s"
+
+#~ msgid "Password: %s"
+#~ msgstr "密码：%s"
+
+#~ msgid "[%s] Your username and password"
+#~ msgstr "[%s] 您的用户名和密码信息"
+
+#~ msgid "Excerpts"
+#~ msgstr "摘要"
+
+#~ msgid "Send username-password after user registration"
+#~ msgstr "用户注册后发送的用户名，密码"
+
+#~ msgid "Login options"
+#~ msgstr "登陸選項"

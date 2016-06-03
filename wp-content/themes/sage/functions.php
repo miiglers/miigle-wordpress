@@ -10,11 +10,13 @@
  * @link https://github.com/roots/sage/pull/1042
  */
 $sage_includes = [
-  'lib/post-types.php', // Custom post types
-  'lib/setup.php',      // Theme setup
-  'lib/titles.php',     // Page titles
-  'lib/wrapper.php',    // Theme wrapper class
-  'lib/controllers.php' // Controller logic for templates
+  'lib/models/product.php',       // Product post type
+  'lib/models/role-request.php',  // Role-request post type
+  'lib/models/brand.php',         // Brand post type
+  'lib/setup.php',                // Theme setup
+  'lib/titles.php',               // Page titles
+  'lib/wrapper.php',              // Theme wrapper class
+  'lib/controllers.php'           // Controller logic for templates
 ];
 
 foreach ($sage_includes as $file) {
