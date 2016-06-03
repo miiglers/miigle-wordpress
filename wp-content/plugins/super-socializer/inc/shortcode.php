@@ -187,7 +187,7 @@ function the_champ_login_shortcode($params){
 				$html .= 'style="'.$style.'"';
 			}
 			$html .= '>';
-			if( $title != '' ) {
+			if( !is_user_logged_in() && $title != '' ) {
 				$html .= '<div style="font-weight:bold">' . ucfirst( $title ) . '</div>';
 			}
 			$html .= the_champ_login_button(true);
