@@ -13,7 +13,9 @@ function mgl_register_product() {
     'has_archive' => true,
     'rewrite'     => array('slug' => 'products'),
     'show_in_rest'=> true,
-    'supports'    => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments')
+    'supports'    => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'),
+    'capability_type' => array('mgl_product', 'mgl_products'),
+    'map_meta_cap' => true
   );
   register_post_type('mgl_product', $args);
   
@@ -42,7 +44,7 @@ function mgl_register_product_meta() {
     * Initiate the metabox
     */
   $cmb = new_cmb2_box(array(
-    'id'            => 'test_metabox',
+    'id'            => $prefix,
     'title'         => __('Product Fields', 'cmb2'),
     'object_types'  => array('mgl_product'), // Post type
     'context'       => 'normal',
@@ -58,6 +60,14 @@ function mgl_register_product_meta() {
     'desc'       => __('do not edit', 'cmb2'),
     'id'         => $prefix . 'brand_id',
     'type'       => 'text'
+  ));
+  
+  // URL
+  $cmb->add_field(array(
+    'name'       => __('URL', 'cmb2'),
+    'desc'       => __('', 'cmb2'),
+    'id'         => $prefix . 'url',
+    'type'       => 'text_url'
   ));
 
 }

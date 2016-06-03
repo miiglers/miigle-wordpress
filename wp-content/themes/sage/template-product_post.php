@@ -4,6 +4,10 @@
  */
  
 $mgl_user = mgl_get_current_user();
+$categories = get_terms(array(
+    'taxonomy' => 'mgl_product_category',
+    'hide_empty' => false,
+));
 ?>
 
 <div id="template-product_post">
@@ -61,7 +65,11 @@ $mgl_user = mgl_get_current_user();
 										<input type="text" name="title" class="form-control" placeholder="Product Name" required>
 									</div>
 									<div class="col-xs-6">
-										<input type="text" name="mgl_product_category[]" class="form-control" placeholder="Category" required>
+										<select name="mgl_product_category[]" class="form-control" placeholder="Category" required>
+											<?php foreach($categories as $category): ?>
+												<option value="<?= $category->term_id ?>"><?= $category->name ?></option>
+											<?php endforeach; ?>
+										</select>
 									</div>
 								</div>
 							</div>
@@ -69,10 +77,10 @@ $mgl_user = mgl_get_current_user();
 							<div class="form-group">
 								<div class="row">
 									<div class="col-xs-6">
-										<input type="text" name="brand" class="form-control" placeholder="Brand">
+										<input type="text" name="_mgl_product_brand_id" class="form-control" placeholder="Brand">
 									</div>
 									<div class="col-xs-6">
-										<input type="text" name="url" class="form-control" placeholder="Product url">
+										<input type="text" name="_mgl_product_url" class="form-control" placeholder="Product url">
 									</div>
 								</div>
 							</div>

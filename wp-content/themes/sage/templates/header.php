@@ -25,7 +25,15 @@
         <?php endif; ?>
         <?php if(is_user_logged_in() && !is_front_page()): ?>
           <li><a href="<?= home_url() ?>/product-post" class="btn btn-default navbar-btn">Post</a></li>
-          <li><a href="<?= home_url() ?>/profile-product"><i class="fa fa-user"></i></a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-user"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="<?= home_url() ?>/profile-product">Profile</a></li>
+              <li><a href="<?= wp_logout_url(home_url()) ?>">Logout</a></li>
+            </ul>
+          </li>
         <?php endif; ?>
         <?php if(!is_user_logged_in() && !is_front_page()): ?>
           <li><a href="<?= home_url() ?>/login" class="btn btn-default navbar-btn">Login</a></li>
