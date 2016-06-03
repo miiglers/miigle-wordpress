@@ -826,6 +826,7 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
 */
 #template-product_post .sidebar {
     background-color:#2a414d;
+    padding-bottom: 50px;
 }
 #template-product_post #profile-sidebar .profile-thumb {
 	padding:32px 32px 22px 32px;

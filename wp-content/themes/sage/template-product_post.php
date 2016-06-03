@@ -3,7 +3,7 @@
  * Template Name: Product Post
  */
  
-$user = wp_get_current_user();
+$mgl_user = mgl_get_current_user();
 ?>
 
 <div id="template-product_post">
@@ -13,30 +13,36 @@ $user = wp_get_current_user();
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar hidden-xs" id="profile-sidebar">
         	<div class="profile-thumb text-center">
-        		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/profile-thumb.png" /></div>
+        		<img src="<?= $mgl_user['avatar'] ?>" /></div>
         	<div class="profile-fullname text-center white-text">
-        		Full name</div>
+        		<?= $mgl_user['first_name'] ?>
+						<?= $mgl_user['last_name'] ?>
+					</div>
         	<div class="profile-id text-center white-text">
         		#1</div>
         	<div class="profile-username text-center white-text">
-        		@miigle_username</div>
+        		@<?= $mgl_user['username'] ?>
+					</div>
         	<div class="profile-website text-center">
-        		<a href="#" target="_blank">website.com</a></div>
-        	<div class="profile-social text-center">
-        		<a href="#" target="_blank">Twitter</a>&nbsp;|&nbsp;<a href="#" target="_blank">Facebook</a></div>
+        		<a href="<?= $mgl_user['website'] ?>" target="_blank"><?= $mgl_user['website'] ?></a>
+					</div>
+        	<!--<div class="profile-social text-center">
+        		<a href="#" target="_blank">Twitter</a>&nbsp;|&nbsp;<a href="#" target="_blank">Facebook</a>
+					</div>-->
         	<div class="profile-btn text-center">
-        		<a href="#" class="btn btn-profile">Go to your profile</a></div>
-        	<div class="spacer-profile"></div>
+        		<a href="<?= home_url() ?>/profile-product" class="btn btn-profile">Go to your profile</a>
+					</div>
+        	<!--<div class="spacer-profile"></div>
         	<div class="profile-footer text-center">
         		<a href="#" target="_blank">Log out</a>&nbsp;|&nbsp;
         		<a href="#" target="_blank">Blog</a>&nbsp;|&nbsp;
         		<a href="#" target="_blank">Contact</a>
-        	</div>
+        	</div>-->
         </div>
         
         <div class="col-sm-7 col-sm-offset-1 col-md-6 main"> 
           
-					<?php if(!current_user_can('subscriber-approved')): ?>
+					<?php if(current_user_can('subscriber-approved')): ?>
 					
 						<p class="grey-text">Here's your opportunity to shine. Make it count!</p>
 
@@ -46,7 +52,7 @@ $user = wp_get_current_user();
 						
 						<form id="product" method="post" action="wp/v2/mgl_product">
 						
-							<input type="hidden" name="author" value="<?= $user->ID ?>">
+							<input type="hidden" name="author" value="<?= $mgl_user['ID'] ?>">
 							<input type="hidden" name="status" value="pending">
 						
 							<div class="form-group" style="margin-top:68px;">
@@ -91,9 +97,9 @@ $user = wp_get_current_user();
 						<h5>Request an invite</h5>
 						
 						<form id="request-invite" method="post" action="wp/v2/mgl_role_request">
-						
-							<input type="hidden" name="author" value="<?= $user->ID ?>">
-							<input type="hidden" name="title" value="<?= $user->user_email ?>">
+							
+							<input type="hidden" name="author" value="<?= $mgl_user['ID'] ?>">
+							<input type="hidden" name="title" value="<?= $mgl_user['email'] ?>">
 							<input type="hidden" name="status" value="pending">
 							
 							<div class="form-group">								

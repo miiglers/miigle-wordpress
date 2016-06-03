@@ -3,7 +3,7 @@
     
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">
+      <a class="navbar-brand" href="<?= home_url() ?>">
         <img alt="Brand" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg">
       </a>
     </div>
@@ -24,12 +24,12 @@
           <li><a href="#story" class="btn btn-primary navbar-btn">Read Our Story</a></li>
         <?php endif; ?>
         <?php if(is_user_logged_in() && !is_front_page()): ?>
-          <li><a href="/product-post" class="btn btn-default navbar-btn">Post</a></li>
-          <li><a href="/profile-product"><i class="fa fa-user"></i></a></li>
+          <li><a href="<?= home_url() ?>/product-post" class="btn btn-default navbar-btn">Post</a></li>
+          <li><a href="<?= home_url() ?>/profile-product"><i class="fa fa-user"></i></a></li>
         <?php endif; ?>
         <?php if(!is_user_logged_in() && !is_front_page()): ?>
-          <li><a href="/login" class="btn btn-default navbar-btn">Login</a></li>
-          <li><a href="/sign-up" class="btn btn-primary navbar-btn">Signup</a></li>
+          <li><a href="<?= home_url() ?>/login" class="btn btn-default navbar-btn">Login</a></li>
+          <li><a href="<?= home_url() ?>/sign-up" class="btn btn-primary navbar-btn">Signup</a></li>
         <?php endif; ?>
       </ul>
       
