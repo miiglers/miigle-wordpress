@@ -48,6 +48,9 @@ function setup() {
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 
+// hide that nasty toolbar
+add_filter('show_admin_bar', '__return_false');
+
 /**
  * Add <body> classes
  */

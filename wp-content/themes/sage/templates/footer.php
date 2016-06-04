@@ -8,3 +8,8 @@
     &copy; 2016 MIIGLE
   </div>
 </footer>
+<script type="text/javascript">
+  /* <![CDATA[ */
+  var wpHomeUrl = '<?= home_url() ?>';
+  /* ]]> */
+</script>

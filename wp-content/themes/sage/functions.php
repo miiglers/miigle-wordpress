@@ -13,11 +13,12 @@ $sage_includes = [
   'lib/models/product.php',       // Product post type
   'lib/models/role-request.php',  // Role-request post type
   'lib/models/brand.php',         // Brand post type
-  'lib/models/user.php',          // user
+  'lib/models/user.php',          // User functions
   'lib/setup.php',                // Theme setup
   'lib/titles.php',               // Page titles
   'lib/wrapper.php',              // Theme wrapper class
-  'lib/controllers.php'           // Controller logic for templates
+  'lib/controllers.php',          // Controller logic for templates
+  'lib/api.php'                   // Rest API functions
 ];
 
 foreach ($sage_includes as $file) {

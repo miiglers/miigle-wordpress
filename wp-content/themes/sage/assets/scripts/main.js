@@ -74,7 +74,10 @@
           $requestForm.validate();
           
           if($requestForm.valid()) {
-            apiAjax($requestForm, $requestForm.serialize());
+            apiAjax($requestForm, $requestForm.serialize())
+            .then(function(success) {
+              window.location = wpHomeUrl + '/profile-product';
+            });
           }
           
           return false;
@@ -85,7 +88,10 @@
           $productForm.validate();
           
           if($productForm.valid()) {
-            apiAjax($productForm, $productForm.serialize());
+            apiAjax($productForm, $productForm.serialize())
+            .then(function(success) {
+              window.location = wpHomeUrl + '/profile-product';
+            });
           }
           
           return false;
@@ -97,7 +103,7 @@
   };
   
   var apiAjax = function($form, data) {
-    $.ajax({
+    return $.ajax({
       url:  wpApiSettings.root + $form.attr('action'),
       method: $form.attr('method'),
       data: data,
@@ -108,19 +114,21 @@
           .find('.fa-spin')
           .removeClass('hidden');
       },
-      success: function(success) {
-        console.log(success);
-      },
-      error: function(error) {
-        console.log(error);
-      },
       complete: function() {
         $form.find('[type=submit]')
           .removeAttr('disabled')
           .find('.fa-spin')
           .addClass('hidden');
       }
-    });
+    })
+    .then(
+      function(success) {
+        console.log(success);
+      },
+      function(error) {
+        console.log(error);
+      }
+    );
   };
 
   // The routing fires all common scripts, followed by the page specific scripts.

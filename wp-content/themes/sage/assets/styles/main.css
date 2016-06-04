@@ -1550,11 +1550,41 @@ cursor: pointer;
 	border-radius: 5px;
 }
 #template-product_page section#discussion .widget-card .item {
-	margin-bottom:20px;
+	margin-bottom: 20px;
 }
 #template-product_page section#discussion .widget-card .item img {
-	margin-bottom:10px;
+	margin-bottom: 10px;
 }
+form.comment-form label {
+	display: none;
+}
+.comments ul {
+	list-style-type: none;
+}
+.comments .comment-metadata {
+	display: none;
+}
+.comments .says {
+	display: none;
+}
+.comments .logged-in-as {
+	display: none;
+}
+.comments .comment-body {
+	padding: 20px 0;
+	border-bottom: 1px solid #e7e7e7;
+}
+.comments .comment-author img {
+	margin-right: 10px;
+}
+.comments .comment-content {
+	padding-left: 45px;
+	padding-top: 10px;
+}
+.comments .comment-body .reply {
+	margin-left: 45px;
+}
+
 @media only screen and (max-width: 768px) {
 	#template-product_page section#product_page .prod-gallery .full {
     margin: 0 0 20px 0;

@@ -1,3 +1,10 @@
+<?php
+
+use Miigle\Models\Product;
+
+$categories = Product\get_categories();
+?>
+
 <div id="archive-mgl_product">
 
   <section id="splash">
@@ -32,14 +39,14 @@
         
         <h4>Categories</h4>
         <ul class="list-unstyled">
-          <li><a href="#">Fashion</a></li>
-          <li><a href="#">Home Goods</a></li>
-          <li><a href="#">Personal Care</a></li>
+          <?php foreach($categories as $category): ?>
+            <li><a href="<?= home_url() ?>"><?= $category->name ?></a></li>
+          <?php endforeach; ?>
         </ul>
         
         <h4>Directory</h4>
         <ul class="list-unstyled">
-          <li><a href="#">All Brands</a></li>
+          <li><a href="<?= home_url() ?>/brands">All Brands</a></li>
         </ul>
 
       </div>
@@ -63,10 +70,10 @@
                     <div class="caption">
                       <h3><?php the_title(); ?></h3>
                       <p><?php the_excerpt(); ?></p>
-                      <p><a href="#">productname.com</a></p>
+                      <p><a href="<?= Product\get_url(get_the_ID()) ?>"><?= Product\get_url(get_the_ID()) ?></a></p>
                       <p>
-                        <span class="label label-danger pull-right"><i class="fa fa-commenting-o"></i> 95</span>
-                        <span class="label label-pink pull-right"><i class="fa fa-star-o"></i> 4</span>
+                        <span class="label label-danger pull-right"><i class="fa fa-commenting-o"></i> <?= Product\get_comments_count(get_the_ID()) ?></span>
+                        <span class="label label-pink pull-right"><i class="fa fa-star-o"></i> <?= Product\get_upvotes(get_the_ID()) ?></span>
                       </p>
                       <div class="clearfix"></div>
                     </div>

@@ -2,12 +2,18 @@
 /**
  * Template Name: Product Post
  */
+
+use Miigle\Models\User;
+use Miigle\Models\Brand;
  
-$mgl_user = mgl_get_current_user();
+$mgl_user = User\current();
+
 $categories = get_terms(array(
     'taxonomy' => 'mgl_product_category',
     'hide_empty' => false,
 ));
+
+$brands = Brand\get_posts();
 ?>
 
 <div id="template-product_post">
@@ -22,8 +28,8 @@ $categories = get_terms(array(
         		<?= $mgl_user['first_name'] ?>
 						<?= $mgl_user['last_name'] ?>
 					</div>
-        	<div class="profile-id text-center white-text">
-        		#1</div>
+        	<!--<div class="profile-id text-center white-text">
+        		#1</div>-->
         	<div class="profile-username text-center white-text">
         		@<?= $mgl_user['username'] ?>
 					</div>
@@ -54,7 +60,7 @@ $categories = get_terms(array(
 						
 						Need help? <a href="#">Watch this video on how to post help</a>
 						
-						<form id="product" method="post" action="wp/v2/mgl_product">
+						<form id="product" method="post" action="mgl/v1/product">
 						
 							<input type="hidden" name="author" value="<?= $mgl_user['ID'] ?>">
 							<input type="hidden" name="status" value="pending">
@@ -65,7 +71,7 @@ $categories = get_terms(array(
 										<input type="text" name="title" class="form-control" placeholder="Product Name" required>
 									</div>
 									<div class="col-xs-6">
-										<select name="mgl_product_category[]" class="form-control" placeholder="Category" required>
+										<select name="mgl_product_category" class="form-control" placeholder="Category" required>
 											<?php foreach($categories as $category): ?>
 												<option value="<?= $category->term_id ?>"><?= $category->name ?></option>
 											<?php endforeach; ?>
@@ -77,7 +83,11 @@ $categories = get_terms(array(
 							<div class="form-group">
 								<div class="row">
 									<div class="col-xs-6">
-										<input type="text" name="_mgl_product_brand_id" class="form-control" placeholder="Brand">
+										<select name="_mgl_product_brand_id" class="form-control" placeholder="Brand">
+											<?php while($brands->have_posts()): $brands->the_post(); ?>
+												<option value="<?= get_the_ID() ?>"><?php the_title(); ?></option>
+											<?php endwhile; ?>
+										</select>
 									</div>
 									<div class="col-xs-6">
 										<input type="text" name="_mgl_product_url" class="form-control" placeholder="Product url">

@@ -1,9 +1,11 @@
 <?php
 
+namespace Miigle\Models\User;
+
 /**
  * Get a user and their meta
  */
-function mgl_get_current_user() {
+function current() {
   $current_user = wp_get_current_user();
   $avatar = get_user_meta($current_user->ID, 'thechamp_large_avatar', true);
   $socials = get_user_meta($current_user->ID, 'thechamp_linked_accounts', true);
