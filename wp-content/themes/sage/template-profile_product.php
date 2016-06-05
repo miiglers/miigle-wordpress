@@ -31,10 +31,15 @@ wp_reset_postdata();
         	<div class="profile-social text-center white-text">
         		<a href="#">@<?= $mgl_user['username'] ?></a>
 						&nbsp;|&nbsp;
-        		<a href="<?= $mgl_user['website'] ?>" target="_blank"><?= $mgl_user['website'] ?></a>
-						<!--&nbsp;|&nbsp;
-        		<a href="#" target="_blank">Twitter</a>&nbsp;|&nbsp;
-        		<a href="#" target="_blank">Facebook</a>&nbsp;|&nbsp;-->
+						<?php if( $mgl_user['_mgl_user_website']): ?>
+        			<a href="<?= $mgl_user['website'] ?>" target="_blank">Website</a>
+						<?php endif; ?>
+						<?php if( $mgl_user['_mgl_user_facebook']): ?>
+        			&nbsp;|&nbsp;<a href="<?= $mgl_user['_mgl_user_facebook'] ?>" target="_blank">Facebook</a>
+						<?php endif; ?>
+						<?php if( $mgl_user['_mgl_user_twitter']): ?>
+        			&nbsp;|&nbsp;<a href="<?= $mgl_user['_mgl_user_twitter'] ?>" target="_blank">Twitter</a>
+						<?php endif; ?>
         	</div>
         	<div class="profile-btn text-center">
         		<a href="#" class="btn btn-profile upvotes">

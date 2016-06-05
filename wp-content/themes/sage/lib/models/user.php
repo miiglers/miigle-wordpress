@@ -19,7 +19,10 @@ function current() {
     'last_name'   => $current_user->user_lastname,
     'website'     => $current_user->user_url,
     'avatar'      => $avatar,
-    '_mgl_user_title' => get_title($current_user->ID)
+    '_mgl_user_title' => get_title($current_user->ID),
+    '_mgl_user_website' => get_website($current_user->ID),
+    '_mgl_user_facebook' => get_facebook($current_user->ID),
+    '_mgl_user_twitter' => get_twitter($current_user->ID)
   );
 }
 
@@ -60,6 +63,30 @@ function register_meta() {
     'id'         => $prefix . 'username',
     'type'       => 'text'
   ));
+  
+  // Website
+  $cmb->add_field(array(
+    'name'       => __('Username', 'cmb2'),
+    'desc'       => __('', 'cmb2'),
+    'id'         => $prefix . 'website',
+    'type'       => 'text_url'
+  ));
+  
+  // Facebook
+  $cmb->add_field(array(
+    'name'       => __('Username', 'cmb2'),
+    'desc'       => __('', 'cmb2'),
+    'id'         => $prefix . 'facebook',
+    'type'       => 'text_url'
+  ));
+  
+  // Twitter
+  $cmb->add_field(array(
+    'name'       => __('Username', 'cmb2'),
+    'desc'       => __('', 'cmb2'),
+    'id'         => $prefix . 'twitter',
+    'type'       => 'text_url'
+  ));
 
 }
 
@@ -68,6 +95,27 @@ function register_meta() {
  */
 function get_title($user_id) {
   return get_user_meta($user_id, '_mgl_user_title', true);
+}
+
+/**
+ * Get user website
+ */
+function get_website($user_id) {
+  return get_user_meta($user_id, '_mgl_user_website', true);
+}
+
+/**
+ * Get user facebook
+ */
+function get_facebook($user_id) {
+  return get_user_meta($user_id, '_mgl_user_facebook', true);
+}
+
+/**
+ * Get user twitter
+ */
+function get_twitter($user_id) {
+  return get_user_meta($user_id, '_mgl_user_twitter', true);
 }
 
 /**
