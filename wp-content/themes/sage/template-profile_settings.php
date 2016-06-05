@@ -73,30 +73,37 @@ $brands = Brand\get_posts();
             </div>
             
             <div class="form-group">
-              <label for="_mgl_user_title" class="col-sm-2 control-label">Job title and company</label>
+              <label for="_mgl_user_title" class="col-sm-2 control-label">Job title</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="_mgl_user_title" name="_mgl_user_title" placeholder="Job title and company" value="<?= $mgl_user['_mgl_user_title'] ?>">
               </div>
             </div>
             
             <div class="form-group">
+              <label for="_mgl_user_company" class="col-sm-2 control-label">Company</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="_mgl_user_company" name="_mgl_user_company" placeholder="Company" value="<?= $mgl_user['_mgl_user_company'] ?>">
+              </div>
+            </div>
+            
+            <div class="form-group">
               <label for="_mgl_user_website" class="col-sm-2 control-label">Website</label>
               <div class="col-sm-10">
-                <input type="url" class="form-control" id="_mgl_user_website" name="_mgl_user_website" placeholder="Website"" value="<?= $mgl_user['_mgl_user_website'] ?>">
+                <input type="text" class="form-control" id="_mgl_user_website" name="_mgl_user_website" placeholder="Website"" value="<?= $mgl_user['_mgl_user_website'] ?>">
               </div>
             </div>
             
             <div class="form-group">
               <label for="_mgl_user_facebook" class="col-sm-2 control-label">Facebook</label>
               <div class="col-sm-10">
-                <input type="url" class="form-control" id="_mgl_user_facebook" name="_mgl_user_facebook" placeholder="Facebook URL" value="<?= $mgl_user['_mgl_user_facebook'] ?>">
+                <input type="text" class="form-control" id="_mgl_user_facebook" name="_mgl_user_facebook" placeholder="Facebook URL" value="<?= $mgl_user['_mgl_user_facebook'] ?>">
               </div>
             </div>
             
             <div class="form-group">
               <label for="_mgl_user_twitter" class="col-sm-2 control-label">Twitter</label>
               <div class="col-sm-10">
-                <input type="url" class="form-control" id="_mgl_user_twitter" name="_mgl_user_twitter" placeholder="Twitter URL" value="<?= $mgl_user['_mgl_user_twitter'] ?>">
+                <input type="text" class="form-control" id="_mgl_user_twitter" name="_mgl_user_twitter" placeholder="Twitter URL" value="<?= $mgl_user['_mgl_user_twitter'] ?>">
               </div>
             </div>
             

@@ -87,6 +87,7 @@ function user_put($data) {
   update_user_meta($user->ID, '_mgl_user_website', $data['_mgl_user_website']);
   update_user_meta($user->ID, '_mgl_user_facebook', $data['_mgl_user_facebook']);
   update_user_meta($user->ID, '_mgl_user_twitter', $data['_mgl_user_twitter']);
+  update_user_meta($user->ID, '_mgl_user_company', $data['_mgl_user_company']);
   
   return wp_update_user(array(
     'ID' => $user->ID,

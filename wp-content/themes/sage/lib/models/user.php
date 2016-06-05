@@ -22,7 +22,8 @@ function current() {
     '_mgl_user_title' => get_title($current_user->ID),
     '_mgl_user_website' => get_website($current_user->ID),
     '_mgl_user_facebook' => get_facebook($current_user->ID),
-    '_mgl_user_twitter' => get_twitter($current_user->ID)
+    '_mgl_user_twitter' => get_twitter($current_user->ID),
+    '_mgl_user_company' => get_company($current_user->ID)
   );
 }
 
@@ -116,6 +117,13 @@ function get_facebook($user_id) {
  */
 function get_twitter($user_id) {
   return get_user_meta($user_id, '_mgl_user_twitter', true);
+}
+
+/**
+ * Get user company
+ */
+function get_company($user_id) {
+  return get_user_meta($user_id, '_mgl_user_company', true);
 }
 
 /**

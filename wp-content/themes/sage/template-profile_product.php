@@ -27,6 +27,9 @@ wp_reset_postdata();
 				  </div>
         	<div class="profile-title text-center white-text">
         		<?= $mgl_user['_mgl_user_title'] ?>
+						<?php if( $mgl_user['_mgl_user_company']): ?>
+        			@ <?= $mgl_user['_mgl_user_company'] ?>
+						<?php endif; ?>
 					</div>
         	<div class="profile-social text-center white-text">
         		<a href="#">@<?= $mgl_user['username'] ?></a>
@@ -68,8 +71,19 @@ wp_reset_postdata();
         	<!-- Card Item -->
         	<div class="row">
 						
+						<div class="col-sm-4 plus-wrap">
+							<a href="<?= home_url() ?>/product-post">
+								<div class="card-item plus text-center">
+									<div class="plus-wrap">
+										<span class="plus"></span>
+									</div>
+									<p>Post a product</p>
+								</div>
+							</a>
+						</div>
+						
 						<?php 
-							$i = 1;
+							$i = 2;
 							foreach($products as $product):
 						?>
 						

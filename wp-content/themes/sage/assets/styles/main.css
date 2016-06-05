@@ -1176,6 +1176,37 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
 	border: solid 1px #e4e4e4;
 	margin-bottom:20px;
 }
+#template-profile_product section#profile_product .card-item.plus {
+	background: white;
+	border: 2px dashed #979797;
+	padding: 50px 0;
+}
+#template-profile_product section#profile_product a:hover .card-item.plus {
+	border-color: #55b7b8;
+}
+#template-profile_product section#profile_product .plus-wrap a {
+	display: block;
+	color: #777;
+}
+#template-profile_product section#profile_product .plus-wrap a:hover {
+	text-decoration: none;
+	color: #55b7b8;
+}
+#template-profile_product section#profile_product .card-item.plus p {
+	font-size: 22px;
+	margin-top: 15px;
+}
+#template-profile_product section#profile_product .card-item.plus span.plus {
+	width: 125px;
+	height: 125px;
+	display: inline-block;
+	background-image: url('../images/icon-plus.png');
+	background-size: cover;
+	background-position: center center;
+}
+#template-profile_product section#profile_product a:hover .card-item.plus span.plus {
+	background-image: url('../images/icon-plus-hover.png');
+}
 #template-profile_product section#profile_product .profile-thumb {
 	padding-bottom:25px;
 }
