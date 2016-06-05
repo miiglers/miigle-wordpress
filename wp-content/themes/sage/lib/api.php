@@ -19,6 +19,11 @@ function register() {
     'callback' => __NAMESPACE__ . '\\product_upvote_post'
   ));
   
+  register_rest_route('mgl/v1', '/product/downvote', array(
+    'methods' => 'POST',
+    'callback' => __NAMESPACE__ . '\\product_downvote_post'
+  ));
+  
 }
 
 /**
@@ -44,6 +49,21 @@ function product_upvote_post($data) {
   if(!User\has_upvoted_product($user->ID, $data['product_id'])) {
     if(User\upvote_product($user->ID, $data['product_id'])) {
       return Product\upvote($data['product_id']);
+    }
+  }
+  
+  return 'success';
+}
+
+/**
+ * Downvote a product
+ */
+function product_downvote_post($data) {
+  $user = wp_get_current_user();
+  
+  if(User\has_upvoted_product($user->ID, $data['product_id'])) {
+    if(User\downvote_product($user->ID, $data['product_id'])) {
+      return Product\downvote($data['product_id']);
     }
   }
   

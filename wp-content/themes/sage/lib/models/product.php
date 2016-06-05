@@ -197,6 +197,16 @@ function upvote($post_id) {
 }
 
 /**
+ * Upvote
+ */
+function downvote($post_id) {
+  $upvotes = get_upvotes($post_id) - 1;  
+  update_post_meta($post_id, '_mgl_product_upvotes', $upvotes);
+  
+  return $upvotes;
+}
+
+/**
  * Get the image gallery
  */
 function get_image_gallery($post_id) {

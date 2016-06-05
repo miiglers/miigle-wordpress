@@ -21,12 +21,26 @@
         
         $('.btn-upvote').on('click', function(e) {
           e.preventDefault();
-          $form = $(this).parents('form');
+          var $star = $(this).find('i');
+          var $form = $(this).parents('form');
+          var upvotes = $form.find('span#upvotes').html() * 1;
           
           apiAjax($form, $form.serialize())
           .then(function(success) {
-            //window.location = wpHomeUrl + '/profile-product';
-            console.log('doneee');
+            // just upvoted
+            if($form.attr('action') === 'mgl/v1/product/upvote') {
+              $star.removeClass('fa-star-o');
+              $star.addClass('fa-star');
+              $form.attr('action', 'mgl/v1/product/downvote');
+              $form.find('span#upvotes').html(upvotes + 1);
+            }
+            // just downvoted
+            else {
+              $star.removeClass('fa-star');
+              $star.addClass('fa-star-o');
+              $form.attr('action', 'mgl/v1/product/upvote');
+              $form.find('span#upvotes').html(upvotes - 1);
+            }
           });
           
           return false;

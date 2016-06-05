@@ -51,11 +51,11 @@ wp_reset_postdata();
 					</div>
 					<div class="prod-meta">
 						<!--<a href="#" class="btn btn-profile trend"><strong>#1</strong> in Fashion</a>-->
-						<form class="upvote" id="product-upvote" method="post" action="mgl/v1/product/upvote">
+						<form class="upvote" id="product-upvote" method="post" action="mgl/v1/product/<?php if($upvoted): ?>down<?php else: ?>up<?php endif; ?>vote">
 							<input type="hidden" name="product_id" value="<?php the_ID(); ?>"> 
 							<span class="label label-danger label-btn btn-upvote" data-upvoted="<?php if($upvoted): ?>1<?php else: ?>0<?php endif; ?>">								
 								<i class="fa fa-star<?php if(!$upvoted): ?>-o<?php endif; ?>"></i> 
-								<?= Product\get_upvotes(get_the_ID()) ?>
+								<span id="upvotes"><?= Product\get_upvotes(get_the_ID()) ?></span>
 							</span>
 						</form>
 						<span class="label label-pink label-btn"><i class="fa fa-commenting-o"></i> <?= Product\get_comments_count(get_the_ID()) ?></span>

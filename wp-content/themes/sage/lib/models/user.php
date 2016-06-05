@@ -60,9 +60,12 @@ function has_upvoted_product($user_id, $product_id) {
     if(array_search($product_id, $upvoted) === false) {
       return false;
     }
+    else {
+      return true;
+    }
   }
   
-  return true; 
+  return false; 
 }
 
 /**
@@ -88,11 +91,11 @@ function downvote_product($user_id, $product_id) {
   $upvoted = get_upvoted_products($user_id);
   
   if($upvoted && is_array($upvoted)) {
-    array_push($upvoted, $product_id);
+    $key = array_search($product_id, $upvoted);
+    array_splice($upvoted, $key, 1);
+    
+    return update_user_meta($user_id, '_mgl_user_upvoted', $upvoted);
   }
-  else {
-    $upvoted = array($product_id);
-  }  
   
-  return update_user_meta($user_id, '_mgl_user_upvoted', $upvoted);
+  return true;
 }
