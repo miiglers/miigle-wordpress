@@ -1080,7 +1080,7 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
 |
 **********************************************************/
 #template-profile_product section#hero {
-	background-color: #233743;
+	background-color: white;
 }
 #template-profile_product section#hero a.btn.btn-follow {
 	border: 1px solid #fff;
@@ -1117,7 +1117,7 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
 	display: inline-block;
 }
 #template-profile_product section#hero .white-text {
-	color:#ffffff;
+	
 }
 #template-profile_product section#hero .profile-fullname {
 	font-size:16px;
@@ -1132,7 +1132,7 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
 	padding-bottom:26px;
 }
 #template-profile_product section#hero .profile-social a {
-	color:#fff;
+	
 }
 #template-profile_product section#hero .profile-social a:hover,
 #template-profile_product section#hero .profile-social a:focus {
@@ -1168,7 +1168,8 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
 }
 
 #template-profile_product section#profile_product {
-	margin-top:80px;
+	padding-top:80px;
+	background: #f9f9fa;
 }
 #template-profile_product section#profile_product .card-item {
 	border-radius: 6px;
