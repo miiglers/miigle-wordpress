@@ -19,6 +19,11 @@
     'common': {
       init: function() {
         
+        $('.height-100, #profile-sidebar').each(function() {
+          var height = $(this).parent().height();
+          $(this).css('height', height);
+        });
+        
         $('.btn-upvote').on('click', function(e) {
           e.preventDefault();
           var $star = $(this).find('i');

@@ -154,9 +154,17 @@ div.wpcf7-mail-sent-ok {
   color: white;
   border-radius: 4px;
 }
-main.main {
-  margin-bottom: 100px;
+div.wpcf7-mail-sent-ng {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid #ebccd1;
+	border-radius: 4px;
+	color: #a94442;
+	background-color: #f2dede;
 }
+/*main.main {
+  margin-bottom: 100px;
+}*/
 footer#footer .links {
   background: #395561;
   padding: 75px 0;
@@ -781,9 +789,14 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
 |
 **********************************************************/
 #template-product_post section#product_post .main {
-	margin-top:118px;
+	margin-top: 75px;
+	padding-bottom: 50px;
 }
 #template-product_post section#product_post h1 { 
+	margin-bottom: 35px;
+}
+#template-product_post section#product_post h2 { 
+	margin-top: 75px;
 	margin-bottom: 35px;
 }
 #template-product_post section#product_post h4 { 
@@ -829,12 +842,12 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
 	letter-spacing: 4px;
 	color: #999999;
 }
-#template-product_post section#product_post input[type="submit"] {
+/*#template-product_post section#product_post input[type="submit"] {
 	font-weight:400;
 	font-size: 25px;
 	color: #ffffff;
 	letter-spacing: 0;
-}
+}*/
 
 /* 
 | profile-sidebar

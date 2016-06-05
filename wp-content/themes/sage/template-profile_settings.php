@@ -79,14 +79,20 @@ $brands = Brand\get_posts();
               </div>
             </div>
             
-            <div class="form-group" style="margin-top:80px;">
-              <button type="submit" class="btn btn-default submit">
+            <div class="form-group" style="margin-top:50px;">
+              <div class="clearfix"></div>
+              <button type="submit" class="btn btn-default submit" style="margin-left: 20px;">
                 <i class="fa fa-refresh fa-spin hidden"></i>
                 Submit
               </button>
             </div>
               
           </form>
+          
+          <h2>Invite someone</h2>
+          <p>You have 5 invites left. Choose wisely.</p>
+          
+          <?= do_shortcode('[contact-form-7 title="Invite"]') ?>
 					
         </div>
       </div>
