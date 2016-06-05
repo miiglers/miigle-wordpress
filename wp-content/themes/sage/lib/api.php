@@ -24,6 +24,11 @@ function register() {
     'callback' => __NAMESPACE__ . '\\product_downvote_post'
   ));
   
+  register_rest_route('mgl/v1', '/user', array(
+    'methods' => 'PUT',
+    'callback' => __NAMESPACE__ . '\\user_put'
+  ));
+  
 }
 
 /**
@@ -68,4 +73,20 @@ function product_downvote_post($data) {
   }
   
   return 'success';
+}
+
+/**
+ * Update a user
+ */
+function user_put($data) {
+  global $wpdb;
+  $user = wp_get_current_user();
+  
+  update_user_meta($user->ID, '_mgl_user_title', $data['_mgl_user_title']);
+  update_user_meta($user->ID, '_mgl_user_username', $data['_mgl_user_username']);
+  
+  return wp_update_user(array(
+    'ID' => $user->ID,
+    'user_email' => $data['email']
+  ));
 }

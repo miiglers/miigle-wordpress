@@ -13,13 +13,74 @@ function current() {
   
   return array(
     'ID'          => $current_user->ID,
-    'username'    => $current_user->user_login,
+    'username'    => get_username($current_user->ID),
     'email'       => $current_user->user_email,
     'first_name'  => $current_user->user_firstname,
     'last_name'   => $current_user->user_lastname,
     'website'     => $current_user->user_url,
-    'avatar'      => $avatar
+    'avatar'      => $avatar,
+    '_mgl_user_title' => get_title($current_user->ID)
   );
+}
+
+/**
+ * Define the metabox and field configurations.
+ */
+function register_meta() {
+
+  // Start with an underscore to hide fields from custom fields list
+  $prefix = '_mgl_user_';
+
+  /**
+    * Initiate the metabox
+    */
+  $cmb = new_cmb2_box(array(
+    'id'            => $prefix,
+    'title'         => __('User Fields', 'cmb2'),
+    'object_types'  => array('user'), // Post type
+    'context'       => 'normal',
+    'priority'      => 'high',
+    'show_names'    => true, // Show field names on the left
+    // 'cmb_styles' => false, // false to disable the CMB stylesheet
+    // 'closed'     => true, // Keep the metabox closed by default
+  ));
+
+  // Brand ID
+  $cmb->add_field(array(
+    'name'       => __('Title & Company', 'cmb2'),
+    'desc'       => __('', 'cmb2'),
+    'id'         => $prefix . 'title',
+    'type'       => 'text'
+  ));
+  
+  // Username
+  $cmb->add_field(array(
+    'name'       => __('Username', 'cmb2'),
+    'desc'       => __('', 'cmb2'),
+    'id'         => $prefix . 'username',
+    'type'       => 'text'
+  ));
+
+}
+
+/**
+ * Get user title
+ */
+function get_title($user_id) {
+  return get_user_meta($user_id, '_mgl_user_title', true);
+}
+
+/**
+ * Get username
+ */
+function get_username($user_id) {
+  $username = get_user_meta($user_id, '_mgl_user_username', true);
+  if($username) {
+    return $username;
+  }
+  else {
+    return get_userdata($user_id)->user_login;
+  }
 }
 
 /**
@@ -27,13 +88,6 @@ function current() {
  */
 function get_upvoted_products($user_id) {
   return get_user_meta($user_id, '_mgl_user_upvoted', true);
-  
-  /*if($upvoted && is_array($upvoted)) {
-    return unserialize($upvoted);
-  }
-  else {
-    return false;
-  }*/
 }
 
 /**

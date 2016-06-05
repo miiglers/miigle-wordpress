@@ -11,13 +11,13 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       
-      <?php if(!is_front_page()): ?>
+      <!--<?php if(!is_front_page()): ?>
         <form class="navbar-form navbar-center" role="search">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">
           </div>
         </form>
-      <?php endif; ?>
+      <?php endif; ?>-->
       
       <ul class="nav navbar-nav navbar-right">        
         <?php if(is_front_page()): ?>
@@ -31,6 +31,12 @@
             </a>
             <ul class="dropdown-menu">
               <li><a href="<?= home_url() ?>/profile-product">Profile</a></li>
+              <li><a href="<?= home_url() ?>/profile-settings">Settings</a></li>
+              <?php if(current_user_can('manage_options')): ?>
+                <li role="separator" class="divider"></li>
+                <li><a href="<?= admin_url() ?>">Admin</a></li>
+              <?php endif; ?>
+              <li role="separator" class="divider"></li>
               <li><a href="<?= wp_logout_url(home_url()) ?>">Logout</a></li>
             </ul>
           </li>

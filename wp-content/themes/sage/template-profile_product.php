@@ -25,8 +25,9 @@ wp_reset_postdata();
         		<?= $mgl_user['first_name'] ?>
 						<?= $mgl_user['last_name'] ?>
 				  </div>
-        	<!--<div class="profile-title text-center white-text">
-        		Title</div>-->
+        	<div class="profile-title text-center white-text">
+        		<?= $mgl_user['_mgl_user_title'] ?>
+					</div>
         	<div class="profile-social text-center white-text">
         		<a href="#">@<?= $mgl_user['username'] ?></a>
 						&nbsp;|&nbsp;

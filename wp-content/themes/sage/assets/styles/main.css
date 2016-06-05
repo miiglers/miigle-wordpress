@@ -103,6 +103,9 @@ h2, h3, h4 {
 a, a:visited {
   color: #55b7b8;
 }
+.form-horizontal .control-label {
+	text-align: left;
+}
 form.upvote {
 	display: inline-block;
 }
@@ -779,6 +782,9 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
 **********************************************************/
 #template-product_post section#product_post .main {
 	margin-top:118px;
+}
+#template-product_post section#product_post h1 { 
+	margin-bottom: 35px;
 }
 #template-product_post section#product_post h4 { 
 	font-weight:700;

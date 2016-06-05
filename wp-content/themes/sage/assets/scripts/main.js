@@ -125,7 +125,26 @@
         });
         
       }
-    }
+    },
+    'profile_settings': {
+      init: function() {
+        var $form = $('form#profile-settings');
+            
+        $form.on('submit', function(e) {
+          e.preventDefault();
+          $form.validate();
+          
+          if($form.valid()) {
+            apiAjax($form, $form.serialize())
+            .then(function(success) {
+              window.location = wpHomeUrl + '/profile-product';
+            });
+          }
+          
+          return false;
+        });
+      }
+    },
     
   };
   
