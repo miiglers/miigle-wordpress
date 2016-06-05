@@ -9,6 +9,7 @@ body {
   padding-top: 70px;
   font-family: 'Open Sans', sans-serif;
   color: #777;
+	background: #f9f9fa;
 }
 .navbar {
   border: none;
@@ -21,6 +22,13 @@ body {
 }
 .navbar-header {
   z-index: 1;
+}
+.navbar-brand.logged-in {
+	height: 50px;
+	padding: 0;
+}
+.navbar-brand.logged-in img {
+	height: 100%;
 }
 .navbar-center {
   position: absolute;
@@ -830,7 +838,7 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
 	margin-bottom:30px;
 }
 #template-product_post section#product_post .form-control  {
-	background-color: #fff;
+	
 }
 #template-product_post section#product_post textarea,
 #template-product_post section#product_post input,

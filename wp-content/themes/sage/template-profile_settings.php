@@ -21,36 +21,8 @@ $brands = Brand\get_posts();
   <section id="product_post">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar hidden-xs" id="profile-sidebar">
-        	<div class="profile-thumb text-center">
-        		<img src="<?= $mgl_user['avatar'] ?>" /></div>
-        	<div class="profile-fullname text-center white-text">
-        		<?= $mgl_user['first_name'] ?>
-						<?= $mgl_user['last_name'] ?>
-					</div>
-        	<!--<div class="profile-id text-center white-text">
-        		#1</div>-->
-        	<div class="profile-username text-center white-text">
-        		@<?= $mgl_user['username'] ?>
-					</div>
-        	<div class="profile-website text-center">
-        		<a href="<?= $mgl_user['website'] ?>" target="_blank"><?= $mgl_user['website'] ?></a>
-					</div>
-        	<!--<div class="profile-social text-center">
-        		<a href="#" target="_blank">Twitter</a>&nbsp;|&nbsp;<a href="#" target="_blank">Facebook</a>
-					</div>-->
-        	<div class="profile-btn text-center">
-        		<a href="<?= home_url() ?>/profile-product" class="btn btn-profile">Go to your profile</a>
-					</div>
-        	<!--<div class="spacer-profile"></div>
-        	<div class="profile-footer text-center">
-        		<a href="#" target="_blank">Log out</a>&nbsp;|&nbsp;
-        		<a href="#" target="_blank">Blog</a>&nbsp;|&nbsp;
-        		<a href="#" target="_blank">Contact</a>
-        	</div>-->
-        </div>
         
-        <div class="col-sm-7 col-sm-offset-1 col-md-6 main">
+        <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 main">
           
           <h1>Settings</h1> 
           
