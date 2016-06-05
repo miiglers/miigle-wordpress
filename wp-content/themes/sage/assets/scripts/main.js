@@ -18,7 +18,20 @@
     // All pages
     'common': {
       init: function() {
-        // JavaScript to be fired on all pages
+        
+        $('.btn-upvote').on('click', function(e) {
+          e.preventDefault();
+          $form = $(this).parents('form');
+          
+          apiAjax($form, $form.serialize())
+          .then(function(success) {
+            //window.location = wpHomeUrl + '/profile-product';
+            console.log('doneee');
+          });
+          
+          return false;
+        });
+        
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

@@ -108,53 +108,54 @@ function register_meta() {
 /**
  * Create a product
  */
-function create($data) {
-  $current_user = wp_get_current_user();
+function create($data, $user) {  
   $new_post = array(
-  'post_title'    => $data['title'],
-  'post_status'   => 'pending',
-  'post_date'     => date('Y-m-d H:i:s'),
-  'post_author'   => $current_user->ID,
-  'post_type'     => 'mgl_product',
-  'post_content'  => $data['content'],
-  'post_name'     => sanitize_title($data['title'])
-);
+    'post_title'    => $data['title'],
+    'post_status'   => 'pending',
+    'post_date'     => date('Y-m-d H:i:s'),
+    'post_author'   => $user->ID,
+    'post_type'     => 'mgl_product',
+    'post_content'  => $data['content'],
+    'post_name'     => sanitize_title($data['title'])
+  );
 
-$post_id = wp_insert_post($new_post);
+  $post_id = wp_insert_post($new_post);
 
-add_post_meta($post_id, '_mgl_product_brand_id', $data['_mgl_product_brand_id'], true);
-add_post_meta($post_id, '_mgl_product_url', $data['_mgl_product_url'], true);
+  add_post_meta($post_id, '_mgl_product_brand_id', $data['_mgl_product_brand_id'], true);
+  add_post_meta($post_id, '_mgl_product_url', $data['_mgl_product_url'], true);
 
-wp_set_object_terms($post_id, intval($data['mgl_product_category']), 'mgl_product_category');
+  wp_set_object_terms($post_id, intval($data['mgl_product_category']), 'mgl_product_category');
 
-return $post_id;
+  return $post_id;
 }
  
 /**
  * Get all products posted by a user
  */
 function get_user_products($user_id) {
-  $query = new \WP_Query(array(
+  return get_posts(array(
     'post_type' => 'mgl_product',
     'post_status' => 'any',
     'author' => $user_id
   ));
-  
-  wp_reset_postdata();
-  
-  return $query;
 }
  
 /**
  * Get the product brand
  */
 function get_brand($post_id) {
-  $brand_id = get_post_meta($post_id, '_mgl_product_brand_id', true);
-  $brand = get_post($brand_id);
+  $brand_id = get_post_meta($post_id, '_mgl_product_brand_id', true);    
+  $brand = get_posts(array(
+    'post_type' => 'mgl_brand',
+    'p' => $brand_id
+  ));
   
-  wp_reset_postdata();
-  
-  return $brand;
+  if($brand) {
+    return $brand[0];
+  }
+  else {
+    return false;
+  }
 }
  
 /**
@@ -162,6 +163,7 @@ function get_brand($post_id) {
  */
 function get_brand_title($post_id) {
   $brand = get_brand($post_id);
+  
   if($brand) {
     return $brand->post_title;
   }

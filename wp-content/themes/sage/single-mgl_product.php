@@ -5,9 +5,15 @@
  
 use Miigle\Models\Product;
 use Miigle\Models\Brand;
+use Miigle\Models\User;
 
 $gallery = Product\get_image_gallery(get_the_ID());
 $brand = Product\get_brand(get_the_ID());
+$mgl_user = User\current();
+$upvoted = User\has_upvoted_product($mgl_user['ID'], get_the_ID());
+
+wp_reset_postdata();
+
 ?>
 
 <div id="template-product_page">
@@ -40,13 +46,19 @@ $brand = Product\get_brand(get_the_ID());
 				<div class="col-md-4">
 					<div class="prod-info">
 						<h1><?php the_title(); ?></h1>
-						<p class="brand-name">From: <?= $brand->post_title ?></p>
+						<p class="brand-name"><a href="<?= get_permalink($brand->ID) ?>"><?= $brand->post_title ?></a></p>
 						<?php the_content(); ?>
 					</div>
 					<div class="prod-meta">
 						<!--<a href="#" class="btn btn-profile trend"><strong>#1</strong> in Fashion</a>-->
-						<a href="#" class="btn btn-profile upvotes"><i class="fa fa-star-o" aria-hidden="true"></i> <?= Product\get_upvotes(get_the_ID()) ?></a>
-						<a href="#" class="btn btn-profile comment"><i class="fa fa-commenting-o" aria-hidden="true"></i> <?= Product\get_comments_count(get_the_ID()) ?></a>
+						<form class="upvote" id="product-upvote" method="post" action="mgl/v1/product/upvote">
+							<input type="hidden" name="product_id" value="<?php the_ID(); ?>"> 
+							<span class="label label-danger label-btn btn-upvote" data-upvoted="<?php if($upvoted): ?>1<?php else: ?>0<?php endif; ?>">								
+								<i class="fa fa-star<?php if(!$upvoted): ?>-o<?php endif; ?>"></i> 
+								<?= Product\get_upvotes(get_the_ID()) ?>
+							</span>
+						</form>
+						<span class="label label-pink label-btn"><i class="fa fa-commenting-o"></i> <?= Product\get_comments_count(get_the_ID()) ?></span>
 					</div>
 					<hr>
 					<div class="prod-action">
@@ -94,10 +106,10 @@ $brand = Product\get_brand(get_the_ID());
       </div>
       <!--<div class="row brand-video">
       	<div class="col-md-6">
-      		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand-video1.jpg" class="img-responsive"/>
+      		<img src="<?php //echo get_template_directory_uri(); ?>/assets/images/brand-video1.jpg" class="img-responsive"/>
       	</div>
       	<div class="col-md-6">
-      		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand-video2.jpg" class="img-responsive"/>
+      		<img src="<?php //echo get_template_directory_uri(); ?>/assets/images/brand-video2.jpg" class="img-responsive"/>
       	</div>
       </div>-->
       <!--<div class="row brand-location">

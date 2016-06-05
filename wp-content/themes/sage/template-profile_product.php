@@ -8,6 +8,7 @@ use Miigle\Models\User;
  
 $mgl_user = User\current();
 $products = Product\get_user_products($mgl_user['ID']);
+wp_reset_postdata();
 ?>
 
 <div id="template-profile_product">
@@ -35,10 +36,14 @@ $products = Product\get_user_products($mgl_user['ID']);
         		<a href="#" target="_blank">Facebook</a>&nbsp;|&nbsp;-->
         	</div>
         	<div class="profile-btn text-center">
-        		<a href="#" class="btn btn-profile upvotes"><i class="fa fa-star-o" aria-hidden="true"></i> 95 - Upvotes</a>
+        		<a href="#" class="btn btn-profile upvotes">
+							<i class="fa fa-star-o" aria-hidden="true"></i> 
+							<?= User\get_upvoted_products_count($mgl_user['ID']) ?> 
+							- Upvotes
+						</a>
         		<a href="#" class="btn btn-profile submitted">
 							<i class="fa fa-external-link" aria-hidden="true"></i>  
-							<?= $products->found_posts ?>
+							<?= count($products) ?>
 							- Submitted
 						</a>
         		<!--<a href="#" class="btn btn-profile following"><i class="fa fa-users" aria-hidden="true"></i> 4 - Following</a>
@@ -59,34 +64,33 @@ $products = Product\get_user_products($mgl_user['ID']);
 						
 						<?php 
 							$i = 1;
-							while($products->have_posts()): 
-								$products->the_post(); 
+							foreach($products as $product):
 						?>
 						
 							<div class="col-sm-4">
 								<div class="card-item">
 									<div class="profile-thumb text-center">
-										<img src="<?php the_post_thumbnail_url(); ?>" class="img-responsive" />
+										<img src="<?= wp_get_attachment_image_src(get_post_thumbnail_id($product->ID), 'full')[0] ?>" class="img-responsive" />
 									</div>
 									<div class="profile-fullname">
-										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+										<a href="<?= get_permalink($product->ID) ?>"><?= $product->post_title ?></a>
 									</div>
 									<div class="profile-brand">
-										<?= Product\get_brand_title(get_the_ID()) ?>
+										<?= Product\get_brand_title($product->ID) ?>
 									</div>
 									<div class="profile-description">
-										<?php the_excerpt(); ?>
+										<?= wp_trim_words($product->post_content) ?>
 									</div>
 									<div class="profile-website">
-										<a href="<?= Product\get_url(get_the_ID()) ?>"><?= Product\get_url(get_the_ID()) ?></a>
+										<a href="<?= Product\get_url($product->ID) ?>"><?= Product\get_url($product->ID) ?></a>
 									</div>
 									<div class="profile-meta">
 										<!--<a href="#" class="btn btn-profile trend">Trending in fashion</a>-->
-										<a href="#" class="btn btn-profile upvotes"><i class="fa fa-star-o" aria-hidden="true"></i> <?= Product\get_upvotes(get_the_ID()) ?></a>
-										<a href="#" class="btn btn-profile comment"><i class="fa fa-commenting-o" aria-hidden="true"></i> <?= Product\get_comments_count(get_the_ID()) ?></a>
+										<a href="#" class="btn btn-profile upvotes"><i class="fa fa-star-o" aria-hidden="true"></i> <?= Product\get_upvotes($product->ID) ?></a>
+										<a href="#" class="btn btn-profile comment"><i class="fa fa-commenting-o" aria-hidden="true"></i> <?= Product\get_comments_count($product->ID) ?></a>
 									</div>
 									<!--<div class="profile-follower">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/profile-thumb.png" />
+										<img src="<?php //echo get_template_directory_uri(); ?>/assets/images/profile-thumb.png" />
 										<span class="user-name">James Tanner</span>
 										<span class="user-cat">Fashion</span>
 									</div>-->
@@ -98,7 +102,7 @@ $products = Product\get_user_products($mgl_user['ID']);
 								<div class="row">
 							<?php endif; ?>
 						
-						<?php $i++; endwhile; ?>
+						<?php $i++; endforeach; ?>
 						
         	</div>
         	<!--./ Card Item -->

@@ -78,6 +78,18 @@ li .navbar-btn {
   background: none;
   border-color: white;
 }
+.label-btn {
+  font-size: 13px;
+	line-height: 1.42857143;
+  font-weight: normal;
+  border-radius: 45px;
+  margin-right: 10px;
+	padding: 5px 15px 7px;
+}
+.btn-upvote:hover {
+	cursor: pointer;
+	opacity: 0.85;
+}
 h1 {
   font-family: 'Montserrat', sans-serif;
   color: #2a404d;
@@ -90,6 +102,9 @@ h2, h3, h4 {
 }
 a, a:visited {
   color: #55b7b8;
+}
+form.upvote {
+	display: inline-block;
 }
 .form-group {
   margin-bottom: 30px;
@@ -372,12 +387,6 @@ body.post-type-archive-mgl_product {
   background-size: cover;
   background-position: center center;
   display: inline-block;
-}
-#archive-mgl_product .label {
-  font-size: 16px;
-  font-weight: normal;
-  border-radius: 45px;
-  margin-right: 10px;
 }
 #archive-mgl_product .label:first-child {
   margin-right: 0;
