@@ -16,7 +16,7 @@ function register() {
     'has_archive' => true,
     'rewrite'     => array('slug' => 'products'),
     'show_in_rest'=> true,
-    'supports'    => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'),
+    'supports'    => array('title', 'editor', 'author', 'excerpt', 'comments'),
     'capability_type' => array('mgl_product', 'mgl_products'),
     'map_meta_cap' => true
   );
@@ -234,6 +234,20 @@ function downvote($post_id) {
  */
 function get_image_gallery($post_id) {
   return get_post_meta($post_id, '_mgl_product_image_gallery', true);
+}
+
+/**
+ * Get the image gallery
+ */
+function get_thumbnail($post_id) {
+  $gallery = get_image_gallery($post_id);
+
+  if($gallery) {
+    return $gallery[0]['image'];
+  }
+  else {
+    return '';
+  }  
 }
 
 /**

@@ -53,7 +53,7 @@ if(isset($_GET['sort']) && $_GET['sort'] == 'popular') {
             <?php while (have_posts()) : the_post(); ?>
               <style type="text/css">
                 a#product-<?php the_ID(); ?> {
-                  background-image: url('<?php the_post_thumbnail_url(); ?>');
+                  background-image: url('<?= Product\get_thumbnail(get_the_ID()) ?>');
                 }
               </style>
               <div class="col-md-6">
