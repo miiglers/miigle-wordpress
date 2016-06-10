@@ -32,5 +32,7 @@ if (post_password_required()) {
     </div>
   <?php endif; ?>
 
-  <?php comment_form(); ?>
+  <?php if(current_user_can('subscriber-approved')): ?>
+    <?php comment_form(); ?>
+  <?php endif; ?>
 </section>

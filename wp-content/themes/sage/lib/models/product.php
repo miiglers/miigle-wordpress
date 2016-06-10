@@ -4,6 +4,7 @@ namespace Miigle\Models\Product;
 
 add_action('init', __NAMESPACE__ . '\\register');
 add_action('cmb2_admin_init', __NAMESPACE__ . '\\register_meta');
+add_action('pre_get_posts', __NAMESPACE__ . '\\pre_get_posts');
 
 /**
  * Produt Post Type
@@ -25,8 +26,8 @@ function register() {
 		'mgl_product_category',
 		'mgl_product',
 		array(
-			'label' => __( 'Category' ),
-			'rewrite' => array( 'slug' => 'category' ),
+			'label' => __('Category'),
+			'rewrite' => array('slug' => 'category', 'hierarchical' => true),
       'show_in_rest'=> true,
 			'hierarchical' => true,
 		)
@@ -106,6 +107,27 @@ function register_meta() {
 }
 
 /**
+ * Modify the archive query
+ */
+function pre_get_posts($query) {
+  if(isset($_GET['sort']) && $_GET['sort'] == 'popular') {
+    if(is_post_type_archive('mgl_product') || is_tax('mgl_product_category')) {
+      
+      $query->set('meta_query', array(
+        'upvotes_clause' => array(
+          'key' => '_mgl_product_upvotes',
+          'compare' => 'EXISTS',
+        )
+      ));
+
+      $query->set('orderby', array('upvotes_clause' => 'DESC'));
+
+    }
+  }
+  
+}
+
+/**
  * Create a product
  */
 function create($data, $user) {  
@@ -121,6 +143,7 @@ function create($data, $user) {
 
   $post_id = wp_insert_post($new_post);
 
+  add_post_meta($post_id, '_mgl_product_upvotes', '0', true);
   add_post_meta($post_id, '_mgl_product_brand_id', $data['_mgl_product_brand_id'], true);
   add_post_meta($post_id, '_mgl_product_url', $data['_mgl_product_url'], true);
 

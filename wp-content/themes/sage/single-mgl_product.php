@@ -9,8 +9,7 @@ use Miigle\Models\User;
 
 $gallery = Product\get_image_gallery(get_the_ID());
 $brand = Product\get_brand(get_the_ID());
-$mgl_user = User\current();
-$upvoted = User\has_upvoted_product($mgl_user['ID'], get_the_ID());
+$mgl_current_user = User\current();
 
 wp_reset_postdata();
 
@@ -37,8 +36,7 @@ wp_reset_postdata();
 								<img src="<?= $gallery[0]['image'] ?>" class="img-responsive" />
 							</div>
 							<div class="share-action">
-								<a class="twitter-share-button" href="https://twitter.com/intent/tweet"><i class="fa fa-twitter" aria-hidden="true"></i> Share this</a>
-								<a class="facebook-share-button" href=""><i class="fa fa-facebook" aria-hidden="true"></i> Share this</a>
+								<?= do_shortcode('[TheChamp-Sharing]'); ?>
 							</div>
 						</div>
 					</div>
@@ -50,15 +48,8 @@ wp_reset_postdata();
 						<?php the_content(); ?>
 					</div>
 					<div class="prod-meta">
-						<!--<a href="#" class="btn btn-profile trend"><strong>#1</strong> in Fashion</a>-->
-						<form class="upvote" id="product-upvote" method="post" action="mgl/v1/product/<?php if($upvoted): ?>down<?php else: ?>up<?php endif; ?>vote">
-							<input type="hidden" name="product_id" value="<?php the_ID(); ?>"> 
-							<span class="label label-danger label-btn btn-upvote" data-upvoted="<?php if($upvoted): ?>1<?php else: ?>0<?php endif; ?>">								
-								<i class="fa fa-star<?php if(!$upvoted): ?>-o<?php endif; ?>"></i> 
-								<span id="upvotes"><?= Product\get_upvotes(get_the_ID()) ?></span>
-							</span>
-						</form>
-						<span class="label label-pink label-btn"><i class="fa fa-commenting-o"></i> <?= Product\get_comments_count(get_the_ID()) ?></span>
+						<?php require_once(locate_template('templates/product/button-upvote.php')); ?>
+						<?php require_once(locate_template('templates/product/button-comment.php')); ?>
 					</div>
 					<hr>
 					<div class="prod-action">

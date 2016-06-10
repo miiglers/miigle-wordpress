@@ -24,6 +24,7 @@
           var $star = $(this).find('i');
           var $form = $(this).parents('form');
           var upvotes = $form.find('span#upvotes').html() * 1;
+          var $this = $(this);
           
           apiAjax($form, $form.serialize())
           .then(function(success) {
@@ -31,6 +32,8 @@
             if($form.attr('action') === 'mgl/v1/product/upvote') {
               $star.removeClass('fa-star-o');
               $star.addClass('fa-star');
+              $this.addClass('label-danger');
+              $this.removeClass('label-default');
               $form.attr('action', 'mgl/v1/product/downvote');
               $form.find('span#upvotes').html(upvotes + 1);
             }
@@ -38,6 +41,8 @@
             else {
               $star.removeClass('fa-star');
               $star.addClass('fa-star-o');
+              $this.addClass('label-default');
+              $this.removeClass('label-danger');
               $form.attr('action', 'mgl/v1/product/upvote');
               $form.find('span#upvotes').html(upvotes - 1);
             }

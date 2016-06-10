@@ -11,61 +11,7 @@ body {
   color: #777;
 	background: #f9f9fa;
 }
-.navbar {
-  border: none;
-  box-shadow: 0 0 transparent,0px 0px 4px 0px #777, 0 0 transparent, 0 0 transparent;
-  margin-bottom: 0;
-  padding: 10px 0;
-}
-.navbar-default {
-  background-color: white;
-}
-.navbar-header {
-  z-index: 1;
-}
-.navbar-brand.logged-in {
-	height: 50px;
-	padding: 0;
-}
-.navbar-brand.logged-in img {
-	height: 100%;
-}
-.navbar-center {
-  position: absolute;
-  left: 40%;
-  top: 20px;  
-  margin: auto;
-  height: 100%;
-  display: inline-block;
-}
-.navbar-collapse {
-  text-align: center;
-}
-li .navbar-btn {
-  margin-left: 15px;
-}
-.btn {
-  padding: 6px 30px;
-}
-.navbar-nav>li>a {
-  padding: 6px 30px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-}
-.navbar-nav>li>a>.fa {
-  font-size: 20px;
-}
 .btn-primary {
-  background-color: #55b7b8;
-  border-color: #55b7b8;
-}
-.navbar-default .navbar-nav>li>a.btn-primary {
-  color: white;
-}
-.navbar-default .navbar-nav>li>a:focus, 
-.navbar-default .navbar-nav>li>a:hover,
-.btn-primary:hover, 
-.btn-primary:focus {
   background-color: #55b7b8;
   border-color: #55b7b8;
 }
@@ -170,9 +116,102 @@ div.wpcf7-mail-sent-ng {
 	color: #a94442;
 	background-color: #f2dede;
 }
-/*main.main {
-  margin-bottom: 100px;
-}*/
+ul.collapsible {
+  margin-bottom: 40px;
+}
+ul.collapsible ul {
+  display: none;
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+ul.collapsible a {
+  color: #777;
+}
+ul.collapsible > li {
+  margin-bottom: 15px;
+}
+ul.collapsible .active-parent ul,
+ul.collapsible li:hover ul {
+  display: block;
+}
+ul.collapsible .active > a {
+  color: #55b7b8;
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 50px;
+  }
+}
+
+
+/*********************************************************
+|
+|  Header
+|
+**********************************************************/
+
+.navbar {
+  border: none;
+  box-shadow: 0 0 transparent,0px 0px 4px 0px #777, 0 0 transparent, 0 0 transparent;
+  margin-bottom: 0;
+  padding: 10px 0;
+}
+.navbar-default {
+  background-color: white;
+}
+.navbar-header {
+  z-index: 1;
+}
+.navbar-brand.logged-in {
+  height: 50px;
+  padding: 0;
+}
+.navbar-brand.logged-in img {
+  height: 100%;
+}
+.navbar-center {
+  position: absolute;
+  left: 40%;
+  top: 20px;  
+  margin: auto;
+  height: 100%;
+  display: inline-block;
+}
+.navbar-collapse {
+  text-align: center;
+}
+li .navbar-btn {
+  margin-left: 15px;
+}
+.btn {
+  padding: 6px 30px;
+}
+.navbar-nav>li>a {
+  padding: 6px 30px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.navbar-nav>li>a>.fa {
+  font-size: 20px;
+}
+.navbar-default .navbar-nav>li>a.btn-primary {
+  color: white;
+}
+.navbar-default .navbar-nav>li>a:focus, 
+.navbar-default .navbar-nav>li>a:hover,
+.btn-primary:hover, 
+.btn-primary:focus {
+  background-color: #55b7b8;
+  border-color: #55b7b8;
+}
+
+/*********************************************************
+|
+|  Footer
+|
+**********************************************************/
+
 footer#footer .links {
   background: #395561;
   padding: 75px 0;
@@ -196,21 +235,12 @@ footer#footer .copyright {
   color: white;
   font-size: 12px;
 }
+
 @media (min-width: 992px) {
-  h1 {
-    font-size: 50px;
-  }
   footer#footer .links li {
     display: inline-block;
     margin-bottom: 0;
   }
-}
-
-/* Mobile user*/
-@media screen and (max-width: 580px){
-    .navbar-fixed-top {
-    position: absolute;
-    }
 }
 
 /*********************************************************
@@ -372,15 +402,6 @@ body.post-type-archive-mgl_product {
   padding-bottom: 25px;
   margin-bottom: 20px;
   border-bottom: 1px solid #e7e7e7;
-}
-#archive-mgl_product .left ul {
-  margin-bottom: 40px;
-}
-#archive-mgl_product .left li {
-  margin-bottom: 15px;
-}
-#archive-mgl_product .left a {
-  color: #777;
 }
 #archive-mgl_product .right .well {
   padding: 14px;
@@ -1410,25 +1431,25 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
     background-color: #ffffff;
 }
 #template-product_page .btn.btn-saveProd {
-    border: 1px solid #55b8b8;
-    color: #55b8b8;
-    padding: 8px 20px;
-    width: 100%;
-    margin-bottom:10px;
+  border: 1px solid #55b8b8;
+  color: #55b8b8;
+  padding: 8px 20px;
+  width: 100%;
+  margin-bottom:10px;
 }
 #template-product_page .btn.btn-saveProd:hover, 
 #template-product_page .btn.btn-saveProd:focus {
-    color: #fff;
-    background-color: #55b8b8;
+  color: #fff;
+  background-color: #55b8b8;
 }
 #template-product_page section#product_page .prod-gallery .previews a {
-display: block;
-margin-bottom: 10px;
+  display: block;
+  margin-bottom: 10px;
 }
 #template-product_page section#product_page .prod-gallery .full {
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),
 							0 2px 10px 0 rgba(0,0,0,.12);
-	margin: 0 35px 40px 35px;
+	margin: 0 35px 40px 0;
 }
 #template-product_page section#product_page .prod-gallery .previews a {
 	border: solid 1px #eeeeee;

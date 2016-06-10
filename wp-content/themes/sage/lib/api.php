@@ -11,22 +11,34 @@ function register() {
   
   register_rest_route('mgl/v1', '/product', array(
     'methods' => 'POST',
-    'callback' => __NAMESPACE__ . '\\product_post'
+    'callback' => __NAMESPACE__ . '\\product_post',
+    'permission_callback' => function () {
+			return current_user_can('subscriber-approved');
+		}
   ));
   
   register_rest_route('mgl/v1', '/product/upvote', array(
     'methods' => 'POST',
-    'callback' => __NAMESPACE__ . '\\product_upvote_post'
+    'callback' => __NAMESPACE__ . '\\product_upvote_post',
+    'permission_callback' => function () {
+			return is_user_logged_in();
+		}
   ));
   
   register_rest_route('mgl/v1', '/product/downvote', array(
     'methods' => 'POST',
-    'callback' => __NAMESPACE__ . '\\product_downvote_post'
+    'callback' => __NAMESPACE__ . '\\product_downvote_post',
+    'permission_callback' => function () {
+			return is_user_logged_in();
+		}
   ));
   
   register_rest_route('mgl/v1', '/user', array(
     'methods' => 'PUT',
-    'callback' => __NAMESPACE__ . '\\user_put'
+    'callback' => __NAMESPACE__ . '\\user_put',
+    'permission_callback' => function () {
+			return is_user_logged_in();
+		}
   ));
   
 }
