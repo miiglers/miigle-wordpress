@@ -1419,7 +1419,6 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
 }
 #template-product_page section#product_page h1 {
 	font-size: 30px;
-	line-height: 0.7;
 	color: #333333;
 	margin-bottom:11px;
 	margin-top:3px;
@@ -1508,13 +1507,13 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
 	margin: 0 35px 40px 0;
 }
 #template-product_page section#product_page .prod-gallery .previews a {
-	border: solid 1px #eeeeee;
+	border: solid 3px #eeeeee;
 	border-radius: 5px;
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),
 							0 2px 10px 0 rgba(0,0,0,.12);
 }
 #template-product_page section#product_page .prod-gallery .previews a:hover, 
-#template-product_page section#product_page .prod-gallery .previews a.selected {
+#template-product_page section#product_page .prod-gallery .previews a.active {
 	border: solid 3px #4a90e2;
 }
 /*

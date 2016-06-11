@@ -10,6 +10,7 @@ use Miigle\Models\User;
 $gallery = Product\get_image_gallery(get_the_ID());
 $brand = Product\get_brand(get_the_ID());
 $mgl_current_user = User\current();
+$badges = Brand\get_badges($brand->ID);
 
 wp_reset_postdata();
 
@@ -25,9 +26,9 @@ wp_reset_postdata();
 						<div class="col-xs-2"> 
 							<div class="previews">
                 <?php foreach($gallery as $k => $v): ?>
-								<a href="#" <?php if($k == 0): ?>class="selected"<?php endif; ?> data-full="<?= $v['image'] ?>">
-                  <img src="<?= $v['image'] ?>" class="img-responsive" />
-                </a> 
+  								<a href="#" <?php if($k == 0): ?>class="active"<?php endif; ?> data-img="<?= $v['image'] ?>">
+                    <img src="<?= $v['image'] ?>" class="img-responsive" />
+                  </a> 
 								<?php endforeach; ?>
 							</div>
 						</div>
@@ -79,15 +80,17 @@ wp_reset_postdata();
       		<div class="our-story-img">
       			<img src="<?= wp_get_attachment_image_src(get_post_thumbnail_id($brand->ID), 'full')[0] ?>" class="img-responsive"/>
       		</div>
-      		<div class="community-badges">
-      			<h3>Community Badges:</h3>
-              <?php foreach(Brand\get_badges($brand->ID) as $badge): ?>
-      				<div class="badges">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/badges-<?= $badge->slug ?>.png" class="oval img-responsive"/>
-                <span class="txt"><?= $badge->name ?></span>
-              </div>
-      				<?php endforeach; ?>
-          </div>
+          <?php if($badges): ?>
+        		<div class="community-badges">
+        			<h3>Community Badges:</h3>
+                <?php foreach($badges as $badge): ?>
+        				<div class="badges">
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/badges-<?= $badge->slug ?>.png" class="oval img-responsive"/>
+                  <span class="txt"><?= $badge->name ?></span>
+                </div>
+        				<?php endforeach; ?>
+            </div>
+          <?php endif; ?>
       	</div>
       	<div class="col-md-6">
       		<div class="our-story">
@@ -126,8 +129,11 @@ wp_reset_postdata();
 		<div class="container">      
       <div class="row">
       	<div class="col-md-9">
-      		<h2>Discussion</h2>
-      		<hr>
+
+          <?php if($post->comment_count || current_user_can('subscriber-approved')): ?>
+        		<h2>Discussion</h2>
+        		<hr>
+          <?php endif; ?>
       		<?php comments_template('/templates/comments.php'); ?>
       	</div>
         

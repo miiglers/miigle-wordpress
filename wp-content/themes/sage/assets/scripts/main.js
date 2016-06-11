@@ -150,6 +150,20 @@
         });
       }
     },
+    'single_mgl_product': {
+      init: function() {
+        $('.prod-gallery a').on('click', function(e) {
+          e.preventDefault();
+          var $this = $(this);
+          var img = $this.data('img');
+
+          $('.prod-gallery a').removeClass('active');
+          $this.addClass('active');
+
+          $('.prod-gallery .full img').attr('src', img);
+        });
+      }
+    },
     
   };
   
