@@ -50,7 +50,7 @@ if(isset($_GET['sort']) && $_GET['sort'] == 'popular') {
           
           <div class="row">
             
-            <?php while (have_posts()) : the_post(); ?>
+            <?php $i=1; while (have_posts()) : the_post(); ?>
               <style type="text/css">
                 a#product-<?php the_ID(); ?> {
                   background-image: url('<?= Product\get_thumbnail(get_the_ID()) ?>');
@@ -74,7 +74,11 @@ if(isset($_GET['sort']) && $_GET['sort'] == 'popular') {
                   </div>
                 </div>
               </div>
-            <?php endwhile; ?>
+              <?php if(($i % 2) == 0): ?>
+                </div>
+                <div class="row">
+              <?php endif; ?>
+            <?php $i++; endwhile; ?>
             
           </div>
           
