@@ -5,26 +5,34 @@ namespace Miigle\Models\User;
 /**
  * Get a user and their meta
  */
-function current() {
-  $current_user = wp_get_current_user();
-  $avatar = get_user_meta($current_user->ID, 'thechamp_large_avatar', true);
-  $socials = get_user_meta($current_user->ID, 'thechamp_linked_accounts', true);
+function get($id) {
+  $user = new \WP_User($id);
+  $avatar = get_user_meta($id, 'thechamp_large_avatar', true);
+  $socials = get_user_meta($id, 'thechamp_linked_accounts', true);
   $socials = unserialize($socials);
   
   return array(
-    'ID'          => $current_user->ID,
-    'username'    => get_username($current_user->ID),
-    'email'       => $current_user->user_email,
-    'first_name'  => $current_user->user_firstname,
-    'last_name'   => $current_user->user_lastname,
-    'website'     => $current_user->user_url,
+    'ID'          => $id,
+    'username'    => get_username($id),
+    'email'       => $user->user_email,
+    'first_name'  => $user->user_firstname,
+    'last_name'   => $user->user_lastname,
+    'full_name'   => $user->user_firstname . ' ' . $user->user_lastname,
+    'website'     => $user->user_url,
     'avatar'      => $avatar,
-    '_mgl_user_title' => get_title($current_user->ID),
-    '_mgl_user_website' => get_website($current_user->ID),
-    '_mgl_user_facebook' => get_facebook($current_user->ID),
-    '_mgl_user_twitter' => get_twitter($current_user->ID),
-    '_mgl_user_company' => get_company($current_user->ID)
+    '_mgl_user_title' => get_title($id),
+    '_mgl_user_website' => get_website($id),
+    '_mgl_user_facebook' => get_facebook($id),
+    '_mgl_user_twitter' => get_twitter($id),
+    '_mgl_user_company' => get_company($id)
   );
+}
+
+/**
+ * Get the current user
+ */
+function current() {
+  return get(wp_get_current_user()->ID);
 }
 
 /**
@@ -96,6 +104,13 @@ function register_meta() {
  */
 function get_title($user_id) {
   return get_user_meta($user_id, '_mgl_user_title', true);
+}
+
+/**
+ * Get user avatar
+ */
+function get_avatar($user_id) {
+  return get_user_meta($user_id, 'thechamp_large_avatar', true);
 }
 
 /**

@@ -114,13 +114,17 @@ function pre_get_posts($query) {
     if(is_post_type_archive('mgl_product') || is_tax('mgl_product_category')) {
       
       $query->set('meta_query', array(
+        'relation' => 'OR',
         'upvotes_clause' => array(
           'key' => '_mgl_product_upvotes',
-          'compare' => 'EXISTS',
+          'value' => 'lame', // this will include products with no upvotes
+          'compare' => '!=',
         )
       ));
 
-      $query->set('orderby', array('upvotes_clause' => 'DESC'));
+      $query->set('orderby', array(
+        'upvotes_clause' => 'DESC'
+      ));
 
     }
   }

@@ -137,6 +137,46 @@ ul.collapsible li:hover ul {
 ul.collapsible .active > a {
   color: #55b7b8;
 }
+.text-two-lines {
+  /* hide text if it more than N lines  */
+  overflow: hidden;
+  /* for set '...' in absolute position */
+  position: relative; 
+  /* use this value to count block height */
+  line-height: 1.2em;
+  /* max-height = line-height (1.2) * lines max number (3) */
+  max-height: 2.4em; 
+  /* fix problem when last visible word doesn't adjoin right side  */
+  text-align: justify;  
+  /* place for '...' */
+  margin-right: -1em;
+  padding-right: 1em;
+}
+/* create the ... */
+.text-two-lines:before {
+  /* points in the end 
+  content: '...';
+  /* absolute position */
+  position: absolute;
+  /* set position to right bottom corner of block */
+  right: 0;
+  bottom: 0;
+}
+/* hide ... if we have text, which is less than or equal to max lines */
+.text-two-lines:after {
+  /* points in the end */
+  content: '';
+  /* absolute position */
+  position: absolute;
+  /* set position to right bottom corner of text */
+  right: 0;
+  /* set width and height */
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  /* bg color = bg color under block */
+  background: white;
+}
 
 @media (min-width: 992px) {
   h1 {
@@ -420,6 +460,22 @@ body.post-type-archive-mgl_product {
 }
 #archive-mgl_product .thumbnail .caption {
   padding: 15px;
+}
+#archive-mgl_product .thumbnail .caption .desc {
+  margin-bottom: 15px;
+}
+#archive-mgl_product .thumbnail .author {
+  padding-top: 15px;
+  margin-top: 15px;
+  border-top: 1px solid #e4e4e4;
+  font-size: 13px;
+}
+#archive-mgl_product .thumbnail .author img {
+  border-radius: 5px;
+}
+#archive-mgl_product .thumbnail .author h4 {
+  margin: 0;
+  font-size: 13px;
 }
 #archive-mgl_product .product-thumb {
   width: 100%;
