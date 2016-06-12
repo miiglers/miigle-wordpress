@@ -5,6 +5,7 @@ namespace Miigle\Models\Product;
 add_action('init', __NAMESPACE__ . '\\register');
 add_action('cmb2_admin_init', __NAMESPACE__ . '\\register_meta');
 add_action('pre_get_posts', __NAMESPACE__ . '\\pre_get_posts');
+add_action('save_post', __NAMESPACE__ . '\\save_post', 10, 3);
 
 /**
  * Produt Post Type
@@ -24,7 +25,7 @@ function register() {
   
   register_taxonomy(
 		'mgl_product_category',
-		'mgl_product',
+		array('mgl_product', 'mgl_brand'),
 		array(
 			'label' => __('Category'),
 			'rewrite' => array('slug' => 'category', 'hierarchical' => true),
@@ -107,6 +108,15 @@ function register_meta() {
 }
 
 /**
+ * Hook for the save_post action
+ */
+function save_post($post_id, $post, $update) {
+  if(!get_upvotes($post_id)) {
+    update_post_meta($post_id, '_mgl_product_upvotes', '0');
+  }
+}
+
+/**
  * Modify the archive query
  */
 function pre_get_posts($query) {
@@ -119,12 +129,21 @@ function pre_get_posts($query) {
           'key' => '_mgl_product_upvotes',
           'value' => 'lame', // this will include products with no upvotes
           'compare' => '!=',
+          //'type' => 'NUMERIC'
+        ),
+        'url_clause' => array(
+          'key' => '_mgl_product_url',
+          'compare' => 'EXISTS',
+          'type' => 'NUMERIC'
         )
       ));
 
       $query->set('orderby', array(
         'upvotes_clause' => 'DESC'
       ));
+
+      echo 'ayyyyyyy<br><br><br>';
+      var_dump($query);
 
     }
   }

@@ -6,8 +6,8 @@
 use Miigle\Models\Product;
 use Miigle\Models\User;
  
-$mgl_user = User\current();
-$products = Product\get_user_products($mgl_user['ID']);
+$mgl_current_user = User\current();
+$products = Product\get_user_products($mgl_current_user['ID']);
 wp_reset_postdata();
 ?>
 
@@ -19,35 +19,35 @@ wp_reset_postdata();
         <div class="col-md-10 col-md-offset-1 hero"> 
           <div class="profile-thumb text-center">
         		<!--<a href="#" class="btn btn-follow float-right">Follow</a>-->
-        		<img src="<?= $mgl_user['avatar'] ?>" class="img-responsive" />
+        		<img src="<?= $mgl_current_user['avatar'] ?>" class="img-responsive" />
         	</div>
         	<div class="profile-fullname text-center white-text">
-        		<?= $mgl_user['first_name'] ?>
-						<?= $mgl_user['last_name'] ?>
+        		<?= $mgl_current_user['first_name'] ?>
+						<?= $mgl_current_user['last_name'] ?>
 				  </div>
         	<div class="profile-title text-center white-text">
-        		<?= $mgl_user['_mgl_user_title'] ?>
-						<?php if( $mgl_user['_mgl_user_company']): ?>
-        			@ <?= $mgl_user['_mgl_user_company'] ?>
+        		<?= $mgl_current_user['_mgl_user_title'] ?>
+						<?php if( $mgl_current_user['_mgl_user_company']): ?>
+        			@ <?= $mgl_current_user['_mgl_user_company'] ?>
 						<?php endif; ?>
 					</div>
         	<div class="profile-social text-center white-text">
-        		<a href="#">@<?= $mgl_user['username'] ?></a>
+        		<a href="#">@<?= $mgl_current_user['username'] ?></a>
 						&nbsp;|&nbsp;
-						<?php if( $mgl_user['_mgl_user_website']): ?>
-        			<a href="<?= $mgl_user['website'] ?>" target="_blank">Website</a>
+						<?php if( $mgl_current_user['_mgl_user_website']): ?>
+        			<a href="<?= $mgl_current_user['website'] ?>" target="_blank">Website</a>
 						<?php endif; ?>
-						<?php if( $mgl_user['_mgl_user_facebook']): ?>
-        			&nbsp;|&nbsp;<a href="<?= $mgl_user['_mgl_user_facebook'] ?>" target="_blank">Facebook</a>
+						<?php if( $mgl_current_user['_mgl_user_facebook']): ?>
+        			&nbsp;|&nbsp;<a href="<?= $mgl_current_user['_mgl_user_facebook'] ?>" target="_blank">Facebook</a>
 						<?php endif; ?>
-						<?php if( $mgl_user['_mgl_user_twitter']): ?>
-        			&nbsp;|&nbsp;<a href="<?= $mgl_user['_mgl_user_twitter'] ?>" target="_blank">Twitter</a>
+						<?php if( $mgl_current_user['_mgl_user_twitter']): ?>
+        			&nbsp;|&nbsp;<a href="<?= $mgl_current_user['_mgl_user_twitter'] ?>" target="_blank">Twitter</a>
 						<?php endif; ?>
         	</div>
         	<div class="profile-btn text-center">
         		<a href="#" class="btn btn-profile upvotes">
 							<i class="fa fa-star-o" aria-hidden="true"></i> 
-							<?= User\get_upvoted_products_count($mgl_user['ID']) ?> 
+							<?= User\get_upvoted_products_count($mgl_current_user['ID']) ?> 
 							- Upvotes
 						</a>
         		<a href="#" class="btn btn-profile submitted">
@@ -99,15 +99,17 @@ wp_reset_postdata();
 										<?= Product\get_brand_title($product->ID) ?>
 									</div>
 									<div class="profile-description">
-										<?= wp_trim_words($product->post_content) ?>
+										<div class="text-two-lines desc">
+                      <?= apply_filters('the_content', $product->post_content) ?>
+                      <div class="clearfix"></div>
+                    </div>
 									</div>
 									<div class="profile-website">
 										<a href="<?= Product\get_url($product->ID) ?>"><?= Product\get_url($product->ID) ?></a>
 									</div>
 									<div class="profile-meta">
-										<!--<a href="#" class="btn btn-profile trend">Trending in fashion</a>-->
-										<a href="#" class="btn btn-profile upvotes"><i class="fa fa-star-o" aria-hidden="true"></i> <?= Product\get_upvotes($product->ID) ?></a>
-										<a href="#" class="btn btn-profile comment"><i class="fa fa-commenting-o" aria-hidden="true"></i> <?= Product\get_comments_count($product->ID) ?></a>
+										<?php require(locate_template('templates/product/button-upvote.php')); ?>
+                    <?php require(locate_template('templates/product/button-comment.php')); ?>
 									</div>
 									<!--<div class="profile-follower">
 										<img src="<?php //echo get_template_directory_uri(); ?>/assets/images/profile-thumb.png" />
