@@ -14,7 +14,7 @@ if(isset($queried_object->term_id)) {
   <h4>Categories</h4>
   <ul class="list-unstyled collapsible">
     <li>
-      <a href="<?= home_url() ?>/products">All</a>
+      <a href="<?= home_url() ?>/brands">All</a>
     </li>
     <?php 
       foreach($categories as $category): 
@@ -24,7 +24,7 @@ if(isset($queried_object->term_id)) {
     ?>
       <?php if(!$category->parent): ?>
         <li class="<?php if($active): ?>active<?php endif; ?> <?php if($active_parent): ?>active-parent<?php endif; ?>">
-          <a href="<?= home_url() ?>/category/<?= $category->slug ?>?products">
+          <a href="<?= home_url() ?>/category/<?= $category->slug ?>?brands">
             <?= $category->name ?>            
           </a>
           <?php if($children): ?>
@@ -34,7 +34,7 @@ if(isset($queried_object->term_id)) {
                   $child_cat = get_term($child);
               ?>
                 <li <?php if($child_cat->term_id == $page_term): ?>class="active"<?php endif; ?>>
-                  <a href="<?= home_url() ?>/category/<?= $child_cat->slug ?>?products">
+                  <a href="<?= home_url() ?>/category/<?= $child_cat->slug ?>?brands">
                     <?= $child_cat->name ?>                      
                   </a>
                 </li>
@@ -48,7 +48,7 @@ if(isset($queried_object->term_id)) {
 
   <h4>Directory</h4>
   <ul class="list-unstyled collapsible">
-    <li><a href="<?= home_url() ?>/brands">All Brands</a></li>
+    <li><a href="<?= home_url() ?>/products">All Products</a></li>
   </ul>
 
 </div>

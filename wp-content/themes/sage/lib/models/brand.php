@@ -3,6 +3,7 @@
 namespace Miigle\Models\Brand;
 
 add_action('init', __NAMESPACE__ . '\\register');
+add_action('pre_get_posts', __NAMESPACE__ . '\\pre_get_posts');
 
 /**
  * Produt Post Type
@@ -28,6 +29,41 @@ function register() {
 			'hierarchical' => false,
 		)
 	);
+}
+
+/**
+ * Modify the archive query
+ */
+function pre_get_posts($query) {
+  $is_brands = (isset($_GET['brands']) || is_post_type_archive('mgl_brand'));
+
+  if(!$is_brands) {
+    return;
+  }
+
+  // the tax pages must have either ?products or ?brands
+  if(is_tax('mgl_product_category')) {
+    $query->set('post_type', 'mgl_brand');
+  }
+
+  // popular sort
+  if(isset($_GET['sort']) && $_GET['sort'] == 'popular') {
+    
+    $query->set('meta_query', array(
+      //'relation' => 'OR',
+      'upvotes_clause' => array(
+        'key' => '_mgl_brand_upvotes',
+        'compare' => 'EXISTS',
+        //'type' => 'NUMERIC'
+      )
+    ));
+
+    $query->set('orderby', array(
+      'upvotes_clause' => 'DESC'
+    ));
+
+  }
+  
 }
 
 /**

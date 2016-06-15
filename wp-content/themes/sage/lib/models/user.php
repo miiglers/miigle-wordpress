@@ -150,7 +150,13 @@ function get_username($user_id) {
     return $username;
   }
   else {
-    return get_userdata($user_id)->user_login;
+    $userdata = get_userdata($user_id);
+    if($userdata) {
+      return $userdata->user_login;
+    }
+    else {
+      return '';
+    }
   }
 }
 

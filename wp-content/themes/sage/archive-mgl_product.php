@@ -4,7 +4,6 @@ use Miigle\Models\User;
 use Miigle\Models\Product;
 
 $mgl_current_user = User\current();
-$categories = Product\get_categories();
 
 ?>
 
@@ -19,6 +18,6 @@ $categories = Product\get_categories();
     </div>
   </section>
   
-  <?php require_once(locate_template('templates/product/content-archive.php')); ?>
+  <?php require_once(locate_template('templates/content-archive.php')); ?>
   
 </div>

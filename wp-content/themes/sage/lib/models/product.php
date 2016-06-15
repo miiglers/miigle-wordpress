@@ -5,7 +5,7 @@ namespace Miigle\Models\Product;
 add_action('init', __NAMESPACE__ . '\\register');
 add_action('cmb2_admin_init', __NAMESPACE__ . '\\register_meta');
 add_action('pre_get_posts', __NAMESPACE__ . '\\pre_get_posts');
-add_action('save_post', __NAMESPACE__ . '\\save_post', 10, 3);
+add_action('save_post', __NAMESPACE__ . '\\save_post', 99, 3);
 
 /**
  * Produt Post Type
@@ -111,7 +111,7 @@ function register_meta() {
  * Hook for the save_post action
  */
 function save_post($post_id, $post, $update) {
-  if(!get_upvotes($post_id)) {
+  if($post->post_type == 'mgl_product' && get_upvotes($post_id) == 0) {
     update_post_meta($post_id, '_mgl_product_upvotes', '0');
   }
 }
@@ -120,32 +120,33 @@ function save_post($post_id, $post, $update) {
  * Modify the archive query
  */
 function pre_get_posts($query) {
+  $is_products = (isset($_GET['products']) || is_post_type_archive('mgl_product'));
+
+  if(!$is_products) {
+    return;
+  }
+
+  // the tax pages must have either ?products or ?brands
+  if(is_tax('mgl_product_category')) {
+    $query->set('post_type', 'mgl_product');
+  }
+
+  // popular sort
   if(isset($_GET['sort']) && $_GET['sort'] == 'popular') {
-    if(is_post_type_archive('mgl_product') || is_tax('mgl_product_category')) {
-      
-      $query->set('meta_query', array(
-        'relation' => 'OR',
-        'upvotes_clause' => array(
-          'key' => '_mgl_product_upvotes',
-          'value' => 'lame', // this will include products with no upvotes
-          'compare' => '!=',
-          //'type' => 'NUMERIC'
-        ),
-        'url_clause' => array(
-          'key' => '_mgl_product_url',
-          'compare' => 'EXISTS',
-          'type' => 'NUMERIC'
-        )
-      ));
+    
+    $query->set('meta_query', array(
+      //'relation' => 'OR',
+      'upvotes_clause' => array(
+        'key' => '_mgl_product_upvotes',
+        'compare' => 'EXISTS',
+        //'type' => 'NUMERIC'
+      )
+    ));
 
-      $query->set('orderby', array(
-        'upvotes_clause' => 'DESC'
-      ));
+    $query->set('orderby', array(
+      'upvotes_clause' => 'DESC'
+    ));
 
-      echo 'ayyyyyyy<br><br><br>';
-      var_dump($query);
-
-    }
   }
   
 }

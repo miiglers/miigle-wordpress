@@ -1908,7 +1908,7 @@ margin-bottom: 30px;
 	margin-bottom:31px;
 	display:inline-block;
 }
-#template-brand_directory section#featured h3 {
+.templates.brand#content-archive h3 {
 	margin-top:0;
 	font-size: 16px;
 	line-height: 1.1;
@@ -1981,20 +1981,20 @@ margin-bottom: 30px;
 	color:#55b7b8;
 	font-weight:700;
 }
-#template-brand_directory section#featured .card {
+.templates.brand#content-archive .card {
 	border-radius: 5px;
 	background-color: #ffffff;
 	border: solid 1.5px #e4e4e4;
 	padding:30px;
 	margin-bottom:13px;
 }
-#template-brand_directory section#featured .card img {
+.templates.brand#content-archive .card img {
 	box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
 	border-radius: 6px;
 }
-#template-brand_directory section#featured .card .prod-meta {
+.templates.brand#content-archive .card .prod-meta {
 	padding-top:15px;
 }
 #template-brand_directory section#featured .showmore {
