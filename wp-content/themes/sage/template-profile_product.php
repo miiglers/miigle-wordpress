@@ -47,7 +47,7 @@ wp_reset_postdata();
         	<div class="profile-btn text-center">
         		<a href="#" class="btn btn-profile upvotes">
 							<i class="fa fa-star-o" aria-hidden="true"></i> 
-							<?= User\get_upvoted_products_count($mgl_current_user['ID']) ?> 
+							<?= User\get_product_upvotes_count($mgl_current_user['ID']) ?> 
 							- Upvotes
 						</a>
         		<a href="#" class="btn btn-profile submitted">

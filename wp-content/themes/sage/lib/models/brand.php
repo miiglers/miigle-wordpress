@@ -2,6 +2,8 @@
 
 namespace Miigle\Models\Brand;
 
+use Miigle\Models\Model;
+
 add_action('init', __NAMESPACE__ . '\\register');
 add_action('pre_get_posts', __NAMESPACE__ . '\\pre_get_posts');
 
@@ -86,4 +88,32 @@ function get_posts() {
  */
 function get_badges($post_id) {
   return wp_get_post_terms($post_id, 'mgl_brand_badge');
+}
+
+/**
+ * Get the product upvotes
+ */
+function get_upvotes($post_id) {
+  return intval(get_post_meta($post_id, '_mgl_brand_upvotes', true));
+}
+
+/**
+ * Get the users who have upvoted the product
+ */
+function get_upvotes_users($post_id) {
+  return get_post_meta($post_id, '_mgl_brand_upvotes_users', true);
+}
+
+/**
+ * Upvote
+ */
+function upvote($post_id, $user_id) {
+  return Model\upvote($post_id, $user_id, 'mgl_brand', '_mgl_brand');
+}
+
+/**
+ * Downvote
+ */
+function downvote($post_id, $user_id) {
+  return Model\downvote($post_id, $user_id, 'mgl_brand', '_mgl_brand');
 }

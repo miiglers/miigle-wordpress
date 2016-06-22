@@ -50,17 +50,12 @@ if(isset($_GET['sort']) && $_GET['sort'] == 'popular') {
     <div class="col-md-8 middle">
       <div class="row">          
         <div class="col-md-12">
-          
-          
-          <div class="row">
             
-            <?php if($is_brands): ?>
-              <?php require_once(locate_template('templates/brand/content-archive.php')); ?>
-            <?php else: ?>
-              <?php require_once(locate_template('templates/product/content-archive.php')); ?>
-            <?php endif; ?>
-            
-          </div>
+          <?php if($is_brands): ?>
+            <?php require_once(locate_template('templates/brand/content-archive.php')); ?>
+          <?php else: ?>
+            <?php require_once(locate_template('templates/product/content-archive.php')); ?>
+          <?php endif; ?>
           
         </div>          
       </div>    

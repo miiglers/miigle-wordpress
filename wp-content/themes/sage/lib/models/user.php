@@ -75,7 +75,7 @@ function register_meta() {
   
   // Website
   $cmb->add_field(array(
-    'name'       => __('Username', 'cmb2'),
+    'name'       => __('Website', 'cmb2'),
     'desc'       => __('', 'cmb2'),
     'id'         => $prefix . 'website',
     'type'       => 'text_url'
@@ -83,7 +83,7 @@ function register_meta() {
   
   // Facebook
   $cmb->add_field(array(
-    'name'       => __('Username', 'cmb2'),
+    'name'       => __('Facebook', 'cmb2'),
     'desc'       => __('', 'cmb2'),
     'id'         => $prefix . 'facebook',
     'type'       => 'text_url'
@@ -91,7 +91,7 @@ function register_meta() {
   
   // Twitter
   $cmb->add_field(array(
-    'name'       => __('Username', 'cmb2'),
+    'name'       => __('Twitter', 'cmb2'),
     'desc'       => __('', 'cmb2'),
     'id'         => $prefix . 'twitter',
     'type'       => 'text_url'
@@ -161,17 +161,22 @@ function get_username($user_id) {
 }
 
 /**
- * Get array of upvoted product id's
+ * Get array of upvoted post id's
  */
-function get_upvoted_products($user_id) {
-  return get_user_meta($user_id, '_mgl_user_upvoted', true);
+function get_upvotes($user_id, $post_type='mgl_product') {
+  if($post_type == 'mgl_brand') {
+    return get_user_meta($user_id, '_mgl_user_upvotes_brand', true);
+  }
+  else {
+    return get_user_meta($user_id, '_mgl_user_upvotes_product', true);
+  }
 }
 
 /**
  * Get a count of upvotes
  */
-function get_upvoted_products_count($user_id) {
-  $upvoted = get_upvoted_products($user_id);
+function get_upvotes_count($user_id, $post_type='mgl_product') {
+  $upvoted = get_upvotes($user_id, $post_type);
   
   if($upvoted && is_array($upvoted)) {
     return count($upvoted);
@@ -182,13 +187,20 @@ function get_upvoted_products_count($user_id) {
 }
 
 /**
+ * Get a count of upvotes
+ */
+function get_product_upvotes_count($user_id, $post_type='mgl_product') {
+  return get_upvotes_count($user_id, 'mgl_product');
+}
+
+/**
  * Check if a user has upvoted a product
  */
-function has_upvoted_product($user_id, $product_id) {
-  $upvoted = get_upvoted_products($user_id);
+function has_upvoted($user_id, $post_id, $post_type='mgl_product') {
+  $upvoted = get_upvotes($user_id, $post_type);
   
   if($upvoted && is_array($upvoted)) {
-    if(array_search($product_id, $upvoted) === false) {
+    if(array_search($post_id, $upvoted) === false) {
       return false;
     }
     else {
@@ -200,33 +212,80 @@ function has_upvoted_product($user_id, $product_id) {
 }
 
 /**
+ * Check if a user has upvoted a product
+ */
+function has_upvoted_product($user_id, $post_id) {
+  return has_upvoted($user_id, $post_id, 'mgl_product');
+}
+
+/**
  * Upvote a product
  */
-function upvote_product($user_id, $product_id) {
-  $upvoted = get_upvoted_products($user_id);
-  
-  if($upvoted && is_array($upvoted)) {
-    array_push($upvoted, $product_id);
+function upvote($user_id, $post_id, $post_type='mgl_product') {
+  $upvoted = get_upvotes($user_id, $post_type);
+  if($post_type == 'mgl_brand') {
+    $meta_key = '_mgl_user_upvotes_brand';
   }
   else {
-    $upvoted = array($product_id);
-  }  
+    $meta_key = '_mgl_user_upvotes_product';
+  }
   
-  return update_user_meta($user_id, '_mgl_user_upvoted', $upvoted);
+  if($upvoted && is_array($upvoted)) {
+    array_push($upvoted, $post_id);
+  }
+  else {
+    $upvoted = array($post_id);
+  }
+
+  return update_user_meta($user_id, $meta_key, $upvoted);
+}
+
+/**
+ * Upvote a product
+ */
+function upvote_product($user_id, $post_id) {
+  return upvote($user_id, $post_id, 'mgl_product');
+}
+
+/**
+ * Upvote a brand
+ */
+function upvote_brand($user_id, $post_id) {
+  return upvote($user_id, $post_id, 'mgl_brand');
 }
 
 /**
  * Downvote a product
  */
-function downvote_product($user_id, $product_id) {
-  $upvoted = get_upvoted_products($user_id);
+function downvote($user_id, $post_id, $post_type='mgl_product') {
+  $upvoted = get_upvotes($user_id, $post_type);
+  if($post_type == 'mgl_brand') {
+    $meta_key = '_mgl_user_upvotes_brand';
+  }
+  else {
+    $meta_key = '_mgl_user_upvotes_product';
+  }
   
   if($upvoted && is_array($upvoted)) {
-    $key = array_search($product_id, $upvoted);
+    $key = array_search($post_id, $upvoted);
     array_splice($upvoted, $key, 1);
     
-    return update_user_meta($user_id, '_mgl_user_upvoted', $upvoted);
+    return update_user_meta($user_id, $meta_key, $upvoted);
   }
   
   return true;
+}
+
+/**
+ * Downvote a product
+ */
+function downvote_product($user_id, $post_id) {
+  return downvote($user_id, $post_id, 'mgl_product');
+}
+
+/**
+ * Downvote a brand
+ */
+function downvote_brand($user_id, $post_id) {
+  return downvote($user_id, $post_id, 'mgl_brand');
 }

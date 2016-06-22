@@ -2,6 +2,8 @@
 
 namespace Miigle\Models\Product;
 
+use Miigle\Models\Model;
+
 add_action('init', __NAMESPACE__ . '\\register');
 add_action('cmb2_admin_init', __NAMESPACE__ . '\\register_meta');
 add_action('pre_get_posts', __NAMESPACE__ . '\\pre_get_posts');
@@ -234,23 +236,24 @@ function get_upvotes($post_id) {
 }
 
 /**
- * Upvote
+ * Get the users who have upvoted the product
  */
-function upvote($post_id) {
-  $upvotes = get_upvotes($post_id) + 1;  
-  update_post_meta($post_id, '_mgl_product_upvotes', $upvotes);
-  
-  return $upvotes;
+function get_upvotes_users($post_id) {
+  return get_post_meta($post_id, '_mgl_product_upvotes_users', true);
 }
 
 /**
  * Upvote
  */
-function downvote($post_id) {
-  $upvotes = get_upvotes($post_id) - 1;  
-  update_post_meta($post_id, '_mgl_product_upvotes', $upvotes);
-  
-  return $upvotes;
+function upvote($post_id, $user_id) {
+  return Model\upvote($post_id, $user_id, 'mgl_product', '_mgl_product');
+}
+
+/**
+ * Downvote
+ */
+function downvote($post_id, $user_id) {
+  return Model\downvote($post_id, $user_id, 'mgl_product', '_mgl_product');
 }
 
 /**

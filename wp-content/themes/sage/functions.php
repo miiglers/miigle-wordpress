@@ -10,15 +10,18 @@
  * @link https://github.com/roots/sage/pull/1042
  */
 $sage_includes = [
+  'lib/models/model.php',         // Shared model functions
   'lib/models/product.php',       // Product post type
   'lib/models/role-request.php',  // Role-request post type
   'lib/models/brand.php',         // Brand post type
   'lib/models/user.php',          // User functions
+  'lib/controllers/application.php',
+  'lib/controllers/user.php',
+  'lib/controllers/product.php',
   'lib/setup.php',                // Theme setup
   'lib/titles.php',               // Page titles
   'lib/wrapper.php',              // Theme wrapper class
-  'lib/controllers.php',          // Controller logic for templates
-  'lib/api.php'                   // Rest API functions
+  'lib/routes.php'                // Rest API routes
 ];
 
 foreach ($sage_includes as $file) {
