@@ -7,13 +7,18 @@ use Miigle\Models\Product;
 
 <div class="templates product" id="content-archive">
   <div class="row">
-    <?php $i=1; while (have_posts()) : the_post(); ?>
+    <?php 
+      $i=1; 
+      while (have_posts()): 
+        the_post(); 
+        $mgl_user = User\get($post->post_author);
+    ?>
       <style type="text/css">
         a#product-<?php the_ID(); ?> {
           background-image: url('<?= Product\get_thumbnail(get_the_ID()) ?>');
         }
       </style>
-      <div class="col-md-6">
+      <div class="col-md-6 product-card">
         <div class="thumbnail">
           <a class="product-thumb" id="product-<?php the_ID(); ?>" href="<?php the_permalink(); ?>">&nbsp;</a>
           <div class="caption">
@@ -32,10 +37,16 @@ use Miigle\Models\Product;
             </div>
             <div class="row author">
               <div class="col-md-3 col-lg-2">
-                <img src="<?= User\get_avatar($post->post_author) ?>" class="img-responsive">
+                <a href="<?= home_url() ?>/profile-product?user_id=<?= $mgl_user['ID'] ?>">
+                  <img src="<?= $mgl_user['avatar'] ?>" class="img-responsive">
+                </a>
               </div>
               <div class="col-md-9 col-lg-10">
-                <h4><?= User\get($post->post_author)['full_name'] ?></h4>
+                <h4>
+                  <a href="<?= home_url() ?>/profile-product?user_id=<?= $mgl_user['ID'] ?>">
+                    <?= $mgl_user['full_name'] ?>
+                  </a>
+                </h4>
                 <?php foreach(Product\get_categories(get_the_ID()) as $cat): ?>
                   <?= $cat->name ?>
                 <?php endforeach; ?>

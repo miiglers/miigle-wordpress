@@ -5,10 +5,17 @@
 
 use Miigle\Models\Product;
 use Miigle\Models\User;
- 
-$mgl_current_user = User\current();
+
+if(isset($_GET['user_id'])) {
+  $mgl_current_user = User\get($_GET['user_id']);
+}
+else {
+  $mgl_current_user = User\current();
+}
+
 $products = Product\get_user_products($mgl_current_user['ID']);
 wp_reset_postdata();
+
 ?>
 
 <div id="template-profile_product">
@@ -86,38 +93,33 @@ wp_reset_postdata();
 							$i = 2;
 							foreach($products as $product):
 						?>
+
+              <style type="text/css">
+                a#product-<?= $product->ID ?> {
+                  background-image: url('<?= Product\get_thumbnail($product->ID) ?>');
+                }
+              </style>
 						
-							<div class="col-sm-4">
-								<div class="card-item">
-									<div class="profile-thumb text-center">
-										<img src="<?= wp_get_attachment_image_src(get_post_thumbnail_id($product->ID), 'full')[0] ?>" class="img-responsive" />
-									</div>
-									<div class="profile-fullname">
-										<a href="<?= get_permalink($product->ID) ?>"><?= $product->post_title ?></a>
-									</div>
-									<div class="profile-brand">
-										<?= Product\get_brand_title($product->ID) ?>
-									</div>
-									<div class="profile-description">
-										<div class="text-two-lines desc">
+							<div class="col-md-4 product-card">
+                <div class="thumbnail">
+                  <a class="product-thumb" id="product-<?= $product->ID ?>" href="<?= get_permalink($product->ID) ?>">&nbsp;</a>
+                  <div class="caption">
+                    <h3><a href="<?= get_permalink($product->ID) ?>"><?= get_the_title($product->ID) ?></a></h3>
+                    <div class="text-two-lines desc">
                       <?= apply_filters('the_content', $product->post_content) ?>
                       <div class="clearfix"></div>
                     </div>
-									</div>
-									<div class="profile-website">
-										<a href="<?= Product\get_url($product->ID) ?>"><?= Product\get_url($product->ID) ?></a>
-									</div>
-									<div class="profile-meta">
-										<?php require(locate_template('templates/product/button-upvote.php')); ?>
-                    <?php require(locate_template('templates/product/button-comment.php')); ?>
-									</div>
-									<!--<div class="profile-follower">
-										<img src="<?php //echo get_template_directory_uri(); ?>/assets/images/profile-thumb.png" />
-										<span class="user-name">James Tanner</span>
-										<span class="user-cat">Fashion</span>
-									</div>-->
-								</div>
-							</div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div>
+                          <?php require(locate_template('templates/product/button-upvote.php')); ?>
+                          <?php require(locate_template('templates/product/button-comment.php')); ?>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 							
 							<?php if(($i % 3) == 0): ?>
 								</div>
