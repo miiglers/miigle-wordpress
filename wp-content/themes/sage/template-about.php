@@ -48,7 +48,7 @@
 					<!-- -->
 					
           <?= the_field('ta_team_members'); ?>
-          <!-- 
+          <?php /* 
           <div class="row">
           	
           	<div class="col-sm-4 team">
@@ -124,7 +124,7 @@
           		<p><a href="#" class="btn btn-default">Send us note</a></p>
           	</div>
           </div>
-					-->
+					*/ ?>
 					
         </div>
       </div>
