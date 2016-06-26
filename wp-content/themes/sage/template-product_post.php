@@ -17,6 +17,18 @@ $brands = Brand\get_posts();
 ?>
 
 <div id="template-product_post">
+
+	<section id="splash" class="text-center page-splash">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+        
+          <h1>Post a product</h1>
+        	
+        </div>
+      </div>
+    </div>
+  </section>
   
   <section id="product_post">
     <div class="container-fluid">
@@ -25,60 +37,135 @@ $brands = Brand\get_posts();
         <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-md-6 main"> 
           
 					<?php if(current_user_can('subscriber-approved')): ?>
-					
-						<p class="grey-text">Here's your opportunity to shine. Make it count!</p>
+						
+            <div id="product-form-wrap" class="well">
 
-						<h4>Tell us about the product</h4>
-						
-						Need help? <a href="#">Watch this video on how to post help</a>
-						
-						<form id="product" method="post" action="mgl/v1/product">
-						
-							<input type="hidden" name="author" value="<?= $mgl_user['ID'] ?>">
-							<input type="hidden" name="status" value="pending">
-						
-							<div class="form-group" style="margin-top:68px;">
-								<div class="row">
-									<div class="col-xs-6">
-										<input type="text" name="title" class="form-control" placeholder="Product Name" required>
-									</div>
-									<div class="col-xs-6">
-										<select name="mgl_product_category" class="form-control" placeholder="Category" required>
-											<?php foreach($categories as $category): ?>
-												<option value="<?= $category->term_id ?>"><?= $category->name ?></option>
-											<?php endforeach; ?>
-										</select>
-									</div>
-								</div>
-							</div>
+              <div id="progress-wrap">
+                <div class="row">
+                  <div class="col-md-10">
 
-							<div class="form-group">
-								<div class="row">
-									<div class="col-xs-6">
-										<select name="_mgl_product_brand_id" class="form-control" placeholder="Brand">
-											<?php while($brands->have_posts()): $brands->the_post(); ?>
-												<option value="<?= get_the_ID() ?>"><?php the_title(); ?></option>
-											<?php endwhile; ?>
-										</select>
-									</div>
-									<div class="col-xs-6">
-										<input type="text" name="_mgl_product_url" class="form-control" placeholder="Product url">
-									</div>
-								</div>
-							</div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                        <span class="sr-only">60% Complete</span>
+                      </div>
+                    </div>
 
-							<div class="form-group">
-								<textarea rows="5" name="content" class="form-control" placeholder="Enter a brief description (120 character limit)" required></textarea>
-							</div>
+                  </div>
+                  <div class="col-md-2">
+                    <span id="percent-complete">25% Complete</span>
+                  </div>
+                </div>
+              </div>
 
-							<div class="form-group" style="margin-top:80px;">
-								<button type="submit" class="btn btn-default submit">
-									<i class="fa fa-refresh fa-spin hidden"></i>
-									Submit
-								</button>
-							</div>
-						
-						</form>
+  						<form id="product" class="text-center form-horizontal" method="post" action="mgl/v1/product">
+  						
+  							<input type="hidden" name="author" value="<?= $mgl_user['ID'] ?>">
+  							<input type="hidden" name="status" value="pending">
+
+  							<div class="tab-content">
+
+  						    <div role="tabpanel" class="tab-pane fade in active" id="category">
+  						    	
+  						    	<h2>Select a category</h2>
+  									<p class="text-muted">Help us filter the type of products that are shared on Miigle.</p>
+
+  									<div class="category-list">
+                      <div class="row">
+    										<?php foreach($categories as $category): ?>
+                          <?php if(!$category->parent): ?>
+                            <div class="col-md-3">
+                              <input type="radio" name="mgl_product_category" id="category-<?= $category->term_id ?>" value="<?= $category->term_id ?>">
+                              <label class="category" for="category-<?= $category->term_id ?>">
+                                <div>          												
+          												<i class="fa fa-bell"></i>
+          												<p><?= $category->name ?></p>
+                                </div>
+                              </label>
+                            </div>
+                          <?php endif; ?>
+    										<?php endforeach; ?>
+                      </div>
+  									</div>
+
+  									<div class="form-group submit-group">
+  										<a class="btn btn-primary pull-right" href="#sub-category" aria-controls="sub-category" role="tab" data-toggle="tab">
+                        Next
+                      </a>
+  									</div>
+                    <div class="clearfix"></div>
+
+  						    </div>
+
+  						    <div role="tabpanel" class="tab-pane fade" id="sub-category">
+  						    	
+                    <h2>Select the gender audience</h2>
+                    <p class="text-muted">Part of getting a product known is by first knowing your audience.</p>
+
+                    <div class="category-list">
+                      <div class="row">
+                        <?php foreach($categories as $category): ?>
+                          <?php if($category->parent): ?>
+                            <div class="col-md-3">
+                              <input type="radio" name="mgl_product_category" id="category-<?= $category->term_id ?>" value="<?= $category->term_id ?>">
+                              <label class="category" for="category-<?= $category->term_id ?>">
+                                <div>                                 
+                                  <i class="fa fa-bell"></i>
+                                  <p><?= $category->name ?></p>
+                                </div>
+                              </label>
+                            </div>
+                          <?php endif; ?>
+                        <?php endforeach; ?>
+                      </div>
+                    </div>
+
+                    <div class="form-group submit-group">
+                      <a class="btn btn-default pull-left" href="#category" aria-controls="category" role="tab" data-toggle="tab">
+                        Back
+                      </a>
+                      <a class="btn btn-primary pull-right" href="#details" aria-controls="details" role="tab" data-toggle="tab">
+                        Next
+                      </a>
+                    </div>
+                    <div class="clearfix"></div>
+
+  						    </div>
+
+  						    <div role="tabpanel" class="tab-pane fade" id="details">
+
+                    <h2>Product information</h2>
+
+                    <div class="form-group">
+                      <label for="_mgl_product_url" class="col-sm-2 control-label">Product URL</label>
+                      <div class="col-sm-10">
+                        <input type="text" name="_mgl_product_url" class="form-control" placeholder="Eg: http://www.toms.com/women/cool-shoes" required>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="content" class="col-sm-2 control-label">Comment (optional)</label>
+                      <div class="col-sm-10">
+                        <textarea rows="5" name="content" class="form-control" placeholder="Why are you sharing this product?"></textarea>
+                      </div>
+                    </div>
+
+  									<div class="form-group submit-group">
+                      <a class="btn btn-default pull-left" href="#sub-category" aria-controls="sub-category" role="tab" data-toggle="tab">
+                        Back
+                      </a>
+                      <button type="submit" class="btn btn-primary pull-right submit">
+                        <i class="fa fa-refresh fa-spin hidden"></i>
+                        Submit
+                      </button>
+                    </div>
+                    <div class="clearfix"></div>
+
+  						    </div>
+
+  						  </div>
+  						
+  						</form>
+            </div>
 
 					<?php else: ?>
 					

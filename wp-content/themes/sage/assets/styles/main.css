@@ -12,7 +12,11 @@ body {
 	background: #f9f9fa;
 }
 .btn-primary {
-  background-color: #55b7b8;
+  background: linear-gradient(to bottom, #83cbb4, #55b8b8);
+  border-color: #55b7b8;
+}
+.btn-primary:hover {
+  background: #83cbb4;
   border-color: #55b7b8;
 }
 .btn-default {
@@ -508,7 +512,7 @@ body.page-template-template-about-php main.main {
   font-size: 16px;
   color: #888;
 }
-#template-about section#splash {
+section.page-splash {
   font-size: 18px;
   padding: 75px 0;
   color: white;
@@ -516,7 +520,8 @@ body.page-template-template-about-php main.main {
   background-size: cover;
   background-position: center center;
 }
-#template-about section#splash h2 {
+section.page-splash h1,
+section.page-splash h2 {
   font-size: 28px;
   font-weight:700;
   color: white;
@@ -881,8 +886,8 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
 	margin-bottom: 35px;
 }
 #template-product_post section#product_post h2 { 
-	margin-top: 75px;
-	margin-bottom: 35px;
+	margin-top: 50px;
+	margin-bottom: 17px;
 }
 #template-product_post section#product_post h4 { 
 	font-weight:700;
@@ -893,11 +898,6 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
 	font-size:16px;
 	margin-top:55px;
 	margin-bottom: 34px;
-}
-#template-product_post section#product_post p { 
-  color: #000;	
-	font-size: 16px;
-	line-height: 1.6;
 }
 #template-product_post section#product_post p a {
 	text-decoration:underline;
@@ -914,9 +914,6 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
 	color: #4a4a4a;
 	margin-bottom:30px;
 }
-#template-product_post section#product_post .form-control  {
-	
-}
 #template-product_post section#product_post textarea,
 #template-product_post section#product_post input,
 #template-product_post section#product_post select {
@@ -927,65 +924,51 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
 	letter-spacing: 4px;
 	color: #999999;
 }
-/*#template-product_post section#product_post input[type="submit"] {
-	font-weight:400;
-	font-size: 25px;
-	color: #ffffff;
-	letter-spacing: 0;
-}*/
-
-/* 
-| profile-sidebar
-*/
-#template-product_post .sidebar {
-    background-color:#2a414d;
-    padding-bottom: 50px;
+#template-product_post #product-form-wrap.well {
+  margin-top: -136px;
+  background: white;
 }
-#template-product_post #profile-sidebar .profile-thumb {
-	padding:32px 32px 22px 32px;
+#template-product_post #product-form-wrap #progress-wrap {
+  border-bottom: 1px solid #e3e3e3;  
+  padding-bottom: 4px;
 }
-#template-product_post #profile-sidebar .profile-thumb img {
-	width: 103px;
-	height: 90px;
-	box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
-	border-radius: 6px;
+#template-product_post #product-form-wrap #progress-wrap .progress {
+  height: 11px;
+  margin-top: 4px;
 }
-#template-product_post #profile-sidebar .white-text {
-	color:#ffffff;
+#template-product_post #product-form-wrap #progress-wrap .progress-bar {
+  background-color: #55b8b8;
 }
-#template-product_post #profile-sidebar .profile-fullname {
-	font-size:16px;
-	padding-bottom:10px;
+#template-product_post #product-form-wrap .category-list {
+  margin: 50px 0;
 }
-#template-product_post #profile-sidebar .profile-id {
-	font-size:16px;
-	padding-bottom:20px;
+#template-product_post #product-form-wrap .category-list .category {
+  height: 155px;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 4.1px;
+  box-shadow: 0 2px 5px 0 rgba(158, 158, 158, 0.4);
+  font-weight: 300;
+  font-size: 16px;
+  color: #4a4a4a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-#template-product_post #profile-sidebar .profile-username {
-	padding-bottom:10px;
+#template-product_post #product-form-wrap .category-list .category:hover {
+  cursor: pointer;
 }
-#template-product_post #profile-sidebar .profile-website {
-	padding-bottom:10px;
+#template-product_post #product-form-wrap .category-list input {
+  position: absolute;
+  left: -99999999999px;
 }
-#template-product_post #profile-sidebar .profile-social {
-	padding-bottom:31px;
+#template-product_post #product-form-wrap .category-list input:checked+label {
+  background-color: #55b8b8;
+  color: white;
 }
-#template-product_post #profile-sidebar .btn.btn-profile {
-	border-radius: 45px;
-	padding: 6px 20px;
-	background-color: rgba(254, 254, 254, 0.15);
-}
-#template-product_post #profile-sidebar .btn.btn-profile:hover,
-#template-product_post #profile-sidebar .btn.btn-profile:focus {
-	color:#ffffff;
-}
-#template-product_post #profile-sidebar .spacer-profile {
-	height:220px;
-}
-#template-product_post #profile-sidebar .profile-footer {
-	padding-bottom:20px;
+#template-product_post #product-form-wrap #details label {
+  font-weight: 300;
+  font-size: 16px;
 }
 
 /*********************************************************
