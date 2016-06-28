@@ -264,6 +264,10 @@ footer#footer .links {
 footer#footer .links a {
   letter-spacing: 2px;
 }
+footer#footer .links a:hover {
+  color: white;
+  text-decoration: none;
+}
 footer#footer .links li {
   margin-bottom: 10px;
 }
