@@ -164,8 +164,14 @@ ul.collapsible .active > a {
   margin-top: 0.2em;
   background: white;
 }
-.templates#content-page {
-  margin: 75px 0;
+.text-danger {
+  color: #f05376;
+}
+.text-primary {
+  color: #44bae2;
+}
+.text-info {
+  color: #d354fc;
 }
 
 
@@ -247,6 +253,12 @@ li .navbar-btn {
 |
 **********************************************************/
 
+footer#footer {
+  margin-top: 75px;
+}
+body.page-template-template-about footer#footer {
+  margin-top: 0;
+}
 footer#footer h4 {
   color: white;
   font-size: 16px;
@@ -506,6 +518,7 @@ body.page-template-template-about-php main.main {
 section.page-splash {
   font-size: 18px;
   padding: 75px 0;
+  margin-bottom: 75px;
   color: white;
   background-image: url('../images/quote-bg.jpg');
   background-size: cover;
@@ -1727,83 +1740,7 @@ form.comment-form label {
 |  template-brand_directory.php
 |
 **********************************************************/
-#template-brand_directory .col-md-10.main {
-	padding-left:0;
-	padding-right:0;
-}
 
-/* 
-| profile-sidebar
-*/
-@media (min-width: 768px) {
-	#template-brand_directory .sidebar {
-    position: fixed;
-    top: 70px;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    display: block;
-    padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: #2a414d;
-  }
-}
-/*
-#template-brand_directory .sidebar {
-	background-color: #2a414d;
-}
-*/
-#template-brand_directory #profile-sidebar .profile-thumb {
-	padding:32px 32px 22px 32px;
-}
-#template-brand_directory #profile-sidebar .profile-thumb img {
-	width: 103px;
-	height: 90px;
-	box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 3px 17px 0 rgba(0, 0, 0, 0.3);
-	border-radius: 6px;
-}
-#template-brand_directory #profile-sidebar .white-text {
-	color:#ffffff;
-}
-#template-brand_directory #profile-sidebar .profile-fullname {
-	font-size:16px;
-	padding-bottom:10px;
-}
-#template-brand_directory #profile-sidebar .profile-id {
-	font-size:16px;
-	padding-bottom:20px;
-}
-#template-brand_directory #profile-sidebar .profile-username {
-	padding-bottom:10px;
-}
-#template-brand_directory #profile-sidebar .profile-website {
-	padding-bottom:10px;
-}
-#template-brand_directory #profile-sidebar .profile-social {
-	padding-bottom:31px;
-}
-#template-brand_directory #profile-sidebar .btn.btn-profile {
-	border-radius: 45px;
-	padding: 6px 20px;
-	background-color: rgba(254, 254, 254, 0.15);
-}
-#template-brand_directory #profile-sidebar .btn.btn-profile:hover,
-#template-brand_directory #profile-sidebar .btn.btn-profile:focus {
-	color:#ffffff;
-}
-#template-brand_directory #profile-sidebar .spacer-profile {
-	height:220px;
-}
-#template-brand_directory #profile-sidebar .profile-footer {
-	padding-bottom:20px;
-}
-#template-brand_directory #profile-sidebar .profile-footer a:hover,
-#template-brand_directory #profile-sidebar .profile-footer a:focus {
-	color: #55b7b8;
-}
 
 /* 
 | brand - splash
@@ -2018,4 +1955,75 @@ margin-bottom: 30px;
 	#template-brand_directory section#featured .card .prod-meta {
 		text-align: center;
 	}
+}
+
+/*********************************************************
+|
+|  template-how_it_works.php
+|
+**********************************************************/
+
+#template-how-it-works h2 {
+  margin-bottom: 40px;
+}
+#template-how-it-works p {
+  margin-bottom: 25px;
+}
+#template-how-it-works section#content {
+  padding-bottom: 75px;
+}
+#template-how-it-works section#steps {
+  padding: 75px 0;
+  background: white;
+  color: #999;
+  line-height: 1.67;
+}
+#template-how-it-works section#steps .step {
+  padding: 75px 0;
+  border-bottom: 1px solid #e7e7e7;
+}
+#template-how-it-works section#steps h3 {
+  font-size: 20px;
+  margin: 50px 0;
+}
+#template-how-it-works section#steps p {
+  max-width: 530px;
+  display: inline-block;
+}
+#template-how-it-works section#steps .step p {
+  max-width: 300px;
+  display: inline-block;
+}
+#template-how-it-works section#steps .step-circle {
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#template-how-it-works section#steps .step-circle.text-danger {
+  background: rgba(240, 83, 117, 0.2);
+  border-color: #f05376;
+}
+#template-how-it-works section#steps .step-circle.text-primary {
+  background: rgba(67, 185, 226, 0.2);
+  border-color: #44bae2;
+}
+#template-how-it-works section#steps .step-circle.text-info {
+  background: rgba(210, 83, 252, 0.2);
+  border-color: #d354fc;
+}
+#template-how-it-works section#steps .support {
+  margin-top: 60px;
+}
+#template-how-it-works section#steps .step .fa {
+  font-size: 25px;
+}
+#template-how-it-works section#steps .join {
+  margin-top: 75px;
+}
+#template-how-it-works section#steps .join h5 {
+  font-weight: bold;
 }

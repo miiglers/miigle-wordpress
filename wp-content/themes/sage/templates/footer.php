@@ -4,7 +4,9 @@
       <div class="row">
 
         <div class="col-md-4">
-          <img class="img-responsive" alt="Miigle" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.svg">
+          <a href="<?= home_url() ?>">
+            <img class="img-responsive" alt="Miigle" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.svg">
+          </a>
         </div>
 
         <div class="col-md-4">
