@@ -14,7 +14,7 @@
           <ul class="list-unstyled">        
             <li><a href="<?= home_url() ?>/about">About</a></li>
             <li><a href="<?= home_url() ?>/how-it-works">How it works</a></li>        
-            <li><a href="<?= home_url() ?>/contact">Contact us</a></li>
+            <li><a href="<?= home_url() ?>/contact">Contact</a></li>
             <li><a href="<?= home_url() ?>/blog">Blog</a></li>
             <li><a href="<?= home_url() ?>/terms">Terms</a></li>
           </ul>
