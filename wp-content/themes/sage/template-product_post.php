@@ -45,14 +45,14 @@ $brands = Brand\get_posts();
                   <div class="col-md-10">
 
                     <div class="progress">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
                         <span class="sr-only">60% Complete</span>
                       </div>
                     </div>
 
                   </div>
                   <div class="col-md-2">
-                    <span id="percent-complete">25% Complete</span>
+                    <span id="percent-complete">25%</span> Complete
                   </div>
                 </div>
               </div>
@@ -74,7 +74,7 @@ $brands = Brand\get_posts();
     										<?php foreach($categories as $category): ?>
                           <?php if(!$category->parent): ?>
                             <div class="col-md-3">
-                              <input type="radio" name="mgl_product_category" id="category-<?= $category->term_id ?>" value="<?= $category->term_id ?>">
+                              <input type="radio" name="mgl_product_category[]" id="category-<?= $category->term_id ?>" value="<?= $category->term_id ?>">
                               <label class="category" for="category-<?= $category->term_id ?>">
                                 <div>          												
           												<i class="fa fa-bell"></i>
@@ -88,9 +88,11 @@ $brands = Brand\get_posts();
   									</div>
 
   									<div class="form-group submit-group">
-  										<a class="btn btn-primary pull-right" href="#sub-category" aria-controls="sub-category" role="tab" data-toggle="tab">
-                        Next
-                      </a>
+                      <div class="col-md-12">
+    										<a class="btn btn-primary pull-right" href="#details" aria-controls="sub-category" role="tab" data-toggle="tab">
+                          Next
+                        </a>
+                      </div>
   									</div>
                     <div class="clearfix"></div>
 
@@ -105,8 +107,9 @@ $brands = Brand\get_posts();
                       <div class="row">
                         <?php foreach($categories as $category): ?>
                           <?php if($category->parent): ?>
-                            <div class="col-md-3">
-                              <input type="radio" name="mgl_product_category" id="category-<?= $category->term_id ?>" value="<?= $category->term_id ?>">
+                            <div class="col-md-3 hidden sub-category">
+                              <input type="checkbox" name="mgl_product_category[]" id="category-<?= $category->term_id ?>" 
+                                class="category-<?= $category->parent ?>" value="<?= $category->term_id ?>">
                               <label class="category" for="category-<?= $category->term_id ?>">
                                 <div>                                 
                                   <i class="fa fa-bell"></i>
@@ -120,12 +123,14 @@ $brands = Brand\get_posts();
                     </div>
 
                     <div class="form-group submit-group">
-                      <a class="btn btn-default pull-left" href="#category" aria-controls="category" role="tab" data-toggle="tab">
-                        Back
-                      </a>
-                      <a class="btn btn-primary pull-right" href="#details" aria-controls="details" role="tab" data-toggle="tab">
-                        Next
-                      </a>
+                      <div class="col-md-12">
+                        <a class="btn btn-default pull-left" href="#category" aria-controls="category" role="tab" data-toggle="tab">
+                          Back
+                        </a>
+                        <a class="btn btn-primary pull-right" href="#details" aria-controls="details" role="tab" data-toggle="tab">
+                          Next
+                        </a>
+                      </div>
                     </div>
                     <div class="clearfix"></div>
 
@@ -150,13 +155,15 @@ $brands = Brand\get_posts();
                     </div>
 
   									<div class="form-group submit-group">
-                      <a class="btn btn-default pull-left" href="#sub-category" aria-controls="sub-category" role="tab" data-toggle="tab">
-                        Back
-                      </a>
-                      <button type="submit" class="btn btn-primary pull-right submit">
-                        <i class="fa fa-refresh fa-spin hidden"></i>
-                        Submit
-                      </button>
+                      <div class="col-md-12">
+                        <a class="btn btn-default pull-left back" href="#category" aria-controls="sub-category" role="tab" data-toggle="tab">
+                          Back
+                        </a>
+                        <button type="submit" class="btn btn-primary pull-right submit">
+                          <i class="fa fa-refresh fa-spin hidden"></i>
+                          Submit
+                        </button>
+                      </div>
                     </div>
                     <div class="clearfix"></div>
 

@@ -139,6 +139,57 @@ for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElemen
           
           return false;
         });
+
+        $productForm.find('.category-list input').on('change', function(e) {
+          var $target = $(e.target),
+              parentId = $target.attr('id'),
+              hasSubCategory = false;
+
+          $productForm.find('#category input:checked').each(function() {
+            var id = $(this).attr('id');
+            $subCategory = $productForm.find('#sub-category input.' + id);
+            console.log($subCategory);
+            if($subCategory.length !== 0) {
+              hasSubCategory = true;
+              return false;
+            }
+            else {
+              hasSubCategory = false;
+            }
+          });
+
+          if(hasSubCategory) {
+            $productForm.find('#category a').attr('href', '#sub-category');
+            $productForm.find('#details a.back').attr('href', '#sub-category');
+          }
+          else {
+            $productForm.find('#category a').attr('href', '#details');
+            $productForm.find('#details a.back').attr('href', '#category');
+          }
+
+          if($target.is(':checked')) {
+            $productForm.find('#sub-category input.' + parentId).parents('.sub-category').removeClass('hidden');
+          }
+          else {
+            $productForm.find('#sub-category input.' + parentId).parents('.sub-category').addClass('hidden');
+          }
+        });
+
+        $productForm.find('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+          var targetId = $(e.target).attr('href'),
+              percentDone = '25%';
+
+          if(targetId === '#sub-category') {
+            percentDone = '50%';
+          }
+          else if(targetId === '#details') {
+            percentDone = '75%';
+          }
+
+          $('.progress-bar').css('width', percentDone);
+          $('span#percent-complete').html(percentDone);
+
+        });
         
       }
     },
