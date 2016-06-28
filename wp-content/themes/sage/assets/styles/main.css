@@ -165,7 +165,7 @@ ul.collapsible .active > a {
   background: white;
 }
 .templates#content-page {
-  margin-top: 75px;
+  margin: 75px 0;
 }
 
 
