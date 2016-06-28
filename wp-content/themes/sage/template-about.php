@@ -131,7 +131,7 @@
     </div>
   </section>
   
-  <section id="video" class="text-center">
+  <section id="video" class="text-center page-video">
     <div class="container">
       
       <?= the_field('ta_video_text'); ?>
@@ -139,7 +139,7 @@
     </div>
   </section>
   
-  <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal fade page-video" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header hidden-lg hidden-md">

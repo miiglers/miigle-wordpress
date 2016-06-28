@@ -173,6 +173,9 @@ ul.collapsible .active > a {
 .text-info {
   color: #d354fc;
 }
+.text-success {
+  color: #55b7b8;
+}
 
 
 @media (min-width: 992px) {
@@ -256,7 +259,8 @@ li .navbar-btn {
 footer#footer {
   margin-top: 75px;
 }
-body.page-template-template-about footer#footer {
+body.page-template-template-about footer#footer,
+body.page-template-template-how_it_works footer#footer {
   margin-top: 0;
 }
 footer#footer h4 {
@@ -373,17 +377,17 @@ footer#footer .copyright {
   border-radius: 5px;
 }
 #front-page section#video h2,
-#template-about section#video h2 {
+section.page-video h2 {
   color: white;
   font-weight: bold;
   margin-bottom: 30px;
 }
 #front-page section#video h3,
-#template-about section#video h3{
+section.page-video h3{
   color: white;
 }
 #front-page section#video,
-#template-about section#video {
+section.page-video {
   padding: 150px 0;
   background-image: url('../images/video-bg.jpg');
   background-size: cover;
@@ -404,15 +408,15 @@ footer#footer .copyright {
     margin-right: 50px;
   }
   #front-page section#video h2,
-  #template-about section#video h2 {
+  section.page-video h2 {
     font-size: 50px;
   }
   #front-page .modal-body,
-  #template-about .modal-body {
+  .page-video .modal-body {
     padding: 0;
   }
   #front-page .modal-dialog,
-  #template-about .modal-dialog {
+  .page-video .modal-dialog {
     width: 800px;
   }
   #videoModal iframe {
