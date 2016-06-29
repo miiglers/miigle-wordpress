@@ -167,11 +167,10 @@ for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElemen
             $productForm.find('#details a.back').attr('href', '#category');
           }
 
+          $productForm.find('#sub-category .sub-category').addClass('hidden');
+
           if($target.is(':checked')) {
             $productForm.find('#sub-category input.' + parentId).parents('.sub-category').removeClass('hidden');
-          }
-          else {
-            $productForm.find('#sub-category input.' + parentId).parents('.sub-category').addClass('hidden');
           }
         });
 
