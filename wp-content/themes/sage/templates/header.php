@@ -27,8 +27,8 @@
       
       <ul class="nav navbar-nav navbar-right">
         <?php if(!is_user_logged_in()): ?>
-          <li><a href="<?= home_url() ?>/about">About</a></li>
-          <li><a href="<?= home_url() ?>/how-it-works">How it Works</a></li>
+          <!--<li><a href="<?= home_url() ?>/about">About</a></li>
+          <li><a href="<?= home_url() ?>/how-it-works">How it Works</a></li>-->
         <?php endif; ?>
         <?php if(is_front_page()): ?>
           <li><a href="#story" class="btn btn-primary navbar-btn">Read Our Story</a></li>

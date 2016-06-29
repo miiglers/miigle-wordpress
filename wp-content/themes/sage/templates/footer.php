@@ -8,20 +8,22 @@
             <img class="img-responsive" alt="Miigle" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-white.svg">
           </a>
         </div>
-
+        
         <div class="col-md-4">
           <h4>Company</h4>
-          <ul class="list-unstyled">        
-            <li><a href="<?= home_url() ?>/about">About</a></li>
-            <li><a href="<?= home_url() ?>/how-it-works">How it works</a></li>        
-            <li><a href="<?= home_url() ?>/contact">Contact</a></li>
+          <ul class="list-unstyled">
+            <?php if(is_user_logged_in()): ?>
+              <li><a href="<?= home_url() ?>/about">About</a></li>
+              <li><a href="<?= home_url() ?>/how-it-works">How it works</a></li>        
+              <li><a href="<?= home_url() ?>/contact">Contact</a></li>
+            <?php endif; ?>
             <li><a href="<?= home_url() ?>/blog">Blog</a></li>
             <li><a href="<?= home_url() ?>/terms">Terms</a></li>
           </ul>
         </div>
 
         <div class="col-md-4">
-          <h4>Company</h4>
+          <h4>Social</h4>
           <ul class="list-unstyled">
             <li><a href="https://www.facebook.com/miiglers/">Facebook</a></li>
             <li><a href="https://twitter.com/miiglers">Twitter</a></li>
