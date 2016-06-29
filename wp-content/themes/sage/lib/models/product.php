@@ -166,22 +166,42 @@ function pre_get_posts($query) {
  */
 function create($data, $user) {  
   $new_post = array(
-    'post_title'    => $data['title'],
+    'post_title'    => date('Y-m-d'),
     'post_status'   => 'pending',
     'post_date'     => date('Y-m-d H:i:s'),
     'post_author'   => $user->ID,
     'post_type'     => 'mgl_product',
-    'post_content'  => $data['content'],
-    'post_name'     => sanitize_title($data['title'])
+    //'post_content'  => $data['content'],
+    //'post_name'     => sanitize_title($data['title'])
   );
 
   $post_id = wp_insert_post($new_post);
 
   add_post_meta($post_id, '_mgl_product_upvotes', '0', true);
-  add_post_meta($post_id, '_mgl_product_brand_id', $data['_mgl_product_brand_id'], true);
   add_post_meta($post_id, '_mgl_product_url', $data['_mgl_product_url'], true);
 
-  wp_set_object_terms($post_id, intval($data['mgl_product_category']), 'mgl_product_category');
+  if($data['mgl_product_category']) {
+    $categories = array();
+
+    foreach($data['mgl_product_category'] as $cat) {
+      array_push($categories, intval($cat));
+    }
+
+    wp_set_object_terms($post_id, $categories, 'mgl_product_category');
+  }
+
+  if($data['comment']) {
+    $comment_id = wp_new_comment(array(
+      'comment_post_ID' => $post_id,
+      'comment_content' => $data['comment'],
+      'comment_type' => '',
+      'comment_parent' => 0,
+      'user_id' => $user->ID,
+      'comment_author' => $user->user_login,
+      'comment_author_email' => '',
+      'comment_author_url' => '',
+    ));
+  }
 
   return $post_id;
 }

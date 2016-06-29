@@ -12,7 +12,7 @@ use Miigle\Models\User;
 function post($data) {
   $user = wp_get_current_user();
   
-  if(Product\create($data, $user)) {
+  if($product = Product\create($data, $user)) {
     return 'success';
   }
   else {

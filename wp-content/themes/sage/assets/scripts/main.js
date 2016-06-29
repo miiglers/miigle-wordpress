@@ -140,7 +140,7 @@ for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElemen
           return false;
         });
 
-        $productForm.find('.category-list input').on('change', function(e) {
+        $productForm.find('#category .category-list input').on('change', function(e) {
           var $target = $(e.target),
               parentId = $target.attr('id'),
               hasSubCategory = false;
