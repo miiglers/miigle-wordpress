@@ -6,11 +6,14 @@
 use Miigle\Models\Product;
 use Miigle\Models\Brand;
 use Miigle\Models\User;
+global $post;
 
 $gallery = Product\get_image_gallery(get_the_ID());
 $brand = Product\get_brand(get_the_ID());
 $mgl_current_user = User\current();
 $badges = Brand\get_badges($brand->ID);
+$product_author = User\get($post->post_author);
+//var_dump($product_author);
 
 wp_reset_postdata();
 
@@ -37,8 +40,37 @@ wp_reset_postdata();
 								<img src="<?= $gallery[0]['image'] ?>" class="img-responsive" />
 							</div>
 							<div class="share-action">
-								<?= do_shortcode('[TheChamp-Sharing]'); ?>
-							</div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="media">
+                      <div class="media-left">
+                        <a href="<?= home_url() ?>/profile-product?user_id=<?= $product_author['ID'] ?>">
+                          <img class="media-object" src="<?= $product_author['avatar'] ?>">
+                        </a>
+                      </div>
+                      <div class="media-body">                    
+                        <h5 class="media-heading">
+                          <a href="<?= home_url() ?>/profile-product?user_id=<?= $product_author['ID'] ?>">
+                            <?= $product_author['full_name'] ?>
+                          </a>
+                        </h5>
+                        <?php foreach(Product\get_categories(get_the_ID()) as $category): ?>
+                          <?php if(!$category->parent): ?>
+                            <a href="<?= home_url() ?>/category/<?= $category->slug ?>">
+                              <?= $category->name ?>
+                            </a>
+                          <?php endif; ?>
+                        <?php endforeach; ?>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="social-wrap">
+    								  <?= do_shortcode('[TheChamp-Sharing]'); ?>
+                    </div>
+                  </div>
+                  </div><!-- .row -->
+							</div><!-- .share-action -->
 						</div>
 					</div>
 				</div>
@@ -54,13 +86,13 @@ wp_reset_postdata();
 					</div>
 					<hr>
 					<div class="prod-action">
-						<div class="row">
-							<div class="col-sm-6">
-								<a href="<?= Product\get_url(get_the_ID()) ?>" class="btn btn-getProd" target="_blank">Get this product <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-							</div>
-							<!--<div class="col-sm-6">
-								<a href="#" class="btn btn-saveProd">Save this product</a>
-							</div>-->
+						<div class="btn-group pull-right">
+              <a href="#" class="btn btn-default btn-price">
+                <?= Product\get_price(get_the_ID()) ?>
+              </a>
+							<a href="<?= Product\get_url(get_the_ID()) ?>" class="btn btn-primary" target="_blank">
+                Get it <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </a>
 						</div>
 					</div>
 				</div>      	      	      	

@@ -83,6 +83,14 @@ function register_meta() {
     'id'         => $prefix . 'upvotes',
     'type'       => 'text'
   ));
+
+  // Price
+  $cmb->add_field(array(
+    'name'       => __('Price', 'cmb2'),
+    'desc'       => __('', 'cmb2'),
+    'id'         => $prefix . 'price',
+    'type'       => 'text'
+  ));
   
   // Image group
   $group_field_id = $cmb->add_field(array(
@@ -219,6 +227,13 @@ function get_brand_title($post_id) {
   else {
     return '';
   }
+}
+
+/**
+ * Get the product url
+ */
+function get_price($post_id) {
+  return get_post_meta($post_id, '_mgl_product_price', true);
 }
  
 /**
