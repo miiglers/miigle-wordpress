@@ -31,7 +31,11 @@ if(isset($queried_object->term_id)) {
       <?php if(!$category->parent): ?>
         <li class="<?php if($active): ?>active<?php endif; ?> <?php if($active_parent): ?>active-parent<?php endif; ?>">
           <a href="<?= home_url() ?>/category/<?= $category->slug ?>?<?= $post_type ?>">
-            <?= $category->name ?>            
+            <?= $category->name ?>
+            <?php if($children): ?>
+              <i class="fa fa-chevron-right right"></i>
+              <i class="fa fa-chevron-down down"></i>
+            <?php endif; ?>
           </a>
           <?php if($children): ?>
             <ul class="list-unstyled">

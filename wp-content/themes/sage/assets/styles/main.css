@@ -128,18 +128,44 @@ ul.collapsible ul {
   padding-left: 20px;
   margin-bottom: 0;
 }
+ul.collapsible a:hover {
+  text-decoration: none;
+}
+ul.collapsible ul a:hover {
+  color: #55b7b8;
+}
 ul.collapsible a {
   color: #777;
+  padding: 5px 15px;
+  display: inline-block;
 }
-ul.collapsible > li {
-  margin-bottom: 15px;
+ul.collapsible > li:hover > a,
+ul.collapsible .active-parent > a,
+ul.collapsible > .active > a {
+  background: #e4e4e4;
+  border-radius: 50px;
 }
 ul.collapsible .active-parent ul,
 ul.collapsible li:hover ul {
   display: block;
 }
-ul.collapsible .active > a {
+ul.collapsible ul .active a {
   color: #55b7b8;
+}
+ul.collapsible .fa {
+  font-size: 12px;
+  margin-left: 5px;
+}
+ul.collapsible .fa.down {
+  display: none;
+}
+ul.collapsible li:hover .fa.down,
+ul.collapsible .active-parent .fa.down {
+  display: inline-block;
+}
+ul.collapsible li:hover .fa.right,
+ul.collapsible .active-parent .fa.right {
+  display: none;
 }
 .text-two-lines {
   overflow: hidden;

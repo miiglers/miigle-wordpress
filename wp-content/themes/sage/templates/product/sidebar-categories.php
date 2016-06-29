@@ -11,7 +11,7 @@ if(isset($queried_object->term_id)) {
 
 <div id="sidebar-categories" class="templates product">
 
-  <h4>Categories</h4>
+  <h4>Categories 2</h4>
   <ul class="list-unstyled collapsible">
     <li>
       <a href="<?= home_url() ?>/products">All</a>
@@ -25,7 +25,7 @@ if(isset($queried_object->term_id)) {
       <?php if(!$category->parent): ?>
         <li class="<?php if($active): ?>active<?php endif; ?> <?php if($active_parent): ?>active-parent<?php endif; ?>">
           <a href="<?= home_url() ?>/category/<?= $category->slug ?>?products">
-            <?= $category->name ?>            
+            <?= $category->name ?>   
           </a>
           <?php if($children): ?>
             <ul class="list-unstyled">
