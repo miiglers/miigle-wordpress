@@ -19,7 +19,7 @@ if(isset($_GET['sort']) && $_GET['sort'] == 'popular') {
 <div class="container main">
   
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8 <?php if(is_user_logged_in()): ?>col-md-offset-3<?php else: ?>col-md-offset-2<?php endif; ?>">
     
       <h1>
         This Week
@@ -41,7 +41,7 @@ if(isset($_GET['sort']) && $_GET['sort'] == 'popular') {
   
   <div class="row">
 
-    <div class="col-md-2 left">
+    <div class="col-md-2 left <?php if(is_user_logged_in()): ?>col-md-offset-1<?php endif; ?>">
       
       <?php require_once(locate_template('templates/sidebar-categories.php')); ?>
 
@@ -61,14 +61,16 @@ if(isset($_GET['sort']) && $_GET['sort'] == 'popular') {
       </div>    
     </div>
 
-    <div class="col-md-2 right">
-      <div class="well">
+    <?php if(!is_user_logged_in()): ?>
+      <div class="col-md-2 right">
+        <div class="well">
+          
+          <h4>All for 1, 1 for all.</h4>
+          <p>See what products your friends are posting and loving on Miigle+</p>
         
-        <h4>All for 1, 1 for all.</h4>
-        <p>See what products your friends are loving!</p>
-      
+        </div>
       </div>
-    </div>
+    <?php endif; ?>
 
   </div>
 </div>

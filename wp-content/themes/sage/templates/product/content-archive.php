@@ -13,16 +13,13 @@ use Miigle\Models\Product;
         the_post(); 
         $mgl_user = User\get($post->post_author);
     ?>
-      <style type="text/css">
-        a#product-<?php the_ID(); ?> {
-          background-image: url('<?= Product\get_thumbnail(get_the_ID()) ?>');
-        }
-      </style>
       <div class="col-md-4 product-card">
         <div class="thumbnail">
-          <a class="product-thumb" id="product-<?php the_ID(); ?>" href="<?php the_permalink(); ?>">&nbsp;</a>
+          <a class="product-thumb" id="product-<?php the_ID(); ?>" href="<?php the_permalink(); ?>">
+            <img src="<?= Product\get_thumbnail(get_the_ID()) ?>">
+          </a>
           <div class="caption">
-            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+            <h3 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
             <div class="text-two-lines desc">
               <?php the_excerpt(); ?>
               <div class="clearfix"></div>
@@ -36,22 +33,28 @@ use Miigle\Models\Product;
               </div>
             </div>
             <div class="row author">
-              <div class="col-md-3 col-lg-2">
-                <a href="<?= home_url() ?>/profile-product?user_id=<?= $mgl_user['ID'] ?>">
-                  <img src="<?= $mgl_user['avatar'] ?>" class="img-responsive">
-                </a>
+              <div class="col-md-12">
+                <div class="media">
+                  <div class="media-left">
+                    <a href="<?= home_url() ?>/profile-product?user_id=<?= $mgl_user['ID'] ?>">
+                      <img src="<?= $mgl_user['avatar'] ?>" class="media-object">
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <h4>
+                      <a href="<?= home_url() ?>/profile-product?user_id=<?= $mgl_user['ID'] ?>">
+                        <?= $mgl_user['full_name'] ?>
+                      </a>
+                    </h4>
+                    <?php foreach(Product\get_categories(get_the_ID()) as $category): ?>
+                      <?php if(!$category->parent): ?>
+                        <?= $category->name ?>
+                      <?php endif; ?>
+                    <?php endforeach; ?>
+                  </div>
+                </div><!-- .media -->
               </div>
-              <div class="col-md-9 col-lg-10">
-                <h4>
-                  <a href="<?= home_url() ?>/profile-product?user_id=<?= $mgl_user['ID'] ?>">
-                    <?= $mgl_user['full_name'] ?>
-                  </a>
-                </h4>
-                <?php foreach(Product\get_categories(get_the_ID()) as $cat): ?>
-                  <?= $cat->name ?>
-                <?php endforeach; ?>
-              </div>
-            </div>
+            </div><!-- .row.author -->
           </div>
         </div>
       </div>
