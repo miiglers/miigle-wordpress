@@ -67,6 +67,7 @@ if(isset($_GET['sort']) && $_GET['sort'] == 'popular') {
           
           <h4>All for 1, 1 for all.</h4>
           <p>See what products your friends are posting and loving on Miigle+</p>
+          <p><?php echo do_shortcode('[TheChamp-Login]'); ?>
         
         </div>
       </div>
