@@ -3,6 +3,7 @@
 namespace Miigle\Models\Product;
 
 use Miigle\Models\Model;
+use Miigle\Models\User;
 
 add_action('init', __NAMESPACE__ . '\\register');
 add_action('cmb2_admin_init', __NAMESPACE__ . '\\register_meta');
@@ -214,6 +215,19 @@ function get_user_products($user_id) {
     'post_type' => 'mgl_product',
     'post_status' => 'any',
     'author' => $user_id
+  ));
+}
+
+/**
+ * Get all products upvoted by a user
+ */
+function get_user_products_upvoted($user_id) {
+  $user_upvoted = User\get_upvotes($user_id);
+
+  return get_posts(array(
+    'post_type' => 'mgl_product',
+    'post_status' => 'any',
+    'post__in' => $user_upvoted
   ));
 }
  

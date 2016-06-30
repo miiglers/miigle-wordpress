@@ -271,6 +271,15 @@ form.comment-form input#submit {
   margin-left: 15px;
   margin-right: 15px;
 }
+.navbar-default .navbar-nav>li>a.avatar {
+  margin-top: 9px;
+  margin-bottom: 8px;
+  padding: 0;
+}
+.navbar-default .navbar-nav>li>a.avatar>img {
+  max-height: 33px;
+  border-radius: 5px;
+}
 .navbar-nav>li>a.btn {
   padding: 6px 30px;
   margin-top: 8px;
@@ -482,7 +491,10 @@ body.post-type-archive-mgl_product {
   color: white;
   padding: 50px 0;
   margin-bottom: 50px;
-  background: linear-gradient(to right,  #5bbbb9 0%,#84cdba 100%);
+  background-color: linear-gradient(to right,  #5bbbb9 0%,#84cdba 100%);
+  background-size: cover;
+  background-position: center center;
+  background-image: url('../images/hero-feed.png');
 }
 #archive-mgl_product .main h1 {
   font-size: 30px;
@@ -1126,7 +1138,10 @@ body.page-template-template-login main.main {
 	opacity:0.8;
 }
 #template-profile_following section#hero .btn.btn-profile.upvotes {
-	background-color: rgba(227, 30, 70, 0.8);
+	background-color: #999;
+}
+#template-profile_following section#hero .btn.btn-profile.upvotes.active {
+  background-color: rgba(227, 30, 70, 0.8);
 }
 #template-profile_following section#hero .btn.btn-profile.submitted {
 	background-color: #46b3df;
@@ -1297,10 +1312,18 @@ body.page-template-template-login main.main {
 	opacity:0.8;
 }
 #template-profile_product section#hero .btn.btn-profile.upvotes {
-	background-color: rgba(227, 30, 70, 0.8);
+	background-color: #999;
+}
+#template-profile_product section#hero .btn.btn-profile.upvotes.active,
+#template-profile_product section#hero .btn.btn-profile.upvotes:hover {
+  background-color: rgba(227, 30, 70, 0.8);
 }
 #template-profile_product section#hero .btn.btn-profile.submitted {
-	background-color: #46b3df;
+	background-color: #999;
+}
+#template-profile_product section#hero .btn.btn-profile.submitted.active,
+#template-profile_product section#hero .btn.btn-profile.submitted:hover {
+  background-color: #46b3df;
 }
 #template-profile_product section#hero .btn.btn-profile.following {
 	background-color: #cc4dfc;

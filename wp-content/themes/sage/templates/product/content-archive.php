@@ -14,6 +14,7 @@ use Miigle\Models\Product;
         while (have_posts()): 
           the_post(); 
           $mgl_user = User\get($post->post_author);
+          $product_id = get_the_ID();
       ?>
         <div class="grid-item col-md-4 product-card">
           <div class="grid-item-content">

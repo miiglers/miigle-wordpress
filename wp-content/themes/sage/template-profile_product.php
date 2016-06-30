@@ -6,14 +6,28 @@
 use Miigle\Models\Product;
 use Miigle\Models\User;
 
+$mgl_current_user = User\current();
+
 if(isset($_GET['user_id'])) {
-  $mgl_current_user = User\get($_GET['user_id']);
+  $profile_user = User\get($_GET['user_id']);
 }
 else {
-  $mgl_current_user = User\current();
+  $profile_user = $mgl_current_user;
 }
 
-$products = Product\get_user_products($mgl_current_user['ID']);
+$submitted_products = Product\get_user_products($profile_user['ID']);
+
+if(isset($_GET['upvoted'])) {
+  $upvoted_class = 'active';
+  $submitted_class = '';
+  $products = Product\get_user_products_upvoted($profile_user['ID']);
+}
+else {
+  $upvoted_class = '';
+  $submitted_class = 'active';
+  $products = $submitted_products;
+}
+
 wp_reset_postdata();
 
 ?>
@@ -26,40 +40,40 @@ wp_reset_postdata();
         <div class="col-md-10 col-md-offset-1 hero"> 
           <div class="profile-thumb text-center">
         		<!--<a href="#" class="btn btn-follow float-right">Follow</a>-->
-        		<img src="<?= $mgl_current_user['avatar'] ?>" class="img-responsive" />
+        		<img src="<?= $profile_user['avatar'] ?>" class="img-responsive" />
         	</div>
         	<div class="profile-fullname text-center white-text">
-        		<?= $mgl_current_user['first_name'] ?>
-						<?= $mgl_current_user['last_name'] ?>
+        		<?= $profile_user['first_name'] ?>
+						<?= $profile_user['last_name'] ?>
 				  </div>
         	<div class="profile-title text-center white-text">
-        		<?= $mgl_current_user['_mgl_user_title'] ?>
-						<?php if( $mgl_current_user['_mgl_user_company']): ?>
-        			@ <?= $mgl_current_user['_mgl_user_company'] ?>
+        		<?= $profile_user['_mgl_user_title'] ?>
+						<?php if( $profile_user['_mgl_user_company']): ?>
+        			@ <?= $profile_user['_mgl_user_company'] ?>
 						<?php endif; ?>
 					</div>
         	<div class="profile-social text-center white-text">
-        		<a href="#">@<?= $mgl_current_user['username'] ?></a>
+        		<a href="#">@<?= $profile_user['username'] ?></a>
 						&nbsp;|&nbsp;
-						<?php if( $mgl_current_user['_mgl_user_website']): ?>
-        			<a href="<?= $mgl_current_user['website'] ?>" target="_blank">Website</a>
+						<?php if( $profile_user['_mgl_user_website']): ?>
+        			<a href="<?= $profile_user['website'] ?>" target="_blank">Website</a>
 						<?php endif; ?>
-						<?php if( $mgl_current_user['_mgl_user_facebook']): ?>
-        			&nbsp;|&nbsp;<a href="<?= $mgl_current_user['_mgl_user_facebook'] ?>" target="_blank">Facebook</a>
+						<?php if( $profile_user['_mgl_user_facebook']): ?>
+        			&nbsp;|&nbsp;<a href="<?= $profile_user['_mgl_user_facebook'] ?>" target="_blank">Facebook</a>
 						<?php endif; ?>
-						<?php if( $mgl_current_user['_mgl_user_twitter']): ?>
-        			&nbsp;|&nbsp;<a href="<?= $mgl_current_user['_mgl_user_twitter'] ?>" target="_blank">Twitter</a>
+						<?php if( $profile_user['_mgl_user_twitter']): ?>
+        			&nbsp;|&nbsp;<a href="<?= $profile_user['_mgl_user_twitter'] ?>" target="_blank">Twitter</a>
 						<?php endif; ?>
         	</div>
         	<div class="profile-btn text-center">
-        		<a href="#" class="btn btn-profile upvotes">
+        		<a href="?upvoted&user_id=<?= $profile_user['ID'] ?>" class="btn btn-profile upvotes <?= $upvoted_class ?>">
 							<i class="fa fa-star-o" aria-hidden="true"></i> 
-							<?= User\get_product_upvotes_count($mgl_current_user['ID']) ?> 
+							<?= User\get_product_upvotes_count($profile_user['ID']) ?> 
 							- Upvotes
 						</a>
-        		<a href="#" class="btn btn-profile submitted">
+        		<a href="?submitted&user_id=<?= $profile_user['ID'] ?>" class="btn btn-profile submitted <?= $submitted_class ?>">
 							<i class="fa fa-external-link" aria-hidden="true"></i>  
-							<?= count($products) ?>
+							<?= count($submitted_products) ?>
 							- Submitted
 						</a>
         		<!--<a href="#" class="btn btn-profile following"><i class="fa fa-users" aria-hidden="true"></i> 4 - Following</a>
@@ -73,7 +87,7 @@ wp_reset_postdata();
   <section id="profile_product">
     <div class="container">
       <div class="row">
-        <div class="col-md-10 col-md-offset-1 main"> 
+        <div class="col-md-8 col-md-offset-2 main"> 
         	
         	<!-- Card Item -->
         	<div class="row">
@@ -97,6 +111,7 @@ wp_reset_postdata();
   						<?php 
   							$i = 2;
   							foreach($products as $product):
+                  $product_id = $product->ID;
   						?>
   						
   							<div class="col-md-4 grid-item product-card">

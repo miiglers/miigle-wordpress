@@ -13,6 +13,7 @@ $brand = Product\get_brand(get_the_ID());
 $mgl_current_user = User\current();
 $badges = Brand\get_badges($brand->ID);
 $product_author = User\get($post->post_author);
+$product_id = get_the_ID();
 //var_dump($product_author);
 
 wp_reset_postdata();

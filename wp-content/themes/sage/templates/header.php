@@ -1,3 +1,11 @@
+<?php
+
+use Miigle\Models\User;
+
+$mgl_current_user = User\current();
+
+?>
+
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     
@@ -36,8 +44,8 @@
         <?php if(is_user_logged_in() && !is_front_page()): ?>          
           <li><a href="<?= home_url() ?>/product-post" class="btn btn-default navbar-btn">Post</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              <i class="fa fa-user"></i>
+            <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <img src="<?= $mgl_current_user['avatar'] ?>">
             </a>
             <ul class="dropdown-menu">
               <li><a href="<?= home_url() ?>/profile-product">Profile</a></li>
