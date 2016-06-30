@@ -47,7 +47,7 @@ if(isset($_GET['sort']) && $_GET['sort'] == 'popular') {
 
     </div>
 
-    <div class="col-md-10 middle">
+    <div class="col-md-8 middle">
       <div class="row">          
         <div class="col-md-12">
             
