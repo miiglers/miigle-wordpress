@@ -18,7 +18,7 @@ use Miigle\Models\Product;
           background-image: url('<?= Product\get_thumbnail(get_the_ID()) ?>');
         }
       </style>
-      <div class="col-md-6 product-card">
+      <div class="col-md-4 product-card">
         <div class="thumbnail">
           <a class="product-thumb" id="product-<?php the_ID(); ?>" href="<?php the_permalink(); ?>">&nbsp;</a>
           <div class="caption">
@@ -55,7 +55,7 @@ use Miigle\Models\Product;
           </div>
         </div>
       </div>
-      <?php if(($i % 2) == 0): ?>
+      <?php if(($i % 3) == 0): ?>
         </div>
         <div class="row">
       <?php endif; ?>
