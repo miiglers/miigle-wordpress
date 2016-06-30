@@ -42,13 +42,6 @@ if(isset($_GET['sort']) && $_GET['sort'] == 'popular') {
   <div class="row">
 
     <div class="col-md-2 left">
-
-      <div class="well">
-        
-        <h4>All for 1, 1 for all.</h4>
-        <p>See what products your friends are loving!</p>
-      
-      </div>
       
       <?php require_once(locate_template('templates/sidebar-categories.php')); ?>
 
@@ -68,14 +61,14 @@ if(isset($_GET['sort']) && $_GET['sort'] == 'popular') {
       </div>    
     </div>
 
-    <!--<div class="col-md-2 right">
+    <div class="col-md-2 right">
       <div class="well">
         
         <h4>All for 1, 1 for all.</h4>
         <p>See what products your friends are loving!</p>
       
       </div>
-    </div>-->
+    </div>
 
   </div>
 </div>
