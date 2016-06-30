@@ -76,10 +76,13 @@ for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElemen
         // JavaScript to be fired on the home page, after the init JS
       }
     },
-    'login': {
+    'post_type_archive_mgl_product': {
       init: function() {
-        $('input#user_login').attr('placeholder', 'Email or Username');
-        $('input#user_pass').attr('placeholder', 'Password');
+        $('.grid').masonry({
+          itemSelector: '.grid-item', // use a separate class for itemSelector, other than .col-
+          columnWidth: '.grid-item',
+          percentPosition: true
+        });
       }
     },
     'sign_up': {
