@@ -11,4 +11,4 @@
 
 ?>
 
-<span class="<?= $label_class ?>"><i class="fa fa-commenting-o"></i> <?= $comments ?></span>
+<span class="<?= $label_class ?>"><i class="fa fa-commenting-o"></i> <?= $comments ?></span> 

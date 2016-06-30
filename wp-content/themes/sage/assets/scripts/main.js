@@ -216,12 +216,12 @@ for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElemen
     },
     'single_mgl_product': {
       init: function() {
-        $('.prod-gallery a').on('click', function(e) {
+        $('.prod-gallery .previews a').on('click', function(e) {
           e.preventDefault();
           var $this = $(this);
           var img = $this.data('img');
 
-          $('.prod-gallery a').removeClass('active');
+          $('.prod-gallery .previews a').removeClass('active');
           $this.addClass('active');
 
           $('.prod-gallery .full img').attr('src', img);
