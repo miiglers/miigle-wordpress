@@ -8,7 +8,7 @@ use Miigle\Models\Product;
 <div class="templates product" id="content-archive">
   <div class="row">
     <div class="grid">
-      <div class="grid-sizer col-md-4"></div>
+      <div class="grid-sizer col-md-4 product-card"></div>
       <?php 
         $i=1; 
         while (have_posts()): 

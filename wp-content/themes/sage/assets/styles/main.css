@@ -505,6 +505,9 @@ body.post-type-archive-mgl_product {
 #archive-mgl_product .right p {
   font-size: 15px;
 }
+.product-card {
+  margin-bottom: 30px;
+}
 .product-card .title {
   font-size: 16px;
 }
