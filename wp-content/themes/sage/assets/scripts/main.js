@@ -29,6 +29,12 @@ for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElemen
           'page name' : document.title,
           'url' : window.location.pathname
         });
+
+        $('.grid').masonry({
+          itemSelector: '.grid-item', // use a separate class for itemSelector, other than .col-
+          columnWidth: '.grid-sizer',
+          percentPosition: true
+        });
         
         $('.btn-upvote').on('click', function(e) {
           e.preventDefault();
@@ -74,15 +80,6 @@ for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElemen
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
-      }
-    },
-    'post_type_archive_mgl_product': {
-      init: function() {
-        $('.grid').masonry({
-          itemSelector: '.grid-item', // use a separate class for itemSelector, other than .col-
-          columnWidth: '.grid-sizer',
-          percentPosition: true
-        });
       }
     },
     'sign_up': {

@@ -77,66 +77,57 @@ wp_reset_postdata();
         	
         	<!-- Card Item -->
         	<div class="row">
-						
-						<div class="col-sm-4 plus-wrap">
-							<a href="<?= home_url() ?>/product-post">
-								<div class="card-item plus text-center">
-									<div class="plus-wrap">
-										<span class="plus"></span>
-									</div>
-									<p>Post a product</p>
-								</div>
-							</a>
-						</div>
-						
-						<?php 
-							$i = 2;
-							foreach($products as $product):
-						?>
+            <div class="grid">
 
-              <style type="text/css">
-                a#product-<?= $product->ID ?> {
-                  background-image: url('<?= Product\get_thumbnail($product->ID) ?>');
-                }
-              </style>
+              <div class="col-md-4 grid-sizer product-card"></div>
 						
-							<div class="col-md-4 product-card">
-                <div class="thumbnail">
-                  <a class="product-thumb" id="product-<?= $product->ID ?>" href="<?= get_permalink($product->ID) ?>">&nbsp;</a>
-                  <div class="caption">
-                    <h3><a href="<?= get_permalink($product->ID) ?>"><?= get_the_title($product->ID) ?></a></h3>
-                    <div class="text-two-lines desc">
-                      <?= apply_filters('the_content', $product->post_content) ?>
-                      <div class="clearfix"></div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div>
-                          <?php require(locate_template('templates/product/button-upvote.php')); ?>
-                          <?php require(locate_template('templates/product/button-comment.php')); ?>
+  						<div class="col-md-4 grid-item plus-wrap product-card">
+                <div class="grid-item-content">
+    							<a href="<?= home_url() ?>/product-post">
+    								<div class="card-item plus text-center">
+    									<div class="plus-wrap">
+    										<span class="plus"></span>
+    									</div>
+    									<p>Post a product</p>
+    								</div>
+    							</a>
+                </div>
+  						</div>
+  						
+  						<?php 
+  							$i = 2;
+  							foreach($products as $product):
+  						?>
+  						
+  							<div class="col-md-4 grid-item product-card">
+                  <div class="grid-item-content">
+                    <div class="thumbnail">
+                      <a class="product-thumb" id="product-<?= $product->ID ?>" href="<?= get_permalink($product->ID) ?>">
+                        <img src="<?= Product\get_thumbnail($product->ID) ?>">
+                      </a>
+                      <div class="caption">
+                        <h3><a href="<?= get_permalink($product->ID) ?>"><?= get_the_title($product->ID) ?></a></h3>
+                        <div class="text-two-lines desc">
+                          <?= apply_filters('the_content', $product->post_content) ?>
+                          <div class="clearfix"></div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div>
+                              <?php require(locate_template('templates/product/button-upvote.php')); ?>
+                              <?php require(locate_template('templates/product/button-comment.php')); ?>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-							
-							<?php if(($i % 3) == 0): ?>
-								</div>
-								<div class="row">
-							<?php endif; ?>
+  						
+  						<?php $i++; endforeach; ?>
 						
-						<?php $i++; endforeach; ?>
-						
+            </div>
         	</div>
-        	<!--./ Card Item -->
-        	
-        	<!-- Show more 
-        	<div class="row">
-        		<div class="col-md-12 text-center showmore">
-        			<a href="#" class="btn btn-showmore">Show more</a>
-        		</div>
-        	</div>-->
         	
         </div>
       </div>
