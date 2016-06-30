@@ -28,7 +28,7 @@ function register() {
 			'label' => __( 'Badges' ),
 			'rewrite' => array( 'slug' => 'badge' ),
       'show_in_rest'=> true,
-			'hierarchical' => false,
+			'hierarchical' => true,
 		)
 	);
 }
