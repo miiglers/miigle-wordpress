@@ -47,19 +47,15 @@ for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElemen
           .then(function(success) {
             // just upvoted
             if($form.attr('action') === 'mgl/v1/product/upvote') {
-              $star.removeClass('fa-star-o');
-              $star.addClass('fa-star');
-              $this.addClass('label-danger');
-              $this.removeClass('label-default');
+              $this.addClass('text-danger');
+              //$this.removeClass('text-info');
               $form.attr('action', 'mgl/v1/product/downvote');
               $form.find('span#upvotes').html(upvotes + 1);
             }
             // just downvoted
             else {
-              $star.removeClass('fa-star');
-              $star.addClass('fa-star-o');
-              $this.addClass('label-default');
-              $this.removeClass('label-danger');
+              //$this.addClass('text-info');
+              $this.removeClass('text-danger');
               $form.attr('action', 'mgl/v1/product/upvote');
               $form.find('span#upvotes').html(upvotes - 1);
             }

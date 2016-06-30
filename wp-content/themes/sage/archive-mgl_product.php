@@ -13,7 +13,7 @@ $mgl_current_user = User\current();
     <div class="container text-center">
     
       <h1>Introducing M+ Products.</h1>
-      <p>Find the best products from environmentally and socially responsible brands around the world.</p>
+      <p>Share and discover the best products from socially and environmentally responsible brands worldwide.</p>
   
     </div>
   </section>

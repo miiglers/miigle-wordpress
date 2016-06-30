@@ -121,7 +121,7 @@ wp_reset_postdata();
                         <img src="<?= Product\get_thumbnail($product->ID) ?>">
                       </a>
                       <div class="caption">
-                        <h3><a href="<?= get_permalink($product->ID) ?>"><?= get_the_title($product->ID) ?></a></h3>
+                        <h3 class="title"><a href="<?= get_permalink($product->ID) ?>"><?= get_the_title($product->ID) ?></a></h3>
                         <div class="text-two-lines desc">
                           <?= apply_filters('the_content', $product->post_content) ?>
                           <div class="clearfix"></div>
