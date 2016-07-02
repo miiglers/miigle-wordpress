@@ -71,6 +71,9 @@ h2, h3, h4 {
   font-family: 'Montserrat', sans-serif;
   color: #333;
 }
+h5 {
+  font-size: 15px;
+}
 a, a:visited {
   color: #55b7b8;
 }
@@ -244,6 +247,9 @@ ul.collapsible .active-parent .fa.right {
 }
 .text-white {
   color: white;
+}
+.text-navy {
+  color: #2a414d;
 }
 .pagination>li>a, 
 .pagination>li>span {
@@ -670,6 +676,7 @@ body.page-template-template-about-php main.main {
 }
 section.page-splash {
   font-size: 18px;
+  font-weight: normal;
   padding: 75px 0;
   margin-bottom: 75px;
   color: white;
@@ -2175,6 +2182,7 @@ margin-bottom: 30px;
 |  template-how_it_works.php
 |
 **********************************************************/
+
 
 #template-how-it-works h2 {
   margin-bottom: 40px;
