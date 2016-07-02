@@ -61,12 +61,14 @@ if(isset($_GET['sort']) && $_GET['sort'] == 'popular') {
 
     <?php if(!is_user_logged_in()): ?>
       <div class="col-md-2 right">
-        <div class="well">
+        <div data-spy="affix" data-offset-top="420" data-offset-bottom="420">
+          <div class="well">
+            
+            <h4>All for 1, 1 for all.</h4>
+            <p>See what products your friends are loving</p>
+            <p><?php echo do_shortcode('[TheChamp-Login]'); ?></p>
           
-          <h4>All for 1, 1 for all.</h4>
-          <p>See what products your friends are loving</p>
-          <p><?php echo do_shortcode('[TheChamp-Login]'); ?>
-        
+          </div>
         </div>
       </div>
     <?php endif; ?>

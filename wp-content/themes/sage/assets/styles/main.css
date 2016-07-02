@@ -518,6 +518,12 @@ body.post-type-archive-mgl_product {
   margin-bottom: 20px;
   border-bottom: 1px solid #e7e7e7;
 }
+.templates#content-archive .affix {
+  top: 100px;
+}
+.templates#content-archive .affix .well {
+  max-width: 165px;
+}
 .templates#content-archive .right .well {
   padding: 14px;
   background: white;
