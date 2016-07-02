@@ -267,6 +267,12 @@ ul.collapsible .active-parent .fa.right {
 .pagination>li>span:hover {
   color: #333;
 }
+.well {
+  background-color: white;
+}
+.well .form-control {
+  background-color: white;
+}
 
 @media (min-width: 992px) {
   h1 {
@@ -2261,7 +2267,7 @@ margin-bottom: 30px;
 
 /*********************************************************
 |
-|  template-contact.php
+|  Contact, Terms, Privacy
 |
 **********************************************************/
 
@@ -2295,4 +2301,19 @@ body.privacy section.page-splash h1 {
   body.privacy section.page-splash h1 {
     padding: 30px 0;
   }
+}
+
+/*********************************************************
+|
+|  template-profile_settings.php
+|
+**********************************************************/
+
+#template-profile_settings h1 {
+  margin: 60px 0;
+  font-size: 30px;
+  font-weight: normal;
+}
+#template-profile_settings .well {
+  padding: 50px 60px;
 }

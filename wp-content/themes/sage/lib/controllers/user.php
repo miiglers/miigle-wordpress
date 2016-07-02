@@ -18,6 +18,8 @@ function put($data) {
   
   return wp_update_user(array(
     'ID' => $user->ID,
-    'user_email' => $data['email']
+    'user_email' => $data['email'],
+    'first_name' => $data['first_name'],
+    'last_name' => $data['last_name']
   ));
 }
