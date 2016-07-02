@@ -104,6 +104,31 @@ input[type=password] {
 form.comment-form textarea {
   border-color: #ccc;
 }
+#splash .mc4wp-form .form-control {
+  height: 50px;
+  background: none;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  -webkit-text-fill-color: #fff !important;
+}
+.mc4wp-form input::placeholder {
+  color: white;
+}
+#splash .mc4wp-form .btn {
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+  font-weight: 600;
+}
+#splash .mc4wp-form .btn:hover {
+  background: #f1f1f1;
+  color: #55b7b8;
+}
+#splash .mc4wp-form .col {
+  padding-left: 8px;
+  padding-right: 8px;
+}
 .thumbnail .caption {
   color: #777;
 }
@@ -505,6 +530,19 @@ body.post-type-archive-mgl_product {
   background-position: center center;
   background-image: url('../images/hero-feed.png');
 }
+#archive-mgl_product section#splash h1 {
+  margin: 0;
+}
+#archive-mgl_product section#splash form p.small {
+  margin: 10px 0 0 0;
+}
+#archive-mgl_product section#splash .txt-wrap {
+  display: inline-block;
+  max-width: 630px;
+  margin: 30px 0;
+  font-size: 20px;
+  font-weight: normal;
+}
 .templates#content-archive .main h1 {
   font-size: 30px;
   margin-top: 0;
@@ -596,7 +634,6 @@ body.post-type-archive-mgl_product {
 }
 @media (min-width: 992px) {
   #archive-mgl_product section#splash {
-    padding: 100px 0;
     margin-bottom: 100px;
   }
 }
