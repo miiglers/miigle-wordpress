@@ -2,6 +2,9 @@
 
 use Miigle\Models\User;
 use Miigle\Models\Product;
+use Miigle\Helpers;
+
+global $wp_query;
 
 ?>
 
@@ -66,5 +69,8 @@ use Miigle\Models\Product;
         </div>
       <?php $i++; endwhile; ?>
     </div>
+  </div><!-- .row -->
+  <div class="text-center">
+    <?= Helpers\bootstrap_pagination($wp_query) ?>
   </div>
 </div>

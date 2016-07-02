@@ -137,6 +137,8 @@ function pre_get_posts($query) {
     return;
   }
 
+  $query->set('posts_per_page', 30);
+
   // the tax pages must have either ?products or ?brands
   if(is_tax('mgl_product_category')) {
     $query->set('post_type', 'mgl_product');

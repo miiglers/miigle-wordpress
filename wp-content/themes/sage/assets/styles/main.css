@@ -245,7 +245,22 @@ ul.collapsible .active-parent .fa.right {
 .text-white {
   color: white;
 }
-
+.pagination>li>a, 
+.pagination>li>span {
+  color: #55b7b8;
+}
+.pagination>li>.current {
+  z-index: 2;
+  color: #333;
+  background-color: #eee;
+  border-color: #ddd;
+}
+.pagination>li>a:focus, 
+.pagination>li>a:hover, 
+.pagination>li>span:focus, 
+.pagination>li>span:hover {
+  color: #333;
+}
 
 @media (min-width: 992px) {
   h1 {
