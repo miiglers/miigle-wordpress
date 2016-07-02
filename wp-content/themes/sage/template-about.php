@@ -65,20 +65,20 @@
           		<!--<p><a href="#">@miigle_handle</a></p>-->
           	</div>
           	
-          	<div class="col-sm-4 team">
-          		<p><img class="img-responsive" src="https://miigle.com/wp-content/uploads/2016/06/michael.png"></p>
-          		<h4>Michael Evans</h4>
-          		<p>COO &amp; CFO</p>
-          		<!--<p><a href="#">@miigle_handle</a></p>-->
-          	</div>
+            <div class="col-sm-4 team">
+              <p><img class="img-responsive" src="https://miigle.com/wp-content/uploads/2016/06/team-wilianiralzabal.png"></p>
+              <h4>Wilian Iralzabal</h4>
+              <p>Co-founder & CPD</p>
+              <!--<p><a href="#">@miigle_handle</a></p>-->
+            </div>
           		<div class="clearfix"></div>
           	
           	<div class="col-sm-4 team">
-          		<p><img class="img-responsive" src="https://miigle.com/wp-content/uploads/2016/06/team-wilianiralzabal.png"></p>
-          		<h4>Wilian Iralzabal</h4>
-          		<p>Product Design</p>
-          		<!--<p><a href="#">@miigle_handle</a></p>-->
-          	</div>
+              <p><img class="img-responsive" src="https://miigle.com/wp-content/uploads/2016/06/michael.png"></p>
+              <h4>Michael Evans</h4>
+              <p>COO &amp; CFO</p>
+              <!--<p><a href="#">@miigle_handle</a></p>-->
+            </div>
           	
           	<div class="col-sm-4 team">
           		<p><img class="img-responsive" src="https://miigle.com/wp-content/uploads/2016/06/team-yukirosene.png"></p>

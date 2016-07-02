@@ -691,6 +691,9 @@ section.page-splash h2 {
   color: white;
   margin-bottom: 20px;
 }
+#template-about section#about {
+  background: white;
+}
 #template-about section#about h2 {
   font-size: 28.8px;
 	line-height: 1.4;
