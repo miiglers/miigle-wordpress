@@ -5,6 +5,7 @@ namespace Miigle\Models\Brand;
 use Miigle\Models\Model;
 
 add_action('init', __NAMESPACE__ . '\\register');
+add_action('cmb2_admin_init', __NAMESPACE__ . '\\register_meta');
 add_action('pre_get_posts', __NAMESPACE__ . '\\pre_get_posts');
 
 /**
@@ -31,6 +32,38 @@ function register() {
 			'hierarchical' => true,
 		)
 	);
+}
+
+/**
+ * Define the metabox and field configurations.
+ */
+function register_meta() {
+
+  // Start with an underscore to hide fields from custom fields list
+  $prefix = '_mgl_brand_';
+
+  /**
+    * Initiate the metabox
+    */
+  $cmb = new_cmb2_box(array(
+    'id'            => $prefix,
+    'title'         => __('Product Fields', 'cmb2'),
+    'object_types'  => array('mgl_brand'), // Post type
+    'context'       => 'normal',
+    'priority'      => 'high',
+    'show_names'    => true, // Show field names on the left
+    // 'cmb_styles' => false, // false to disable the CMB stylesheet
+    // 'closed'     => true, // Keep the metabox closed by default
+  ));
+  
+  // URL
+  $cmb->add_field(array(
+    'name'       => __('URL', 'cmb2'),
+    'desc'       => __('', 'cmb2'),
+    'id'         => $prefix . 'url',
+    'type'       => 'text_url'
+  ));
+
 }
 
 /**
@@ -116,4 +149,11 @@ function upvote($post_id, $user_id) {
  */
 function downvote($post_id, $user_id) {
   return Model\downvote($post_id, $user_id, 'mgl_brand', '_mgl_brand');
+}
+
+/**
+ * Get the url
+ */
+function get_url($post_id) {
+  return get_post_meta($post_id, '_mgl_brand_url', true);
 }

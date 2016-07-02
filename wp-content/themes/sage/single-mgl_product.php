@@ -8,12 +8,12 @@ use Miigle\Models\Brand;
 use Miigle\Models\User;
 global $post;
 
-$gallery = Product\get_image_gallery(get_the_ID());
-$brand = Product\get_brand(get_the_ID());
+$gallery = Product\get_image_gallery($post->ID);
+$brand = Product\get_brand($post->ID);
 $mgl_current_user = User\current();
 $badges = Brand\get_badges($brand->ID);
 $product_author = User\get($post->post_author);
-$product_id = get_the_ID();
+$product_id = $post->ID;
 //var_dump($product_author);
 
 wp_reset_postdata();
@@ -78,7 +78,7 @@ wp_reset_postdata();
 				<div class="col-md-4">
 					<div class="prod-info">
 						<h1><?php the_title(); ?></h1>
-						<p class="brand-name"><a href="<?= get_permalink($brand->ID) ?>"><?= $brand->post_title ?></a></p>
+						<p class="brand-name">From: <a href="<?= Brand\get_url($brand->ID) ?>"><?= $brand->post_title ?></a></p>
 						<?php the_content(); ?>
 					</div>
 					<div class="prod-meta">
@@ -105,7 +105,7 @@ wp_reset_postdata();
   	 <div class="container">      
       <div class="row title">
       	<div class="col-md-12">
-      		<h2>About the Brand</h2>
+      		<h2>About <a href="<?= Brand\get_url($brand->ID) ?>"><?= $brand->post_title ?></a></h2>
       	</div>
       </div>
       <div class="row brand-entry">
@@ -127,7 +127,7 @@ wp_reset_postdata();
       	</div>
       	<div class="col-md-6">
       		<div class="our-story">
-      			<?= $brand->post_content ?>
+      			<?= apply_filters('the_content', $brand->post_content) ?>
       		</div>	
       	</div>
       </div>
@@ -151,7 +151,7 @@ wp_reset_postdata();
       	<div class="col-md-12">
       		<div class="cta-bar-bg">
 						<!--<p>Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsum</p>-->
-						<a href="<?= get_permalink($brand->ID) ?>" class="btn btn-cta">Shop brand name</a>
+            <a href="<?= Brand\get_url($brand->ID) ?>" class="btn btn-cta">Visit <?= $brand->post_title ?></a>
 					</div>
       	</div>
       </div>	

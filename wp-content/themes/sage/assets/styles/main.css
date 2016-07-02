@@ -1646,6 +1646,7 @@ body.page-template-template-product_post section.page-splash {
 	color: #333333;
 	margin-bottom:11px;
 	margin-top:3px;
+  font-weight: normal;
 }
 #template-product_page section#product_page p {
 	font-size: 15px;
@@ -1825,7 +1826,7 @@ body.page-template-template-product_post section.page-splash {
 	line-height: 1.7;
 	text-align: center;
 	color: #777777;
-	font-weight:700;
+	font-weight:600;
 	display:block;
 	padding:15px 0;
 }
