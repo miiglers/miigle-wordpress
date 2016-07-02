@@ -586,6 +586,9 @@ body.post-type-archive-mgl_product {
   margin: 0;
   font-size: 13px;
 }
+.product-card .thumbnail .author h4 a {
+  color: #333;
+}
 .product-card .product-thumb {
 }
 #archive-mgl_product .label:first-child {
