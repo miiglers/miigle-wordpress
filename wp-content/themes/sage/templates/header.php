@@ -61,7 +61,7 @@ $mgl_current_user = User\current();
         <?php endif; ?>
         <?php if(!is_user_logged_in() && !is_front_page()): ?>
           <li><a href="<?= home_url() ?>/login" class="btn btn-default navbar-btn">Login</a></li>
-          <li><a href="<?= home_url() ?>/login" class="btn btn-primary navbar-btn">Signup</a></li>
+          <li><a href="<?= home_url() ?>/signup" class="btn btn-primary navbar-btn">Signup</a></li>
         <?php endif; ?>
       </ul>
       

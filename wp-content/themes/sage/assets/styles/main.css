@@ -292,6 +292,7 @@ ul.collapsible .active-parent .fa.right {
 }
 li .navbar-btn {
   margin-left: 15px;
+  font-weight: 300;
 }
 .btn,
 form.comment-form input#submit {
@@ -581,7 +582,7 @@ body.post-type-archive-mgl_product {
 }
 .templates#content-archive ul.the_champ_login_ul li ss:before {
   font-size: 14px;
-  margin-left: 45px;
+  margin-left: 25px;
 }
 .templates#content-archive ul.the_champ_login_ul li ss.theChampFacebookLoginSvg:before {
   content: 'Login';
@@ -828,6 +829,14 @@ article.post .entry-thumb {
 |
 **********************************************************/
 
+#template-login p {
+  font-size: 18px;
+  font-weight: normal;
+}
+#template-login small {
+  font-size: 14px;
+  font-weight: normal;
+}
 ul.the_champ_login_ul li {
   display: block;
   width: 45% !important;
@@ -838,6 +847,7 @@ ul.the_champ_login_ul li:first-child {
 }
 ul.the_champ_login_ul li i {
   width: 100% !important;
+  padding: 4px 0 4px 8px !important;
 }
 ul.the_champ_login_ul li ss {
   padding-left: 5px;
@@ -845,15 +855,19 @@ ul.the_champ_login_ul li ss {
 ul.the_champ_login_ul li ss:before {
   color: white;
   font-style: normal;
-  font-size: 15px;
-  line-height: 35px;
-  margin-left: 35px;
+  font-size: 13px;
+  line-height: 27px;
+  margin-left: 0;
+  border-left: 1px solid #274072;
+  padding-left: 10px;
 }
 ul.the_champ_login_ul li ss.theChampFacebookLoginSvg:before {
   content: 'Login Using Facebook';
 }
 ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
   content: 'Login Using Twitter';
+  border-color: #1a8ac1;
+  margin-left: -10px;
 }
 #wp-submit {
   display: inline-block;
@@ -896,7 +910,7 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
 #template-signup section#signup h2,
 #template-login section#signup h2 {
 	font-weight: 700;
-	margin-bottom: 21px;
+	margin-bottom: 40px;
 }
 #template-signup section#signup p,
 #template-login section#signup p {
