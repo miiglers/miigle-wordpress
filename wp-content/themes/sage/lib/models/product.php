@@ -216,7 +216,8 @@ function get_user_products($user_id) {
   return get_posts(array(
     'post_type' => 'mgl_product',
     'post_status' => 'any',
-    'author' => $user_id
+    'author' => $user_id,
+    'posts_per_page' => -1
   ));
 }
 
@@ -229,7 +230,8 @@ function get_user_products_upvoted($user_id) {
   return get_posts(array(
     'post_type' => 'mgl_product',
     'post_status' => 'any',
-    'post__in' => $user_upvoted
+    'post__in' => $user_upvoted,
+    'posts_per_page' => -1
   ));
 }
  
