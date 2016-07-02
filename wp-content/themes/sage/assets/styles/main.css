@@ -2251,3 +2251,20 @@ margin-bottom: 30px;
 #template-how-it-works section#steps .join h5 {
   font-weight: bold;
 }
+
+/*********************************************************
+|
+|  template-contact.php
+|
+**********************************************************/
+
+#template-contact .well {
+  background-color: white;
+  padding: 50px 100px 40px 100px;
+}
+#template-contact .form-control {
+  background: white;
+}
+#template-contact section.page-splash h1 {
+  font-size: 52px;
+}
