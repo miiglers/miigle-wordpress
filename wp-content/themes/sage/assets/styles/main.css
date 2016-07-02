@@ -324,6 +324,9 @@ li .navbar-btn {
 .navbar-default .navbar-nav>li>a.btn-default {
   color: #55b7b8;
 }
+.navbar-default .navbar-nav>li>a.btn-default:hover {
+  color: white;
+}
 .btn,
 form.comment-form input#submit {
   padding: 6px 30px;
@@ -1078,6 +1081,10 @@ body.page-template-template-login main.main {
 |  template-product_post.php
 |
 **********************************************************/
+
+body.page-template-template-product_post section.page-splash {
+  background-image: url('../images/splash-product-post.png');
+}
 #template-product_post section#product_post .main {
 	margin-top: 75px;
 	padding-bottom: 50px;
@@ -1125,7 +1132,7 @@ body.page-template-template-login main.main {
 	color: #999999;
 }
 #template-product_post #product-form-wrap.well {
-  margin-top: -136px;
+  margin-top: -208px;
   background: white;
 }
 #template-product_post #product-form-wrap #progress-wrap {
@@ -1173,6 +1180,14 @@ body.page-template-template-login main.main {
 }
 #template-product_post #product-form-wrap #details .form-group {
   margin-top: 50px;
+}
+#template-product_post #product-form-wrap #details {
+  padding: 0 30px;
+}
+#template-product_post #product-form-wrap #details label {
+  font-size: 16px;
+  font-weight: 300;
+  color: #333;
 }
 
 @media screen and (min-width: 768px){

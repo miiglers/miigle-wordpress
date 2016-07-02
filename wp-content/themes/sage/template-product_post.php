@@ -67,7 +67,7 @@ $brands = Brand\get_posts();
   						    <div role="tabpanel" class="tab-pane fade in active" id="category">
   						    	
   						    	<h2>Select a category</h2>
-  									<p class="text-muted">Help us filter the type of products that are shared on Miigle.</p>
+  									<p class="text-muted">Please select a category below that closely matches the type of product are you posting. We will be adding more soon!</p>
 
   									<div class="category-list">
                       <div class="row">
@@ -100,8 +100,8 @@ $brands = Brand\get_posts();
 
   						    <div role="tabpanel" class="tab-pane fade" id="sub-category">
   						    	
-                    <h2>Select the gender audience</h2>
-                    <p class="text-muted">Part of getting a product known is by first knowing your audience.</p>
+                    <h2>Who is this for</h2>
+                    <p class="text-muted">Select all that apply</p>
 
                     <div class="category-list">
                       <div class="row">
