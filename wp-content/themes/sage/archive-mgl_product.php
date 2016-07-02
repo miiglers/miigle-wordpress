@@ -12,7 +12,7 @@ $mgl_current_user = User\current();
   <section id="splash">
     <div class="container text-center">
     
-      <h1>Introducing M+ Products.</h1>
+      <h1>Introducing <span class="text-white">M+</span> Products</h1>
       <p>Share and discover the best products from socially and environmentally responsible brands worldwide.</p>
   
     </div>

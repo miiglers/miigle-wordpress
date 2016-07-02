@@ -186,8 +186,8 @@ ul.collapsible .active-parent .fa.right {
 .text-two-lines {
   overflow: hidden;
   position: relative;
-  line-height: 1.2em;
-  max-height: 2.4em;
+  line-height: 1.6em;
+  max-height: 3.2em;
   margin-right: -1em;
   padding-right: 1em;
 }
@@ -216,6 +216,9 @@ ul.collapsible .active-parent .fa.right {
 }
 .text-success {
   color: #55b7b8;
+}
+.text-white {
+  color: white;
 }
 
 
@@ -485,8 +488,12 @@ section.page-video {
 body.post-type-archive-mgl_product {
   background: #f9f9fa;
 }
-.templates#content-archive h1 {
+.templates#content-archive h2 {
+  margin: 0;
+}
+.templates#content-archive .sort {
   margin-bottom: 30px;
+  line-height: 33px;
 }
 #archive-mgl_product section#splash {
   font-size: 18px;
@@ -498,26 +505,49 @@ body.post-type-archive-mgl_product {
   background-position: center center;
   background-image: url('../images/hero-feed.png');
 }
-#archive-mgl_product .main h1 {
+.templates#content-archive .main h1 {
   font-size: 30px;
   margin-top: 0;
 }
-#archive-mgl_product h1 small {
+.templates#content-archive h1 small {
   font-size: 16px;
   line-height: 33px;
 }
-#archive-mgl_product .left h4 {
+.templates#content-archive .left h4 {
   padding-bottom: 25px;
   margin-bottom: 20px;
   border-bottom: 1px solid #e7e7e7;
 }
-#archive-mgl_product .right .well {
+.templates#content-archive .right .well {
   padding: 14px;
   background: white;
+  font-size: 13px;
 }
-#archive-mgl_product .right h4 {
+.templates#content-archive .right h4 {
   margin-bottom: 15px;
   font-size: 15px;
+}
+.templates#content-archive ul.the_champ_login_ul li {
+  display: block;
+  width: 100% !important;
+  margin-left: 0 !important;
+}
+.templates#content-archive .theChampLogin {
+  margin: 5px 0;
+}
+.templates#content-archive ul.the_champ_login_ul li ss:before {
+  font-size: 14px;
+  margin-left: 45px;
+}
+.templates#content-archive ul.the_champ_login_ul li ss.theChampFacebookLoginSvg:before {
+  content: 'Login';
+}
+.templates#content-archive ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
+  content: 'Login';
+}
+.grid .product-card {
+  padding-left: 8px;
+  padding-right: 8px;
 }
 .product-card {
   margin-bottom: 1px;

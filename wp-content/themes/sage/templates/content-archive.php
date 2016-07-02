@@ -19,22 +19,20 @@ if(isset($_GET['sort']) && $_GET['sort'] == 'popular') {
 <div class="container main">
   
   <div class="row">
-    <div class="col-md-8 <?php if(is_user_logged_in()): ?>col-md-offset-3<?php else: ?>col-md-offset-2<?php endif; ?>">
+    <div class="sort col-md-8 <?php if(is_user_logged_in()): ?>col-md-offset-3<?php else: ?>col-md-offset-2<?php endif; ?>">
     
-      <h1>
-        This Week
-        <small class="pull-right">
-          <?php if($sort == 'popular'): ?>
-            Popular
-            |
-            <a href="?sort=new&products">Newest</a>
-          <?php else: ?>
-            <a href="?sort=popular&products">Popular</a>
-            |
-            Newest
-          <?php endif; ?>
-        </small>
-      </h1>
+      <h2 class="pull-left">This Week</h2>
+      <span class="pull-right">
+        <?php if($sort == 'popular'): ?>
+          Popular
+          |
+          <a href="?sort=new&products">Newest</a>
+        <?php else: ?>
+          <a href="?sort=popular&products">Popular</a>
+          |
+          Newest
+        <?php endif; ?>
+      </span>
     
     </div>
   </div>
@@ -66,7 +64,7 @@ if(isset($_GET['sort']) && $_GET['sort'] == 'popular') {
         <div class="well">
           
           <h4>All for 1, 1 for all.</h4>
-          <p>See what products your friends are posting and loving on Miigle+</p>
+          <p>See what products your friends are loving</p>
           <p><?php echo do_shortcode('[TheChamp-Login]'); ?>
         
         </div>
