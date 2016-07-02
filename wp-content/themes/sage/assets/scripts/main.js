@@ -30,10 +30,17 @@ for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElemen
           'url' : window.location.pathname
         });
 
-        $('.grid').masonry({
-          itemSelector: '.grid-item', // use a separate class for itemSelector, other than .col-
-          columnWidth: '.grid-sizer',
-          percentPosition: true
+        $(window).load(function() {
+          $('.grid').masonry({
+            itemSelector: '.grid-item', // use a separate class for itemSelector, other than .col-
+            columnWidth: '.grid-sizer',
+            percentPosition: true
+          });
+        });
+
+        $(".dotdotdot").dotdotdot({
+          wrap: 'letter',
+          height: 44
         });
         
         $('.btn-upvote').on('click', function(e) {

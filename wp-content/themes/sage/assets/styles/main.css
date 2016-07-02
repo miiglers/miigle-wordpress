@@ -183,19 +183,15 @@ ul.collapsible li:hover .fa.right,
 ul.collapsible .active-parent .fa.right {
   display: none;
 }
-.text-two-lines {
+.text-two-lines p {
   overflow: hidden;
   position: relative;
   line-height: 1.6em;
   max-height: 3.2em;
   margin-right: -1em;
   padding-right: 1em;
-}
-.text-two-lines:before {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
+  text-overflow: ellipsis;
+}/*
 .text-two-lines:after {
   content: '';
   position: absolute;
@@ -204,7 +200,7 @@ ul.collapsible .active-parent .fa.right {
   height: 1em;
   margin-top: 0.2em;
   background: white;
-}
+}*/
 .text-danger {
   color: #f05376;
 }
