@@ -191,6 +191,10 @@ ul.collapsible .active-parent .fa.right {
   margin-right: -1em;
   padding-right: 1em;
   text-overflow: ellipsis;
+}
+.dotdotdot-wrap {
+  max-height: 44px;
+  overflow: hidden;
 }/*
 .text-two-lines:after {
   content: '';

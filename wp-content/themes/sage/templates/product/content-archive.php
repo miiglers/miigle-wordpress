@@ -24,8 +24,10 @@ use Miigle\Models\Product;
               </a>
               <div class="caption">
                 <h3 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                <div class="dotdotdot desc">
-                  <?php the_excerpt(); ?>
+                <div class="dotdotdot-wrap desc">
+                  <div class="dotdotdot">
+                    <?php the_excerpt(); ?>
+                  </div>
                 </div>
                 <div class="row">
                   <div class="col-md-12">
