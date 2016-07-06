@@ -62,9 +62,9 @@ if(isset($queried_object->term_id)) {
       <li><a href="<?= home_url() ?>/products">All Products</a></li>
     </ul>
   <?php else: ?>
-    <ul class="list-unstyled collapsible">
+    <!--<ul class="list-unstyled collapsible">
       <li><a href="<?= home_url() ?>/brands">All Brands</a></li>
-    </ul>
+    </ul>-->
   <?php endif; ?>
 
 </div>
