@@ -688,6 +688,9 @@ body.page-template-template-about-php main.main {
   font-size: 16px;
   color: #888;
 }
+#template-about section.page-splash {
+  margin-bottom: 0;
+}
 section.page-splash {
   font-size: 18px;
   font-weight: normal;

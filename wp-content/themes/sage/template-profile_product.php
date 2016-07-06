@@ -56,7 +56,7 @@ wp_reset_postdata();
         		<a href="#">@<?= $profile_user['username'] ?></a>
 						&nbsp;|&nbsp;
 						<?php if( $profile_user['_mgl_user_website']): ?>
-        			<a href="<?= $profile_user['website'] ?>" target="_blank">Website</a>
+        			<a href="<?= $profile_user['_mgl_user_website'] ?>" target="_blank">Website</a>
 						<?php endif; ?>
 						<?php if( $profile_user['_mgl_user_facebook']): ?>
         			&nbsp;|&nbsp;<a href="<?= $profile_user['_mgl_user_facebook'] ?>" target="_blank">Facebook</a>
@@ -67,7 +67,7 @@ wp_reset_postdata();
         	</div>
         	<div class="profile-btn text-center">
         		<a href="?upvoted&user_id=<?= $profile_user['ID'] ?>" class="btn btn-profile upvotes <?= $upvoted_class ?>">
-							<i class="fa fa-star-o" aria-hidden="true"></i> 
+							<i class="fa fa-caret-up" aria-hidden="true"></i> 
 							<?= User\get_product_upvotes_count($profile_user['ID']) ?> 
 							- Upvotes
 						</a>
@@ -122,9 +122,10 @@ wp_reset_postdata();
                       </a>
                       <div class="caption">
                         <h3 class="title"><a href="<?= get_permalink($product->ID) ?>"><?= get_the_title($product->ID) ?></a></h3>
-                        <div class="text-two-lines desc">
-                          <?= apply_filters('the_content', $product->post_content) ?>
-                          <div class="clearfix"></div>
+                        <div class="dotdotdot-wrap desc">
+                          <div class="dotdotdot">
+                            <?= apply_filters('the_content', $product->post_content) ?>
+                          </div>
                         </div>
                         <div class="row">
                           <div class="col-md-12">

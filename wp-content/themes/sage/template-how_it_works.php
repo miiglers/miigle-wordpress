@@ -107,7 +107,7 @@
         </div>
 
         <div class="col-sm-5 support">
-          <h4 class="text-info"><i class="fa fa-star"></i> &nbsp;Upvote</h4>
+          <h4 class="text-info"><i class="fa fa-caret-up"></i> &nbsp;Upvote</h4>
           Upvoting is like giving your seal of approval on a product. The more upvotes a product has, the 
           more chances it has to be prominently featured on the site and our email newsletter. 
         </div>   
