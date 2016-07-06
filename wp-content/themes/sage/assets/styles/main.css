@@ -1808,6 +1808,21 @@ body.page-template-template-product_post section.page-splash {
 	text-decoration:none;
 	opacity:0.8;
 }
+#template-product_page section#product_page .share-action blockquote {
+  font-size: 15px;
+  margin-top: 30px;
+  border-left: none;
+  padding: 0 35px 0 0;
+}
+#template-product_page section#product_page .share-action blockquote .fa {
+  color: #55b7b8;
+}
+#template-product_page section#product_page .share-action blockquote .fa-quote-left {
+  margin-right: 5px;
+}
+#template-product_page section#product_page .share-action blockquote .fa-quote-right {
+  margin-left: 5px;
+}
 #template-product_page a.twitter-share-button {	
 	background-color: #32a7e0;	
 }	

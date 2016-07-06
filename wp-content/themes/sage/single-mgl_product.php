@@ -71,7 +71,18 @@ wp_reset_postdata();
     								  <?= do_shortcode('[TheChamp-Sharing]'); ?>
                     </div>
                   </div>
-                  </div><!-- .row -->
+                </div><!-- .row -->
+                <?php if(Product\get_author_comment(get_the_ID())): ?>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <blockquote>
+                        <i class="fa fa-quote-left"></i>                      
+                        <?= Product\get_author_comment(get_the_ID()) ?>
+                        <i class="fa fa-quote-right"></i>
+                      </blockquote>
+                    </div>
+                  </div>
+                <?php endif; ?>
 							</div><!-- .share-action -->
 						</div>
 					</div>
@@ -79,7 +90,7 @@ wp_reset_postdata();
 				<div class="col-md-4">
 					<div class="prod-info">
 						<h1><?php the_title(); ?></h1>
-						<p class="brand-name">From: <a target="_blank"> href="<?= Helpers\format_url(Brand\get_url($brand->ID)) ?>"><?= $brand->post_title ?></a></p>
+						<p class="brand-name">From: <a target="_blank" href="<?= Helpers\format_url(Brand\get_url($brand->ID)) ?>"><?= $brand->post_title ?></a></p>
 						<?php the_content(); ?>
 					</div>
 					<div class="prod-meta">

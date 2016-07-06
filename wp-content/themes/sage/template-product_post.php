@@ -150,7 +150,7 @@ $brands = Brand\get_posts();
                     <div class="form-group">
                       <label for="content" class="col-sm-2 control-label">Comment (optional)</label>
                       <div class="col-sm-10">
-                        <textarea rows="5" name="comment" class="form-control" placeholder="Why are you sharing this product?"></textarea>
+                        <textarea rows="5" name="_mgl_product_author_comment" class="form-control" placeholder="Why are you sharing this product?"></textarea>
                       </div>
                     </div>
 

@@ -92,6 +92,14 @@ function register_meta() {
     'id'         => $prefix . 'price',
     'type'       => 'text'
   ));
+
+  // Comment
+  $cmb->add_field(array(
+    'name'       => __('User Comment', 'cmb2'),
+    'desc'       => __('', 'cmb2'),
+    'id'         => $prefix . 'author_comment',
+    'type'       => 'textarea'
+  ));
   
   // Image group
   $group_field_id = $cmb->add_field(array(
@@ -182,6 +190,7 @@ function create($data, $user) {
 
   add_post_meta($post_id, '_mgl_product_upvotes', '0', true);
   add_post_meta($post_id, '_mgl_product_url', $data['_mgl_product_url'], true);
+  add_post_meta($post_id, '_mgl_product_author_comment', $data['_mgl_product_author_comment'], true);
 
   if($data['mgl_product_category']) {
     $categories = array();
@@ -191,19 +200,6 @@ function create($data, $user) {
     }
 
     wp_set_object_terms($post_id, $categories, 'mgl_product_category');
-  }
-
-  if($data['comment']) {
-    $comment_id = wp_new_comment(array(
-      'comment_post_ID' => $post_id,
-      'comment_content' => $data['comment'],
-      'comment_type' => '',
-      'comment_parent' => 0,
-      'user_id' => $user->ID,
-      'comment_author' => $user->user_login,
-      'comment_author_email' => '',
-      'comment_author_url' => '',
-    ));
   }
 
   return $post_id;
@@ -263,6 +259,13 @@ function get_brand_title($post_id) {
   else {
     return '';
   }
+}
+
+/**
+ * Get the author comment
+ */
+function get_author_comment($post_id) {
+  return get_post_meta($post_id, '_mgl_product_author_comment', true);
 }
 
 /**
