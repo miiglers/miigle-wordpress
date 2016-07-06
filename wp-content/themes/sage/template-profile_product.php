@@ -31,7 +31,6 @@ else {
 
 wp_reset_postdata();
 
-var_dump(parse_url($profile_user['_mgl_user_website']));
 ?>
 
 <div id="template-profile_product">
