@@ -317,11 +317,14 @@ ul.collapsible .active-parent .fa.right {
 .navbar-header {
   z-index: 1;
 }
-.navbar-brand.logged-in {
+.navbar-brand {
   height: 50px;
   padding: 0;
 }
-.navbar-brand.logged-in img {
+.home .navbar-brand {
+  padding: 5px;
+}
+.navbar-brand img {
   height: 100%;
 }
 .navbar-center {

@@ -11,9 +11,15 @@ $mgl_current_user = User\current();
     
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand logged-in" href="<?= home_url() ?>">
-        <img alt="Miigle" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-beta.svg">
-      </a>
+      <?php if(is_user_logged_in() && !is_front_page()): ?>
+        <a class="navbar-brand logged-in" href="<?= home_url() ?>">
+          <img alt="Miigle" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-circle-beta.svg">
+        </a>
+      <?php else: ?>
+        <a class="navbar-brand" href="<?= home_url() ?>">
+          <img alt="Miigle" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-beta.svg">
+        </a>
+      <?php endif; ?>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
