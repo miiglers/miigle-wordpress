@@ -2215,7 +2215,9 @@ margin-bottom: 30px;
 |
 **********************************************************/
 
-
+#template-how-it-works section.page-splash {
+  background-image: url('../images/splash-how-it-works.png');
+}
 #template-how-it-works h2 {
   margin-bottom: 40px;
 }
@@ -2287,6 +2289,9 @@ margin-bottom: 30px;
 |
 **********************************************************/
 
+#template-contact section.page-splash {
+  background-image: url('../images/splash-contact.png');
+}
 #template-contact .well {
   background-color: white;
   padding: 50px 100px 40px 100px;
