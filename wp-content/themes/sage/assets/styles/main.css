@@ -877,7 +877,8 @@ article.post .entry-thumb {
   font-weight: normal;
 }
 ul.the_champ_login_ul li {
-  display: block;
+  display: inline-block;
+  float: none;
   width: 45% !important;
   margin-left: 3% !important;
 }
