@@ -1135,10 +1135,8 @@ body.page-template-template-product_post section.page-splash {
 #template-product_post section#product_post input,
 #template-product_post section#product_post select {
 	font-family: 'Open Sans', sans-serif;
-	font-weight:700;
 	font-size: 13px;
 	line-height: 1.4;
-	letter-spacing: 4px;
 	color: #999999;
 }
 #template-product_post #product-form-wrap.well {

@@ -100,8 +100,8 @@ $brands = Brand\get_posts();
 
   						    <div role="tabpanel" class="tab-pane fade" id="sub-category">
   						    	
-                    <h2>Who is this for</h2>
-                    <p class="text-muted">Select all that apply</p>
+                    <h2>Who is this for?</h2>
+                    <p class="text-muted">Select all that apply.</p>
 
                     <div class="category-list">
                       <div class="row">
