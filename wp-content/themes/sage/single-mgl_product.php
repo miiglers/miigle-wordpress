@@ -79,7 +79,7 @@ wp_reset_postdata();
 				<div class="col-md-4">
 					<div class="prod-info">
 						<h1><?php the_title(); ?></h1>
-						<p class="brand-name">From: <a href="<?= Helpers\format_url(Brand\get_url($brand->ID)) ?>"><?= $brand->post_title ?></a></p>
+						<p class="brand-name">From: <a target="_blank"> href="<?= Helpers\format_url(Brand\get_url($brand->ID)) ?>"><?= $brand->post_title ?></a></p>
 						<?php the_content(); ?>
 					</div>
 					<div class="prod-meta">
@@ -152,7 +152,7 @@ wp_reset_postdata();
       	<div class="col-md-12">
       		<div class="cta-bar-bg">
 						<!--<p>Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsum</p>-->
-            <a href="<?= Helpers\format_url(Brand\get_url($brand->ID)) ?>" class="btn btn-lg btn-cta">Visit <?= $brand->post_title ?></a>
+            <a target="_blank" href="<?= Helpers\format_url(Brand\get_url($brand->ID)) ?>" class="btn btn-lg btn-cta">Visit <?= $brand->post_title ?></a>
 					</div>
       	</div>
       </div>	

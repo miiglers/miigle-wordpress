@@ -112,7 +112,12 @@ for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElemen
     'product_post': {
       init: function() {
         var $requestForm = $('form#request-invite'),
-            $productForm = $('form#product');
+            $productForm = $('form#product'),
+            $modal = $('#post-success');
+
+        $modal.on('hidden.bs.modal', function(e) {
+          window.location = wpHomeUrl + '/profile-product';
+        });
             
         $requestForm.on('submit', function(e) {
           e.preventDefault();
@@ -135,7 +140,7 @@ for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElemen
           if($productForm.valid()) {
             apiAjax($productForm, $productForm.serialize())
             .then(function(success) {
-              window.location = wpHomeUrl + '/profile-product';
+              $modal.modal('show');
             });
           }
           

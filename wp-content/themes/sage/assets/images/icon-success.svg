@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>A9F7C966-4D39-4B66-8896-4894D69160B1</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <polygon id="path-1" points="38.4636789 45.9437295 27.9848023 35.2262865 24.4472727 38.8446036 36.6949141 51.3712051 38.4636789 53.1803636 40.2329521 51.3712051 58.0024544 33.1964989 54.4649248 29.5781818"></polygon>
+    </defs>
+    <g id="PRODUCT-POST" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="PRODUCT-POST-4" transform="translate(-676.000000, -439.000000)">
+            <g id="Group-7" transform="translate(490.000000, 393.000000)">
+                <g id="ic_success" transform="translate(189.000000, 49.000000)">
+                    <circle id="Oval-214" stroke="#55B8B8" stroke-width="4.14730451" cx="41.4671937" cy="41.4671937" r="41.4671937"></circle>
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-4"></g>
+                    <polygon id="Fill-3" fill="#55B8B8" mask="url(#mask-2)" points="17.1776735 59.291021 65.1570283 59.291021 65.1570283 23.708979 17.1776735 23.708979"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -273,7 +273,25 @@ ul.collapsible .active-parent .fa.right {
 .well .form-control {
   background-color: white;
 }
+.modal-header {
+  border-bottom: none;
+  padding-top: 50px;
+}
+.modal-footer {
+  border-top: none;
+  padding-bottom: 50px;
+  text-align: center;
+}
+.modal-body {
+  padding-left: 50px;
+  padding-right: 50px;
+}
 
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 460px;
+  }
+}
 @media (min-width: 992px) {
   h1 {
     font-size: 50px;

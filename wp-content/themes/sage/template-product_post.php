@@ -205,6 +205,27 @@ $brands = Brand\get_posts();
       </div>
     </div>
   </section>
+
+  <!-- Modal -->
+  <div class="modal fade" id="post-success" tabindex="-1" role="dialog" aria-labelledby="post-success-label">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content text-center">
+        <div class="modal-header">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-success.svg">
+        </div>
+        <div class="modal-body">
+          <h4>Thanks for your submission!</h4>
+          <p>
+            We will review it and notify you once it's been approved and posted. Don't worry you can 
+            keep posting products even as we review previous submissions. :)
+          </p>
+        </div>
+        <div class="modal-footer">          
+          <a href="<?= home_url() ?>/profile-product" class="btn btn-primary">Close</a>
+        </div>
+      </div>
+    </div>
+  </div>
   
    
 </div>
