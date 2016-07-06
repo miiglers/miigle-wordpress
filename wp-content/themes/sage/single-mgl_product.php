@@ -151,7 +151,7 @@ wp_reset_postdata();
       	<div class="col-md-12">
       		<div class="cta-bar-bg">
 						<!--<p>Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsum</p>-->
-            <a href="<?= Brand\get_url($brand->ID) ?>" class="btn btn-cta">Visit <?= $brand->post_title ?></a>
+            <a href="<?= Brand\get_url($brand->ID) ?>" class="btn btn-lg btn-cta">Visit <?= $brand->post_title ?></a>
 					</div>
       	</div>
       </div>	

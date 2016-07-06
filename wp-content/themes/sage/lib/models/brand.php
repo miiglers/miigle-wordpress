@@ -47,7 +47,7 @@ function register_meta() {
     */
   $cmb = new_cmb2_box(array(
     'id'            => $prefix,
-    'title'         => __('Product Fields', 'cmb2'),
+    'title'         => __('Brand Fields', 'cmb2'),
     'object_types'  => array('mgl_brand'), // Post type
     'context'       => 'normal',
     'priority'      => 'high',

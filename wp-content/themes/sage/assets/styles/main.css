@@ -1840,14 +1840,13 @@ body.page-template-template-product_post section.page-splash {
 }
 #template-product_page section#about-brand p {
 	font-size:15px;
-	line-height:25px;
+	line-height: 1.7;
 	color: #777777;
 	margin-bottom: 25px;
 }
 #template-product_page section#about-brand blockquote,
 #template-product_page section#about-brand blockquote p {
 	font-size: 21px;
-	line-height: 1;
 	color: #333333;
 	margin-bottom: 0;
 }
