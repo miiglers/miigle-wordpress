@@ -1851,7 +1851,9 @@ body.page-template-template-product_post section.page-splash {
 	margin-bottom: 0;
 }
 #template-product_page section#about-brand blockquote {
-    border-left: none;
+  border-left: none;
+  border-top: 1px solid #e7e7e7;
+  padding-top: 25px;
 }
 #template-product_page section#about-brand .brand-entry,
 #template-product_page section#about-brand .brand-video,
