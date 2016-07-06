@@ -17,12 +17,7 @@ $is_brands = (isset($_GET['brands']) || is_post_type_archive('mgl_brand'));
       <?php if($is_brands): ?>
         <h1>M+ Brands</h1>
       <?php else: ?>
-        <h1>Introducing <span class="text-white">M+</span> Products</h1>
-        <div class="txt-wrap">
-          <p>Share and discover the best products from socially and environmentally responsible brands worldwide.</p>
-        </div>
-
-        <?= do_shortcode('[mc4wp_form id="441"]'); ?>
+        <?= apply_filters('the_content', mgl_get_option('_mgl_archive-product-content')) ?>
       <?php endif; ?>
   
     </div>

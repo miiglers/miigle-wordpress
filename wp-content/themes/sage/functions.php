@@ -22,7 +22,8 @@ $sage_includes = [
   'lib/titles.php',               // Page titles
   'lib/wrapper.php',              // Theme wrapper class
   'lib/routes.php',                // Rest API routes
-  'lib/helpers.php'                // Template Helpers
+  'lib/helpers.php',                // Template Helpers
+  'lib/options.php'                // CMB2 Options page
 ];
 
 foreach ($sage_includes as $file) {

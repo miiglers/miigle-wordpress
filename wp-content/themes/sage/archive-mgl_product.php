@@ -11,13 +11,8 @@ $mgl_current_user = User\current();
 
   <section id="splash">
     <div class="container text-center">
-    
-      <h1>Introducing <span class="text-white">M+</span> Products</h1>
-      <div class="txt-wrap">
-        <p>Share and discover the best products from socially and environmentally responsible brands worldwide.</p>
-      </div>
 
-      <?= do_shortcode('[mc4wp_form]'); ?>
+      <?= apply_filters('the_content', mgl_get_option('_mgl_archive-product-content')) ?>
   
     </div>
   </section>
