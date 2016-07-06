@@ -908,6 +908,12 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
   border-color: #1a8ac1;
   margin-left: -10px;
 }
+.signup ul.the_champ_login_ul li ss.theChampFacebookLoginSvg:before {
+  content: 'Signup Using Facebook';
+}
+.signup ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
+  content: 'Signup Using Twitter';
+}
 #wp-submit {
   display: inline-block;
   padding: 6px 30px;
