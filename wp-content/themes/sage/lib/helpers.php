@@ -31,3 +31,14 @@ function bootstrap_pagination($query) {
     return $pagination;
   }
 }
+
+/**
+ * Pagination with bootstrap classes
+ */
+function format_url($url) {
+  if (0 !== strpos($url, 'http://') && 0 !== strpos($url, 'https://')) {
+   $url = "http://{$url}";
+  }
+
+  return $url;
+}

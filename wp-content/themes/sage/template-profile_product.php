@@ -5,6 +5,7 @@
 
 use Miigle\Models\Product;
 use Miigle\Models\User;
+use Miigle\Helpers;
 
 $mgl_current_user = User\current();
 
@@ -30,6 +31,7 @@ else {
 
 wp_reset_postdata();
 
+var_dump(parse_url($profile_user['_mgl_user_website']));
 ?>
 
 <div id="template-profile_product">
@@ -56,13 +58,13 @@ wp_reset_postdata();
         		<a href="#">@<?= $profile_user['username'] ?></a>
 						&nbsp;|&nbsp;
 						<?php if( $profile_user['_mgl_user_website']): ?>
-        			<a href="<?= $profile_user['_mgl_user_website'] ?>" target="_blank">Website</a>
+        			<a href="<?= Helpers\format_url($profile_user['_mgl_user_website']) ?>" target="_blank">Website</a>
 						<?php endif; ?>
 						<?php if( $profile_user['_mgl_user_facebook']): ?>
-        			&nbsp;|&nbsp;<a href="<?= $profile_user['_mgl_user_facebook'] ?>" target="_blank">Facebook</a>
+        			&nbsp;|&nbsp;<a href="<?= Helpers\format_url($profile_user['_mgl_user_facebook']) ?>" target="_blank">Facebook</a>
 						<?php endif; ?>
 						<?php if( $profile_user['_mgl_user_twitter']): ?>
-        			&nbsp;|&nbsp;<a href="<?= $profile_user['_mgl_user_twitter'] ?>" target="_blank">Twitter</a>
+        			&nbsp;|&nbsp;<a href="<?= Helpers\format_url($profile_user['_mgl_user_twitter']) ?>" target="_blank">Twitter</a>
 						<?php endif; ?>
         	</div>
         	<div class="profile-btn text-center">
