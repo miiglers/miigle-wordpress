@@ -95,7 +95,7 @@ $brands = Brand\get_posts();
                 <div class="clearfix"></div>
                 <button type="submit" class="btn btn-primary pull-right submit">
                   <i class="fa fa-refresh fa-spin hidden"></i>
-                  Submit
+                  Save
                 </button>
               </div>
                 
@@ -108,7 +108,25 @@ $brands = Brand\get_posts();
             <h2>Invite someone</h2>
             <p>You have 5 invites left. Choose wisely.</p>
             
+            <div class="form-group">
             <?= do_shortcode('[contact-form-7 title="Invite"]') ?>
+            </div>
+
+            <div class="form-group">
+            <?= do_shortcode('[contact-form-7 title="Invite"]') ?>
+            </div>
+
+            <div class="form-group">
+            <?= do_shortcode('[contact-form-7 title="Invite"]') ?>
+            </div>
+
+            <div class="form-group">
+            <?= do_shortcode('[contact-form-7 title="Invite"]') ?>
+            </div>
+
+            <div class="form-group">
+            <?= do_shortcode('[contact-form-7 title="Invite"]') ?>
+            </div>
 
           </div>
 					
