@@ -17,7 +17,7 @@ $mgl_current_user = User\current();
         <p>Share and discover the best products from socially and environmentally responsible brands worldwide.</p>
       </div>
 
-      <?= do_shortcode('[mc4wp_form id="441"]'); ?>
+      <?= do_shortcode('[mc4wp_form]'); ?>
   
     </div>
   </section>
