@@ -108,25 +108,7 @@ $brands = Brand\get_posts();
             <h2>Invite someone</h2>
             <p>You have 5 invites left. Choose wisely.</p>
             
-            <div class="form-group">
             <?= do_shortcode('[contact-form-7 title="Invite"]') ?>
-            </div>
-
-            <div class="form-group">
-            <?= do_shortcode('[contact-form-7 title="Invite"]') ?>
-            </div>
-
-            <div class="form-group">
-            <?= do_shortcode('[contact-form-7 title="Invite"]') ?>
-            </div>
-
-            <div class="form-group">
-            <?= do_shortcode('[contact-form-7 title="Invite"]') ?>
-            </div>
-
-            <div class="form-group">
-            <?= do_shortcode('[contact-form-7 title="Invite"]') ?>
-            </div>
 
           </div>
 					
