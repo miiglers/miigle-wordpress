@@ -3,8 +3,8 @@ Contributors: Heateor, the_champ, Hungarian Translator: László Tavaszi http://
 Donate link: https://www.heateor.com/donate?action=Super+Socializer
 Tags: the champ, champ, social login, social sharing, social commenting, social comments, social plugin, buddypress, bbpress, social share, comments, share post, user profile data, social analytics, online identity, social profile storage, id provider, single sign-on, social media tools, free social login, post to social networks, social authentication, social app, connect, capture social data, social sign-in, signin, sign up, signup, social connect, facebook login, twitter login, google login, google+ login, linkedin login, yahoo, vkontakte, instagram, reddit, digg, stumbleupon, delicious, float it, tumblr, social network
 Requires at least: 2.5.0
-Tested up to: 4.5.2
-Stable tag: 7.7.2
+Tested up to: 4.5.3
+Stable tag: 7.7.3
 License: GPLv2 or later
 
 The unique Social Plugin to let you integrate Social Login, Social Share and Social Comments at your website
@@ -204,6 +204,9 @@ Yes, we can help you with it. Just drop an email at support@heateor.com
 8. **Social Commenting**: Disqus Commenting selected
 
 == Changelog ==
+= 7.7.3 =
+* [Bugfix] Option to update social avatar were appearing at user profile page, even if Social Login was disabled
+
 = 7.7.2 =
 * [Bugfix] Title specified in Social Login Shortcode was appearing for logged in users too, at front-end
 
@@ -945,3 +948,6 @@ Yes, we can help you with it. Just drop an email at support@heateor.com
 
 = 7.7.2 =
 * [Bugfix] Title specified in Social Login Shortcode was appearing for logged in users too, at front-end
+
+= 7.7.3 =
+* [Bugfix] Option to update social avatar were appearing at user profile page, even if Social Login was disabled

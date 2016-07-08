@@ -3,7 +3,7 @@
 Plugin Name: Super Socializer
 Plugin URI: http://super-socializer-wordpress.heateor.com
 Description: A complete 360 degree solution to provide all the social features like Social Login, Social Commenting, Social Sharing and more.
-Version: 7.7.2
+Version: 7.7.3
 Author: Team Heateor
 Author URI: https://www.heateor.com
 Text Domain: Super-Socializer
@@ -11,7 +11,7 @@ Domain Path: /languages
 License: GPL2+
 */
 defined('ABSPATH') or die("Cheating........Uh!!");
-define('THE_CHAMP_SS_VERSION', '7.7.2');
+define('THE_CHAMP_SS_VERSION', '7.7.3');
 
 $theChampLoginOptions = get_option('the_champ_login');
 if(isset($theChampLoginOptions['providers']) && in_array('twitter', $theChampLoginOptions['providers'])){
@@ -873,29 +873,31 @@ function the_champ_fb_root_div(){
 }
 
 function the_champ_show_avatar_option( $user ) {
-	global $user_ID;
-	$dontUpdateAvatar = get_user_meta($user_ID, 'thechamp_dontupdate_avatar', true);
-	?>
-	<h3><?php _e( 'Super Socializer - Social Avatar', 'Super-Socializer' ) ?></h3>
-	<table class="form-table">
-        <tr>
-            <th><label for="ss_small_avatar"><?php _e( 'Small Avatar Url', 'Super-Socializer' ) ?></label></th>
-            <td><input id="ss_small_avatar" type="text" name="the_champ_small_avatar" value="<?php echo esc_attr(get_user_meta( $user->ID, 'thechamp_avatar', true )); ?>" class="regular-text" /></td>
-        </tr>
-        <tr>
-            <th><label for="ss_large_avatar"><?php _e( 'Large Avatar Url', 'Super-Socializer' ) ?></label></th>
-            <td><input id="ss_large_avatar" type="text" name="the_champ_large_avatar" value="<?php echo esc_attr(get_user_meta( $user->ID, 'thechamp_large_avatar', true )); ?>" class="regular-text" /></td>
-        </tr>
-        <tr>
-            <th><label for="ss_dontupdate_avatar_1"><?php _e( 'Do not fetch and update social avatar from my profile, next time I Social Login', 'Super-Socializer' ) ?></label></th>
-            <td><input id="ss_dontupdate_avatar_1" style="margin-right:5px" type="radio" name="ss_dontupdate_avatar" value="1" <?php echo $dontUpdateAvatar ? 'checked' : '' ?> /></td>
-        </tr>
-        <tr>
-            <th><label for="ss_dontupdate_avatar_0"><?php _e( 'Update social avatar, next time I Social Login', 'Super-Socializer' ) ?></label></th>
-            <td><input id="ss_dontupdate_avatar_0" style="margin-right:5px" type="radio" name="ss_dontupdate_avatar" value="0" <?php echo ! $dontUpdateAvatar ? 'checked' : '' ?> /></td>
-        </tr>
-    </table>
-	<?php
+	global $user_ID, $theChampLoginOptions;
+	if ( isset( $theChampLoginOptions['enable'] ) ) {
+		$dontUpdateAvatar = get_user_meta($user_ID, 'thechamp_dontupdate_avatar', true);
+		?>
+		<h3><?php _e( 'Super Socializer - Social Avatar', 'Super-Socializer' ) ?></h3>
+		<table class="form-table">
+	        <tr>
+	            <th><label for="ss_small_avatar"><?php _e( 'Small Avatar Url', 'Super-Socializer' ) ?></label></th>
+	            <td><input id="ss_small_avatar" type="text" name="the_champ_small_avatar" value="<?php echo esc_attr(get_user_meta( $user->ID, 'thechamp_avatar', true )); ?>" class="regular-text" /></td>
+	        </tr>
+	        <tr>
+	            <th><label for="ss_large_avatar"><?php _e( 'Large Avatar Url', 'Super-Socializer' ) ?></label></th>
+	            <td><input id="ss_large_avatar" type="text" name="the_champ_large_avatar" value="<?php echo esc_attr(get_user_meta( $user->ID, 'thechamp_large_avatar', true )); ?>" class="regular-text" /></td>
+	        </tr>
+	        <tr>
+	            <th><label for="ss_dontupdate_avatar_1"><?php _e( 'Do not fetch and update social avatar from my profile, next time I Social Login', 'Super-Socializer' ) ?></label></th>
+	            <td><input id="ss_dontupdate_avatar_1" style="margin-right:5px" type="radio" name="ss_dontupdate_avatar" value="1" <?php echo $dontUpdateAvatar ? 'checked' : '' ?> /></td>
+	        </tr>
+	        <tr>
+	            <th><label for="ss_dontupdate_avatar_0"><?php _e( 'Update social avatar, next time I Social Login', 'Super-Socializer' ) ?></label></th>
+	            <td><input id="ss_dontupdate_avatar_0" style="margin-right:5px" type="radio" name="ss_dontupdate_avatar" value="0" <?php echo ! $dontUpdateAvatar ? 'checked' : '' ?> /></td>
+	        </tr>
+	    </table>
+		<?php
+	}
 }
 add_action( 'edit_user_profile', 'the_champ_show_avatar_option' );
 add_action( 'show_user_profile', 'the_champ_show_avatar_option' );
