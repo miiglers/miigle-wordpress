@@ -42,3 +42,22 @@ function format_url($url) {
 
   return $url;
 }
+
+/**
+ * Return a Font Awesome class for a product category
+ */
+function get_subcategory_icon($slug) {
+  $subcategories = array(
+    'women',
+    'men'
+  );
+  $icon = 'toys';
+
+  foreach($subcategories as $subcategory) {
+    if(strpos($slug, $subcategory) == 0) {
+      $icon = $subcategory;
+    }
+  }
+
+  return $icon;
+}

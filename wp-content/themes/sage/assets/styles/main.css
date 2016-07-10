@@ -1195,6 +1195,9 @@ body.page-template-template-product_post section.page-splash {
 #template-product_post #product-form-wrap .category-list .category:hover {
   cursor: pointer;
 }
+#template-product_post #product-form-wrap .category-list .category img {
+  padding: 10px 0;
+}
 #template-product_post #product-form-wrap .category-list input {
   position: absolute;
   left: -99999999999px;

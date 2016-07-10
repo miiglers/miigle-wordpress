@@ -5,7 +5,8 @@
 
 use Miigle\Models\User;
 use Miigle\Models\Brand;
- 
+use Miigle\Helpers;
+
 $mgl_user = User\current();
 
 $categories = get_terms(array(
@@ -77,7 +78,7 @@ $brands = Brand\get_posts();
                               <input type="radio" name="mgl_product_category[]" id="category-<?= $category->term_id ?>" value="<?= $category->term_id ?>">
                               <label class="category" for="category-<?= $category->term_id ?>">
                                 <div>          												
-          												<i class="fa fa-bell"></i>
+          												<img src="<?= get_template_directory_uri() ?>/assets/images/icon-<?= $category->slug ?>.png">
           												<p><?= $category->name ?></p>
                                 </div>
                               </label>
@@ -112,7 +113,7 @@ $brands = Brand\get_posts();
                                 class="category-<?= $category->parent ?>" value="<?= $category->term_id ?>">
                               <label class="category" for="category-<?= $category->term_id ?>">
                                 <div>                                 
-                                  <i class="fa fa-bell"></i>
+                                  <img src="<?= get_template_directory_uri() ?>/assets/images/icon-<?= Helpers\get_subcategory_icon($category->slug) ?>.png">
                                   <p><?= $category->name ?></p>
                                 </div>
                               </label>
