@@ -36,8 +36,6 @@ $brands = Brand\get_posts();
       <div class="row">
         
         <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-md-6 main"> 
-          
-					<?php if(current_user_can('subscriber-approved')): ?>
 						
             <div id="product-form-wrap" class="well">
 
@@ -174,33 +172,6 @@ $brands = Brand\get_posts();
   						
   						</form>
             </div>
-
-					<?php else: ?>
-					
-						Posting and commenting on Miigle+ is limited to a growing number of trustworthy people to maintain a healthy volume of submissions and thoughtful dialogue.
-						
-						<h5>Request an invite</h5>
-						
-						<form id="request-invite" method="post" action="wp/v2/mgl_role_request">
-							
-							<input type="hidden" name="author" value="<?= $mgl_user['ID'] ?>">
-							<input type="hidden" name="title" value="<?= $mgl_user['email'] ?>">
-							<input type="hidden" name="status" value="pending">
-							
-							<div class="form-group">								
-								<textarea rows="3" name="content" class="form-control" placeholder="Tell us a bit about yourself" required></textarea>
-							</div>
-							
-							<div class="form-group">								
-								<button type="submit" class="btn btn-default submit">
-									<i class="fa fa-refresh fa-spin hidden"></i>
-									Submit
-								</button>
-							</div>
-							
-						</form>
-
-					<?php endif; ?>
 					
         </div>
       </div>

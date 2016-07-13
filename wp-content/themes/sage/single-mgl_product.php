@@ -104,7 +104,7 @@ wp_reset_postdata();
                 <?= Product\get_price(get_the_ID()) ?>
               </a>
 							<a href="<?= Product\get_url(get_the_ID()) ?>" class="btn btn-primary" target="_blank">
-                Get it <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                Buy it <i class="fa fa-arrow-right" aria-hidden="true"></i>
               </a>
 						</div>
 					</div>
