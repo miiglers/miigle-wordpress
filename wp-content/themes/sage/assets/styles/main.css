@@ -291,6 +291,9 @@ ul.collapsible .active-parent .fa.right {
   padding-left: 50px;
   padding-right: 50px;
 }
+#doorbell-background {
+  background: #333;
+}
 
 @media (min-width: 768px) {
   .modal-dialog {
