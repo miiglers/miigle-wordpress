@@ -68,6 +68,14 @@ function register_meta() {
     'id'         => $prefix . 'brand_id',
     'type'       => 'text'
   ));
+
+  // Brand URL
+  $cmb->add_field(array(
+    'name'       => __('URL', 'cmb2'),
+    'desc'       => __('This is used when there is no brand created', 'cmb2'),
+    'id'         => $prefix . 'brand_url',
+    'type'       => 'text_url'
+  ));
   
   // URL
   $cmb->add_field(array(
@@ -208,11 +216,19 @@ function create($data, $user) {
 /**
  * Get all products posted by a user
  */
-function get_user_products($user_id) {
+function get_user_products($user_id, $get_pending=false) {
+  if($get_pending) {
+    $status = 'any';
+  }
+  else {
+    $status = 'publish';
+  }
+
   return get_posts(array(
     'post_type' => 'mgl_product',
     'author' => $user_id,
-    'posts_per_page' => -1
+    'posts_per_page' => -1,
+    'post_status' => $status
   ));
 }
 
@@ -259,6 +275,13 @@ function get_brand_title($post_id) {
   else {
     return '';
   }
+}
+
+/**
+ * Get the author comment
+ */
+function get_brand_url($post_id) {
+  return get_post_meta($post_id, '_mgl_product_brand_url', true);
 }
 
 /**
@@ -351,14 +374,14 @@ function get_comments_count($post_id) {
 /**
  * Get product categories
  */
-function get_categories($post_id=false) {
+function get_categories($post_id=false, $hide_empty=true) {
   if($post_id) {
     return wp_get_post_terms($post_id, 'mgl_product_category');
   }
   else {
     return get_terms(array(
       'taxonomy' => 'mgl_product_category',
-      'hide_empty' => false,
+      'hide_empty' => $hide_empty,
     ));
   }
 }

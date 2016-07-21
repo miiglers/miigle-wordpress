@@ -11,4 +11,6 @@
 
 ?>
 
-<span class="<?= $label_class ?>"><i class="fa fa-commenting-o"></i> <?= $comments ?></span> 
+<a href="<?php the_permalink(); ?>#discussion" id="button-comment" class="templates product <?= $label_class ?>">
+  <i class="fa fa-commenting-o"></i> <?= $comments ?>
+</a>

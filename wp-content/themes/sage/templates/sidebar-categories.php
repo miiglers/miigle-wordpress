@@ -55,9 +55,9 @@ if(isset($queried_object->term_id)) {
       <?php endif; ?>
     <?php endforeach; ?>
   </ul>
-
-  <h4>Directory</h4>
-  <?php if($is_brands): ?>    
+  
+  <?php if($is_brands): ?> 
+    <h4>Directory</h4>   
     <ul class="list-unstyled collapsible">
       <li><a href="<?= home_url() ?>/products">All Products</a></li>
     </ul>

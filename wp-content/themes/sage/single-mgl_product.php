@@ -11,8 +11,16 @@ global $post;
 
 $gallery = Product\get_image_gallery($post->ID);
 $brand = Product\get_brand($post->ID);
+if($brand) {
+  $brand_url = Helpers\format_url(Brand\get_url($brand->ID));
+  $brand_title = $brand->post_title;
+  $badges = Brand\get_badges($brand->ID);
+}
+else {
+  $brand_url = Helpers\format_url(Product\get_brand_url($post->ID));
+  $brand_title = $brand_url;
+}
 $mgl_current_user = User\current();
-$badges = Brand\get_badges($brand->ID);
 $product_author = User\get($post->post_author);
 $product_id = $post->ID;
 //var_dump($product_author);
@@ -90,7 +98,7 @@ wp_reset_postdata();
 				<div class="col-md-4">
 					<div class="prod-info">
 						<h1><?php the_title(); ?></h1>
-						<p class="brand-name">From: <a target="_blank" href="<?= Helpers\format_url(Brand\get_url($brand->ID)) ?>"><?= $brand->post_title ?></a></p>
+						<p class="brand-name">From: <a target="_blank" href="<?= $brand_url ?>"><?= $brand_title ?></a></p>
 						<?php the_content(); ?>
 					</div>
 					<div class="prod-meta">
@@ -113,62 +121,66 @@ wp_reset_postdata();
     </div>
   </section>
   
-  <section id="about-brand">
-  	 <div class="container">      
-      <div class="row title">
-      	<div class="col-md-12">
-      		<h2>About <a href="<?= Brand\get_url($brand->ID) ?>"><?= $brand->post_title ?></a></h2>
-      	</div>
+  <?php if($brand): ?>
+
+    <section id="about-brand">
+    	 <div class="container">      
+        <div class="row title">
+        	<div class="col-md-12">
+        		<h2>About <a href="<?= Brand\get_url($brand->ID) ?>"><?= $brand->post_title ?></a></h2>
+        	</div>
+        </div>
+        <div class="row brand-entry">
+        	<div class="col-md-6">
+        		<div class="our-story-img">
+        			<img src="<?= wp_get_attachment_image_src(get_post_thumbnail_id($brand->ID), 'full')[0] ?>" class="img-responsive"/>
+        		</div>
+            <?php if($badges): ?>
+          		<div class="community-badges">
+          			<h3>Community Badges:</h3>
+                  <?php foreach($badges as $badge): ?>
+          				<div class="badges">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/badges-<?= $badge->slug ?>.png" class="oval img-responsive"/>
+                    <span class="txt"><?= $badge->name ?></span>
+                  </div>
+          				<?php endforeach; ?>
+              </div>
+            <?php endif; ?>
+        	</div>
+        	<div class="col-md-6">
+        		<div class="our-story">
+        			<?= apply_filters('the_content', $brand->post_content) ?>
+        		</div>	
+        	</div>
+        </div>
+        <!--<div class="row brand-video">
+        	<div class="col-md-6">
+        		<img src="<?php //echo get_template_directory_uri(); ?>/assets/images/brand-video1.jpg" class="img-responsive"/>
+        	</div>
+        	<div class="col-md-6">
+        		<img src="<?php //echo get_template_directory_uri(); ?>/assets/images/brand-video2.jpg" class="img-responsive"/>
+        	</div>
+        </div>-->
+        <!--<div class="row brand-location">
+        	<div class="col-md-12">
+        		<h3>Where it all happens</h3>
+        		<div class="map-wrapper">
+        			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.621187689043!2d-122.08651748469237!3d37.422427679825034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba027820e5d9%3A0x60a90600ff6e7e6e!2s1600+Amphitheatre+Pkwy%2C+Mountain+View%2C+CA+94043!5e0!3m2!1sen!2sus!4v1464384842902" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+        		</div>
+        	</div>
+        </div>-->
+        <div class="row cta-bar">
+        	<div class="col-md-12">
+        		<div class="cta-bar-bg">
+  						<!--<p>Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsum</p>-->
+              <a target="_blank" href="<?= Helpers\format_url(Brand\get_url($brand->ID)) ?>" class="btn btn-lg btn-cta">Visit <?= $brand->post_title ?></a>
+  					</div>
+        	</div>
+        </div>	
       </div>
-      <div class="row brand-entry">
-      	<div class="col-md-6">
-      		<div class="our-story-img">
-      			<img src="<?= wp_get_attachment_image_src(get_post_thumbnail_id($brand->ID), 'full')[0] ?>" class="img-responsive"/>
-      		</div>
-          <?php if($badges): ?>
-        		<div class="community-badges">
-        			<h3>Community Badges:</h3>
-                <?php foreach($badges as $badge): ?>
-        				<div class="badges">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/badges-<?= $badge->slug ?>.png" class="oval img-responsive"/>
-                  <span class="txt"><?= $badge->name ?></span>
-                </div>
-        				<?php endforeach; ?>
-            </div>
-          <?php endif; ?>
-      	</div>
-      	<div class="col-md-6">
-      		<div class="our-story">
-      			<?= apply_filters('the_content', $brand->post_content) ?>
-      		</div>	
-      	</div>
-      </div>
-      <!--<div class="row brand-video">
-      	<div class="col-md-6">
-      		<img src="<?php //echo get_template_directory_uri(); ?>/assets/images/brand-video1.jpg" class="img-responsive"/>
-      	</div>
-      	<div class="col-md-6">
-      		<img src="<?php //echo get_template_directory_uri(); ?>/assets/images/brand-video2.jpg" class="img-responsive"/>
-      	</div>
-      </div>-->
-      <!--<div class="row brand-location">
-      	<div class="col-md-12">
-      		<h3>Where it all happens</h3>
-      		<div class="map-wrapper">
-      			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.621187689043!2d-122.08651748469237!3d37.422427679825034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba027820e5d9%3A0x60a90600ff6e7e6e!2s1600+Amphitheatre+Pkwy%2C+Mountain+View%2C+CA+94043!5e0!3m2!1sen!2sus!4v1464384842902" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
-      		</div>
-      	</div>
-      </div>-->
-      <div class="row cta-bar">
-      	<div class="col-md-12">
-      		<div class="cta-bar-bg">
-						<!--<p>Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsum</p>-->
-            <a target="_blank" href="<?= Helpers\format_url(Brand\get_url($brand->ID)) ?>" class="btn btn-lg btn-cta">Visit <?= $brand->post_title ?></a>
-					</div>
-      	</div>
-      </div>	
-    </div>
-  </section> 
+    </section> 
+
+  <?php endif; ?>
 	
 	<section id="discussion">
 		<div class="container text-center">      

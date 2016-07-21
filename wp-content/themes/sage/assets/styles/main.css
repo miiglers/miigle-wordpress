@@ -294,6 +294,12 @@ ul.collapsible .active-parent .fa.right {
 #doorbell-background {
   background: #333;
 }
+a.templates.product#button-comment {
+  display: inline-block;
+}
+a.templates.product#button-comment:hover {
+  text-decoration: none;
+}
 
 @media (min-width: 768px) {
   .modal-dialog {

@@ -8,6 +8,7 @@ use Miigle\Models\User;
 use Miigle\Helpers;
 
 $mgl_current_user = User\current();
+$is_owner = false;
 
 if(isset($_GET['user_id'])) {
   $profile_user = User\get($_GET['user_id']);
@@ -16,12 +17,16 @@ else {
   $profile_user = $mgl_current_user;
 }
 
-$submitted_products = Product\get_user_products($profile_user['ID']);
+if($profile_user['ID'] == $mgl_current_user['ID']){
+  $is_owner = true;
+}
+
+$submitted_products = Product\get_user_products($profile_user['ID'], $is_owner);
 
 if(isset($_GET['upvoted'])) {
   $upvoted_class = 'active';
   $submitted_class = '';
-  $products = Product\get_user_products_upvoted($profile_user['ID']);
+  $products = Product\get_user_products_upvoted($profile_user['ID'], $is_owner);
 }
 else {
   $upvoted_class = '';
@@ -122,10 +127,22 @@ wp_reset_postdata();
                         <img src="<?= Product\get_thumbnail($product->ID) ?>">
                       </a>
                       <div class="caption">
-                        <h3 class="title"><a href="<?= get_permalink($product->ID) ?>"><?= get_the_title($product->ID) ?></a></h3>
+                        <h3 class="title">
+                          <a href="<?= get_permalink($product->ID) ?>">
+                            <?php if(get_post_status($product->ID) == 'pending'): ?>
+                              <?= Product\get_url($product->ID) ?>  
+                            <?php else: ?>
+                              <?= get_the_title($product->ID) ?>  
+                            <?php endif; ?>        
+                          </a>
+                        </h3>
                         <div class="dotdotdot-wrap desc">
                           <div class="dotdotdot">
-                            <?= apply_filters('the_content', $product->post_content) ?>
+                            <?php if(get_post_status($product->ID) == 'pending'): ?>
+                              <em class="text-muted">Pending Approval</em>
+                            <?php else: ?>
+                              <?= apply_filters('the_content', $product->post_content) ?>
+                            <?php endif; ?>
                           </div>
                         </div>
                         <div class="row">
