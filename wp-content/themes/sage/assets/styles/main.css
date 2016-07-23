@@ -42,6 +42,7 @@ form.comment-form input#submit {
 .btn-transparent {
   background: none;
   border-color: white;
+  color: white;
 }
 .label-btn {
   font-size: 13px;
@@ -108,6 +109,11 @@ input[type=password] {
   height: 34px;
   padding: 6px 12px;
   background-image: none;
+}
+.has-error .form-control,
+.has-error input[type=text],
+.has-error input[type=password] {
+  border-color: #a94442;
 }
 form.comment-form textarea {
   border-color: #ccc;
@@ -302,7 +308,7 @@ a.templates.product#button-comment:hover {
 }
 
 @media (min-width: 768px) {
-  .modal-dialog {
+  #videoModal .modal-dialog {
     width: 460px;
   }
 }
@@ -561,12 +567,12 @@ section.page-video {
   section.page-video h2 {
     font-size: 50px;
   }
-  #front-page .modal-body,
-  .page-video .modal-body {
+  #front-page #videoModal .modal-body,
+  .page-video #videoModal .modal-body {
     padding: 0;
   }
-  #front-page .modal-dialog,
-  .page-video .modal-dialog {
+  #front-page #videoModal .modal-dialog,
+  .page-video #videoModal .modal-dialog {
     width: 800px;
   }
   #videoModal iframe {

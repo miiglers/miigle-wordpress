@@ -78,7 +78,29 @@ for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElemen
     // Home page
     'home': {
       init: function() {
-        // JavaScript to be fired on the home page
+        $('#accessModal form').on('submit', function(e) {
+          console.log('ayyy');
+          e.preventDefault();
+          $input = $('input#accessCode');
+
+          if($input.val() === 'M+2016') {
+            $input.parents('.form-group')
+              .removeClass('has-error')
+              .addClass('has-success')
+              .find('.help-block')
+              .addClass('hidden');
+            window.location = '/products';
+          }
+          else {
+            console.log('nope');
+            $input.parents('.form-group')
+              .addClass('has-error')
+              .find('.help-block')
+              .removeClass('hidden');
+          }
+
+          return false;
+        });
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
