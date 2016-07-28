@@ -12,14 +12,10 @@
         <div class="col-md-3">
           <h4>Company</h4>
           <ul class="list-unstyled">
-            <?php if(is_user_logged_in()): ?>
               <li><a href="<?= home_url() ?>/about">About</a></li>
               <li><a href="<?= home_url() ?>/how-it-works">How it works</a></li>
               <li><a href="<?= home_url() ?>/blog">Blog</a></li>
-            <?php endif; ?>
-            <?php if(is_user_logged_in()): ?>
               <li><a href="<?= home_url() ?>/contact">Contact</a></li>
-            <?php endif; ?>
           </ul>
         </div>
 

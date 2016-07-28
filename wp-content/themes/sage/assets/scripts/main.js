@@ -48,22 +48,27 @@ for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElemen
           var $form = $(this).parents('form');
           var upvotes = $form.find('span#upvotes').html() * 1;
           var $this = $(this);
+
+          // just upvoted
+            if($form.attr('action') === 'mgl/v1/product/upvote') {
+              $this.addClass('upvoted');
+              $form.find('span#upvotes').html(upvotes + 1);
+            }
+            // just downvoted
+            else {
+              $this.removeClass('upvoted');
+              $form.find('span#upvotes').html(upvotes - 1);
+            }
           
           apiAjax($form, $form.serialize())
           .then(function(success) {
             // just upvoted
             if($form.attr('action') === 'mgl/v1/product/upvote') {
-              $this.addClass('text-danger');
-              //$this.removeClass('text-info');
               $form.attr('action', 'mgl/v1/product/downvote');
-              $form.find('span#upvotes').html(upvotes + 1);
             }
             // just downvoted
             else {
-              //$this.addClass('text-info');
-              $this.removeClass('text-danger');
               $form.attr('action', 'mgl/v1/product/upvote');
-              $form.find('span#upvotes').html(upvotes - 1);
             }
           });
           

@@ -1,0 +1,43 @@
+<!--ClickMeter.com code for conversion: bodshaperz -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.2/js.cookie.min.js"></script>
+<script type='text/javascript'>
+  console.log('wtf');
+  var ClickMeter_conversion_id = '';
+  var ClickMeter_conversion_value = '';
+  var ClickMeter_conversion_commission = '';
+  var ClickMeter_conversion_commission_percentage = '';
+  var ClickMeter_conversion_parameter = '';
+  (function () {
+      
+      console.log('anon function');
+      var getURLParameter = function(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      };
+    console.log(getURLParameter('miigle'));
+      if(getURLParameter('miigle')) {
+        console.log('created cookie');
+        Cookies('miigle', true);        
+      }
+
+      if(!Cookies('miigle')) {
+        console.log('not tracking');
+        return false;
+      }
+
+      console.log('tracking');
+
+      ClickMeter_conversion_id = '6865B229D8C943EB984557767A49199E';
+      ClickMeter_conversion_value = '1.00';
+      ClickMeter_conversion_commission = '0.50';
+      ClickMeter_conversion_commission_percentage = '50.00';
+      ClickMeter_conversion_parameter = 'empty';
+
+  })();
+</script>
+<script type='text/javascript' id='cmconvscript' src='//s3.amazonaws.com/scripts-clickmeter-com/js/conversion.js'></script>

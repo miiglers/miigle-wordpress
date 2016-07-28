@@ -8,7 +8,7 @@
   $endpoint = 'upvote';
 
   if($upvoted) {
-    $label_class = 'text-danger';
+    $label_class = 'upvoted';
     $endpoint = 'downvote';
   }
   
@@ -18,7 +18,7 @@
   <input type="hidden" name="product_id" value="<?= $product_id; ?>"> 
   <span class="btn-upvote <?= $label_class ?>" 
   data-upvoted="<?= intval($upvoted) ?>">								
-    <i class="fa fa-caret-up"></i> 
+    <i class="fa fa-heart-o"></i> 
     <span id="upvotes"><?= Product\get_upvotes($product_id) ?></span>
   </span>
 </form>

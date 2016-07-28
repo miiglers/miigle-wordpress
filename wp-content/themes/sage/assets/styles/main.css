@@ -55,14 +55,32 @@ form.comment-form input#submit {
 .btn-upvote {
   margin-right: 8px;
   padding: 1px 8px;
-  border: 1px solid #eee;
-  border-radius: 5px;
+  border: 1px solid #e41e47;
+  color: #e41e47;
+  border-radius: 25px;
+  font-weight: normal;
+}
+.btn-upvote:hover,
+.btn-upvote.upvoted {
+  background-color: #e41e47;
+  color: white;
 }
 .btn-upvote:hover {
-	cursor: pointer;
-	opacity: 0.85;
-  background-color: #eee;
-  color: #333;
+  cursor: pointer;
+  opacity: 0.85;
+}
+.btn-comment {
+  padding: 1px 8px;
+  border: 1px solid #cc4bfc;
+  color: #cc4bfc;
+  border-radius: 25px;
+  font-weight: normal;
+}
+.btn-comment:hover {
+  cursor: pointer;
+  opacity: 0.85;
+  background-color: #cc4bfc;
+  color: white;
 }
 .btn-upvote .fa {
   
