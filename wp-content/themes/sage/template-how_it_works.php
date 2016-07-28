@@ -11,7 +11,7 @@
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
         
-          <h1>“Never doubt that a small group of thoughful, committed citizens can change the world.” </h1>
+          <h1>“Never doubt that a small group of thoughtful, committed citizens can change the world.” </h1>
           <p class="text-navy">- Margaret Mead</p>
           
         </div>

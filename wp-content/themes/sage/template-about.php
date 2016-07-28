@@ -96,13 +96,6 @@
           		<div class="clearfix"></div>
           	
           	<div class="col-sm-4 team">
-          		<p><img class="img-responsive" src="https://miigle.com/wp-content/uploads/2016/06/team-aaronplaat.png"></p>
-          		<h4>Aaron Plaat</h4>
-          		<p>Marketing</p>
-          		<!--<p><a href="#">@miigle_handle</a></p>-->
-          	</div>
-          	
-          	<div class="col-sm-4 team">
           		<p><img class="img-responsive" src="https://miigle.com/wp-content/uploads/2016/06/sarah.png"></p>
           		<h4>Sarah Smith</h4>
           		<p>Operations</p>
@@ -115,13 +108,11 @@
           		<p>Strategy</p>
           		<!--<p><a href="#">@miigle_handle</a></p>-->
           	</div>
-          		<div class="clearfix"></div>
           	
           	<div class="col-sm-4 team">
           		<p><img class="img-responsive" src="https://miigle.com/wp-content/uploads/2016/06/team-add.png"></p>
           		<h4>Want to join?</h4>
-          		<p>&nbsp;</p>
-          		<p><a href="#" class="btn btn-default">Send us note</a></p>
+          		<p><a href="/contact" class="btn btn-default">Send us note</a></p>
           	</div>
           </div>
 					*/ ?>

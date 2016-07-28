@@ -80,7 +80,7 @@ h2, h3, h4 {
 h5 {
   font-size: 15px;
 }
-a, a:visited {
+a {
   color: #55b7b8;
 }
 .form-horizontal .control-label {
@@ -874,6 +874,10 @@ article.post .entry-thumb {
   margin-bottom: 25px;
   border-radius: 8px;
 }
+.single-post .discussion {
+  padding: 75px 0;
+}
+
 @media (min-width: 992px) {
   article.post header h2 {
     font-size: 29px;

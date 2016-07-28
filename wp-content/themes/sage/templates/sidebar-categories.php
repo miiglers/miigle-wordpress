@@ -24,9 +24,13 @@ if(isset($queried_object->term_id)) {
     </li>
     <?php 
       foreach($categories as $category): 
-        $children = get_term_children($category->term_id, $category->taxonomy);
+        $children_ids = get_term_children($category->term_id, $category->taxonomy);
+        $children = array_map(function($v){
+          return get_term($v);
+        }, $children_ids);
+
         $active = ($category->term_id == $page_term);
-        $active_parent = in_array($page_term, $children);
+        $active_parent = in_array($page_term, $children_ids);
     ?>
       <?php if(!$category->parent): ?>
         <li class="<?php if($active): ?>active<?php endif; ?> <?php if($active_parent): ?>active-parent<?php endif; ?>">
@@ -40,15 +44,15 @@ if(isset($queried_object->term_id)) {
           <?php if($children): ?>
             <ul class="list-unstyled">
               <?php 
-                foreach($children as $child): 
-                  $child_cat = get_term($child);
+                foreach($children as $child_cat):
+                  if($child_cat->count):
               ?>
                 <li <?php if($child_cat->term_id == $page_term): ?>class="active"<?php endif; ?>>
                   <a href="<?= home_url() ?>/category/<?= $child_cat->slug ?>?<?= $post_type ?>">
                     <?= $child_cat->name ?>                      
                   </a>
                 </li>
-              <?php endforeach; ?>
+              <?php endif; endforeach; ?>
             </ul>
           <?php endif; ?>
         </li>

@@ -14,11 +14,11 @@
 
         <?php get_template_part('templates/content-single', get_post_type()); ?>
 
-        <?php if($post->comment_count || current_user_can('subscriber-approved')): ?>
+        <div class="discussion">
           <h2>Discussion</h2>
           <hr>
-        <?php endif; ?>
-        <?php comments_template('/templates/comments.php'); ?>
+          <?php comments_template('/templates/comments.php'); ?>
+        </div>
 
       </div>
     </div>
