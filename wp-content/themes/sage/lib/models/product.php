@@ -147,10 +147,23 @@ function save_post($post_id, $post, $update) {
  * Modify the archive query
  */
 function pre_get_posts($query) {
-  $is_products = (isset($_GET['products']) || is_post_type_archive('mgl_product'));
+  $is_homepage = ($query->get('page_id') == get_option('page_on_front'));
+  $is_products = (isset($_GET['products']) || is_post_type_archive('mgl_product') || $is_homepage);
 
-  if(!$is_products) {
+  if(!$is_products || is_admin()) {
     return;
+  }
+
+  if($is_homepage) {
+    $paged = (isset($_GET['paged']) ? $_GET['paged'] : '');
+    $query->set('post_type', 'mgl_product');
+    $query->set('page_id', '');
+    $query->set('paged', $paged);
+
+    $query->is_page = 0;
+    $query->is_singular = 0;
+    $query->is_post_type_archive = 1;
+    $query->is_archive = 1;
   }
 
   $query->set('posts_per_page', 30);

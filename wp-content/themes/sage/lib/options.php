@@ -106,9 +106,15 @@ class mgl_Admin {
     ) );
     // Set our CMB2 fields
     $cmb->add_field( array(
-      'name' => __( 'Products Page Content', 'mgl' ),
+      'name' => __( 'Products Page Header', 'mgl' ),
       'desc' => __( 'this shows up at the top of /products', 'mgl' ),
       'id'   => '_mgl_archive-product-content',
+      'type' => 'wysiwyg',
+    ) );
+    $cmb->add_field( array(
+      'name' => __( 'Products Page Featured Brands', 'mgl' ),
+      'desc' => __( 'this shows up at the top of /products', 'mgl' ),
+      'id'   => '_mgl_archive-product-featured',
       'type' => 'wysiwyg',
     ) );
   }

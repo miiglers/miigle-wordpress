@@ -16,6 +16,16 @@ $mgl_current_user = User\current();
   
     </div>
   </section>
+
+  <section id="brands" class="text-center">
+    <div class="container">
+
+      <p>Featured Brands</p>
+      
+      <?= apply_filters('the_content', mgl_get_option('_mgl_archive-product-featured')) ?>
+
+    </div>
+  </section>
   
   <?php require_once(locate_template('templates/content-archive.php')); ?>
   
