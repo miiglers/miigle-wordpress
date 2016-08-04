@@ -14,7 +14,7 @@ function register() {
     'methods' => 'POST',
     'callback' => 'Miigle\\Controllers\\Product\\post',
     'permission_callback' => function () {
-			return current_user_can('subscriber-approved');
+			return current_user_can('subscriber');
 		}
   ));
   

@@ -15,7 +15,7 @@ if(isset($queried_object->term_id)) {
 
 ?>
 
-<div id="sidebar-categories" class="templates product" data-spy="affix" data-offset-top="420" data-offset-bottom="350">
+<div id="sidebar-categories" class="templates product" data-spy="affix" data-offset-top="520" data-offset-bottom="350">
 
   <h4>Categories</h4>
   <ul class="list-unstyled collapsible">
