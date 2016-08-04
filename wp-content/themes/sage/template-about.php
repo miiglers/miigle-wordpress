@@ -68,7 +68,7 @@
             <div class="col-sm-4 team">
               <p><img class="img-responsive" src="https://miigle.com/wp-content/uploads/2016/06/team-wilianiralzabal.png"></p>
               <h4>Wilian Iralzabal</h4>
-              <p>Co-founder & CPD</p>
+              <p>Co-Founder & CPD</p>
               <!--<p><a href="#">@miigle_handle</a></p>-->
             </div>
           		<div class="clearfix"></div>

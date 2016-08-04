@@ -101,18 +101,20 @@ wp_reset_postdata();
 
               <div class="col-md-4 grid-sizer product-card"></div>
 						
-  						<div class="col-md-4 grid-item plus-wrap product-card">
-                <div class="grid-item-content">
-    							<a href="<?= home_url() ?>/product-post">
-    								<div class="card-item plus text-center">
-    									<div class="plus-wrap">
-    										<span class="plus"></span>
-    									</div>
-    									<p>Post a product</p>
-    								</div>
-    							</a>
-                </div>
-  						</div>
+              <?php if($is_owner): ?>
+    						<div class="col-md-4 grid-item plus-wrap product-card">
+                  <div class="grid-item-content">
+      							<a href="<?= home_url() ?>/product-post">
+      								<div class="card-item plus text-center">
+      									<div class="plus-wrap">
+      										<span class="plus"></span>
+      									</div>
+      									<p>Post a product</p>
+      								</div>
+      							</a>
+                  </div>
+    						</div>
+              <?php endif; ?>
   						
   						<?php 
   							$i = 2;
