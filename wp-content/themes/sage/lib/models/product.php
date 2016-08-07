@@ -231,7 +231,7 @@ function create($data, $user) {
  */
 function get_user_products($user_id, $get_pending=false) {
   if($get_pending) {
-    $status = 'any';
+    $status = 'publish';
   }
   else {
     $status = 'publish';
