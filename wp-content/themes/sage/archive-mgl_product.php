@@ -19,8 +19,6 @@ $mgl_current_user = User\current();
 
   <section id="brands" class="text-center">
     <div class="container">
-
-      <p>Featured Brands</p>
       
       <?= apply_filters('the_content', mgl_get_option('_mgl_archive-product-featured')) ?>
 
