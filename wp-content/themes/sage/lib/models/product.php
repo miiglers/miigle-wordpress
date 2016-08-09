@@ -154,7 +154,7 @@ function pre_get_posts($query) {
     return;
   }
 
-  if($is_homepage) {
+  /*if($is_homepage) {
     $paged = (isset($_GET['paged']) ? $_GET['paged'] : '');
     $query->set('post_type', 'mgl_product');
     $query->set('page_id', '');
@@ -164,7 +164,7 @@ function pre_get_posts($query) {
     $query->is_singular = 0;
     $query->is_post_type_archive = 1;
     $query->is_archive = 1;
-  }
+  }*/
 
   $query->set('posts_per_page', 30);
 
