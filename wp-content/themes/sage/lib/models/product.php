@@ -69,10 +69,18 @@ function register_meta() {
     'type'       => 'text'
   ));
 
+  // Brand Name
+  $cmb->add_field(array(
+    'name'       => __('Brand Name', 'cmb2'),
+    'desc'       => __('This is only used when there is no brand created', 'cmb2'),
+    'id'         => $prefix . 'brand_name',
+    'type'       => 'text'
+  ));
+
   // Brand URL
   $cmb->add_field(array(
-    'name'       => __('URL', 'cmb2'),
-    'desc'       => __('This is used when there is no brand created', 'cmb2'),
+    'name'       => __('Brand URL', 'cmb2'),
+    'desc'       => __('This is only used when there is no brand created', 'cmb2'),
     'id'         => $prefix . 'brand_url',
     'type'       => 'text_url'
   ));
@@ -262,18 +270,20 @@ function get_user_products_upvoted($user_id) {
  * Get the product brand
  */
 function get_brand($post_id) {
-  $brand_id = get_post_meta($post_id, '_mgl_product_brand_id', true);    
-  $brand = get_posts(array(
-    'post_type' => 'mgl_brand',
-    'p' => $brand_id
-  ));
-  
-  if($brand) {
-    return $brand[0];
+  $brand_id = get_post_meta($post_id, '_mgl_product_brand_id', true);
+
+  if($brand_id) {
+    $brand = get_posts(array(
+      'post_type' => 'mgl_brand',
+      'p' => $brand_id
+    ))[0];
   }
   else {
-    return false;
+    $brand = false;
   }
+  
+  
+  return $brand;
 }
  
 /**
@@ -291,7 +301,14 @@ function get_brand_title($post_id) {
 }
 
 /**
- * Get the author comment
+ * Get the brand name
+ */
+function get_brand_name($post_id) {
+  return get_post_meta($post_id, '_mgl_product_brand_name', true);
+}
+
+/**
+ * Get the brand url
  */
 function get_brand_url($post_id) {
   return get_post_meta($post_id, '_mgl_product_brand_url', true);

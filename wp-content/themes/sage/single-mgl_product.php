@@ -18,7 +18,7 @@ if($brand) {
 }
 else {
   $brand_url = Helpers\format_url(Product\get_brand_url($post->ID));
-  $brand_title = $brand_url;
+  $brand_title = Product\get_brand_name($post->ID);
 }
 $mgl_current_user = User\current();
 $product_author = User\get($post->post_author);
