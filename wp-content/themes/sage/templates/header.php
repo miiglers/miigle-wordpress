@@ -39,9 +39,8 @@ $mgl_current_user = User\current();
           <li><a href="<?= home_url() ?>/how-it-works">How it Works</a></li>-->
         <?php endif; ?>
         <li><a href="<?= home_url() ?>/about">About</a></li>
-        <li><a href="<?= home_url() ?>/how-it-works">How it works</a></li>
         <?php if(is_front_page()): ?>
-          <li><a href="#story" class="btn btn-primary navbar-btn">Read Our Story</a></li>
+          <li><a href="<?= home_url() ?>/our-story" class="btn btn-primary navbar-btn">Read Our Story</a></li>
         <?php endif; ?>
         <?php if(is_user_logged_in() && !is_front_page()): ?>          
           <li><a href="<?= home_url() ?>/product-post" class="btn btn-default navbar-btn">Post</a></li>
