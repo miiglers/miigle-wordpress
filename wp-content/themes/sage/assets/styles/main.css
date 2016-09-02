@@ -431,6 +431,7 @@ form.comment-form input#submit {
 footer#footer {
   margin-top: 75px;
 }
+body.home footer#footer,
 body.page-template-template-about footer#footer,
 body.page-template-template-how_it_works footer#footer,
 body.blog footer#footer,
@@ -481,11 +482,12 @@ footer#footer .copyright {
 #front-page section#splash {
   font-size: 18px;
   color: white;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5bbbb9+0,84cdba+100 */
-  background-image: url('../images/dotted-map.png'), linear-gradient(to right,  #5bbbb9 0%,#84cdba 100%);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#55b8b8+0,89d0bb+100 */
+  background: #55b8b8; /* Old browsers */
+  background: -moz-linear-gradient(left,  #55b8b8 0%, #89d0bb 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #55b8b8 0%,#89d0bb 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #55b8b8 0%,#89d0bb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#55b8b8', endColorstr='#89d0bb',GradientType=1 ); /* IE6-9 */
 }
 #front-page section#splash h1 {
   margin-bottom: 40px;
@@ -495,6 +497,8 @@ footer#footer .copyright {
 }
 #front-page section#splash .btn {
   margin-bottom: 20px;
+  padding: 16px 25px;
+  border-radius: 80px;
 }
 section#brands {
   background: #f5f5f5;
