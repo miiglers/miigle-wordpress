@@ -151,7 +151,7 @@
                 to checking out your posts! Happy Miiglin’! ;)
               </p>
               <div class="clearfix"></div>
-              <a class="btn btn-primary" href="login">
+              <a class="btn btn-primary" href="#contact">
                 Ready to join Miigle+
               </a>
             </div>
@@ -169,6 +169,20 @@
     <div class="container">
 
       <?php the_field('fp_video_text'); ?>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="text-center">
+            <?php the_field('fp_contact_text'); ?>
+          </div>
+        </div>
+      </div>
 
     </div>
   </section>
