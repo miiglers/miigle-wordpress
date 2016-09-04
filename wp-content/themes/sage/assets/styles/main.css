@@ -89,7 +89,7 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   color: #2a404d;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 28px;
 }
 h2, h3, h4 {
   font-family: 'Montserrat', sans-serif;
@@ -332,7 +332,17 @@ a.templates.product#button-comment:hover {
 }
 @media (min-width: 992px) {
   h1 {
-    
+    font-size: 34px;
+  }
+}
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 38px;
+  }
+}
+@media (min-width: 1300px) {
+  h1 {
+    font-size: 42px;
   }
 }
 
@@ -495,6 +505,13 @@ footer#footer .copyright {
 #front-page section#splash p {
   margin-bottom: 40px;
 }
+#front-page section#splash a {
+  display: inline-block;
+  margin-right: 20px;
+}
+#front-page section#splash p.passcode {
+  padding-left: 50px;
+}
 #front-page section#splash .btn {
   margin-bottom: 20px;
   padding: 16px 25px;
@@ -523,6 +540,19 @@ section#brands img:last-child {
 }
 #front-page section#how h4 {
   margin: 35px 0 25px 0;
+}
+#front-page section#how .videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+#front-page section#how .videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 #front-page section#how p.lead {
   margin-bottom: 50px;
@@ -578,6 +608,16 @@ section.page-video {
 }
 #front-page section#contact form {
   margin-top: 75px;
+}
+
+@media (min-width: 933px) {
+  #front-page section#splash a {
+    display: inline;
+  }
+  #front-page section#splash p.passcode {
+    text-align: left; 
+    padding-left: 250px;
+  }
 }
 
 @media (min-width: 992px) {

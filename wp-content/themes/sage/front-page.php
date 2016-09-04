@@ -5,15 +5,19 @@
 
 <div id="front-page">
 
-  <section id="splash" class="text-center">
+  <section id="splash">
     <div class="container-fluid">
       <div class="row">
 
-        <div class="col-md-6">
-          <?php the_field('fp_hero_text'); ?>
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-lg-11 col-lg-offset-1">
+              <?php the_field('fp_hero_text'); ?>
+            </div>
+          </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-sm-6">
           <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/images/home-laptop-screenshot.png">
         </div>
 
