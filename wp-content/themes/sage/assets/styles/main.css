@@ -365,6 +365,9 @@ a.templates.product#button-comment:hover {
 .navbar-header {
   z-index: 1;
 }
+.navbar>.container-fluid .navbar-brand {
+  margin-left: 0;
+}
 .navbar-brand {
   height: 50px;
   padding: 0;

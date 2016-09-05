@@ -7,7 +7,11 @@ $mgl_current_user = User\current();
 ?>
 
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="row">
+          <div class="col-lg-11 col-lg-offset-1">
     
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -21,6 +25,11 @@ $mgl_current_user = User\current();
         </a>
       <?php endif; ?>
     </div>
+
+    </div>
+    </div>
+    </div>
+    <div class="col-sm-6">
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -67,5 +76,7 @@ $mgl_current_user = User\current();
       </ul>
       
     </div><!-- /.navbar-collapse -->
+    </div>
+    </div>
   </div><!-- /.container-fluid -->
 </nav>
