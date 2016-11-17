@@ -2139,7 +2139,51 @@ form.comment-form label {
 |  template-brand_directory.php
 |
 **********************************************************/
-#template-brand_directory {padding-top: 60px;background-color: white;}
+/* 
+| brand - cta
+*/
+.btn.btn-default.btn-cta {
+	border-radius: 50px;
+  background-color: #f5f6f6;
+  border-color:#f5f6f6;
+  padding: 10px 30px;
+  font-weight:bold;
+}
+.btn.btn-default.btn-cta:hover,
+.btn.btn-default.btn-cta:focus {
+	background-color: #55b8b8;
+  border-color:#55b8b8;
+  color:#fff;
+}
+#cta .btn.btn-default.btn-cta {
+	background-image: linear-gradient(to right, #55b8b8, #89d0bb);
+	color:white;
+}
+#cta .btn.btn-default.btn-cta:hover,
+#cta .btn.btn-default.btn-cta:focus {
+	background-color: #55b8b8;
+	background-image: none;
+}
+.input-group.form-cta {
+	border-radius: 50px;
+  background-color: #f5f6f6;
+  padding: 13px;
+}
+.form-cta .form-control, 
+.form-cta input[type=text] {
+	border: none;
+}
+.form-cta .btn-default {
+	background-color: transparent;
+  border-color: transparent;
+  font-weight:bold;
+}
+.form-cta .btn-default:hover {
+	background-color: #55b8b8;
+  color:#fff;
+}
+
+#template-brand_directory {padding-top: 60px;background-color: white;padding-bottom: 75px;margin-bottom: -75px;}
 
 #template-brand_directory .mT {margin-top:60px;}
 #template-brand_directory .msT {margin-top:30px;}
@@ -2215,19 +2259,31 @@ form.comment-form label {
   justify-content: center;
   border-radius: 3px;
   box-shadow: 0 10px 20px 0 rgba(226, 191, 185, 0.5);
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size:cover;
 }
 #template-brand_directory #mainCol .card p {
 	font-size: 30px;
   color:#fff;
   z-index:100;
 }
+#template-brand_directory .mask.accessories {background-color: rgba(157, 100, 125, 0.7);border-radius: 3px;}
 #template-brand_directory .mask.beauty {background-color: rgba(232, 189, 183, 0.8);border-radius: 3px;}
+#template-brand_directory .mask.electronics {background-color: rgba(194, 94, 51, 0.7);border-radius: 3px;}
+#template-brand_directory .mask.gifts {background-color: rgba(79, 198, 150, 0.7);border-radius: 3px;}
 #template-brand_directory .mask.kids {background-color: rgba(126, 180, 199, 0.8);border-radius: 3px;}
 #template-brand_directory .mask.clothings {background-color: rgba(233, 158, 74, 0.8);border-radius: 3px;}
 #template-brand_directory .mask.foods {background-color: rgba(130, 90, 170, 0.8);border-radius: 3px;}
-#template-brand_directory .mask.shoes {background-color: rgba(128, 195, 117, 0.8);border-radius: 3px;}
+#template-brand_directory .mask.shoes {background-color: rgba(27, 69, 115, 0.8);border-radius: 3px;}
 #template-brand_directory .mask.health {background-color: rgba(199, 45, 26, 0.7);border-radius: 3px;}
+#template-brand_directory .mask.jewlery {background-color: rgba(193, 107, 56, 0.7);border-radius: 3px;}
+#template-brand_directory .mask.pets {background-color: rgba(95, 66, 55, 0.7);border-radius: 3px;}
+#template-brand_directory .mask.home {background-color: rgba(158, 131, 83, 0.8);border-radius: 3px;}
+#template-brand_directory .card:hover .mask,
+#template-brand_directory .card:focus .mask {opacity:0.5;}
 
+#template-brand_directory #mainCol .banner-section {margin-bottom:20px;}
 
 /* 
 | brand - side
@@ -2252,10 +2308,6 @@ form.comment-form label {
 		padding-left:60px;
 	}
 }
-
-/* 
-| brand - cta
-*/
 
 /*********************************************************
 |
