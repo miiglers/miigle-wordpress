@@ -38,7 +38,6 @@ class MC4WP_Form_Manager {
 	 * Hook!
 	 */
 	public function add_hooks() {
-
 		add_action( 'init', array( $this, 'initialize' ) );
 
 		// forms
@@ -99,7 +98,7 @@ class MC4WP_Form_Manager {
 	 * @hooked `template_redirect`
 	 */
 	public function init_asset_manager() {
-		$assets = new MC4WP_Form_Asset_Manager( $this->output_manager );
+		$assets = new MC4WP_Form_Asset_Manager();
 		$assets->hook();
 	}
 

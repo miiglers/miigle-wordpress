@@ -66,7 +66,7 @@ class MC4WP_Contact_Form_7_Integration extends MC4WP_Integration {
 	* @return array
 	*/
 	public function alter_cf7_data( $data = array() ) {
-		$data['mc4wp_checkbox'] = $this->checkbox_was_checked() ? __( 'Yes', 'mailchimp-for-wp' ) : __( 'No', 'mailchimp-for-wp' );
+		$data['mc4wp_checkbox'] = $this->checkbox_was_checked() ? __( 'Yes' ) : __( 'No' );
 		return $data;
 	}
 
@@ -90,10 +90,11 @@ class MC4WP_Contact_Form_7_Integration extends MC4WP_Integration {
 
 		// do nothing if no email was found
 		if( empty( $data['EMAIL'] ) ) {
-			return false;
+            $this->get_log()->warning( sprintf( '%s > Unable to find EMAIL field.', $this->name ) );
+            return false;
 		}
 
-		return $this->subscribe( $data['EMAIL'], $data, $cf7_form->id() );
+		return $this->subscribe( $data, $cf7_form->id() );
 	}
 
 	/**
@@ -116,6 +117,9 @@ class MC4WP_Contact_Form_7_Integration extends MC4WP_Integration {
 				$this->options['precheck'] = false;
 			}
 		}
+
+		// disable paragraph wrap because CF7 defaults to `wpautop`
+		$this->options['wrap_p'] = 0;
 
 		return $this->get_checkbox_html();
 	}

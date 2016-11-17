@@ -3,7 +3,7 @@
 Plugin Name: Super Socializer
 Plugin URI: http://super-socializer-wordpress.heateor.com
 Description: A complete 360 degree solution to provide all the social features like Social Login, Social Commenting, Social Sharing and more.
-Version: 7.7.3
+Version: 7.8.6
 Author: Team Heateor
 Author URI: https://www.heateor.com
 Text Domain: Super-Socializer
@@ -11,20 +11,24 @@ Domain Path: /languages
 License: GPL2+
 */
 defined('ABSPATH') or die("Cheating........Uh!!");
-define('THE_CHAMP_SS_VERSION', '7.7.3');
+define('THE_CHAMP_SS_VERSION', '7.8.6');
+
+require 'helper.php';
 
 $theChampLoginOptions = get_option('the_champ_login');
-if(isset($theChampLoginOptions['providers']) && in_array('twitter', $theChampLoginOptions['providers'])){
-	require 'library/twitteroauth.php';
-}
-if(isset($theChampLoginOptions['providers']) && in_array('xing', $theChampLoginOptions['providers'])){
-	$theChampOauthConfigurationFile = plugins_url('library/oauth_configuration.json', __FILE__);
-	require 'library/http.php';
-	require 'library/oauth_client.php';
-}
-if(isset($theChampLoginOptions['providers']) && in_array('steam', $theChampLoginOptions['providers'])){
-	require 'library/SteamLogin/SteamLogin.php';
-	$theChampSteamLogin = new SteamLogin();
+if(the_champ_social_login_enabled()){
+	if(isset($theChampLoginOptions['providers']) && in_array('twitter', $theChampLoginOptions['providers'])){
+		require 'library/twitteroauth.php';
+	}
+	if(isset($theChampLoginOptions['providers']) && in_array('xing', $theChampLoginOptions['providers'])){
+		$theChampOauthConfigurationFile = plugins_url('library/oauth_configuration.json', __FILE__);
+		require 'library/http.php';
+		require 'library/oauth_client.php';
+	}
+	if(isset($theChampLoginOptions['providers']) && in_array('steam', $theChampLoginOptions['providers'])){
+		require 'library/SteamLogin/SteamLogin.php';
+		$theChampSteamLogin = new SteamLogin();
+	}
 }
 
 $theChampFacebookOptions = get_option('the_champ_facebook');
@@ -34,7 +38,6 @@ $theChampGeneralOptions = get_option('the_champ_general');
 
 $theChampIsBpActive = false;
 
-require 'helper.php';
 // include social login functions
 require 'inc/social_login.php';
 
@@ -120,11 +123,6 @@ function the_champ_connect(){
 		$users = get_users('meta_key=thechamp_key&meta_value='.$verificationKey);
 		if(count($users) > 0 && isset($users[0] -> ID)){
 			delete_user_meta($users[0] -> ID, 'thechamp_key');
-			// update password
-			$password = wp_generate_password();
-			wp_update_user(array('ID' => $users[0] -> ID, 'user_pass' => $password));
-			// send notification email
-			heateor_ss_new_user_notification($users[0] -> ID);
 			wp_redirect(home_url().'?SuperSocializerVerified=1');
 			die;
 		}
@@ -411,7 +409,7 @@ function the_champ_get_http(){
  */
 function the_champ_get_valid_url($url){
 	$url = urldecode($url);
-	if(html_entity_decode(esc_url(remove_query_arg('ss_message', $url))) == wp_login_url() || $url == home_url().'/wp-login.php?action=register' || $url == home_url().'/wp-login.php?loggedout=true'){ 
+	if(html_entity_decode(esc_url(remove_query_arg(array('ss_message', 'SuperSocializerVerified', 'SuperSocializerUnverified'), $url))) == wp_login_url() || $url == home_url().'/wp-login.php?action=register' || $url == home_url().'/wp-login.php?loggedout=true'){ 
 		$url = home_url().'/';
 	}elseif(isset($_GET['redirect_to'])){
 		if(urldecode($_GET['redirect_to']) == admin_url()){
@@ -811,7 +809,7 @@ function the_champ_frontend_styles(){
  * Create plugin menu in admin.
  */	
 function the_champ_create_admin_menu(){
-	$page = add_menu_page('Super Socializer by Heateor', '<b>Super Socializer</b>', 'manage_options', 'heateor-ss-general-options', 'the_champ_general_options_page', plugins_url('images/logo.png', __FILE__));
+	$page = add_menu_page('Super Socializer by Heateor', 'Super Socializer', 'manage_options', 'heateor-ss-general-options', 'the_champ_general_options_page', plugins_url('images/logo.png', __FILE__));
 	// general options page
 	$generalOptionsPage = add_submenu_page( 'heateor-ss-general-options', __( "Super Socializer - General Options", 'Super-Socializer' ), __( "General Options", 'Super-Socializer' ), 'manage_options', 'heateor-ss-general-options', 'the_champ_general_options_page' );
 	// facebook page
@@ -877,7 +875,7 @@ function the_champ_show_avatar_option( $user ) {
 	if ( isset( $theChampLoginOptions['enable'] ) ) {
 		$dontUpdateAvatar = get_user_meta($user_ID, 'thechamp_dontupdate_avatar', true);
 		?>
-		<h3><?php _e( 'Super Socializer - Social Avatar', 'Super-Socializer' ) ?></h3>
+		<h3><?php _e( 'Social Avatar', 'Super-Socializer' ) ?></h3>
 		<table class="form-table">
 	        <tr>
 	            <th><label for="ss_small_avatar"><?php _e( 'Small Avatar Url', 'Super-Socializer' ) ?></label></th>
@@ -956,7 +954,7 @@ function the_champ_replace_array_value($array, $value, $replacement){
 /**
  * Default options when plugin is installed
  */
-function the_champ_default_options(){
+function the_champ_save_default_options(){
 	// general options
 	add_option('the_champ_general', array(
 	   'footer_script' => '1',
@@ -1077,8 +1075,46 @@ function the_champ_default_options(){
 
 	add_option('the_champ_ss_version', THE_CHAMP_SS_VERSION);
 }
-register_activation_hook(__FILE__, 'the_champ_default_options');
 
+/**
+ * Plugin activation function
+ */
+function the_champ_activate_plugin($networkWide){
+	global $wpdb;
+	if(function_exists('is_multisite') && is_multisite()){
+		//check if it is network activation if so run the activation function for each id
+		if($networkWide){
+			$oldBlog =  $wpdb->blogid;
+			//Get all blog ids
+			$blogIds =  $wpdb->get_col("SELECT blog_id FROM $wpdb->blogs");
+
+			foreach($blogIds as $blogId){
+				switch_to_blog($blogId);
+				the_champ_save_default_options();
+			}
+			switch_to_blog($oldBlog);
+			return;
+		}
+	}
+	the_champ_save_default_options();
+}
+register_activation_hook(__FILE__, 'the_champ_activate_plugin');
+
+/**
+ * Save default options for the new subsite created
+ */
+function the_champ_new_subsite_default_options($blogId, $userId, $domain, $path, $siteId, $meta){
+    if(is_plugin_active_for_network('super-socializer/super_socializer.php')){ 
+        switch_to_blog($blogId);
+        the_champ_save_default_options();
+        restore_current_blog();
+    }
+}
+add_action('wpmu_new_blog', 'the_champ_new_subsite_default_options', 10, 6);
+
+/**
+ * Show notification related to add-on update
+ */
 function the_champ_addon_update_notification(){
 	if(current_user_can('manage_options')){
 		if(defined('HEATEOR_SOCIAL_SHARE_MYCRED_INTEGRATION_VERSION') && version_compare('1.3.3', HEATEOR_SOCIAL_SHARE_MYCRED_INTEGRATION_VERSION) > 0){

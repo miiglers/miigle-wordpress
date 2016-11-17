@@ -1,6 +1,7 @@
 theChampFBKey = typeof theChampFBKey != 'undefined' ? theChampFBKey : '', theChampFBLang = typeof theChampFBLang != 'undefined' ? theChampFBLang : '';
 // general.js
 function theChampPopup(e){window.open(e,"popUpWindow","height=400,width=600,left=400,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes")}function theChampStrReplace(e,t,n){for(var r=0;r<e.length;r++){n=n.replace(new RegExp(e[r],"g"),t[r])}return n}function theChampCallAjax(e){if(typeof jQuery!="undefined"){e()}else{theChampGetScript("http://code.jquery.com/jquery-latest.min.js",e)}}function theChampGetScript(e,t){var n=document.createElement("script");n.src=e;var r=document.getElementsByTagName("head")[0],i=false;n.onload=n.onreadystatechange=function(){if(!i&&(!this.readyState||this.readyState=="loaded"||this.readyState=="complete")){i=true;t();n.onload=n.onreadystatechange=null;r.removeChild(n)}};r.appendChild(n)}function theChampGetElementsByClass(e,t){if(e.getElementsByClassName){return e.getElementsByClassName(t)}else{return function(e,t){if(t==null){t=document}var n=[],r=t.getElementsByTagName("*"),i=r.length,s=new RegExp("(^|\\s)"+e+"(\\s|$)"),o,u;for(o=0,u=0;o<i;o++){if(s.test(r[o].className)){n[u]=r[o];u++}}return n}(t,e)}}if(typeof String.prototype.trim!=="function"){String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g,"")}}
+if(typeof theChampLinkingRedirection=="undefined"){var theChampLinkingRedirection='';}
 // common.js
 function theChampLoadingIcon(){jQuery(".the_champ_login_container").html('<img id="the_champ_loading_image" src="'+theChampLoadingImgPath+'" />')}function theChampAjaxUserAuth(e,t){theChampLoadingIcon(),jQuery.ajax({type:"POST",dataType:"json",url:theChampAjaxUrl,data:{action:"the_champ_user_auth",profileData:e,provider:t,redirectionUrl:theChampTwitterRedirect?theChampTwitterRedirect:""},success:function(e){var t=theChampSiteUrl;if(1==e.status)t="register"==e.message?e.url&&""!=e.url?e.url:theChampRegRedirectionUrl+(theChampCommentFormLogin?"/#commentform":""):"linked"==e.message?theChampLinkingRedirection+"?linked=1":e.url&&""!=e.url?e.url:theChampRedirectionUrl+(theChampCommentFormLogin?"/#commentform":"");else if(null!==e.message.match(/ask/)){var a=e.message.split("|");t=theChampSiteUrl+"?SuperSocializerEmail=1&par="+a[1]}else 0==e.status&&"registration disabled"==e.message?t="undefined"!=typeof theChampDisableRegRedirect?theChampDisableRegRedirect:decodeURIComponent(theChampTwitterRedirect):"unverified"==e.message?t=theChampSiteUrl+"?SuperSocializerUnverified=1":"not linked"==e.message?t=theChampLinkingRedirection+"?linked=0":"provider exists"==e.message&&(t=theChampLinkingRedirection+"?linked=2");location.href=t},error:function(){location.href=decodeURIComponent(theChampRedirectionUrl)}})}function theChampInitiateLogin(e){var t=e.getAttribute("alt");if("Login with Facebook"==t)navigator.userAgent.match("CriOS")?location.href="https://www.facebook.com/dialog/oauth?client_id="+theChampFBKey+"&redirect_uri="+theChampRedirectionUrl+"&scope="+theChampFacebookScope:theChampAuthUserFB();else if("Login with Twitch"==t)theChampPopup(theChampSiteUrl+"?SuperSocializerAuth=Twitch");else if("Login with Steam"==t)theChampPopup(theChampSteamAuthUrl);else if("Login with Twitter"==t)theChampPopup(theChampSiteUrl+"?SuperSocializerAuth=Twitter&super_socializer_redirect_to="+theChampTwitterRedirect);else if("Login with Xing"==t)theChampPopup(theChampSiteUrl+"?SuperSocializerAuth=Xing&super_socializer_redirect_to="+theChampTwitterRedirect);else{if("Login with Linkedin"==t)return IN.User.authorize(),!1;"Login with Google"==t?theChampInitializeGPLogin():"Login with Vkontakte"==t?theChampInitializeVKLogin():"Login with Instagram"==t&&theChampInitializeInstaLogin()}}function theChampDisplayLoginIcon(e,t){if("undefined"!=typeof jQuery)for(var a=0;a<t.length;a++)jQuery("."+t[a]).css("display","block");else for(var a=0;a<t.length;a++)for(var i=theChampGetElementsByClass(e,t[a]),h=0;h<i.length;h++)i[h].style.display="block"}function theChampValidateEmail(e){var t=/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;return t.test(e)}function the_champ_save_email(e){var t=document.getElementById("the_champ_email").value.trim(),a=document.getElementById("the_champ_confirm_email").value.trim();return"save"!=e.id||theChampValidateEmail(t)?t!=a?(document.getElementById("the_champ_error").innerHTML="Email addresses do not match",void jQuery("#TB_ajaxContent").css("height","auto")):void theChampCallAjax(function(){theChampSaveEmail(e.id,t)}):(document.getElementById("the_champ_error").innerHTML=theChampEmailPopupErrorMsg,void jQuery("#TB_ajaxContent").css("height","auto"))}function theChampSaveEmail(e,t){document.getElementById("the_champ_error").innerHTML='<img src="'+theChampLoadingImgPath+'" />',jQuery.ajax({type:"POST",dataType:"json",url:theChampAjaxUrl,data:{action:"the_champ_save_email",elemId:e,email:t,id:theChampEmailPopupUniqueId},success:function(e){window.history.pushState({html:"html",pageTitle:"page title"},"","?done=1"),1==e.status&&e.message.response&&"success"==e.message.response?location.href=e.message.url:1==e.status&&"success"==e.message?location.href=theChampRegRedirectionUrl:1==e.status&&"cancelled"==e.message?tb_remove():1==e.status&&"verify"==e.message?document.getElementById("TB_ajaxContent").innerHTML="<strong>"+theChampEmailPopupVerifyMessage+"</strong>":0==e.status&&(document.getElementById("the_champ_error").innerHTML=e.message,jQuery("#TB_ajaxContent").css("height","auto"))},error:function(){location.href=decodeURIComponent(theChampRedirectionUrl)}})}function theChampCapitaliseFirstLetter2(e){return e.charAt(0).toUpperCase()+e.slice(1)}theChampVerified&&theChampLoadEvent(function(){tb_show(theChampPopupTitle,theChampAjaxUrl)}),theChampEmailPopup&&theChampLoadEvent(function(){tb_show(theChampEmailPopupTitle,theChampEmailAjaxUrl)});var theChampCommentFormLogin=!1;
 // Google.js
@@ -12,16 +13,16 @@ function theChampInitializeVKLogin(){VK.Auth.login(function(t){t.session.mid&&VK
 // instagram.js
 function theChampInitializeInstaLogin(){var e=typeof theChampLinkingRedirection!="undefined"&&theChampLinkingRedirection!=""?theChampLinkingRedirection:theChampTwitterRedirect;theChampPopup("https://instagram.com/oauth/authorize/?client_id="+theChampInstaId+"&redirect_uri="+encodeURI(theChampSiteUrl+"?ssredirect="+e)+"&response_type=token")}function theChampGetHashValue(e){if(typeof e!=="string"){e=""}else{e=e.toLowerCase()}var t=location.hash.toLowerCase().match(new RegExp(e+"=([^&]*)"));var n="";if(t){n=t[1]}return n}function theChampGetParameterByName(e){e=e.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");var t=new RegExp("[\\?&]"+e+"=([^&#]*)"),n=t.exec(location.search);return n===null?"":decodeURIComponent(n[1].replace(/\+/g," "))}var theChampInstagramHash=theChampGetHashValue("access_token");if(theChampInstagramHash!=""){var redirection=theChampGetParameterByName("ssredirect");window.opener.location.href=theChampSiteUrl+"?SuperSocializerInstaToken="+theChampInstagramHash+"&super_socializer_redirect_to="+(redirection?redirection:theChampTwitterRedirect);window.close()}
 // sdk.js
-function theChampInitiateFB(){FB.init({appId:theChampFBKey,channelUrl:"//"+theChampSiteUrl+"/channel.html",status:!0,cookie:!0,xfbml:!0,version:"v2.5"})}window.fbAsyncInit=function(){theChampInitiateFB(),theChampFbIosLogin&&theChampAuthUserFB(),"function"==typeof theChampDisplayLoginIcon&&theChampDisplayLoginIcon(document,["theChampFacebookButton","theChampFacebookLogin"]),theChampCommentNotification&&FB.Event.subscribe("comment.create",function(e){e.commentID&&jQuery.ajax({type:"POST",dataType:"json",url:theChampSiteUrl+"/index.php",data:{action:"the_champ_moderate_fb_comments",data:e},success:function(){}})}),theChampFbLikeMycred&&(FB.Event.subscribe("edge.create",function(e){heateorSsmiMycredPoints("Facebook_like_recommend","",e?e:"")}),FB.Event.subscribe("edge.remove",function(e){heateorSsmiMycredPoints("Facebook_like_recommend","",e?e:"","Minus point(s) for undoing Facebook like-recommend")})),theChampSsga&&(FB.Event.subscribe("edge.create",function(e){heateorSsgaSocialPluginsTracking("Facebook","Like",e?e:"")}),FB.Event.subscribe("edge.remove",function(e){heateorSsgaSocialPluginsTracking("Facebook","Unlike",e?e:"")}))},function(e){var t,n="facebook-jssdk",o=e.getElementsByTagName("script")[0];e.getElementById(n)||(t=e.createElement("script"),t.id=n,t.async=!0,t.src="//connect.facebook.net/"+theChampFBLang+"/sdk.js",o.parentNode.insertBefore(t,o))}(document);
+function theChampInitiateFB(){FB.init({appId:theChampFBKey,channelUrl:"//"+theChampSiteUrl+"/channel.html",status:!0,cookie:!0,xfbml:!0,version:"v2.8"})}window.fbAsyncInit=function(){theChampInitiateFB(),theChampFbIosLogin&&theChampAuthUserFB(),"function"==typeof theChampDisplayLoginIcon&&theChampDisplayLoginIcon(document,["theChampFacebookButton","theChampFacebookLogin"]),theChampCommentNotification&&FB.Event.subscribe("comment.create",function(e){e.commentID&&jQuery.ajax({type:"POST",dataType:"json",url:theChampSiteUrl+"/index.php",data:{action:"the_champ_moderate_fb_comments",data:e},success:function(){}})}),theChampFbLikeMycred&&(FB.Event.subscribe("edge.create",function(e){heateorSsmiMycredPoints("Facebook_like_recommend","",e?e:"")}),FB.Event.subscribe("edge.remove",function(e){heateorSsmiMycredPoints("Facebook_like_recommend","",e?e:"","Minus point(s) for undoing Facebook like-recommend")})),theChampSsga&&(FB.Event.subscribe("edge.create",function(e){heateorSsgaSocialPluginsTracking("Facebook","Like",e?e:"")}),FB.Event.subscribe("edge.remove",function(e){heateorSsgaSocialPluginsTracking("Facebook","Unlike",e?e:"")}))},function(e){var t,n="facebook-jssdk",o=e.getElementsByTagName("script")[0];e.getElementById(n)||(t=e.createElement("script"),t.id=n,t.async=!0,t.src="//connect.facebook.net/"+theChampFBLang+"/sdk.js",o.parentNode.insertBefore(t,o))}(document);
 // facebook.js
-function theChampAuthUserFB(){FB.getLoginStatus(theChampFBCheckLoginStatus)}function theChampFBCheckLoginStatus(response){if(response&&response.status=='connected'){theChampLoadingIcon();theChampFBLoginUser()}else{FB.login(theChampFBLoginUser,{scope:theChampFacebookScope})}}function theChampFBLoginUser(){FB.api('/me?fields=id,name,bio,about,link,email,first_name,last_name',function(response){if(!response.id){return}theChampCallAjax(function(){theChampAjaxUserAuth(response,'facebook')})})}
+function theChampAuthUserFB(){FB.getLoginStatus(theChampFBCheckLoginStatus)}function theChampFBCheckLoginStatus(response){if(response&&response.status=='connected'){theChampLoadingIcon();theChampFBLoginUser()}else{FB.login(theChampFBLoginUser,{scope:theChampFacebookScope})}}function theChampFBLoginUser(){FB.api('/me?fields=id,name,about,link,email,first_name,last_name',function(response){if(!response.id){return}theChampCallAjax(function(){theChampAjaxUserAuth(response,'facebook')})})}
 // commenting.js
 function theChampRenderFBCommenting(){var e='';if(typeof theChampCommentingId != 'undefined'){e=document.getElementById(theChampCommentingId);}if(e){var t=[],a=[],m=[];t.wordpress='<div style="clear:both"></div>'+e.innerHTML,theChampFBCommentingContent='<div class="fb-comments" data-href="'+theChampFBCommentUrl+'"',""!=theChampFBCommentColor&&(theChampFBCommentingContent+=' data-colorscheme="'+theChampFBCommentColor+'"'),""!=theChampFBCommentNumPosts&&(theChampFBCommentingContent+=' data-numposts="'+theChampFBCommentNumPosts+'"'),theChampFBCommentingContent+=' data-width="'+theChampFBCommentWidth+'"',""!=theChampFBCommentOrderby&&(theChampFBCommentingContent+=' data-order-by="'+theChampFBCommentOrderby+'"'),theChampFBCommentingContent+=" ></div>",t.fb=theChampFBCommentingContent,a.fb="theChampInitiateFB();",t.googleplus="<div class='g-comments' data-href='"+theChampGpCommentsUrl+"' "+(theChampGpCommentsWidth?"data-width='"+theChampGpCommentsWidth+"'":"")+" data-first_party_property='BLOGGER' data-view_type='FILTERED_POSTMOD' ></div>",a.googleplus=" ",m.googleplus="//apis.google.com/js/plusone.js",t.disqus='<div class="embed-container clearfix" id="disqus_thread">'+(""!=theChampDisqusShortname?theChampDisqusShortname:'<div style="font-size: 14px;clear: both;">Specify a Disqus shortname in Super Socializer &gt; Social Commenting section in admin panel</div>')+"</div>",a.disqus="var disqus_shortname = '"+theChampDisqusShortname+"';(function(d) {var dsq = d.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(dsq); })(document);";var h='<div class="theChampCommentingTabs"><h3 id="theChampReplyTitle" style="margin-bottom:15px" class="comment-reply-title">'+theChampScLabel+"</h3><ul>";theChampScEnabledTabs=theChampScEnabledTabs.split(",");for(var n=0;n<theChampScEnabledTabs.length;n++){h+='<li id="theChampTabs-'+n+'-li" onclick="',h+="this.setAttribute('class', 'theChampSelectedTab');document.getElementById('theChampTabs-"+n+"').style.display='block';","fb"==theChampScEnabledTabs[n]&&(h+="theChampInitiateFB();");for(var s=0;s<theChampScEnabledTabs.length;s++)s!=n&&(h+="document.getElementById('theChampTabs-"+s+"-li').setAttribute('class', '');document.getElementById('theChampTabs-"+s+"').style.display='none';");h+='">',h+=theChampScTabLabels[theChampScEnabledTabs[n]],h+="</li>"}h+="</ul>";for(var n=0;n<theChampScEnabledTabs.length;n++)h+='<div id="theChampTabs-'+n+'" ><div style="clear: both"></div>'+t[theChampScEnabledTabs[n]]+"</div>";h+="</div>",e.innerHTML=h;var d=document.getElementById("reply-title");d&&d.remove();for(var n=0;n<theChampScEnabledTabs.length;n++)if(a[theChampScEnabledTabs[n]]){var o=document.createElement("script");m[theChampScEnabledTabs[n]]&&o.setAttribute("src",m[theChampScEnabledTabs[n]]),o.innerHTML=a[theChampScEnabledTabs[n]],document.getElementById("theChampTabs-"+n).appendChild(o)}document.getElementById("theChampTabs-0-li").setAttribute("class","theChampSelectedTab");for(var n=1;n<theChampScEnabledTabs.length;n++)document.getElementById("theChampTabs-"+n).style.display="none"}}theChampLoadEvent(function(){theChampRenderFBCommenting()});
 // sharing.js
 /**
  * Show more sharing services popup
  */
-function theChampMoreSharingPopup(elem, postUrl, postTitle){
+function theChampMoreSharingPopup(elem, postUrl, postTitle, twitterTitle){
 	concate = '</ul></div><div class="footer-panel"><p></p></div></div>';
 	var theChampMoreSharingServices = {
 	  facebook: {
@@ -32,7 +33,7 @@ function theChampMoreSharingPopup(elem, postUrl, postTitle){
 	  twitter: {
 		title: "Twitter",
 		locale: "en-US",
-		redirect_url: "http://twitter.com/intent/tweet?text=" + postTitle + " " + postUrl,
+		redirect_url: "http://twitter.com/intent/tweet?text=" + (twitterTitle ? twitterTitle : postTitle) + " " + postUrl,
 	  },
 	  google: {
 		title: "Google plus",
@@ -222,7 +223,7 @@ function theChampMoreSharingPopup(elem, postUrl, postTitle){
 	  flipboard: {
 		title: "Flipboard",
 		locale: "en-US",
-		redirect_url: "https://share.flipboard.com/flipit/load?v=1.0&url=" + postUrl + "&title=" + postTitle,
+		redirect_url: "https://share.flipboard.com/bookmarklet/popout?v=2&url=" + postUrl + "&title=" + postTitle,
 	  },
 	  mail: {
 		title: "Email",
@@ -375,9 +376,9 @@ function theChampMoreSharingPopup(elem, postUrl, postTitle){
 		redirect_url: "https://mixi.jp/share.pl?mode=login&u=" + postUrl,
 	  },
 	  MySpace: {
-		title: "Mixi",
+		title: "MySpace",
 		locale: "en-US",
-		redirect_url: "https://myspace.com/",
+		redirect_url: "https://myspace.com/post?u=" + encodeURIComponent(postUrl) + "&t=" + postTitle + "&l=3&c=" + postTitle,
 	  },
 	  Netlog: {
 		title: "Netlog",
@@ -524,13 +525,14 @@ function theChampMoreSharingPopup(elem, postUrl, postTitle){
 		bgDiv.parentNode.removeChild(bgDiv);
 	}
 }
+
 if(typeof theChampHorizontalSharingCountEnable == 'undefined'){
 	var theChampHorizontalSharingCountEnable = 0;
 }
 if(typeof theChampVerticalSharingCountEnable == 'undefined'){
 	var theChampVerticalSharingCountEnable = 0;
 }
-if( theChampHorizontalSharingCountEnable || theChampVerticalSharingCountEnable ){
+if(theChampHorizontalSharingCountEnable || theChampVerticalSharingCountEnable){
 	// get sharing counts on window load
 	theChampLoadEvent(
 		function(){
@@ -554,6 +556,8 @@ function theChampFilterSharing(val) {
 		}
 	});
 };
+
+var heateorSsFacebookTargetUrls = [];
 
 /**
  * Get sharing counts
@@ -582,6 +586,9 @@ function theChampGetSharingCounts(){
 		},
 		success: function(data, textStatus, XMLHttpRequest){
 			if(data.status == 1){
+				if(data.facebook){
+					heateorSsFacebookTargetUrls = data.facebook_urls;
+				}
 				for(var i in data.message){
 					var sharingContainers = jQuery("div[super-socializer-data-href='"+i+"']");
 
@@ -590,8 +597,6 @@ function theChampGetSharingCounts(){
 						for(var j in data.message[i]){
 							if(j == 'google_plus'){
 								var sharingCount = parseInt(data.message[i][j]) || 0;
-							}else if(j == 'vkontakte'){
-								var sharingCount = parseInt(data.message[i][j].replace('VK.Share.count(0, ', '').replace(');', ''));
 							}else{
 								var sharingCount = data.message[i][j];
 							}
@@ -603,7 +608,7 @@ function theChampGetSharingCounts(){
 							}
 							totalCount += parseInt(sharingCount);
 							if(sharingCount < 1){ continue; }
-							jQuery(targetElement).html(theChampCalculateCountWidth(sharingCount)).css({'visibility': 'visible', 'display': 'block'});
+							jQuery(targetElement).html(theChampCalculateApproxCount(sharingCount)).css({'visibility': 'visible', 'display': 'block'});
 							
 							if ( ( typeof theChampReduceHorizontalSvgWidth != 'undefined' && jQuery(this).hasClass('the_champ_horizontal_sharing') ) || ( typeof theChampReduceVerticalSvgWidth != 'undefined' && jQuery(this).hasClass('the_champ_vertical_sharing') ) ) {
 								jQuery(targetElement).parents('li').find('.theChampSharingSvg').css('float', 'left');
@@ -615,16 +620,108 @@ function theChampGetSharingCounts(){
 						var totalCountContainer = jQuery(this).find('.theChampTCBackground');
 						jQuery(totalCountContainer).each(function(){
 							var containerHeight = jQuery(this).css('height');
-							jQuery(this).html('<div class="theChampTotalShareCount" style="font-size: '+ (parseInt(containerHeight) * 62/100) +'px">' + theChampCalculateCountWidth(totalCount) + '</div><div class="theChampTotalShareText" style="font-size: '+ (parseInt(containerHeight) * 38/100) +'px">' + (totalCount < 2 ? heateorSsShareText : heateorSsSharesText) + '</div>').css('visibility', 'visible');
+							jQuery(this).html('<div class="theChampTotalShareCount" style="font-size: '+ (parseInt(containerHeight) * 62/100) +'px">' + theChampCalculateApproxCount(totalCount) + '</div><div class="theChampTotalShareText" style="font-size: '+ (parseInt(containerHeight) * 38/100) +'px">' + (totalCount == 0 || totalCount > 1 ? heateorSsSharesText : heateorSsShareText) + '</div>').css('visibility', 'visible');
 						});
 					});
+				}
+				if(heateorSsFacebookTargetUrls.length != 0){
+					theChampFetchFacebookShares(heateorSsFacebookTargetUrls);
 				}
 			}
 		}
 	});
 }
 
-function theChampCalculateCountWidth(sharingCount){
+function theChampFetchFacebookShares(targetUrls){
+	var loopCounter = 0;
+	for(var i in targetUrls){
+		for(var j in targetUrls[i]){
+			loopCounter++;
+			theChampFBShareJSONCall(targetUrls[i][j], loopCounter, targetUrls[0].length*targetUrls.length, targetUrls[0][j]);
+		}
+	}
+}
+
+function theChampFBShareJSONCall(targetUrl, loopCounter, targetUrlsLength, dataHref) {
+	jQuery.getJSON('//graph.facebook.com/?id=' + targetUrl, function(data){
+	    if(data.share && data.share.share_count){
+	    	var sharingContainers = jQuery("div[super-socializer-data-href='"+dataHref+"']");
+
+			jQuery(sharingContainers).each(function(){
+				var targetElement = jQuery(this).find('.the_champ_facebook_count');
+				var facebookBackground = jQuery(this).find('i.theChampFacebookBackground');
+				var sharingCount = parseInt(data.share.share_count);
+
+				if(jQuery(targetElement).attr('ss_st_count') !== undefined){
+					sharingCount += parseInt(jQuery(targetElement).attr('ss_st_count'));
+				}
+				if(jQuery(targetElement).text().trim() == '' || jQuery(targetElement).text().trim() == '&nbsp;'){
+					jQuery(targetElement).html(theChampCalculateApproxCount(sharingCount)).css({'visibility': 'visible', 'display': 'block'});
+					jQuery(facebookBackground).attr('heateor-ss-fb-shares', sharingCount);
+				}else if(typeof jQuery(facebookBackground).attr('heateor-ss-fb-shares') != 'undefined'){
+					var tempShareCount = parseInt(jQuery(facebookBackground).attr('heateor-ss-fb-shares'));
+					jQuery(facebookBackground).attr('heateor-ss-fb-shares', sharingCount + tempShareCount);
+					jQuery(targetElement).html(theChampCalculateApproxCount(sharingCount + tempShareCount));
+				}
+				if ( ( typeof theChampReduceHorizontalSvgWidth != 'undefined' && jQuery(this).hasClass('the_champ_horizontal_sharing') ) || ( typeof theChampReduceVerticalSvgWidth != 'undefined' && jQuery(this).hasClass('the_champ_vertical_sharing') ) ) {
+					jQuery(targetElement).parents('li').find('.theChampSharingSvg').css('float', 'left');
+				}
+				if ( ( typeof theChampReduceHorizontalSvgHeight != 'undefined' && jQuery(this).hasClass('the_champ_horizontal_sharing') ) || ( typeof theChampReduceVerticalSvgHeight != 'undefined' && jQuery(this).hasClass('the_champ_vertical_sharing') ) ) {
+					jQuery(targetElement).parents('li').find('.theChampSharingSvg').css('marginTop', '0');
+				}
+				var totalCountContainer = jQuery(this).find('.theChampTCBackground');
+				jQuery(totalCountContainer).each(function(){
+					var totalShareCountElem = jQuery(this).find('.theChampTotalShareCount');
+					var totalShareCount = jQuery(totalShareCountElem).text();
+					var newTotalCount = theChampCalculateActualCount(totalShareCount) + sharingCount;
+					jQuery(totalShareCountElem).text(theChampCalculateApproxCount(newTotalCount));
+					jQuery(this).find('.theChampTotalShareText').text(newTotalCount == 0 || newTotalCount > 1 ? heateorSsSharesText : heateorSsShareText);
+				});
+			});
+		}
+		
+		if(loopCounter == targetUrlsLength){
+			setTimeout(function(){
+				var facebookShares = {};
+				for(var i in heateorSsFacebookTargetUrls[0]){
+					var sharingContainers = jQuery("div[super-socializer-data-href='"+heateorSsFacebookTargetUrls[0][i]+"']");
+					jQuery(sharingContainers).each(function(){
+						var facebookCountElement = jQuery(this).find('.the_champ_facebook_count');
+						var facebookCountElementBg = jQuery(this).find('i.theChampFacebookBackground');
+						var shareCountString = typeof jQuery(facebookCountElementBg).attr('heateor-ss-fb-shares') != 'undefined' ? jQuery(facebookCountElementBg).attr('heateor-ss-fb-shares').trim() : '';
+						if(shareCountString != ''){
+							var shareCount = parseInt(theChampCalculateActualCount(shareCountString));
+							if(jQuery(facebookCountElement).attr('ss_st_count') !== undefined){
+								var startingCount = parseInt(jQuery(facebookCountElement).attr('ss_st_count').trim());
+								shareCount = Math.abs(shareCount - startingCount);
+							}
+							facebookShares[heateorSsFacebookTargetUrls[0][i]] = shareCount;
+							return;
+						}
+					});
+				}
+				if(!jQuery.isEmptyObject(facebookShares)){
+					theChampSaveFacebookShares(facebookShares);
+				}
+			}, 1000);
+		}
+	});
+}
+
+function theChampSaveFacebookShares(facebookShares){
+	jQuery.ajax({
+		type: 'GET',
+		dataType: 'json',
+		url: theChampSharingAjaxUrl,
+		data: {
+			action: 'the_champ_save_facebook_shares',
+			share_counts: facebookShares,
+		},
+		success: function(data, textStatus, XMLHttpRequest){}
+	});
+}
+
+function theChampCalculateApproxCount(sharingCount){
 	if(sharingCount > 999 && sharingCount < 10000){
 		sharingCount = Math.round(sharingCount/1000) + 'K';
 	}else if(sharingCount > 9999 && sharingCount < 100000){
@@ -635,6 +732,15 @@ function theChampCalculateCountWidth(sharingCount){
 		sharingCount = Math.round(sharingCount/1000000) + 'M';
 	}
 	return sharingCount;
+}
+
+function theChampCalculateActualCount(sharingCount){
+	if(sharingCount.indexOf('K') > 0){
+		sharingCount = parseInt(sharingCount.replace('K', '')) * 1000;
+	}else if(sharingCount.indexOf('M') > 0){
+		sharingCount = parseInt(sharingCount.replace('M', '')) * 1000000;
+	}
+	return parseInt(sharingCount);
 }
 
 function theChampCapitaliseFirstLetter(e) {

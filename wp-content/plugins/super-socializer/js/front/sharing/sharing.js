@@ -1,7 +1,7 @@
 /**
  * Show more sharing services popup
  */
-function theChampMoreSharingPopup(elem, postUrl, postTitle){
+function theChampMoreSharingPopup(elem, postUrl, postTitle, twitterTitle){
 	concate = '</ul></div><div class="footer-panel"><p></p></div></div>';
 	var theChampMoreSharingServices = {
 	  facebook: {
@@ -12,7 +12,7 @@ function theChampMoreSharingPopup(elem, postUrl, postTitle){
 	  twitter: {
 		title: "Twitter",
 		locale: "en-US",
-		redirect_url: "http://twitter.com/intent/tweet?text=" + postTitle + " " + postUrl,
+		redirect_url: "http://twitter.com/intent/tweet?text=" + (twitterTitle ? twitterTitle : postTitle) + " " + postUrl,
 	  },
 	  google: {
 		title: "Google plus",
@@ -202,7 +202,7 @@ function theChampMoreSharingPopup(elem, postUrl, postTitle){
 	  flipboard: {
 		title: "Flipboard",
 		locale: "en-US",
-		redirect_url: "https://share.flipboard.com/flipit/load?v=1.0&url=" + postUrl + "&title=" + postTitle,
+		redirect_url: "https://share.flipboard.com/bookmarklet/popout?v=2&url=" + postUrl + "&title=" + postTitle,
 	  },
 	  mail: {
 		title: "Email",
@@ -355,9 +355,9 @@ function theChampMoreSharingPopup(elem, postUrl, postTitle){
 		redirect_url: "https://mixi.jp/share.pl?mode=login&u=" + postUrl,
 	  },
 	  MySpace: {
-		title: "Mixi",
+		title: "MySpace",
 		locale: "en-US",
-		redirect_url: "https://myspace.com/",
+		redirect_url: "https://myspace.com/post?u=" + encodeURIComponent(postUrl) + "&t=" + postTitle + "&l=3&c=" + postTitle,
 	  },
 	  Netlog: {
 		title: "Netlog",
@@ -505,6 +505,12 @@ function theChampMoreSharingPopup(elem, postUrl, postTitle){
 	}
 }
 
+if(typeof theChampHorizontalSharingCountEnable == 'undefined'){
+	var theChampHorizontalSharingCountEnable = 0;
+}
+if(typeof theChampVerticalSharingCountEnable == 'undefined'){
+	var theChampVerticalSharingCountEnable = 0;
+}
 if(theChampHorizontalSharingCountEnable || theChampVerticalSharingCountEnable){
 	// get sharing counts on window load
 	theChampLoadEvent(
@@ -529,6 +535,8 @@ function theChampFilterSharing(val) {
 		}
 	});
 };
+
+var heateorSsFacebookTargetUrls = [];
 
 /**
  * Get sharing counts
@@ -557,6 +565,9 @@ function theChampGetSharingCounts(){
 		},
 		success: function(data, textStatus, XMLHttpRequest){
 			if(data.status == 1){
+				if(data.facebook){
+					heateorSsFacebookTargetUrls = data.facebook_urls;
+				}
 				for(var i in data.message){
 					var sharingContainers = jQuery("div[super-socializer-data-href='"+i+"']");
 
@@ -565,8 +576,6 @@ function theChampGetSharingCounts(){
 						for(var j in data.message[i]){
 							if(j == 'google_plus'){
 								var sharingCount = parseInt(data.message[i][j]) || 0;
-							}else if(j == 'vkontakte'){
-								var sharingCount = parseInt(data.message[i][j].replace('VK.Share.count(0, ', '').replace(');', ''));
 							}else{
 								var sharingCount = data.message[i][j];
 							}
@@ -578,7 +587,7 @@ function theChampGetSharingCounts(){
 							}
 							totalCount += parseInt(sharingCount);
 							if(sharingCount < 1){ continue; }
-							jQuery(targetElement).html(theChampCalculateCountWidth(sharingCount)).css({'visibility': 'visible', 'display': 'block'});
+							jQuery(targetElement).html(theChampCalculateApproxCount(sharingCount)).css({'visibility': 'visible', 'display': 'block'});
 							
 							if ( ( typeof theChampReduceHorizontalSvgWidth != 'undefined' && jQuery(this).hasClass('the_champ_horizontal_sharing') ) || ( typeof theChampReduceVerticalSvgWidth != 'undefined' && jQuery(this).hasClass('the_champ_vertical_sharing') ) ) {
 								jQuery(targetElement).parents('li').find('.theChampSharingSvg').css('float', 'left');
@@ -590,16 +599,108 @@ function theChampGetSharingCounts(){
 						var totalCountContainer = jQuery(this).find('.theChampTCBackground');
 						jQuery(totalCountContainer).each(function(){
 							var containerHeight = jQuery(this).css('height');
-							jQuery(this).html('<div class="theChampTotalShareCount" style="font-size: '+ (parseInt(containerHeight) * 62/100) +'px">' + theChampCalculateCountWidth(totalCount) + '</div><div class="theChampTotalShareText" style="font-size: '+ (parseInt(containerHeight) * 38/100) +'px">' + (totalCount < 2 ? heateorSsShareText : heateorSsSharesText) + '</div>').css('visibility', 'visible');
+							jQuery(this).html('<div class="theChampTotalShareCount" style="font-size: '+ (parseInt(containerHeight) * 62/100) +'px">' + theChampCalculateApproxCount(totalCount) + '</div><div class="theChampTotalShareText" style="font-size: '+ (parseInt(containerHeight) * 38/100) +'px">' + (totalCount == 0 || totalCount > 1 ? heateorSsSharesText : heateorSsShareText) + '</div>').css('visibility', 'visible');
 						});
 					});
+				}
+				if(heateorSsFacebookTargetUrls.length != 0){
+					theChampFetchFacebookShares(heateorSsFacebookTargetUrls);
 				}
 			}
 		}
 	});
 }
 
-function theChampCalculateCountWidth(sharingCount){
+function theChampFetchFacebookShares(targetUrls){
+	var loopCounter = 0;
+	for(var i in targetUrls){
+		for(var j in targetUrls[i]){
+			loopCounter++;
+			theChampFBShareJSONCall(targetUrls[i][j], loopCounter, targetUrls[0].length*targetUrls.length, targetUrls[0][j]);
+		}
+	}
+}
+
+function theChampFBShareJSONCall(targetUrl, loopCounter, targetUrlsLength, dataHref) {
+	jQuery.getJSON('//graph.facebook.com/?id=' + targetUrl, function(data){
+	    if(data.share && data.share.share_count){
+	    	var sharingContainers = jQuery("div[super-socializer-data-href='"+dataHref+"']");
+
+			jQuery(sharingContainers).each(function(){
+				var targetElement = jQuery(this).find('.the_champ_facebook_count');
+				var facebookBackground = jQuery(this).find('i.theChampFacebookBackground');
+				var sharingCount = parseInt(data.share.share_count);
+
+				if(jQuery(targetElement).attr('ss_st_count') !== undefined){
+					sharingCount += parseInt(jQuery(targetElement).attr('ss_st_count'));
+				}
+				if(jQuery(targetElement).text().trim() == '' || jQuery(targetElement).text().trim() == '&nbsp;'){
+					jQuery(targetElement).html(theChampCalculateApproxCount(sharingCount)).css({'visibility': 'visible', 'display': 'block'});
+					jQuery(facebookBackground).attr('heateor-ss-fb-shares', sharingCount);
+				}else if(typeof jQuery(facebookBackground).attr('heateor-ss-fb-shares') != 'undefined'){
+					var tempShareCount = parseInt(jQuery(facebookBackground).attr('heateor-ss-fb-shares'));
+					jQuery(facebookBackground).attr('heateor-ss-fb-shares', sharingCount + tempShareCount);
+					jQuery(targetElement).html(theChampCalculateApproxCount(sharingCount + tempShareCount));
+				}
+				if ( ( typeof theChampReduceHorizontalSvgWidth != 'undefined' && jQuery(this).hasClass('the_champ_horizontal_sharing') ) || ( typeof theChampReduceVerticalSvgWidth != 'undefined' && jQuery(this).hasClass('the_champ_vertical_sharing') ) ) {
+					jQuery(targetElement).parents('li').find('.theChampSharingSvg').css('float', 'left');
+				}
+				if ( ( typeof theChampReduceHorizontalSvgHeight != 'undefined' && jQuery(this).hasClass('the_champ_horizontal_sharing') ) || ( typeof theChampReduceVerticalSvgHeight != 'undefined' && jQuery(this).hasClass('the_champ_vertical_sharing') ) ) {
+					jQuery(targetElement).parents('li').find('.theChampSharingSvg').css('marginTop', '0');
+				}
+				var totalCountContainer = jQuery(this).find('.theChampTCBackground');
+				jQuery(totalCountContainer).each(function(){
+					var totalShareCountElem = jQuery(this).find('.theChampTotalShareCount');
+					var totalShareCount = jQuery(totalShareCountElem).text();
+					var newTotalCount = theChampCalculateActualCount(totalShareCount) + sharingCount;
+					jQuery(totalShareCountElem).text(theChampCalculateApproxCount(newTotalCount));
+					jQuery(this).find('.theChampTotalShareText').text(newTotalCount == 0 || newTotalCount > 1 ? heateorSsSharesText : heateorSsShareText);
+				});
+			});
+		}
+		
+		if(loopCounter == targetUrlsLength){
+			setTimeout(function(){
+				var facebookShares = {};
+				for(var i in heateorSsFacebookTargetUrls[0]){
+					var sharingContainers = jQuery("div[super-socializer-data-href='"+heateorSsFacebookTargetUrls[0][i]+"']");
+					jQuery(sharingContainers).each(function(){
+						var facebookCountElement = jQuery(this).find('.the_champ_facebook_count');
+						var facebookCountElementBg = jQuery(this).find('i.theChampFacebookBackground');
+						var shareCountString = typeof jQuery(facebookCountElementBg).attr('heateor-ss-fb-shares') != 'undefined' ? jQuery(facebookCountElementBg).attr('heateor-ss-fb-shares').trim() : '';
+						if(shareCountString != ''){
+							var shareCount = parseInt(theChampCalculateActualCount(shareCountString));
+							if(jQuery(facebookCountElement).attr('ss_st_count') !== undefined){
+								var startingCount = parseInt(jQuery(facebookCountElement).attr('ss_st_count').trim());
+								shareCount = Math.abs(shareCount - startingCount);
+							}
+							facebookShares[heateorSsFacebookTargetUrls[0][i]] = shareCount;
+							return;
+						}
+					});
+				}
+				if(!jQuery.isEmptyObject(facebookShares)){
+					theChampSaveFacebookShares(facebookShares);
+				}
+			}, 1000);
+		}
+	});
+}
+
+function theChampSaveFacebookShares(facebookShares){
+	jQuery.ajax({
+		type: 'GET',
+		dataType: 'json',
+		url: theChampSharingAjaxUrl,
+		data: {
+			action: 'the_champ_save_facebook_shares',
+			share_counts: facebookShares,
+		},
+		success: function(data, textStatus, XMLHttpRequest){}
+	});
+}
+
+function theChampCalculateApproxCount(sharingCount){
 	if(sharingCount > 999 && sharingCount < 10000){
 		sharingCount = Math.round(sharingCount/1000) + 'K';
 	}else if(sharingCount > 9999 && sharingCount < 100000){
@@ -610,6 +711,15 @@ function theChampCalculateCountWidth(sharingCount){
 		sharingCount = Math.round(sharingCount/1000000) + 'M';
 	}
 	return sharingCount;
+}
+
+function theChampCalculateActualCount(sharingCount){
+	if(sharingCount.indexOf('K') > 0){
+		sharingCount = parseInt(sharingCount.replace('K', '')) * 1000;
+	}else if(sharingCount.indexOf('M') > 0){
+		sharingCount = parseInt(sharingCount.replace('M', '')) * 1000000;
+	}
+	return parseInt(sharingCount);
 }
 
 function theChampCapitaliseFirstLetter(e) {

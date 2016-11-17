@@ -848,7 +848,7 @@
 								</td>
 								<td>
 									<select name="the_champ_login[xprofile_mapping][<?php echo $field -> name ?>]">
-										<option value="">--Select--</option>
+										<option value="">--<?php _e('Select', 'Super-Socializer') ?>--</option>
 										<?php
 										foreach($profileFields as $key => $val){
 											?>

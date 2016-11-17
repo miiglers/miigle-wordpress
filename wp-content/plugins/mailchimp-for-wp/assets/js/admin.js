@@ -2,7 +2,7 @@
 'use strict';
 
 // dependencies
-var m = require('mithril');
+var m = window.m = require('mithril');
 var EventEmitter = require('wolfy87-eventemitter');
 
 // vars
@@ -12,6 +12,13 @@ var tabs = require ('./admin/tabs.js')(context);
 var helpers = require('./admin/helpers.js');
 var settings = require('./admin/settings.js')(context, helpers, events);
 
+// list fetcher
+var ListFetcher = require('./admin/list-fetcher.js');
+var mount = document.getElementById('mc4wp-list-fetcher');
+if( mount ) {
+    m.mount(mount, new ListFetcher);
+}
+
 // expose some things
 window.mc4wp = window.mc4wp || {};
 window.mc4wp.deps = window.mc4wp.deps || {};
@@ -20,7 +27,7 @@ window.mc4wp.helpers = helpers;
 window.mc4wp.events = events;
 window.mc4wp.settings = settings;
 window.mc4wp.tabs = tabs;
-},{"./admin/helpers.js":2,"./admin/settings.js":3,"./admin/tabs.js":4,"mithril":6,"wolfy87-eventemitter":7}],2:[function(require,module,exports){
+},{"./admin/helpers.js":2,"./admin/list-fetcher.js":3,"./admin/settings.js":4,"./admin/tabs.js":5,"mithril":7,"wolfy87-eventemitter":8}],2:[function(require,module,exports){
 'use strict';
 
 var helpers = {};
@@ -64,6 +71,7 @@ helpers.debounce = function(func, wait, immediate) {
 	};
 };
 
+
 /**
  * Showif.js
  */
@@ -74,19 +82,18 @@ helpers.debounce = function(func, wait, immediate) {
 	Array.prototype.forEach.call( showIfElements, function(element) {
 		var config = JSON.parse( element.getAttribute('data-showif') );
 		var parentElements = document.querySelectorAll('[name="'+ config.element +'"]');
-
 		var inputs = element.querySelectorAll('input,select,textarea:not([readonly])');
 		var hide = config.hide === undefined || config.hide;
 
 		function toggleElement() {
 
-			// do nothing with unchecked elements
-			if( typeof( this.checked ) === "boolean" && ! this.checked ) {
+			// do nothing with unchecked radio inputs
+			if( this.getAttribute('type') === "radio" && ! this.checked ) {
 				return;
 			}
 
-			// check if element value matches expected value
-			var conditionMet = ( this.value == config.value );
+			var value = ( this.getAttribute("type")  === "checkbox" ) ? this.checked : this.value;
+			var conditionMet = ( value == config.value );
 
 			if( hide ) {
 				element.style.display = conditionMet ? '' : 'none';
@@ -97,7 +104,7 @@ helpers.debounce = function(func, wait, immediate) {
 
 			// disable input fields to stop sending their values to server
 			Array.prototype.forEach.call( inputs, function(inputElement) {
-				conditionMet ?  inputElement.removeAttribute('readonly') : inputElement.setAttribute('readonly','readonly');
+				conditionMet ? inputElement.removeAttribute('readonly') : inputElement.setAttribute('readonly','readonly');
 			});
 		}
 
@@ -113,6 +120,71 @@ helpers.debounce = function(func, wait, immediate) {
 
 module.exports = helpers;
 },{}],3:[function(require,module,exports){
+'use strict';
+
+var $ = window.jQuery;
+var config = mc4wp_vars;
+var i18n = config.i18n;
+
+function ListFetcher() {
+    this.working = false;
+    this.done = false;
+
+    // start fetching right away when no lists but api key given
+    if( config.mailchimp.api_connected && config.mailchimp.lists.length == 0 ) {
+        this.fetch();
+    }
+}
+
+ListFetcher.prototype.fetch = function (e) {
+    e && e.preventDefault();
+
+    this.working = true;
+    this.done = false;
+
+    $.post(ajaxurl, {
+        action: "mc4wp_renew_mailchimp_lists"
+    }).done(function(data) {
+        if(data) {
+            window.setTimeout(function() { window.location.reload(); }, 3000 );
+        }
+    }).always(function (data) {
+        this.working = false;
+        this.done = true;
+
+        m.redraw();
+    }.bind(this));
+};
+
+ListFetcher.prototype.view = function () {
+    return m('form', {
+        method: "POST",
+        onsubmit: this.fetch.bind(this)
+    }, [
+        m('p', [
+            m('input', {
+                type: "submit",
+                value: this.working ? i18n.fetching_mailchimp_lists : i18n.renew_mailchimp_lists,
+                className: "button",
+                disabled: !!this.working
+            }),
+            m.trust(' &nbsp; '),
+
+            this.working ? [
+                m('span.mc4wp-loader', "Loading..."),
+                m.trust(' &nbsp; '),
+                m('em.help', i18n.fetching_mailchimp_lists_can_take_a_while)
+            ]: '',
+
+            this.done ? [
+                m( 'em.help.green', i18n.fetching_mailchimp_lists_done )
+            ] : ''
+        ])
+    ]);
+};
+
+module.exports = ListFetcher;
+},{}],4:[function(require,module,exports){
 var Settings = function(context, helpers, events ) {
 	'use strict';
 
@@ -178,15 +250,17 @@ var Settings = function(context, helpers, events ) {
 };
 
 module.exports = Settings;
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
+'use strict';
+
+var URL = require('./url.js');
+
 // Tabs
 var Tabs = function(context) {
-	'use strict';
 
 	// @todo last piece of jQuery... can we get rid of it?
 	var $ = window.jQuery;
 
-	var URL = require('./url.js');
 	var $context = $(context);
 	var $tabs = $context.find('.tab');
 	var $tabNavs = $context.find('.nav-tab');
@@ -351,7 +425,7 @@ var Tabs = function(context) {
 };
 
 module.exports = Tabs;
-},{"./url.js":5}],5:[function(require,module,exports){
+},{"./url.js":6}],6:[function(require,module,exports){
 'use strict';
 
 var URL = {
@@ -382,7 +456,7 @@ var URL = {
 };
 
 module.exports = URL;
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 ;(function (global, factory) { // eslint-disable-line
 	"use strict"
 	/* eslint-disable no-undef */
@@ -2617,7 +2691,7 @@ module.exports = URL;
 	return m
 }); // eslint-disable-line
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 /*!
  * EventEmitter v4.2.11 - git.io/ee
  * Unlicense - http://unlicense.org/

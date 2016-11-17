@@ -25,42 +25,68 @@ class MC4WP_Ninja_Forms_Integration extends MC4WP_Integration {
 	 */
 	public function add_hooks() {
 		add_action( 'init', array( $this, 'register_field' ) );
-		add_action( 'ninja_forms_post_process', array( $this, 'process' ) );
 	}
 
 	public function register_field() {
-
 		$args = array(
 			'name' => __( 'MailChimp', 'ninja-forms' ),
 			'edit_function' => '',
-			'display_function' => array( $this, 'output_checkbox' ),
+			'display_function' => 'ninja_forms_field_checkbox_display',
 			'group' => 'standard_fields',
 			'sidebar' => 'template_fields',
-			'edit_conditional' => false,
-			'edit_options' => array(),
-			'edit_custom_class' => false,
-
-			// TODO: Allow setting a label per Ninja Form
-			'edit_label' => false,
-			'edit_label_pos' => false,
-			'edit_meta' => false,
+            'edit_label'        => true,
+            'edit_label_pos'    => true,
+            'label_pos_options' => array(
+                array('name' => __( 'Left of Element', 'ninja-forms' ), 'value' => 'left'),
+                array('name' => __( 'Above Element', 'ninja-forms' ), 'value' => 'above'),
+                array('name' => __( 'Below Element', 'ninja-forms' ), 'value' => 'below'),
+                array('name' => __( 'Right of Element', 'ninja-forms' ), 'value' => 'right'),
+            ),
 			'edit_placeholder' => false,
-			'edit_req' => false,
+            'edit_req' => true,
+            'edit_custom_class' => true,
+            'edit_help' => true,
+            'edit_desc' => true,
+            'edit_meta' => false,
+            'process' => array( $this, 'process' ),
+            'default_label' => $this->options['label'],
+            'edit_options' => array(
+                array(
+                    'type'    => 'select', //What type of input should this be?
+                    'options' => array(
+                        array(
+                            'name'  => __( 'Unchecked', 'ninja-forms' ),
+                            'value' => 'unchecked',
+                        ),
+                        array(
+                            'name'  => __( 'Checked', 'ninja-forms' ),
+                            'value' => 'checked',
+                        ),
+                    ),
+                    'name' => 'default_value', //What should it be named. This should always be a programmatic name, not a label.
+                    'label' => __( 'Default Value', 'ninja-forms' ),
+                    'class' => 'widefat', //Additional classes to be added to the input element.
+                ),
+            ),
 		);
 
 		ninja_forms_register_field( 'mc4wp-subscribe', $args );
 	}
 
-	/**
+    /**
 	 * Process form submissions
 	 *
+     * @param int $id
+     * @param string $value
+     *
 	 * @return bool|string
 	 */
-	public function process() {
+	public function process( $id, $value ) {
 
-		if( ! $this->triggered() ) {
-			return false;
-		}
+	    // field was not checked
+        if( $value !== 'checked' ) {
+            return false;
+        }
 
 		/**
 		 * @var Ninja_Forms_Processing $ninja_forms_processing
@@ -69,6 +95,7 @@ class MC4WP_Ninja_Forms_Integration extends MC4WP_Integration {
 
 		// generate an array of field label => field value
 		$fields = $ninja_forms_processing->get_all_submitted_fields();
+
 		$pretty = array();
 		foreach( $fields as $field_id => $field_value ) {
 
@@ -87,12 +114,12 @@ class MC4WP_Ninja_Forms_Integration extends MC4WP_Integration {
 
 		// do nothing if no email was found
 		if( empty( $data['EMAIL'] ) ) {
+		    $this->get_log()->warning( sprintf( '%s > Unable to find EMAIL field.', $this->name ) );
 			return false;
 		}
 
-		return $this->subscribe( $data['EMAIL'], $data, $ninja_forms_processing->get_form_ID() );
+		return $this->subscribe( $data, $ninja_forms_processing->get_form_ID() );
 	}
-
 
 
 	/**
@@ -102,11 +129,12 @@ class MC4WP_Ninja_Forms_Integration extends MC4WP_Integration {
 		return function_exists( 'ninja_forms_register_field' );
 	}
 
-	/**
-	 * @return array
-	 */
-	public function get_ui_elements() {
-		return parent::get_ui_elements();
-	}
+    /**
+     * @since 3.0
+     * @return array
+     */
+    public function get_ui_elements() {
+        return array_diff( parent::get_ui_elements(), array( 'enabled', 'implicit', 'precheck', 'css', 'label' ) );
+    }
 
 }

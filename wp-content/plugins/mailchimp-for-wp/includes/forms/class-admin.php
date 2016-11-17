@@ -64,17 +64,20 @@ class MC4WP_Forms_Admin {
 			'checkboxes'    => __( 'Checkboxes', 'mailchimp-for-wp' ),
 			'choices'       => __( 'Choices', 'mailchimp-for-wp' ),
 			'choiceType'    => __( "Choice type", 'mailchimp-for-wp' ),
-			'chooseField'   => __( "Choose a MailChimp field to add to the form", 'mailchimp-for-wp' ),
+			'chooseField'   => __( "Choose a field to add to the form", 'mailchimp-for-wp' ),
 			'close'         => __( 'Close', 'mailchimp-for-wp' ),
 			'country'       => __( 'Country', 'mailchimp-for-wp' ),
 			'dropdown'      => __( 'Dropdown', 'mailchimp-for-wp' ),
 			'fieldLabel'    => __( "Field label", 'mailchimp-for-wp' ),
 			'formAction'    => __( 'Form action', 'mailchimp-for-wp' ),
 			'formActionDescription' => __( 'This field will allow your visitors to choose whether they would like to subscribe or unsubscribe', 'mailchimp-for-wp' ),
-			'forceRequired' => __( 'This field is marked as required in MailChimp.', 'mailchimp-for-wp' ),
+			'formFields'    => __( 'Form fields', 'mailchimp-for-wp' ),
+            'forceRequired' => __( 'This field is marked as required in MailChimp.', 'mailchimp-for-wp' ),
+            'interestCategories'    => __( 'Interest categories', 'mailchimp-for-wp' ),
 			'isFieldRequired' => __( "Is this field required?", 'mailchimp-for-wp' ),
 			'listChoice'    => __( 'List choice', 'mailchimp-for-wp' ),
 			'listChoiceDescription' => __( 'This field will allow your visitors to choose a list to subscribe to.', 'mailchimp-for-wp' ),
+            'listFields'    => __( 'List fields', 'mailchimp-for-wp' ),
 			'min'           => __( 'Min', 'mailchimp-for-wp' ),
 			'max'           => __( 'Max', 'mailchimp-for-wp' ),
 			'noAvailableFields' => __( 'No available fields. Did you select a MailChimp list in the form settings?', 'mailchimp-for-wp' ),
@@ -136,7 +139,13 @@ class MC4WP_Forms_Admin {
 			)
 		);
 
-		update_post_meta( $form_id, '_mc4wp_settings', $form_data['settings'] );
+        // if settings were passed, save those too.
+        if( isset( $form_data['settings'] ) ) {
+            update_post_meta( $form_id, '_mc4wp_settings', $form_data['settings'] );
+        }
+
+        // set default form ID
+        $this->set_default_form_id( $form_id );
 
 		$this->messages->flash( __( "<strong>Success!</strong> Form successfully saved.", 'mailchimp-for-wp' ) );
 		wp_redirect( mc4wp_get_edit_form_url( $form_id ) );
@@ -222,7 +231,7 @@ class MC4WP_Forms_Admin {
 
 		// strip tags from messages
 		foreach( $data['messages'] as $key => $message ) {
-			$data['messages'][$key] = strip_tags( $message, '<strong><b><br><a><script><u><em><i><span>' );
+			$data['messages'][$key] = strip_tags( $message, '<strong><b><br><a><script><u><em><i><span><img>' );
 		}
 
 		// make sure lists is an array
@@ -239,6 +248,7 @@ class MC4WP_Forms_Admin {
 		 * @param array $raw_data Raw array of form data.
 		 *
 		 * @since 3.0.8
+         * @ignore
 		 */
 		$data = (array) apply_filters( 'mc4wp_form_sanitized_data', $data, $raw_data );
 
@@ -257,17 +267,23 @@ class MC4WP_Forms_Admin {
 		$form_data['ID'] = $form_id;
 
 		$this->save_form( $form_data );
-
-		// update default form id?
-		$default_form_id = (int) get_option( 'mc4wp_default_form_id', 0 );
-		if( empty( $default_form_id ) ) {
-			update_option( 'mc4wp_default_form_id', $form_id );
-		}
+		$this->set_default_form_id( $form_id );
 
 		$previewer = new MC4WP_Form_Previewer( $form_id );
 
 		$this->messages->flash( __( "<strong>Success!</strong> Form successfully saved.", 'mailchimp-for-wp' ) . sprintf( ' <a href="%s">', $previewer->get_preview_url() ) . __( 'Preview form', 'mailchimp-for-wp' ) . '</a>' );
 	}
+
+    /**
+     * @param int $form_id
+     */
+	private function set_default_form_id( $form_id ) {
+        $default_form_id = (int) get_option( 'mc4wp_default_form_id', 0 );
+
+        if( empty( $default_form_id ) ) {
+            update_option( 'mc4wp_default_form_id', $form_id );
+        }
+    }
 
 	/**
 	 * Goes through each form and aggregates array of stylesheet slugs to load.

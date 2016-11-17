@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) or exit;
  *
  * @param array $opts
  */
-function __mc4wp_usage_tracking_setting( $opts ) {
+function _mc4wp_usage_tracking_setting( $opts ) {
 	?>
 	<div class="medium-margin">
 	<h3><?php _e( 'Usage Tracking', 'mailchimp-for-wp' ); ?></h3>
@@ -28,7 +28,7 @@ function __mc4wp_usage_tracking_setting( $opts ) {
 	<?php
 }
 
-add_action( 'mc4wp_admin_other_settings', '__mc4wp_usage_tracking_setting', 70 );
+add_action( 'mc4wp_admin_other_settings', '_mc4wp_usage_tracking_setting', 70 );
 ?>
 <div id="mc4wp-admin" class="wrap mc4wp-settings">
 
@@ -76,7 +76,7 @@ add_action( 'mc4wp_admin_other_settings', '__mc4wp_usage_tracking_setting', 70 )
 			<div class="medium-margin">
 
 				<style scoped type="text/css">
-					#debug-log { font-family: monaco, monospace, courier, 'courier new', 'Bitstream Vera Sans Mono'; font-size: 13px; line-height: 140%; min-height: 100px; max-height: 300px; padding: 6px; border:1px solid #ccc; background: #262626; color: white; overflow-y: scroll; }
+					#debug-log { font-family: monaco, monospace, courier, 'courier new', 'Bitstream Vera Sans Mono'; font-size: 13px; resize: vertical; line-height: 140%; height: 200px; padding: 6px; border:1px solid #ccc; background: #262626; color: white; overflow-y: scroll; }
 					#debug-log .time { color: rgb(181, 137, 0); }
 					#debug-log .level { color: #35AECD; }
 					#debug-log .debug-log-empty { color: #ccc; font-style: italic; }
