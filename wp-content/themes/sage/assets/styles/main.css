@@ -7,10 +7,11 @@
 
 body {
   padding-top: 70px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "brandon-grotesque",sans-serif;
   color: #777;
   font-weight: 300;
 	background: #f9f9fa;
+	font-size: 17px;
 }
 .btn-primary,
 form.comment-form input#submit {
@@ -86,17 +87,21 @@ form.comment-form input#submit {
   
 }
 h1 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "brandon-grotesque",sans-serif;
   color: #2a404d;
   font-weight: bold;
   font-size: 28px;
 }
 h2, h3, h4 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "brandon-grotesque",sans-serif;
   color: #333;
 }
 h5 {
-  font-size: 15px;
+  font-size: 20px;
+}
+p {
+	font-size:17px;
+	font-weight:300;
 }
 a {
   color: #55b7b8;
@@ -1107,7 +1112,7 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
 #template-login section#signup input,
 #template-signup section#signup textarea,
 #template-signup section#signup input {
-	font-family: 'Open Sans', sans-serif;
+	font-family: "brandon-grotesque",sans-serif;
 	font-weight:700;
 	font-size: 13px;
 	line-height: 1.4;
@@ -1148,7 +1153,7 @@ ul.the_champ_login_ul li ss.theChampTwitterLoginSvg:before {
 #social-login .o-r {
 	width: 35px;
 	height: 34px;
-	font-family: OpenSans;
+	font-family: "brandon-grotesque",sans-serif;
 	font-size: 25px !important;
 	color: #9b9b9b;
 }
@@ -1249,7 +1254,7 @@ body.page-template-template-product_post section.page-splash {
 #template-product_post section#product_post textarea,
 #template-product_post section#product_post input,
 #template-product_post section#product_post select {
-	font-family: 'Open Sans', sans-serif;
+	font-family: "brandon-grotesque",sans-serif;
 	font-size: 13px;
 	line-height: 1.4;
 	color: #999999;
@@ -2183,6 +2188,7 @@ form.comment-form label {
 #template-brand_directory #mainCol h2 {
 	font-size:25px;
 	color:#55b8b8;
+	font-weight: bold;
 }
 #template-brand_directory #mainCol .brand-btn button.btn.btn-default {
 	background-color: white;
