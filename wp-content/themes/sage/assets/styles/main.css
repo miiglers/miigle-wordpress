@@ -2134,6 +2134,8 @@ form.comment-form label {
 |  template-brand_directory.php
 |
 **********************************************************/
+#template-brand_directory {padding-top: 60px;background-color: white;}
+
 #template-brand_directory .mT {margin-top:60px;}
 #template-brand_directory .msT {margin-top:30px;}
 #template-brand_directory .mB {margin-bottom:60px;}
@@ -2147,6 +2149,8 @@ form.comment-form label {
 	top: 0;
 	left: 0;
 }
+
+#template-brand_directory hr {border-top: 1px solid #d7e7e4;}
 
 #template-brand_directory .banner.lg {
 	width:100%;
@@ -2182,7 +2186,7 @@ form.comment-form label {
 }
 #template-brand_directory #mainCol .brand-btn button.btn.btn-default {
 	background-color: white;
-	border-color: #c1cace;
+	border-color: #d7e7e4;
 	color: #c1cace;
 	font-weight:bold;
 	text-transform: uppercase;
@@ -2192,7 +2196,7 @@ form.comment-form label {
 #template-brand_directory #mainCol .brand-btn button.btn.btn-default:focus,
 #template-brand_directory #mainCol .brand-btn button.btn.btn-default.active {
 	background-color: #d7e7e4;
-	border-color: #c1cace;
+	border-color: #d7e7e4;
 	color: #55b8b8;
 	box-shadow: none;
 }
@@ -2218,11 +2222,29 @@ form.comment-form label {
 #template-brand_directory .mask.shoes {background-color: rgba(128, 195, 117, 0.8);border-radius: 3px;}
 #template-brand_directory .mask.health {background-color: rgba(199, 45, 26, 0.7);border-radius: 3px;}
 
+
 /* 
 | brand - side
 */
-#template-brand_directory #sideCol {
+#template-brand_directory #sideCol .widgetBox {
+	border-bottom: 1px solid #d7e7e4;
+	padding-bottom:60px;
+	margin-bottom:60px;
+}
 
+/* 
+| brand - divider ONLY Desktop
+*/
+@media (min-width: 1200px) {
+	#template-brand_directory #mainCol.divider {
+		border-right: 1px solid #d7e7e4;
+	}
+	#template-brand_directory #mainCol.divider {
+		padding-right:60px;
+	}
+	#template-brand_directory #sideCol.divider {
+		padding-left:60px;
+	}
 }
 
 /* 
