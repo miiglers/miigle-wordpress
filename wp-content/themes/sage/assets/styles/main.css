@@ -2297,6 +2297,12 @@ form.comment-form label {
 	margin-bottom:60px;
 }
 
+@media (max-width: 780px) {
+	#template-brand_directory .text-sm-center {
+		text-align:center;
+	}
+}
+
 /* 
 | brand - divider ONLY Desktop
 */
@@ -2349,7 +2355,7 @@ form.comment-form label {
 
 #template-brand_detail .carousel .carousel-control {
 	background-image:none;
-	width: 50px;
+	width: 15px;
 	font-size: 50px;
 	color: #c1cace;
 	text-shadow: none;
@@ -2360,12 +2366,25 @@ form.comment-form label {
 	color: #55b8b8;
 }
 #template-brand_detail .carousel .left.carousel-control {
-	left: -50px;
 	text-align: left;
 }
 #template-brand_detail .carousel .right.carousel-control {
-	right: -50px;
 	text-align: right;
+}
+
+@media (min-width: 780px) {
+	#template-brand_detail .carousel .left.carousel-control {
+		left: -3%;
+	}
+	#template-brand_detail .carousel .right.carousel-control {
+		right: -3%;
+	}
+}
+
+#template-brand_detail .borderB {
+	border-bottom: 1px solid #d7e7e4;
+	padding-bottom: 30px;
+	margin-bottom: 30px;
 }
 #template-brand_detail .badge {background:none;}
 #template-brand_detail .badge img {width:18px;}
@@ -2376,6 +2395,19 @@ form.comment-form label {
 		align-items: center;
 		justify-content: center;
   }
+}
+@media (max-width: 480px) {
+	#template-brand_detail .card p {
+		font-size: 24px;
+	}
+}
+@media (max-width: 780px) {
+	#template-brand_detail .text-sm-center {
+		text-align:center;
+	}
+	#template-brand_detail .card {
+		margin-bottom:20px;
+	}
 }
 
 /*********************************************************

@@ -14,10 +14,14 @@ $user = wp_get_current_user();
 				
 				<!-- main section-->
 				<div id="mainCol" class="col-lg-8 divider">
-        	<?php the_field('page_heading'); ?>        	
+        	<div class="text-sm-center">
+        		<?php the_field('page_heading'); ?>
+        	</div>       	
 					
 					<div class="browseWrapper mT">
-						<?php the_field('browse_heading'); ?>
+						<div class="text-sm-center">
+							<?php the_field('browse_heading'); ?>
+						</div>
 						
 						<div class="btn-group btn-group-justified msT brand-btn" role="group" aria-label="brand-filter">
 							<div class="btn-group" role="group">
@@ -136,7 +140,7 @@ $user = wp_get_current_user();
 				<!-- side section-->
 				<div id="sideCol" class="col-lg-4 divider">
           
-          <div class="widgetBox">
+          <div class="widgetBox text-sm-center">
 						<?php the_field('social_widget_content'); ?>	         	
 						<br>
 						<p><a href="#" class="btn btn-default btn-cta">EMAIL THIS PAGE</a></p>
@@ -145,7 +149,7 @@ $user = wp_get_current_user();
 						<p><a href="#" class="btn btn-default btn-cta">BOOKMARK THIS PAGE</a></p>
 					</div>
 					
-					<div class="widgetBox">
+					<div class="widgetBox text-sm-center">
 						<?php the_field('newsletter_form_widget_content'); ?>
 						<br>
 						<div class="input-group form-cta">
