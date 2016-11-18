@@ -121,11 +121,11 @@ $user = wp_get_current_user();
 						<!--/carousel-inner-->
 						<a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
 						<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
-					</div><!--/#myCarousel for Desktop -->
+					</div><!--/#myCarousel -->
        	</div>
       </div>
     </div>
-   </section>   
+   </section><!-- /#brand_scroll for Desktop -->   
    
    <section id="brand_detail"> 
    	<div class="container"> 
@@ -248,6 +248,6 @@ $user = wp_get_current_user();
 				</div>
 			</div>
     </div>
-  </section>
+  </section><!-- /#brand_list for Mobile/Tablet -->
      
 </div>
