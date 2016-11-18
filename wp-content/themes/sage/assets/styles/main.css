@@ -2148,6 +2148,7 @@ form.comment-form label {
   border-color:#f5f6f6;
   padding: 10px 30px;
   font-weight:bold;
+  text-transform:uppercase;
 }
 .btn.btn-default.btn-cta:hover,
 .btn.btn-default.btn-cta:focus {
@@ -2177,20 +2178,15 @@ form.comment-form label {
 	background-color: transparent;
   border-color: transparent;
   font-weight:bold;
+  padding: 6px 20px;
 }
-.form-cta .btn-default:hover {
+.form-cta .btn-default:hover,
+.form-cta .btn-default:focus {
 	background-color: #55b8b8;
-  color:#fff;
+  color:white;
 }
 
-#template-brand_directory {padding-top: 60px;background-color: white;padding-bottom: 75px;margin-bottom: -75px;}
-
-#template-brand_directory .mT {margin-top:60px;}
-#template-brand_directory .msT {margin-top:30px;}
-#template-brand_directory .mB {margin-bottom:60px;}
-#template-brand_directory .msB {margin-bottom:30px;}
-
-#template-brand_directory .mask {
+.mask {
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -2198,6 +2194,27 @@ form.comment-form label {
 	top: 0;
 	left: 0;
 }
+.mask.accessories {background-color: rgba(157, 100, 125, 0.7);border-radius: 3px;}
+.mask.beauty {background-color: rgba(232, 189, 183, 0.8);border-radius: 3px;}
+.mask.electronics {background-color: rgba(194, 94, 51, 0.7);border-radius: 3px;}
+.mask.gifts {background-color: rgba(79, 198, 150, 0.7);border-radius: 3px;}
+.mask.kids {background-color: rgba(126, 180, 199, 0.8);border-radius: 3px;}
+.mask.clothings {background-color: rgba(233, 158, 74, 0.8);border-radius: 3px;}
+.mask.foods {background-color: rgba(130, 90, 170, 0.8);border-radius: 3px;}
+.mask.shoes {background-color: rgba(27, 69, 115, 0.8);border-radius: 3px;}
+.mask.health {background-color: rgba(199, 45, 26, 0.7);border-radius: 3px;}
+.mask.jewlery {background-color: rgba(193, 107, 56, 0.7);border-radius: 3px;}
+.mask.pets {background-color: rgba(95, 66, 55, 0.7);border-radius: 3px;}
+.mask.home {background-color: rgba(158, 131, 83, 0.8);border-radius: 3px;}
+.card:hover .mask,
+.card:focus .mask {opacity:0.5;}
+
+#template-brand_directory {padding-top: 60px;background-color: white;padding-bottom: 75px;margin-bottom: -75px;}
+
+#template-brand_directory .mT {margin-top:60px;}
+#template-brand_directory .msT {margin-top:30px;}
+#template-brand_directory .mB {margin-bottom:60px;}
+#template-brand_directory .msB {margin-bottom:30px;}
 
 #template-brand_directory hr {border-top: 1px solid #d7e7e4;}
 
@@ -2268,20 +2285,6 @@ form.comment-form label {
   color:#fff;
   z-index:100;
 }
-#template-brand_directory .mask.accessories {background-color: rgba(157, 100, 125, 0.7);border-radius: 3px;}
-#template-brand_directory .mask.beauty {background-color: rgba(232, 189, 183, 0.8);border-radius: 3px;}
-#template-brand_directory .mask.electronics {background-color: rgba(194, 94, 51, 0.7);border-radius: 3px;}
-#template-brand_directory .mask.gifts {background-color: rgba(79, 198, 150, 0.7);border-radius: 3px;}
-#template-brand_directory .mask.kids {background-color: rgba(126, 180, 199, 0.8);border-radius: 3px;}
-#template-brand_directory .mask.clothings {background-color: rgba(233, 158, 74, 0.8);border-radius: 3px;}
-#template-brand_directory .mask.foods {background-color: rgba(130, 90, 170, 0.8);border-radius: 3px;}
-#template-brand_directory .mask.shoes {background-color: rgba(27, 69, 115, 0.8);border-radius: 3px;}
-#template-brand_directory .mask.health {background-color: rgba(199, 45, 26, 0.7);border-radius: 3px;}
-#template-brand_directory .mask.jewlery {background-color: rgba(193, 107, 56, 0.7);border-radius: 3px;}
-#template-brand_directory .mask.pets {background-color: rgba(95, 66, 55, 0.7);border-radius: 3px;}
-#template-brand_directory .mask.home {background-color: rgba(158, 131, 83, 0.8);border-radius: 3px;}
-#template-brand_directory .card:hover .mask,
-#template-brand_directory .card:focus .mask {opacity:0.5;}
 
 #template-brand_directory #mainCol .banner-section {margin-bottom:20px;}
 
@@ -2307,6 +2310,72 @@ form.comment-form label {
 	#template-brand_directory #sideCol.divider {
 		padding-left:60px;
 	}
+}
+
+/*********************************************************
+|
+|  template-brand_detail.php
+|
+**********************************************************/
+#template-brand_detail {padding-top: 60px;background-color: white;padding-bottom: 75px;margin-bottom: -75px;}
+
+#template-brand_detail .mT {margin-top:60px;}
+#template-brand_detail .msT {margin-top:30px;}
+#template-brand_detail .mB {margin-bottom:60px;}
+#template-brand_detail .msB {margin-bottom:30px;}
+
+#template-brand_detail .card {
+	position:relative;
+	height:100px;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  box-shadow: 0 10px 20px 0 rgba(226, 191, 185, 0.5);
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+#template-brand_detail .card p {
+	font-size: 30px;
+  color:#fff;
+  z-index:100;
+}
+#template-brand_detail h1 {
+	color: #55b8b8;
+	text-transform:uppercase;
+}
+#template-brand_detail section#brand_detail h3 {margin-top:0;}
+
+#template-brand_detail .carousel .carousel-control {
+	background-image:none;
+	width: 50px;
+	font-size: 50px;
+	color: #c1cace;
+	text-shadow: none;
+	opacity:1;
+}
+#template-brand_detail .carousel .carousel-control:hover,
+#template-brand_detail .carousel .carousel-control:focus {
+	color: #55b8b8;
+}
+#template-brand_detail .carousel .left.carousel-control {
+	left: -50px;
+	text-align: left;
+}
+#template-brand_detail .carousel .right.carousel-control {
+	right: -50px;
+	text-align: right;
+}
+#template-brand_detail .badge {background:none;}
+#template-brand_detail .badge img {width:18px;}
+
+@media (min-width: 780px) {
+	#template-brand_detail .flexRow {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+  }
 }
 
 /*********************************************************

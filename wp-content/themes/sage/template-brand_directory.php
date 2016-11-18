@@ -159,22 +159,18 @@ $user = wp_get_current_user();
 				</div>
 				<!-- /. side section-->
 			
-			</div>
-			
-				<hr>
-				
-			<div class="row">
-				
-				<!-- cta section-->
-				<div id="cta" class="col-sm-10 col-sm-offset-1 text-center">
-        	<?php the_field('cta_section_content'); ?>        						
-				</div>
-				<!-- /. cta section-->
-				
-			</div>
-		
+			</div>			
+				<hr>		
 		</div>
   </section>
   
-   
+  <section id="cta">
+  	<div class="container">
+  		<div class="row">				
+				<div class="col-sm-10 col-sm-offset-1 text-center">
+        	<?php the_field('cta_section_content'); ?>        						
+				</div>
+			</div>
+  	</div>
+  </section>
 </div>
