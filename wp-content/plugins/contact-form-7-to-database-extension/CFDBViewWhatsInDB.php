@@ -218,7 +218,7 @@ class CFDBViewWhatsInDB extends CFDBView {
                         }
                     }
                     function uploadGoogleSS() {
-                        var key = '3fde789a';
+                        var key = '95ab43fde789a49f8e563cc1';
                         var guser = printHex(des(key, jQuery('#guser').attr('value'), 1));
                         var gpwd = printHex(des(key, jQuery('#gpwd').attr('value'), 1));
                         jQuery("#GoogleCredentialsDialog").dialog('close');
@@ -229,6 +229,11 @@ class CFDBViewWhatsInDB extends CFDBView {
                         if (searchVal != null && searchVal != "") {
                             url += '&search=' + encodeURI(searchVal);
                         }
+                        var checkedValues = [];
+                        jQuery('input[id^="delete_"]:checked').each(function() {
+                            checkedValues.push(this.name);
+                        });
+                        checkedValues = checkedValues.join(',');
                         if (checkedValues) {
                             url += "&filter=submit_time[in]" + checkedValues;
                         }
