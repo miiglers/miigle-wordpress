@@ -3,8 +3,8 @@ Contributors: shinephp
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=vladimir%40shinephp%2ecom&lc=RU&item_name=ShinePHP%2ecom&item_number=User%20Role%20Editor%20WordPress%20plugin&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 Tags: user, role, editor, security, access, permission, capability
 Requires at least: 4.0
-Tested up to: 4.6
-Stable tag: 4.26.3
+Tested up to: 4.6.1
+Stable tag: 4.29
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,8 +23,6 @@ Multi-site support is provided.
 
 To read more about 'User Role Editor' visit [this page](http://www.shinephp.com/user-role-editor-wordpress-plugin/) at [shinephp.com](http://shinephp.com)
 
-Short demo about 1st steps with User Role Editor:
-https://www.youtube.com/watch?v=UmMtOmWGGxY
 
 Do you need more functionality with quality support in the real time? Do you wish to remove advertisements from User Role Editor pages? 
 [Buy Pro version](https://www.role-editor.com). 
@@ -77,6 +75,35 @@ If you wish to check available translations or help with plugin translation to y
 https://translate.wordpress.org/projects/wp-plugins/user-role-editor/
 
 == Changelog ==
+= [4.29] 10.11.2016 =
+* New: User Role Editor own user capabilities are grouped separately under Custom capabilities.
+* Update: URE_Lib::is_super_admin() uses WordPress core is_super_admin() for multisite setup only. Superadmin is a user with 'administrator' role in the case of single site WordPress installation.  
+  This is the difference with the WordPress core which counts as a superadmin (for single site WP installation) any user with a 'delete_users' capability.
+* Update: BaseLib::option_selected() calls were replaced with the calls of a similar selected() function from WordPress core.
+
+= [4.28] 20.10.2016 =
+* New: WooCommerce plugin user capabilities (if exist) are grouped separately under Custom capabilities.
+* Update: Temporally raised permissions flag is taken into account when checking, if user has a superadmin privileges. WordPress is_super_admin() function was replaced with custom wrapper to define if current user is a real superadmin or just a local admin with the temporally raised (add/edit users pages) permissions.
+
+= [4.27.2] 15.09.2016 =
+* Update: There was a conflict with plugins which use a '|' character at the custom user capabilities: e.g. 'Nginx Helper | Config' from "Nginx Helper' plugin.
+* Fix: PHP notice was removed: Undefined property: URE_Role_View::$multisite in wp-content/plugins/user-role-editor/includes/classes/view.php on line 143
+* Fix: WordPress multisite: Settings link under the URE plugin at the plugins list leads to the network admin now, not to the the single site settings page, which does not exist.
+* Fix: WordPress multisite: conflict with "Visual Composer" plugin was resolved: single site administrators could now use Visual Composer editor.
+* Fix: WordPress multisite: changed role name was not replicated to other sites when user clicked "Update" with "Apply to All Sites" option turned ON.
+
+= [4.27.1] 22.08.2016 =
+* Update: There was a conflict with plugins which use a '/' character at the custom user capabilities: e.g. vc_access_rules_backend_editor/disabled_ce_editor from Visual Composer.
+* Update: add/delete, escape, validate user capability code extracted from URE_Lib to the separate URE_Capability class
+
+= [4.27] 18.08.2016 =
+* New: Total/Granted counters were added to the capabilities groups titles.
+* New: "Columns" drop-down menu allows to change capabilities section layout to 1, 2 or 3 columns.
+* New: Capabilities section is limited in height and has independent scrollbar.
+* Update: User Role Editor page markup was updated to use more available space on page.
+* Update: URE_Ajax_Processor class allows to differentiate required user permissions according to action submitted by user.
+* Fix: CSS updated to exclude text overlapping at capabilities groups section when custom post type name is not fitted into 1 line.
+* Fix: required JavaScript files were not loaded at "Network Admin->Settings->User Role Editor" page.
 
 = [4.26.3] 25.07.2016 =
 * Fix: Selecting a sub-group/list of caps does make the ure_select_all_caps checkbox select all within that group, but checking that box when at the "All" top-level group did not work.

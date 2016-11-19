@@ -20,6 +20,9 @@ class WPSEO_Sitemap_Image_Parser {
 	/** @var array $attachments Cached set of attachments for multiple posts. */
 	protected $attachments = array();
 
+	/** @var string $charset Holds blog charset value for use in DOM parsing.  */
+	protected $charset = 'UTF-8';
+
 	/**
 	 * Set up URL properties for reuse.
 	 */
@@ -35,6 +38,8 @@ class WPSEO_Sitemap_Image_Parser {
 		if ( ! empty( $parsed_home['scheme'] ) ) {
 			$this->scheme = $parsed_home['scheme'];
 		}
+
+		$this->charset = esc_attr( get_bloginfo( 'charset' ) );
 	}
 
 	/**
@@ -82,6 +87,13 @@ class WPSEO_Sitemap_Image_Parser {
 			$alt      = get_post_meta( $post->ID, '_wp_attachment_image_alt', true );
 
 			$images[] = $this->get_image_item( $post, $src, $post->post_title, $alt );
+		}
+
+		foreach ( $images as $key => $image ) {
+
+			if ( empty( $image['src'] ) ) {
+				unset( $images[ $key ] );
+			}
 		}
 
 		/**
@@ -139,7 +151,7 @@ class WPSEO_Sitemap_Image_Parser {
 		libxml_use_internal_errors( true );
 
 		$post_dom = new DOMDocument();
-		$post_dom->loadHTML( $content );
+		$post_dom->loadHTML( '<?xml encoding="'. $this->charset .'">' . $content );
 
 		// Clear the errors, so they don't get kept in memory.
 		libxml_clear_errors();
@@ -381,6 +393,10 @@ class WPSEO_Sitemap_Image_Parser {
 	 * @return string
 	 */
 	protected function get_absolute_url( $src ) {
+
+		if ( empty( $src ) || ! is_string( $src ) ) {
+			return $src;
+		}
 
 		if ( WPSEO_Utils::is_url_relative( $src ) === true ) {
 
