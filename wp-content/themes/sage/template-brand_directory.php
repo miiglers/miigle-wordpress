@@ -2,8 +2,11 @@
 /**
  * Template Name: Brand Directory
  */
- 
-$user = wp_get_current_user();
+
+//use Miigle\Models\User;
+//use Miigle\Models\Brand;
+
+//$mgl_current_user = User\current();
 ?>
 
 <div id="template-brand_directory">
@@ -15,12 +18,12 @@ $user = wp_get_current_user();
 				<!-- main section-->
 				<div id="mainCol" class="col-lg-8 divider">
         	<div class="text-sm-center">
-        		<?php the_field('page_heading'); ?>
+        		<?php the_field('bd_page_heading'); ?>
         	</div>       	
 					
 					<div class="browseWrapper mT">
 						<div class="text-sm-center">
-							<?php the_field('browse_heading'); ?>
+							<?php the_field('bd_browse_heading'); ?>
 						</div>
 						
 						<div class="btn-group btn-group-justified msT brand-btn" role="group" aria-label="brand-filter">
@@ -141,7 +144,7 @@ $user = wp_get_current_user();
 				<div id="sideCol" class="col-lg-4 divider">
           
           <div class="widgetBox text-sm-center">
-						<?php the_field('social_widget_content'); ?>	         	
+						<?php the_field('bd_social_widget_content'); ?>	         	
 						<br>
 						<p><a href="#" class="btn btn-default btn-cta">EMAIL THIS PAGE</a></p>
 						<p><a href="#" class="btn btn-default btn-cta">TWEET THIS PAGE</a></p>
@@ -150,7 +153,7 @@ $user = wp_get_current_user();
 					</div>
 					
 					<div class="widgetBox text-sm-center">
-						<?php the_field('newsletter_form_widget_content'); ?>
+						<?php the_field('bd_newsletter_form_widget_content'); ?>
 						<br>
 						<div class="input-group form-cta">
 							<input type="text" class="form-control" placeholder="Enter your email">
@@ -172,7 +175,7 @@ $user = wp_get_current_user();
   	<div class="container">
   		<div class="row">				
 				<div class="col-sm-10 col-sm-offset-1 text-center">
-        	<?php the_field('cta_section_content'); ?>        						
+        	<?php the_field('bd_cta_section_content'); ?>        						
 				</div>
 			</div>
   	</div>
