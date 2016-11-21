@@ -52,7 +52,7 @@ class User_Role_Editor {
         register_deactivation_hook(URE_PLUGIN_FULL_PATH, array($this, 'cleanup'));
         		
         // Who can use this plugin
-        $this->key_capability = $this->lib->get_key_capability();
+        $this->key_capability = URE_Own_Capabilities::get_key_capability();
                 
         // Process URE's internal tasks queue
         $task_queue = URE_Task_Queue::get_instance();
@@ -311,7 +311,7 @@ class User_Role_Editor {
         if ($current_user->ID===0) {
             return;
         }
-        if (is_super_admin()) { // Superadmin may do all
+        if ($this->lib->is_super_admin()) { // Superadmin may do all
             return;
         }
                         
@@ -324,8 +324,8 @@ class User_Role_Editor {
             return;
         }
         
-        // editing a user profile
-        if (!is_super_admin($current_user->ID) && is_super_admin($profileuser->ID)) { // trying to edit a superadmin while himself is less than a superadmin
+        // editing a user profile: it's correct to call is_super_admin() directly here, as permissions are raised for the $current_user only
+        if (!$this->lib->is_super_admin($current_user->ID) && is_super_admin($profileuser->ID)) { // trying to edit a superadmin while himself is less than a superadmin
             wp_die(esc_html__('You do not have permission to edit this user.', 'user-role-editor'));
         } elseif (!( is_user_member_of_blog($profileuser->ID, get_current_blog_id()) && is_user_member_of_blog($current_user->ID, get_current_blog_id()) )) { // editing user and edited user aren't members of the same blog
             wp_die(esc_html__('You do not have permission to edit this user.', 'user-role-editor'));
@@ -405,7 +405,7 @@ class User_Role_Editor {
         $multisite = $this->lib->get('multisite');
         // if multi-site, then allow plugin activation for network superadmins and, if that's specially defined, - for single site administrators too    
         if ($multisite) {
-            if (is_super_admin() || $this->lib->user_is_admin()) {
+            if ($this->lib->is_super_admin() || $this->lib->user_is_admin()) {
                 return $plugins;
             }
         } else {
@@ -444,8 +444,22 @@ class User_Role_Editor {
      * @return array
      */
     public function plugin_action_links($links) {
-
-        $settings_link = "<a href='options-general.php?page=settings-" . URE_PLUGIN_FILE . "'>" . esc_html__('Settings', 'user-role-editor') . "</a>";
+        $single_site_settings_link = '<a href="options-general.php?page=settings-' . URE_PLUGIN_FILE . '">' . esc_html__('Settings', 'user-role-editor') .'</a>';
+        $multisite = $this->lib->get('multisite');        
+        if (!$multisite ) {
+            $settings_link = $single_site_settings_link;
+        } else {
+            $ure = basename(URE_PLUGIN_DIR) . '/' . URE_PLUGIN_FILE;
+            $active_for_network = is_plugin_active_for_network($ure);
+            if (!$active_for_network) {
+                $settings_link = $single_site_settings_link;
+            } else {
+                if (!current_user_can('manage_network_plugins')) {
+                    return $links;
+                }
+                $settings_link = '<a href="'. network_admin_url() .'settings.php?page=settings-'. URE_PLUGIN_FILE .'">'. esc_html__('Settings', 'user-role-editor') .'</a>';
+            }
+        }
         array_unshift($links, $settings_link);
 
         return $links;
@@ -522,7 +536,7 @@ class User_Role_Editor {
         $multisite = $this->lib->get('multisite');
         $active_for_network = $this->lib->get('active_for_network');
         if ( !$multisite || ($multisite && !$active_for_network) ) {
-            $settings_capability = $this->lib->get_settings_capability();
+            $settings_capability = URE_Own_Capabilities::get_settings_capability();
             $this->settings_page_hook = add_options_page(
                     $translated_title,
                     $translated_title,
@@ -671,7 +685,7 @@ class User_Role_Editor {
     
 
     public function settings() {
-        $settings_capability = $this->lib->get_settings_capability();
+        $settings_capability = URE_Own_Capabilities::get_settings_capability();
         if (!current_user_can($settings_capability)) {
             wp_die(esc_html__( 'You do not have sufficient permissions to manage options for User Role Editor.', 'user-role-editor' ));
         }
@@ -762,7 +776,7 @@ class User_Role_Editor {
     function setup() {
 
         $this->lib->make_roles_backup();
-        $this->lib->init_ure_caps();
+        URE_Own_Capabilities::init_caps();
         
         $task_queue = URE_Task_Queue::get_instance();
         $task_queue->add('on_activation');
@@ -778,7 +792,6 @@ class User_Role_Editor {
         
         wp_enqueue_script('jquery-ui-dialog', false, array('jquery-ui-core', 'jquery-ui-button', 'jquery'));
         wp_enqueue_script('jquery-ui-selectable', false, array('jquery-ui-core', 'jquery'));
-        wp_enqueue_script('jquery-ui-tabs', false, array('jquery-ui-core', 'jquery'));
         wp_register_script('ure-js', plugins_url('/js/ure-js.js', URE_PLUGIN_FULL_PATH));
         wp_enqueue_script('ure-js');
         wp_localize_script('ure-js', 'ure_data', array(
@@ -829,6 +842,7 @@ class User_Role_Editor {
     protected function load_settings_js() {
     
         wp_enqueue_script('jquery-ui-tabs', false, array('jquery-ui-core', 'jquery'));
+        do_action('ure_load_js_settings');
         
     }
     // end of load_settings_js()

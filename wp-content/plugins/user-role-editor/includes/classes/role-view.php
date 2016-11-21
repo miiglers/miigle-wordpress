@@ -44,8 +44,8 @@ class URE_Role_View extends URE_View {
         $wp_default_role = $this->lib->get('wp_default_role');
         $this->role_default_html = '<select id="default_user_role" name="default_user_role" '. $select_style .'>';
         foreach ($roles as $key => $value) {
-            $selected = $this->lib->option_selected($key, $wp_default_role);
-            $disabled = ($key==='administrator' && $caps_access_restrict_for_simple_admin && !is_super_admin()) ? 'disabled' : '';
+            $selected = selected($key, $wp_default_role, false);
+            $disabled = ($key==='administrator' && $caps_access_restrict_for_simple_admin && !$this->lib->is_super_admin()) ? 'disabled' : '';
             if ($show_admin_role || $key != 'administrator') {
                 $translated_name = esc_html__($value['name'], 'user-role-editor');  // get translation from URE language file, if exists
                 if ($translated_name === $value['name']) { // get WordPress internal translation
@@ -65,7 +65,7 @@ class URE_Role_View extends URE_View {
         
         global $current_user;
         
-        $key_capability = $this->lib->get_key_capability();
+        $key_capability = URE_Own_Capabilities::get_key_capability();
         $user_is_ure_admin = current_user_can($key_capability);
         $role_to_skip = ($user_is_ure_admin) ? '':$current_user->roles[0];
         
@@ -80,8 +80,8 @@ class URE_Role_View extends URE_View {
             if ($key===$role_to_skip) { //  skip role of current user if he does not have full access to URE
                 continue;
             }            
-            $selected1 = $this->lib->option_selected($key, $current_role);
-            $disabled = ($key==='administrator' && $caps_access_restrict_for_simple_admin && !is_super_admin()) ? 'disabled' : '';
+            $selected1 = selected($key, $current_role, false);
+            $disabled = ($key==='administrator' && $caps_access_restrict_for_simple_admin && !$this->lib->is_super_admin()) ? 'disabled' : '';
             if ($show_admin_role || $key != 'administrator') {
                 $translated_name = esc_html__($value['name'], 'user-role-editor');  // get translation from URE language file, if exists
                 if ($translated_name === $value['name']) { // get WordPress internal translation
@@ -236,7 +236,7 @@ if ($multisite && !is_network_admin()) {
         } else {
             $add_del_role_for_simple_admin = 1;
         }
-        $super_admin = is_super_admin();
+        $super_admin = $this->lib->is_super_admin();
         $multisite = $this->lib->get('multisite');
         
 ?>	
@@ -294,7 +294,7 @@ if ($multisite && !is_network_admin()) {
                <div id="ure_service_tools">
 <?php
                 do_action('ure_role_edit_toolbar_service');
-                if (!$multisite || (is_main_site( get_current_blog_id()) || (is_network_admin() && is_super_admin()))) {
+                if (!$multisite || (is_main_site( get_current_blog_id()) || (is_network_admin() && $this->lib->is_super_admin()))) {
                     if (current_user_can('ure_reset_roles')) {
 ?>                   
                   <button id="ure_reset_roles_button" class="ure_toolbar_button" style="color: red;" title="Reset Roles to its original state">Reset</button> 
@@ -313,16 +313,11 @@ if ($multisite && !is_network_admin()) {
     // end of toolbar()
     
     
-    public function display() {
-        
+    private function display_options() {
         $multisite = $this->lib->get('multisite');
-        $active_for_network = $this->lib->get('active_for_network');
+        $active_for_network = $this->lib->get('active_for_network');        
 ?>
-
-<div class="has-sidebar-content">
-  			<div class="postbox" style="float: left; min-width:850px;">
-        	<h3>&nbsp;<?php esc_html_e('Select Role and change its capabilities:', 'user-role-editor'); ?> <?php echo $this->role_select_html; ?></h3>         
-        	<div class="inside">        
+    <div id="ure_editor_options">
 <?php
         $caps_readable = $this->lib->get('caps_readable');
         if ($caps_readable) {
@@ -331,10 +326,9 @@ if ($multisite && !is_network_admin()) {
             $checked = '';
         }
         $caps_access_restrict_for_simple_admin = $this->lib->get_option('caps_access_restrict_for_simple_admin', 0);
-        if (is_super_admin() || !$multisite || !$this->lib->is_pro() || !$caps_access_restrict_for_simple_admin) {
+        if ($this->lib->is_super_admin() || !$multisite || !$this->lib->is_pro() || !$caps_access_restrict_for_simple_admin) {
 ?>              
-            <input type="checkbox" name="ure_caps_readable" id="ure_caps_readable" value="1" 
-                <?php echo $checked; ?> onclick="ure_turn_caps_readable(0);"/>
+            <input type="checkbox" name="ure_caps_readable" id="ure_caps_readable" value="1" <?php echo $checked; ?> onclick="ure_turn_caps_readable(0);"/>
             <label for="ure_caps_readable"><?php esc_html_e('Show capabilities in human readable form', 'user-role-editor'); ?></label>&nbsp;&nbsp;
 <?php
             $show_deprecated_caps = $this->lib->get('show_deprecated_caps');
@@ -344,12 +338,11 @@ if ($multisite && !is_network_admin()) {
                 $checked = '';
             }
 ?>
-            <input type="checkbox" name="ure_show_deprecated_caps" id="ure_show_deprecated_caps" value="1" 
-                <?php echo $checked; ?> onclick="ure_turn_deprecated_caps(0);"/>
+            <input type="checkbox" name="ure_show_deprecated_caps" id="ure_show_deprecated_caps" value="1" <?php echo $checked; ?> onclick="ure_turn_deprecated_caps(0);"/>
             <label for="ure_show_deprecated_caps"><?php esc_html_e('Show deprecated capabilities', 'user-role-editor'); ?></label>              
 <?php
         }
-        if ($multisite && $active_for_network && !is_network_admin() && is_main_site(get_current_blog_id()) && is_super_admin()) {
+        if ($multisite && $active_for_network && !is_network_admin() && is_main_site(get_current_blog_id()) && $this->lib->is_super_admin()) {
             $hint = esc_html__('If checked, then apply action to ALL sites of this Network');
             $apply_to_all = $this->lib->get('apply_to_all');
             if ($apply_to_all) {
@@ -360,32 +353,39 @@ if ($multisite && !is_network_admin()) {
                 $fontColor = '';
             }
 ?>
-              <div style="float: right; margin-left:10px; margin-right: 20px; <?php echo $fontColor;?>" id="ure_apply_to_all_div">
-                  <input type="checkbox" name="ure_apply_to_all" id="ure_apply_to_all" value="1" 
-                      <?php echo $checked; ?> title="<?php echo $hint;?>" onclick="ure_applyToAllOnClick(this)"/>
-                  <label for="ure_apply_to_all" title="<?php echo $hint;?>"><?php esc_html_e('Apply to All Sites', 'user-role-editor');?></label>
-              </div>
+            <div style="float: right; margin-left:10px; margin-right: 20px; <?php echo $fontColor; ?>" id="ure_apply_to_all_div">
+                <input type="checkbox" name="ure_apply_to_all" id="ure_apply_to_all" value="1" 
+                       <?php echo $checked; ?> title="<?php echo $hint; ?>" onclick="ure_applyToAllOnClick(this)"/>
+                <label for="ure_apply_to_all" title="<?php echo $hint; ?>"><?php esc_html_e('Apply to All Sites', 'user-role-editor'); ?></label>
+            </div>
 <?php
         }
 ?>
-<br /><br />
-<hr />
-    <div style="display:table-inline; float: right; margin-right: 12px;"></div>	
-
-<?php 
-    $this->display_caps(); ?>
+        </div>
+        <hr>  
+<?php        
+    }    
+    // end of display_options()
     
-<?php 
-    $ao = $this->lib->get('role_additional_options');
-    $current_role = $this->lib->get('current_role');
-    $ao->show($current_role);
+    
+    public function display() {
+        
 ?>
-    <input type="hidden" name="object" value="role" />
+    <div class="postbox" style="min-width:800px;width:100%">
+        <div id="ure_role_selector">
+            <span id="ure_role_select_label"><?php esc_html_e('Select Role and change its capabilities:', 'user-role-editor'); ?></span> <?php echo $this->role_select_html; ?>
+        </div>    
+        <div class="inside">
 <?php
-  $this->display_box_end();
-?>  
-    <div style="clear: left; float: left; width: 800px;"></div>    
-</div>
+        $this->display_options();
+        $this->display_caps();
+        $ao = $this->lib->get('role_additional_options');
+        $current_role = $this->lib->get('current_role');
+        $ao->show($current_role);
+?>
+            <input type="hidden" name="object" value="role" />
+        </div>    
+    </div>
 <?php        
         
     }

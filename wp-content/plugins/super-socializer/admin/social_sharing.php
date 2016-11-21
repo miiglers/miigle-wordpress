@@ -232,7 +232,7 @@
 											<label><?php _e("Border radius (in pixels)", 'Super-Socializer' ); ?></label>
 										</th>
 										<td>
-											<input style="width:50px" id="the_champ_icon_border_radius" name="the_champ_sharing[horizontal_border_radius]" type="text" value="<?php echo $sharing_border_radius; ?>" onkeyup="theChampSharingBorderRadius = this.value.trim() ? this.value.trim() + 'px' : '';theChampUpdateSharingPreview(this.value.trim() + 'px', 'borderRadius', '0px', 'the_champ_preview')" />
+											<input style="width:50px" id="the_champ_icon_border_radius" name="the_champ_sharing[horizontal_border_radius]" type="text" value="<?php echo $sharing_border_radius; ?>" onkeyup="theChampSharingBorderRadius = this.value.trim() ? this.value.trim() + 'px' : '0px';theChampUpdateSharingPreview(theChampSharingBorderRadius, 'borderRadius', '0px', 'the_champ_preview')" />
 										</td>
 									</tr>
 
@@ -540,7 +540,7 @@
 											<label><?php _e("Border radius (in pixels)", 'Super-Socializer' ); ?></label>
 										</th>
 										<td>
-											<input style="width:50px" id="the_champ_vertical_icon_border_radius" name="the_champ_sharing[vertical_border_radius]" type="text" value="<?php echo $vertical_sharing_border_radius; ?>" onkeyup="theChampVerticalBorderRadius = this.value.trim() ? this.value.trim() + 'px' : '';theChampUpdateSharingPreview(this.value.trim() + 'px', 'borderRadius', '0px', 'the_champ_vertical_preview')" />
+											<input style="width:50px" id="the_champ_vertical_icon_border_radius" name="the_champ_sharing[vertical_border_radius]" type="text" value="<?php echo $vertical_sharing_border_radius; ?>" onkeyup="theChampVerticalBorderRadius = this.value.trim() ? this.value.trim() + 'px' : '0px';theChampUpdateSharingPreview(theChampVerticalBorderRadius, 'borderRadius', '0px', 'the_champ_vertical_preview')" />
 										</td>
 									</tr>
 
@@ -997,7 +997,7 @@
 							<td>
 							<input id="the_champ_counts" name="the_champ_sharing[horizontal_counts]" type="checkbox" <?php echo isset( $theChampSharingOptions['horizontal_counts'] ) ? 'checked = "checked"' : '';?> value="1" />
 							<br/>
-							<span style="font-size:12px"><?php _e( 'Official share counts are supported for Facebook, Linkedin, GooglePlus, Delicious, Buffer, Reddit, Pinterest, Stumbleupon and Vkontakte', 'Super-Socializer' ) ?></span>
+							<span style="font-size:12px"><?php _e( 'Share counts are supported for Facebook, Twitter, Linkedin, GooglePlus, Delicious, Buffer, Reddit, Pinterest, Stumbleupon and Vkontakte', 'Super-Socializer' ) ?></span>
 							</td>
 						</tr>
 						
@@ -1418,7 +1418,7 @@
 							<td>
 							<input id="the_champ_vertical_counts" name="the_champ_sharing[vertical_counts]" type="checkbox" <?php echo isset( $theChampSharingOptions['vertical_counts'] ) ? 'checked = "checked"' : '';?> value="1" />
 							<br/>
-							<span style="font-size:12px"><?php _e( 'Official share counts are supported for Facebook, Linkedin, GooglePlus, Delicious, Buffer, Reddit, Pinterest, Stumbleupon and Vkontakte', 'Super-Socializer' ) ?></span>
+							<span style="font-size:12px"><?php _e( 'Share counts are supported for Facebook, Twitter, Linkedin, GooglePlus, Delicious, Buffer, Reddit, Pinterest, Stumbleupon and Vkontakte', 'Super-Socializer' ) ?></span>
 							</td>
 						</tr>
 						
@@ -1594,7 +1594,7 @@
 						<tr>
 							<th>
 							<img id="the_champ_bitly_login_help" class="the_champ_help_bubble" src="<?php echo plugins_url('../images/info.png', __FILE__) ?>" />
-							<label for="the_champ_bitly_login"><?php _e("bit.ly username", 'Super-Socializer' ); ?></label>
+							<label for="the_champ_bitly_login"><?php _e("bit.ly Login", 'Super-Socializer' ); ?></label>
 							</th>
 							<td>
 							<input id="the_champ_bitly_login" name="the_champ_sharing[bitly_username]" type="text" value="<?php echo isset( $theChampSharingOptions['bitly_username'] ) ? $theChampSharingOptions['bitly_username'] : '' ?>" />
@@ -1604,7 +1604,7 @@
 						<tr class="the_champ_help_content" id="the_champ_bitly_login_help_cont">
 							<td colspan="2">
 							<div>
-							<?php echo sprintf(__('Login to your bit.ly account and navigate to <a href="%s" target="_blank">this link</a> to get bit.ly username', 'Super-Socializer' ), 'https://bitly.com/a/your_api_key') ?>
+							<?php echo sprintf(__('Login to your bit.ly account and navigate to <a href="%s" target="_blank">this link</a> to get bit.ly login', 'Super-Socializer' ), 'https://bitly.com/a/your_api_key') ?>
 							<img width="550" src="<?php echo plugins_url('../images/snaps/ss_bitly_username.png', __FILE__); ?>" />
 							</div>
 							</td>
@@ -1769,6 +1769,31 @@
 					</table>
 					</div>
 				</div>
+
+				<div class="stuffbox">
+					<h3><label><?php _e( 'AMP', 'Super-Socializer' );?></label></h3>
+					<div class="inside">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" class="form-table editcomment menu_content_table">
+						<tr>
+							<th>
+							<img id="the_champ_amp_enable_help" class="the_champ_help_bubble" src="<?php echo plugins_url( '../images/info.png', __FILE__ ) ?>" />
+							<label for="the_champ_amp_enable"><?php _e("Enable sharing on AMP pages", 'Super-Socializer'); ?></label>
+							</th>
+							<td>
+							<input id="the_champ_amp_enable" name="the_champ_sharing[amp_enable]" type="checkbox" <?php echo isset( $theChampSharingOptions['amp_enable'] ) ? 'checked = "checked"' : '';?> value="1" />
+							</td>
+						</tr>
+						
+						<tr class="the_champ_help_content" id="the_champ_amp_enable_help_cont">
+							<td colspan="2">
+							<div>
+							<?php _e( 'Enable this option to render sharing icons on AMP pages', 'Super-Socializer' ) ?>
+							</div>
+							</td>
+						</tr>
+					</table>
+					</div>
+				</div>
 							
 				</div>
 				<?php include 'help.php'; ?>
@@ -1794,8 +1819,8 @@
 					<table width="100%" border="0" cellspacing="0" cellpadding="0" class="form-table editcomment menu_content_table">
 						<tr>
 							<td>
-							<?php _e('If Facebook sharing is not working fine, click at the following link and enter the problematic url (where Facebook sharing is not working properly) of your website in the text field:', 'Super-Socializer' ) ?><br/>
-							<a style="text-decoration: none" target="_blank" href="https://developers.facebook.com/tools/debug/">https://developers.facebook.com/tools/debug/</a>
+							<?php _e('If Facebook sharing is not working fine, click at the following link and enter the problematic url (where Facebook sharing is not working properly) of your website in the text field. Click "Fetch New Scrape Information" button.', 'Super-Socializer' ) ?><br/>
+							<a style="text-decoration: none" target="_blank" href="https://developers.facebook.com/tools/debug/og/object/">https://developers.facebook.com/tools/debug/og/object/</a>
 							</td>
 						</tr>
 					</table>
@@ -1810,6 +1835,7 @@
 				<div class="stuffbox">
 					<h3><label><?php _e('FAQ', 'Super-Socializer' ) ?></label></h3>
 					<div class="inside faq">
+						<p><a href="http://support.heateor.com/why-is-sharer-not-showing-the-correct-image-title-and-other-meta-tags-content" target="_blank"><?php _e('Why is sharer not showing the correct image, title and other meta tags content?', 'Super-Socializer' ) ?></a></p>
 						<p><a href="http://support.heateor.com/how-can-i-show-share-counts-of-my-website-rather-than-of-individual-pagepost/" target="_blank"><?php _e('How can I show share counts of my website rather than of individual pages/posts?', 'Super-Socializer' ) ?></a></p>
 						<p><a href="http://support.heateor.com/how-can-i-disable-social-sharing-on-particular-pagepost/" target="_blank"><?php _e('How can I disable sharing on particular page/post?', 'Super-Socializer' ) ?></a></p>
 						<p><a href="http://support.heateor.com/how-can-i-specify-minimum-sharing-count-for-sharing-networks/" target="_blank"><?php _e('How can I specify minimum sharing count for sharing networks?', 'Super-Socializer' ) ?></a></p>

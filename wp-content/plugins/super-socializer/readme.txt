@@ -1,16 +1,16 @@
 ﻿=== Super Socializer ===
-Contributors: Heateor, the_champ, Hungarian Translator: László Tavaszi http://kerekmese.hu, Chinese Translator: Alex Li plpkj.com, Portuguese Translator: Paulo Purkyt https://www.linkedin.com/in/ppurkyt, Italian Translator: Maurizio https://freedomsgate.org, Spanish translator: Ignacio Iglesias http://trespies.com, Arabic Translator: http://www.ArabsSM.com, Russian Translator: Nicholas Lagunov http://tobehip.com.ua
+Contributors: Heateor, the_champ, Hungarian Translator: László Tavaszi http://kerekmese.hu, Chinese Translator: Alex Li plpkj.com, Portuguese Translator: Paulo Purkyt https://www.linkedin.com/in/ppurkyt, Italian Translator: FG3D (Freedom's Gate) https://fg3d.net, Spanish translator: Ignacio Iglesias http://trespies.com, Arabic Translator: http://www.ArabsSM.com, Russian/Ukrainian Translator: Nicholas Lagunov
 Donate link: https://www.heateor.com/donate?action=Super+Socializer
 Tags: the champ, champ, social login, social sharing, social commenting, social comments, social plugin, buddypress, bbpress, social share, comments, share post, user profile data, social analytics, online identity, social profile storage, id provider, single sign-on, social media tools, free social login, post to social networks, social authentication, social app, connect, capture social data, social sign-in, signin, sign up, signup, social connect, facebook login, twitter login, google login, google+ login, linkedin login, yahoo, vkontakte, instagram, reddit, digg, stumbleupon, delicious, float it, tumblr, social network
 Requires at least: 2.5.0
-Tested up to: 4.5.3
-Stable tag: 7.7.3
+Tested up to: 4.6.1
+Stable tag: 7.8.6
 License: GPLv2 or later
 
 The unique Social Plugin to let you integrate Social Login, Social Share and Social Comments at your website
 
 == Description ==
-**Available in English, Spanish, Hungarian, Portuguese, Chinese, Italian, Arabic and Russian languages**
+**Available in English, Spanish, Hungarian, Portuguese, Chinese, Italian, Arabic, Russian and Ukrainian languages**
 
 = Feature list =
 * Social Sharing from around 100 social networks
@@ -204,6 +204,75 @@ Yes, we can help you with it. Just drop an email at support@heateor.com
 8. **Social Commenting**: Disqus Commenting selected
 
 == Changelog ==
+= 7.8.6 =
+* [New] Compatible with <a href="https://www.heateor.com/recover-social-share-counts" target="_blank">Recover Social Share Counts</a> add-on
+* [Bugfix] Logged in users were able to see their Social Account Linking interface at other users' BuddyPress profile page too
+* [Bugfix] Vkontakte share count was not working in some cases
+
+= 7.8.5 =
+* [Bugfix] Email sharing was not working in some cases
+* [Bugfix] Myspace sharing was not working
+* [Bugfix] Myspace was not appearing in "More" share icons popup
+* [Bugfix] Colon (:) in post/page title was appearing encoded in Twitter sharing
+
+= 7.8.4 =
+* [Bugfix] Social Account Linking interface was not appearing at user profile page, in some cases
+* [New] Twitter sharer shows title from "Twitter Title" option of Yoast SEO post meta options, if one is specified
+
+= 7.8.3 =
+* [Bugfix] Flipboard sharing was not working in some cases
+
+= 7.8.2 =
+* [Bugfix] Social Login was not working for Russian names (thanks @funfrog)
+* [Improvement] OAuth libraries were being included even if Social Login was disabled
+* [Improvement] Social Avatar was not appearing when Ultimate Member plugin was enabled
+* [Improvement] Updated Flipboard share API
+* [Improvement] Updated Instagram icon
+* [Improvement] Improved Italian and Russian translation
+* [New] Included Ukrainian translation
+
+= 7.8.1 =
+* [Bugfix] Facebook Login was not working due to recent official Facebook API changes
+* [Improvement] Improved share count functionality
+* [Improvement] Updated Facebook SDK to latest version
+
+= 7.8 =
+* [Bugfix] "Widgets" page in admin area was unresponsive, in some cases
+* [Bugfix] "Notice of password change" email was being sent when user verified Twitter login email
+* [Improvement] Share count cache was not working for sharing icons enabled using shortcode and widgets
+* [Improvement] myCRED referred signups are now being detected, when using Social Login
+* [Improvement] First name was being saved in 'user_nicename' field, instead of username
+* [Improvement] Social Login is now compatible with Theme My Login plugin's 'E-mail only' Login type mode
+
+= 7.7.8 =
+* [Bugfix] Facebook shares were not being included in total shares, in some cases
+* [Improvement] Added background color for Pocket share icon
+* [Improvement] Default plugin options are being saved for every subsite in multisite network on Network Activating the plugin
+* [Improvement] Default plugin options are being saved when a new subsite is created in multisite network
+
+= 7.7.7 =
+* [Bugfix] Facebook share counts were not appearing on websites with SSL enabled, when "Load all Javascript files in single file" option was enabled
+
+= 7.7.6 =
+* [Bugfix] Facebook share counts were not appearing on websites with SSL enabled
+
+= 7.7.5 =
+* [Bugfix] Facebook share counts were not appearing in some cases
+* [Bugfix] Shares specified in "Starting share count" option for individual posts/pages were not appearing at homepage
+* [Bugfix] Querystring variables were not being appended to the url being shared
+* [Bugfix] Border radius was not reverting to default when kept blank in "Theme Selection" section at sharing options page in admin area
+* [Improvement] "Share" was being displayed in total share counts for 0 shares, instead of "Shares"
+* [Improvement] Admin UI improvement
+* [Improvement] "heateor_ss_custom_share_url" filter has been included in widgets and shortcode for sharing icons and like buttons
+* [New] Added option to enable/disable sharing on AMP pages
+* [New] Vkontakte profile url is now being saved in "Website" field of profile page
+
+= 7.7.4 =
+* [Bugfix] Share counts suddenly stopped appearing because of deprecated Facebook share count API
+* [Improvement] "Super Socializer - Social Avatar" heading appearing at profile page has been updated to "Social Avatar"
+* [Improvement] Admin UI improvement
+* [Improvement] A couple of text strings were not being included in the translation files
+
 = 7.7.3 =
 * [Bugfix] Option to update social avatar were appearing at user profile page, even if Social Login was disabled
 
@@ -951,3 +1020,72 @@ Yes, we can help you with it. Just drop an email at support@heateor.com
 
 = 7.7.3 =
 * [Bugfix] Option to update social avatar were appearing at user profile page, even if Social Login was disabled
+
+= 7.7.4 =
+* [Bugfix] Share counts suddenly stopped appearing because of deprecated Facebook share count API
+* [Improvement] "Super Socializer - Social Avatar" heading appearing at profile page has been updated to "Social Avatar"
+* [Improvement] Admin UI improvement
+* [Improvement] A couple of text strings were not being included in the translation files
+
+= 7.7.5 =
+* [Bugfix] Facebook share counts were not appearing in some cases
+* [Bugfix] Shares specified in "Starting share count" option for individual posts/pages were not appearing at homepage
+* [Bugfix] Querystring variables were not being appended to the url being shared
+* [Bugfix] Border radius was not reverting to default when kept blank in "Theme Selection" section at sharing options page in admin area
+* [Improvement] "Share" was being displayed in total share counts for 0 shares, instead of "Shares"
+* [Improvement] Admin UI improvement
+* [Improvement] "heateor_ss_custom_share_url" filter has been included in widgets and shortcode for sharing icons and like buttons
+* [New] Added option to enable/disable sharing on AMP pages
+* [New] Vkontakte profile url is now being saved in "Website" field of profile page
+
+= 7.7.6 =
+* [Bugfix] Facebook share counts were not appearing on websites with SSL enabled
+
+= 7.7.7 =
+* [Bugfix] Facebook share counts were not appearing on websites with SSL enabled, when "Load all Javascript files in single file" option was enabled
+
+= 7.7.8 =
+* [Bugfix] Facebook shares were not being included in total shares, in some cases
+* [Improvement] Added background color for Pocket share icon
+* [Improvement] Default plugin options are being saved for every subsite in multisite network on Network Activating the plugin
+* [Improvement] Default plugin options are being saved when a new subsite is created in multisite network
+
+= 7.8 =
+* [Bugfix] "Widgets" page in admin area was unresponsive, in some cases
+* [Bugfix] "Notice of password change" email was being sent when user verified Twitter login email
+* [Improvement] Share count cache was not working for sharing icons enabled using shortcode and widgets
+* [Improvement] myCRED referred signups are now being detected, when using Social Login
+* [Improvement] First name was being saved in 'user_nicename' field, instead of username
+* [Improvement] Social Login is now compatible with Theme My Login plugin's 'E-mail only' Login type mode
+
+= 7.8.1 =
+* [Bugfix] Facebook Login was not working due to recent official Facebook API changes
+* [Improvement] Improved share count functionality
+* [Improvement] Updated Facebook SDK to latest version
+
+= 7.8.2 =
+* [Bugfix] Social Login was not working for Russian names (thanks @funfrog)
+* [Improvement] OAuth libraries were being included even if Social Login was disabled
+* [Improvement] Social Avatar was not appearing when Ultimate Member plugin was enabled
+* [Improvement] Updated Flipboard share API
+* [Improvement] Updated Instagram icon
+* [Improvement] Improved Italian and Russian translation
+* [New] Included Ukrainian translation
+
+= 7.8.3 =
+* [Bugfix] Flipboard sharing was not working in some cases
+
+= 7.8.4 =
+* [Bugfix] Social Account Linking interface was not appearing at user profile page, in some cases
+* [New] Twitter sharer shows title from "Twitter Title" option of Yoast SEO post meta options, if one is specified
+
+= 7.8.5 =
+* [Bugfix] Email sharing was not working in some cases
+* [Bugfix] Myspace sharing was not working
+* [Bugfix] Myspace was not appearing in "More" share icons popup
+* [Bugfix] Colon (:) in post/page title was appearing encoded in Twitter sharing
+
+= 7.8.6 =
+* [New] Compatible with <a href="https://www.heateor.com/recover-social-share-counts" target="_blank">Recover Social Share Counts</a> add-on
+* [Bugfix] Logged in users were able to see their Social Account Linking interface at other users' BuddyPress profile page too
+* [Bugfix] Vkontakte share count was not working in some cases

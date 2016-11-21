@@ -65,8 +65,11 @@ class TheChampLoginWidget extends WP_Widget {
 		/* Set up default widget settings. */ 
 		$defaults = array( 'title' => __('Login with your Social Account', 'Super-Socializer'), 'before_widget_content' => '', 'after_widget_content' => '' );  
 
-		foreach( $instance as $key => $value )  
-			$instance[ $key ] = esc_attr( $value );  
+		foreach( $instance as $key => $value ) {  
+			if ( is_string( $value ) ) {
+				$instance[ $key ] = esc_attr( $value );  
+			}
+		}
 
 		$instance = wp_parse_args( (array)$instance, $defaults ); 
 		?> 
@@ -113,11 +116,17 @@ class TheChampSharingWidget extends WP_Widget {
 		
 		global $theChampSharingOptions, $post;
 		$postId = $post -> ID;
-		if(isset($instance['target_url'])){
+		$customUrl = apply_filters('heateor_ss_custom_share_url', '', $post);
+		if($customUrl){
+			$sharingUrl = $customUrl;
+			$postId = 0;
+		}elseif(isset($instance['target_url'])){
 			if($instance['target_url'] == 'default'){
 				if(is_home()){
 					$sharingUrl = home_url();
 					$postId = 0;
+				}elseif(isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']){
+					$sharingUrl = html_entity_decode(esc_url(the_champ_get_http().$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]));
 				}elseif(get_permalink($post -> ID)){
 					$sharingUrl = get_permalink($post->ID);
 				}else{
@@ -134,7 +143,10 @@ class TheChampSharingWidget extends WP_Widget {
 			$sharingUrl = get_permalink($post->ID);
 		}
 
-		echo "<div class='the_champ_sharing_container the_champ_horizontal_sharing' super-socializer-data-href='".$sharingUrl."'>";
+		$shareCountTransientId = heateor_ss_get_share_count_transient_id($sharingUrl);
+		$cachedShareCount = heateor_ss_get_cached_share_count($shareCountTransientId);
+
+		echo "<div class='the_champ_sharing_container the_champ_horizontal_sharing' super-socializer-data-href='".$sharingUrl."' ". ($cachedShareCount === false ? "" : "super-socializer-no-counts='1' ") .">";
 		
 		echo $before_widget;
 		
@@ -155,14 +167,14 @@ class TheChampSharingWidget extends WP_Widget {
 				$sharingUrl = $shortUrl;
 			}
 		}
-		echo the_champ_prepare_sharing_html($sharingUrl, 'horizontal', isset($instance['show_counts']), isset($instance['total_shares']), '');
+		echo the_champ_prepare_sharing_html($sharingUrl, 'horizontal', isset($instance['show_counts']), isset($instance['total_shares']), $shareCountTransientId);
 
 		if( !empty( $instance['after_widget_content'] ) ){ 
 			echo '<div>' . $instance['after_widget_content'] . '</div>'; 
 		}
 		
 		echo '</div>';
-		if(isset($instance['show_counts']) || isset($instance['total_shares'])){
+		if((isset($instance['show_counts']) || isset($instance['total_shares'])) && $cachedShareCount == false){
 			echo '<script>theChampLoadEvent(
 		function(){
 			// sharing counts
@@ -195,8 +207,10 @@ class TheChampSharingWidget extends WP_Widget {
 		/* Set up default widget settings. */ 
 		$defaults = array( 'title' => 'Share the joy', 'show_counts' => 0, 'total_shares' => 0, 'target_url' => 'default', 'target_url_custom' => '', 'before_widget_content' => '', 'after_widget_content' => '' );
 
-		foreach( $instance as $key => $value ){
-			$instance[ $key ] = esc_attr( $value );
+		foreach( $instance as $key => $value ) {  
+			if ( is_string( $value ) ) {
+				$instance[ $key ] = esc_attr( $value );  
+			}
 		}
 		
 		$instance = wp_parse_args( (array)$instance, $defaults );
@@ -246,10 +260,10 @@ class TheChampVerticalSharingWidget extends WP_Widget {
 	public function __construct() { 
 		parent::__construct( 
 			'TheChampVerticalSharing', //unique id 
-			'Super Socializer - Sharing (Floating Floating Widget)', //title displayed at admin panel 
+			'Super Socializer - Sharing (Floating Widget)', //title displayed at admin panel 
 			//Additional parameters 
 			array(
-				'description' => __( 'Floating floating sharing widget. Let your website users share content on popular Social networks like Facebook, Twitter, Tumblr, Google+ and many more', 'Super-Socializer' )) 
+				'description' => __( 'Floating sharing widget. Let your website users share content on popular Social networks like Facebook, Twitter, Tumblr, Google+ and many more', 'Super-Socializer' )) 
 			); 
 	}  
 
@@ -264,11 +278,17 @@ class TheChampVerticalSharingWidget extends WP_Widget {
 		
 		global $theChampSharingOptions, $post;
 		$postId = $post -> ID;
-		if(isset($instance['target_url'])){
+		$customUrl = apply_filters('heateor_ss_custom_share_url', '', $post);
+		if($customUrl){
+			$sharingUrl = $customUrl;
+			$postId = 0;
+		}elseif(isset($instance['target_url'])){
 			if($instance['target_url'] == 'default'){
 				if(is_home()){
 					$sharingUrl = home_url();
 					$postId = 0;
+				}elseif(isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']){
+					$sharingUrl = html_entity_decode(esc_url(the_champ_get_http().$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]));
 				}elseif(get_permalink($post -> ID)){
 					$sharingUrl = get_permalink($post->ID);
 				}else{
@@ -288,7 +308,11 @@ class TheChampVerticalSharingWidget extends WP_Widget {
 		if(isset($instance['alignment']) && isset($instance[$instance['alignment'] . '_offset'])){
 			$ssOffset = $instance[$instance['alignment'] . '_offset'];
 		}
-		echo "<div class='the_champ_sharing_container the_champ_vertical_sharing" . ( isset( $theChampSharingOptions['hide_mobile_sharing'] ) ? ' the_champ_hide_sharing' : '' ) . ( isset( $theChampSharingOptions['bottom_mobile_sharing'] ) ? ' the_champ_bottom_sharing' : '' ) . "' ss-offset='" . $ssOffset . "' style='width:" . ((isset($theChampSharingOptions['vertical_sharing_size']) ? $theChampSharingOptions['vertical_sharing_size'] : 35) + 4) . "px;".(isset($instance['alignment']) && $instance['alignment'] != '' && isset($instance[$instance['alignment'].'_offset']) ? $instance['alignment'].': '. ( $instance[$instance['alignment'].'_offset'] == '' ? 0 : $instance[$instance['alignment'].'_offset'] ) .'px;' : '').(isset($instance['top_offset']) ? 'top: '. ( $instance['top_offset'] == '' ? 0 : $instance['top_offset'] ) .'px;' : '') . (isset($instance['vertical_bg']) && $instance['vertical_bg'] != '' ? 'background-color: '.$instance['vertical_bg'] . ';' : '-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;') . "' super-socializer-data-href='". $sharingUrl ."'>";
+
+		$shareCountTransientId = heateor_ss_get_share_count_transient_id($sharingUrl);
+		$cachedShareCount = heateor_ss_get_cached_share_count($shareCountTransientId);
+
+		echo "<div class='the_champ_sharing_container the_champ_vertical_sharing" . ( isset( $theChampSharingOptions['hide_mobile_sharing'] ) ? ' the_champ_hide_sharing' : '' ) . ( isset( $theChampSharingOptions['bottom_mobile_sharing'] ) ? ' the_champ_bottom_sharing' : '' ) . "' ss-offset='" . $ssOffset . "' style='width:" . ((isset($theChampSharingOptions['vertical_sharing_size']) ? $theChampSharingOptions['vertical_sharing_size'] : 35) + 4) . "px;".(isset($instance['alignment']) && $instance['alignment'] != '' && isset($instance[$instance['alignment'].'_offset']) ? $instance['alignment'].': '. ( $instance[$instance['alignment'].'_offset'] == '' ? 0 : $instance[$instance['alignment'].'_offset'] ) .'px;' : '').(isset($instance['top_offset']) ? 'top: '. ( $instance['top_offset'] == '' ? 0 : $instance['top_offset'] ) .'px;' : '') . (isset($instance['vertical_bg']) && $instance['vertical_bg'] != '' ? 'background-color: '.$instance['vertical_bg'] . ';' : '-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;') . "' super-socializer-data-href='". $sharingUrl ."' ". ($cachedShareCount === false ? "" : "super-socializer-no-counts='1' ") .">";
 		
 		if(isset($theChampSharingOptions['use_shortlinks']) && function_exists('wp_get_shortlink')){
 			$sharingUrl = wp_get_shortlink();
@@ -300,9 +324,9 @@ class TheChampVerticalSharingWidget extends WP_Widget {
 			}
 		}
 		//echo $before_widget;
-		echo the_champ_prepare_sharing_html($sharingUrl, 'vertical', isset($instance['show_counts']), isset($instance['total_shares']), '');
+		echo the_champ_prepare_sharing_html($sharingUrl, 'vertical', isset($instance['show_counts']), isset($instance['total_shares']), $shareCountTransientId);
 		echo '</div>';
-		if(isset($instance['show_counts']) || isset($instance['total_shares'])){
+		if((isset($instance['show_counts']) || isset($instance['total_shares'])) && $cachedShareCount == false){
 			echo '<script>theChampLoadEvent(
 		function(){
 			// sharing counts
@@ -337,8 +361,10 @@ class TheChampVerticalSharingWidget extends WP_Widget {
 		/* Set up default widget settings. */ 
 		$defaults = array('alignment' => 'left', 'show_counts' => 0, 'total_shares' => 0, 'left_offset' => '40', 'right_offset' => '0', 'target_url' => 'default', 'target_url_custom' => '', 'top_offset' => '100', 'vertical_bg' => '');
 
-		foreach( $instance as $key => $value ){
-			$instance[ $key ] = esc_attr( $value );
+		foreach( $instance as $key => $value ) {  
+			if ( is_string( $value ) ) {
+				$instance[ $key ] = esc_attr( $value );  
+			}
 		}
 		
 		$instance = wp_parse_args( (array)$instance, $defaults ); 
@@ -429,11 +455,17 @@ class TheChampCounterWidget extends WP_Widget {
 		
 		global $theChampCounterOptions, $post;
 		$postId = $post -> ID;
-		if(isset($instance['target_url'])){
+		$customUrl = apply_filters('heateor_ss_custom_share_url', '', $post);
+		if($customUrl){
+			$sharingUrl = $customUrl;
+			$postId = 0;
+		}elseif(isset($instance['target_url'])){
 			if($instance['target_url'] == 'default'){
 				if(is_home()){
 					$counterUrl = home_url();
 					$postId = 0;
+				}elseif(isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']){
+					$counterUrl = html_entity_decode(esc_url(the_champ_get_http().$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]));
 				}elseif(get_permalink($post -> ID)){
 					$counterUrl = get_permalink($post->ID);
 				}else{
@@ -500,8 +532,10 @@ class TheChampCounterWidget extends WP_Widget {
 		/* Set up default widget settings. */ 
 		$defaults = array( 'title' => 'Share the joy', 'before_widget_content' => '', 'after_widget_content' => '', 'target_url_custom' => '', 'target_url' => 'default' );
 
-		foreach( $instance as $key => $value ){
-			$instance[ $key ] = esc_attr( $value );
+		foreach( $instance as $key => $value ) {  
+			if ( is_string( $value ) ) {
+				$instance[ $key ] = esc_attr( $value );  
+			}
 		}
 		
 		$instance = wp_parse_args( (array)$instance, $defaults ); 
@@ -547,10 +581,10 @@ class TheChampVerticalCounterWidget extends WP_Widget {
 	public function __construct() { 
 		parent::__construct( 
 			'TheChampVerticalCounter', //unique id 
-			'Super Socializer - Like Buttons (Floating Floating Widget)', //title displayed at admin panel 
+			'Super Socializer - Like Buttons (Floating Widget)', //title displayed at admin panel 
 			//Additional parameters 
 			array(
-				'description' => __( 'Floating floating like buttons widget. Let your website users share/like content on popular Social networks like Facebook, Twitter, Google+ and many more', 'Super-Socializer' )) 
+				'description' => __( 'Floating like buttons widget. Let your website users share/like content on popular Social networks like Facebook, Twitter, Google+ and many more', 'Super-Socializer' )) 
 			); 
 	}  
 
@@ -565,11 +599,17 @@ class TheChampVerticalCounterWidget extends WP_Widget {
 		
 		global $theChampCounterOptions, $post;
 		$postId = $post -> ID;
-		if(isset($instance['target_url'])){
+		$customUrl = apply_filters('heateor_ss_custom_share_url', '', $post);
+		if($customUrl){
+			$sharingUrl = $customUrl;
+			$postId = 0;
+		}elseif(isset($instance['target_url'])){
 			if($instance['target_url'] == 'default'){
 				if(is_home()){
 					$counterUrl = home_url();
 					$postId = 0;
+				}elseif(isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']){
+					$counterUrl = html_entity_decode(esc_url(the_champ_get_http().$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]));
 				}elseif(get_permalink($post -> ID)){
 					$counterUrl = get_permalink($post->ID);
 				}else{
@@ -627,8 +667,10 @@ class TheChampVerticalCounterWidget extends WP_Widget {
 		/* Set up default widget settings. */ 
 		$defaults = array('alignment' => 'left', 'left_offset' => '40', 'right_offset' => '0', 'top_offset' => '100', 'vertical_bg' => '', 'target_url' => 'default', 'target_url_custom' => '');
 
-		foreach( $instance as $key => $value ){
-			$instance[ $key ] = esc_attr( $value );
+		foreach( $instance as $key => $value ) {  
+			if ( is_string( $value ) ) {
+				$instance[ $key ] = esc_attr( $value );  
+			}
 		}
 		
 		$instance = wp_parse_args( (array)$instance, $defaults ); 

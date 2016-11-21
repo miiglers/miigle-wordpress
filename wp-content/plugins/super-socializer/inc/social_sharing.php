@@ -16,20 +16,17 @@ function the_champ_prepare_sharing_html( $postUrl, $sharingType = 'horizontal', 
 	} else {
 		$postTitle = $post->post_title;
 	}
-	$originalPostTitle = $postTitle = html_entity_decode( $postTitle, ENT_QUOTES, 'UTF-8' );
-    $postTitle = rawurlencode( $postTitle );
-    $postTitle = str_replace( '#', '%23', $postTitle );
-    $postTitle = esc_html( $postTitle );
+
+    $originalPostTitle = html_entity_decode($postTitle, ENT_QUOTES, 'UTF-8');
+	$postTitle = heateor_ss_sanitize_post_title($postTitle);
 
 	$output = apply_filters( 'the_champ_sharing_interface_filter', '', $postUrl, $sharingType, $theChampSharingOptions, $post, $displayCount, $totalShares );
 	if ( $output != '' ) {
 		return $output;
 	}
 	$html = '';
-	$sharingMeta = '';
-	if (! is_front_page() || ( is_front_page() && 'page' == get_option( 'show_on_front' ) ) ) {
-		$sharingMeta = get_post_meta( $post->ID, '_the_champ_meta', true );
-	}
+	
+	$sharingMeta = get_post_meta( $post->ID, '_the_champ_meta', true );
 
 	if ( isset( $theChampSharingOptions[$sharingType.'_re_providers'] ) ) {
 		
@@ -117,6 +114,13 @@ function the_champ_prepare_sharing_html( $postUrl, $sharingType = 'horizontal', 
 		$twitterUsername = $theChampSharingOptions['twitter_username'] != '' ? $theChampSharingOptions['twitter_username'] : '';
 		$totalShareCount = 0;
 
+		$wpseoPostTitle = $postTitle;
+		$decodedPostTitle = esc_html(str_replace(array('%23', '%27', '%22', '%21', '%3A'), array('#', "'", '"', '!', ':'), urlencode($originalPostTitle)));
+		if($wpseoTwitterTitle = heateor_ss_wpseo_twitter_title($post)){
+			$wpseoPostTitle = heateor_ss_sanitize_post_title($wpseoTwitterTitle);
+			$decodedPostTitle = esc_html(str_replace(array('%23', '%27', '%22', '%21', '%3A'), array('#', "'", '"', '!', ':'), urlencode(html_entity_decode($wpseoTwitterTitle, ENT_QUOTES, 'UTF-8'))));
+		}
+
 		$shareCount = array();
 		foreach ( $theChampSharingOptions[$sharingType.'_re_providers'] as $provider ) {
 			$shareCount[$provider] = $shareCounts == '&nbsp;' ? '' : ( isset( $shareCounts[$provider] ) ? $shareCounts[$provider] : '' );
@@ -131,6 +135,7 @@ function the_champ_prepare_sharing_html( $postUrl, $sharingType = 'horizontal', 
 					'%encoded_post_url%',
 					'%post_url%',
 					'%post_title%',
+					'%wpseo_post_title%',
 					'%decoded_post_title%',
 					'%twitter_username%',
 					'%via_twitter_username%',
@@ -150,7 +155,8 @@ function the_champ_prepare_sharing_html( $postUrl, $sharingType = 'horizontal', 
 					urlencode( $postUrl ),
 					$postUrl,
 					$postTitle,
-					esc_html( str_replace( array('#', '%27', '%22'), array('%23', "'", '"'), urlencode( $originalPostTitle ) ) ),
+					$wpseoPostTitle,
+					$decodedPostTitle,
 					$twitterUsername,
 					$twitterUsername ? 'via=' . $twitterUsername . '&' : '',
 					$language,
@@ -170,7 +176,7 @@ function the_champ_prepare_sharing_html( $postUrl, $sharingType = 'horizontal', 
 			if ( $displayCount) {
 				$liItems .= $counterContainerInitHtml . '">&nbsp;' . $counterContainerEndHtml;
 			}
-			$liItems .= '<i ' . $style . ' title="More" alt="More" class="theChampSharing theChampMoreBackground" onclick="theChampMoreSharingPopup(this, \'' . $postUrl . '\', \''.$postTitle.'\' )" ><ss style="display:block" class="theChampSharingSvg theChampMoreSvg"></ss></i></li>';
+			$liItems .= '<i ' . $style . ' title="More" alt="More" class="theChampSharing theChampMoreBackground" onclick="theChampMoreSharingPopup(this, \'' . $postUrl . '\', \''.$postTitle.'\', \'' . heateor_ss_sanitize_post_title(heateor_ss_wpseo_twitter_title($post)) . '\')" ><ss style="display:block" class="theChampSharingSvg theChampMoreSvg"></ss></i></li>';
 		}
 		
 		$totalSharesHtml = '';
@@ -198,6 +204,35 @@ function the_champ_prepare_sharing_html( $postUrl, $sharingType = 'horizontal', 
 		$html .= '</ul><div style="clear:both"></div>';
 	}
 	return $html;
+}
+
+/**
+ * Sanitize post title
+ */
+function heateor_ss_sanitize_post_title($postTitle){
+	$postTitle = html_entity_decode($postTitle, ENT_QUOTES, 'UTF-8');
+    $postTitle = rawurlencode($postTitle);
+    $postTitle = str_replace('#', '%23', $postTitle);
+    $postTitle = esc_html($postTitle);
+
+    return $postTitle;
+}
+
+/**
+ * Get Yoast SEO post meta Twitter title
+ */
+function heateor_ss_wpseo_twitter_title($post){
+	if($post && heateor_ss_is_plugin_active('wordpress-seo/wp-seo.php') && ($wpseoTwitterTitle = WPSEO_Meta::get_value('twitter-title', $post->ID))){
+		return $wpseoTwitterTitle;
+	}
+	return '';
+}
+
+/**
+ * Check if plugin is active
+ */
+function heateor_ss_is_plugin_active($pluginFile){
+	return in_array($pluginFile, apply_filters('active_plugins', get_option('active_plugins')));
 }
 
 /**
@@ -239,10 +274,14 @@ function the_champ_prepare_counter_html($postUrl, $sharingType = 'horizontal', $
 	}else{
 		$postTitle = $post->post_title;
 	}
-	$postTitle = html_entity_decode($postTitle, ENT_QUOTES, 'UTF-8');
-    $postTitle = urlencode($postTitle);
-    $postTitle = str_replace( array('#', '%27', '%22'), array('%23', "'", '"'), $postTitle );
-    $postTitle = esc_html($postTitle);
+	
+	$originalPostTitle = html_entity_decode($postTitle, ENT_QUOTES, 'UTF-8');
+	$decodedPostTitle = esc_html(str_replace(array('%23', '%27', '%22', '%21', '%3A'), array('#', "'", '"', '!', ':'), urlencode($originalPostTitle)));
+	if($wpseoTwitterTitle = heateor_ss_wpseo_twitter_title($post)){
+		$decodedPostTitle = esc_html(str_replace(array('%23', '%27', '%22', '%21', '%3A'), array('#', "'", '"', '!', ':'), urlencode(html_entity_decode($wpseoTwitterTitle, ENT_QUOTES, 'UTF-8'))));
+	}
+	$postTitle = heateor_ss_sanitize_post_title($postTitle);
+
 	$shortUrl = (isset($theChampCounterOptions['use_shortlink']) && function_exists('wp_get_shortlink')) ? wp_get_shortlink() : $shortUrl;
 	$output = apply_filters('the_champ_counter_interface_filter', '', $postUrl, $shortUrl, $sharingType, $theChampCounterOptions, $post);
 	if($output != ''){
@@ -260,7 +299,7 @@ function the_champ_prepare_counter_html($postUrl, $sharingType = 'horizontal', $
 			}elseif($provider == 'facebook_recommend'){
 				$html .= '<li class="the_champ_facebook_recommend"><div class="fb-like" data-href="'. $postUrl .'" data-layout="button_count" data-action="recommend" data-show-faces="false" data-share="false"></div></li>';
 			}elseif($provider == 'twitter_tweet'){
-				$html .= '<li class="the_champ_twitter_tweet" heateor-ss-data-href="'. $postUrl .'"><a href="https://twitter.com/share" class="twitter-share-button" data-url="'. $shortUrl .'" data-counturl="'. $postUrl .'" data-text="'. $postTitle .'" data-via="'. (isset($theChampCounterOptions['twitter_username']) && $theChampCounterOptions['twitter_username'] != '' ? $theChampCounterOptions['twitter_username'] : '') .'" data-lang="'. $language .'" >Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document, "script", "twitter-wjs");</script></li>';
+				$html .= '<li class="the_champ_twitter_tweet" heateor-ss-data-href="'. $postUrl .'"><a href="https://twitter.com/share" class="twitter-share-button" data-url="'. $shortUrl .'" data-counturl="'. $postUrl .'" data-text="'. $decodedPostTitle .'" data-via="'. (isset($theChampCounterOptions['twitter_username']) && $theChampCounterOptions['twitter_username'] != '' ? $theChampCounterOptions['twitter_username'] : '') .'" data-lang="'. $language .'" >Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document, "script", "twitter-wjs");</script></li>';
 			}elseif($provider == 'linkedin_share'){
 				$html .= '<li class="the_champ_linkedin_share"><script src="//platform.linkedin.com/in.js" type="text/javascript">lang: '. $language .'</script><script type="IN/Share" data-url="' . $postUrl . '" data-counter="right"></script></li>';
 			}elseif($provider == 'google_plusone'){
@@ -322,6 +361,17 @@ function the_champ_generate_counter_bitly_url($url, $postId = 0){
 	return false;
 }
 
+/**
+ * Check if current page is AMP page
+ */
+function the_champ_is_amp_page(){
+	$currentPageUrl = html_entity_decode(esc_url(the_champ_get_http() . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]));
+	if(strpos($currentPageUrl, '/amp') !== false || strpos($currentPageUrl, '?amp=1') !== false){
+		return true;
+	}
+	return false;
+}
+
 $theChampVerticalHomeCount = 0;
 $theChampVerticalExcerptCount = 0;
 $theChampVerticalCounterHomeCount = 0;
@@ -330,13 +380,19 @@ $theChampVerticalCounterExcerptCount = 0;
  * Enable sharing interface at selected areas.
  */
 function the_champ_render_sharing($content){
+	global $theChampSharingOptions, $theChampCounterOptions;
+
+	// if sharing is disabled on AMP, return content as is
+	if(!isset($theChampSharingOptions['amp_enable']) && the_champ_is_amp_page()){
+		return $content;
+	}
+
 	global $post;
 	// hook to bypass sharing
 	$disable = apply_filters('the_champ_bypass_sharing', $post, $content);
 	// if $disable value is 1, return content without sharing interface
 	if($disable === 1){ return $content; }
 	$sharingMeta = get_post_meta($post->ID, '_the_champ_meta', true);
-	global $theChampSharingOptions, $theChampCounterOptions;
 	
 	$sharingBpActivity = false;
 	$counterBpActivity = false;
@@ -365,7 +421,7 @@ function the_champ_render_sharing($content){
 			}elseif(isset($theChampCounterOptions['horizontal_target_url'])){
 				if($theChampCounterOptions['horizontal_target_url'] == 'default'){
 					$counterPostUrl = get_permalink($post->ID);
-					if($counterPostUrl == ''){
+					if((isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']) || $counterPostUrl == ''){
 						$counterPostUrl = html_entity_decode(esc_url(the_champ_get_http().$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]));
 					}
 				}elseif($theChampCounterOptions['horizontal_target_url'] == 'home'){
@@ -443,7 +499,7 @@ function the_champ_render_sharing($content){
 			}elseif(isset($theChampCounterOptions['vertical_target_url'])){
 				if($theChampCounterOptions['vertical_target_url'] == 'default'){
 					$counterPostUrl = get_permalink($post->ID);
-					if($counterPostUrl == ''){
+					if((isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']) || $counterPostUrl == ''){
 						$counterPostUrl = html_entity_decode(esc_url(the_champ_get_http().$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]));
 					}
 				}elseif($theChampCounterOptions['vertical_target_url'] == 'home'){
@@ -529,7 +585,7 @@ function the_champ_render_sharing($content){
 			}elseif(isset($theChampSharingOptions['horizontal_target_url'])){
 				if($theChampSharingOptions['horizontal_target_url'] == 'default'){
 					$postUrl = get_permalink($post->ID);
-					if($postUrl == ''){
+					if((isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']) || $postUrl == ''){
 						$postUrl = html_entity_decode(esc_url(the_champ_get_http().$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]));
 					}
 				}elseif($theChampSharingOptions['horizontal_target_url'] == 'home'){
@@ -608,7 +664,7 @@ function the_champ_render_sharing($content){
 			}elseif(isset($theChampSharingOptions['vertical_target_url'])){
 				if($theChampSharingOptions['vertical_target_url'] == 'default'){
 					$postUrl = get_permalink($post->ID);
-					if($postUrl == ''){
+					if((isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']) || $postUrl == ''){
 						$postUrl = html_entity_decode(esc_url(the_champ_get_http().$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]));
 					}
 				}elseif($theChampSharingOptions['vertical_target_url'] == 'home'){
@@ -756,7 +812,10 @@ function the_champ_sharing_count(){
 	}
 
 	$responseData = array();
-
+	$ajaxResponse = array();
+	if(in_array('facebook', $sharingNetworks)){
+		$ajaxResponse['facebook'] = 1;
+	}
 	$multiplier = 60;
 	switch ( $theChampSharingOptions['share_count_cache_refresh_unit'] ) {
 		case 'seconds':
@@ -781,147 +840,208 @@ function the_champ_sharing_count(){
 	}
 	$transientExpirationTime = $multiplier * $theChampSharingOptions['share_count_cache_refresh_count'];
 
-	foreach($targetUrls as $targetUrl){
-		$shareCountTransient = array();
-		foreach($sharingNetworks as $provider){
-			switch($provider){
-				case 'facebook':
-					$url = 'http://api.facebook.com/restserver.php?method=links.getStats&urls=' . $targetUrl . '&format=json&callback=';
-					break;
-				case 'twitter':
+	$targetUrlsArray = array();
+	$targetUrlsArray[] = $targetUrls;
+	$targetUrlsArray = apply_filters('heateor_ss_target_share_urls', $targetUrlsArray);
+	$shareCountTransientArray = array();
+	if(in_array('facebook', $sharingNetworks)){
+		$ajaxResponse['facebook_urls'] = $targetUrlsArray;
+	}
+	foreach($targetUrlsArray as $targetUrls){
+		$shareCountTransients = array();
+		foreach($targetUrls as $targetUrl){
+			$shareCountTransient = array();
+			foreach($sharingNetworks as $provider){
+				switch($provider){
+					case 'twitter':
 						$url = $twitterCountApi . $targetUrl;
 						break;
-				case 'linkedin':
-					$url = 'http://www.linkedin.com/countserv/count/share?url='. $targetUrl .'&format=json';
-					break;
-				case 'reddit':
-					$url = 'http://www.reddit.com/api/info.json?url='. $targetUrl;
-					break;
-				case 'delicious':
-					$url = 'http://feeds.delicious.com/v2/json/urlinfo/data?url='. $targetUrl;
-					break;
-				case 'pinterest':
-					$url = 'http://api.pinterest.com/v1/urls/count.json?callback=theChamp&url='. $targetUrl;
-					break;
-				case 'buffer':
-					$url = 'https://api.bufferapp.com/1/links/shares.json?url='. $targetUrl;
-					break;
-				case 'stumbleupon':
-					$url = 'http://www.stumbleupon.com/services/1.01/badge.getinfo?url='. $targetUrl;
-					break;
-				case 'google_plus':
-					$url = 'http://share.yandex.ru/gpp.xml?url='. $targetUrl;
-					break;
-				case 'vkontakte':
-					$url = 'https://vk.com/share.php?act=count&url='. $targetUrl;
-					break;
-				default:
-					$url = '';
-			}
-			if($url == '') { continue; }
-			$response = wp_remote_get( $url,  array( 'timeout' => 15 ) );
-			if( ! is_wp_error( $response ) && isset( $response['response']['code'] ) && 200 === $response['response']['code'] ){
-				$body = wp_remote_retrieve_body( $response );
-				if($provider == 'pinterest'){
-					$body = str_replace(array('theChamp(', ')'), '', $body);
-				}
-				if(!in_array($provider, array('google', 'vkontakte'))){
-					$body = json_decode($body);
-				}
-				switch($provider){
-					case 'facebook':
-						if(!empty($body[0] -> total_count)){
-							$responseData[$targetUrl]['facebook'] = $body[0] -> total_count;
-							$shareCountTransient['facebook'] = $body[0] -> total_count;
-						}else{
-							$responseData[$targetUrl]['facebook'] = 0;
-						}
-						break;
-					case 'twitter':
-							if ( ! empty( $body -> count ) ) {
-								$responseData[$targetUrl]['twitter'] = $body -> count;
-								$shareCountTransient['twitter'] = $body -> count;
-							} else {
-								$responseData[$targetUrl]['twitter'] = 0;
-							}
-							break;
 					case 'linkedin':
-						if(!empty($body -> count)){
-							$responseData[$targetUrl]['linkedin'] = $body -> count;
-							$shareCountTransient['linkedin'] = $body -> count;
-						}else{
-							$responseData[$targetUrl]['linkedin'] = 0;
-						}
+						$url = 'http://www.linkedin.com/countserv/count/share?url='. $targetUrl .'&format=json';
 						break;
 					case 'reddit':
-						$responseData[$targetUrl]['reddit'] = 0;
-						if(!empty($body -> data -> children)){
-							$children = $body -> data -> children;
-							if(!empty($children[0] -> data -> score)){
-								$responseData[$targetUrl]['reddit'] = $children[0] -> data -> score;
-								$shareCountTransient['reddit'] = $children[0] -> data -> score;
-							}
-						}
+						$url = 'http://www.reddit.com/api/info.json?url='. $targetUrl;
 						break;
 					case 'delicious':
-						if(!empty($body[0] -> total_posts)){
-							$responseData[$targetUrl]['delicious'] = $body[0] -> total_posts;
-							$shareCountTransient['delicious'] = $body[0] -> total_posts;
-						}else{
-							$responseData[$targetUrl]['delicious'] = 0;
-						}
+						$url = 'http://feeds.delicious.com/v2/json/urlinfo/data?url='. $targetUrl;
 						break;
 					case 'pinterest':
-						if(!empty($body -> count)){
-							$responseData[$targetUrl]['pinterest'] = $body -> count;
-							$shareCountTransient['pinterest'] = $body -> count;
-						}else{
-							$responseData[$targetUrl]['pinterest'] = 0;
-						}
+						$url = 'http://api.pinterest.com/v1/urls/count.json?callback=theChamp&url='. $targetUrl;
 						break;
 					case 'buffer':
-						if(!empty($body -> shares)){
-							$responseData[$targetUrl]['buffer'] = $body -> shares;
-							$shareCountTransient['buffer'] = $body -> shares;
-						}else{
-							$responseData[$targetUrl]['buffer'] = 0;
-						}
+						$url = 'https://api.bufferapp.com/1/links/shares.json?url='. $targetUrl;
 						break;
 					case 'stumbleupon':
-						if(!empty($body -> result) && isset( $body -> result -> views )){
-							$responseData[$targetUrl]['stumbleupon'] = $body -> result -> views;
-							$shareCountTransient['stumbleupon'] = $body -> result -> views;
-						}else{
-							$responseData[$targetUrl]['stumbleupon'] = 0;
-						}
+						$url = 'http://www.stumbleupon.com/services/1.01/badge.getinfo?url='. $targetUrl;
 						break;
 					case 'google_plus':
-						if(!empty($body)){
-							$responseData[$targetUrl]['google_plus'] = $body;
-							$shareCountTransient['google_plus'] = (int) str_replace( '"', '', $body );
-						}else{
-							$responseData[$targetUrl]['google_plus'] = 0;
-						}
+						$url = 'http://share.yandex.ru/gpp.xml?url='. $targetUrl;
 						break;
 					case 'vkontakte':
-						if(!empty($body)){
-							$responseData[$targetUrl]['vkontakte'] = $body;
-							$shareCountTransient['vkontakte'] = (int) str_replace(array('VK.Share.count(0, ', ');'), '', $body);
-						}else{
-							$responseData[$targetUrl]['vkontakte'] = 0;
-						}
+						$url = 'https://vk.com/share.php?act=count&url='. $targetUrl;
 						break;
+					default:
+						$url = '';
 				}
+				if($url == '') { continue; }
+				$response = wp_remote_get( $url,  array( 'timeout' => 15 ) );
+				if( ! is_wp_error( $response ) && isset( $response['response']['code'] ) && 200 === $response['response']['code'] ){
+					$body = wp_remote_retrieve_body( $response );
+					if($provider == 'pinterest'){
+						$body = str_replace(array('theChamp(', ')'), '', $body);
+					}
+					if(!in_array($provider, array('google', 'vkontakte'))){
+						$body = json_decode($body);
+					}
+					switch($provider){
+						case 'twitter':
+							if ( ! empty( $body -> count ) ) {
+								$shareCountTransient['twitter'] = $body -> count;
+							} else {
+								$shareCountTransient['twitter'] = 0;
+							}
+							break;
+						case 'linkedin':
+							if(!empty($body -> count)){
+								$shareCountTransient['linkedin'] = $body -> count;
+							}else{
+								$shareCountTransient['linkedin'] = 0;
+							}
+							break;
+						case 'reddit':
+							$shareCountTransient['reddit'] = 0;
+							if(!empty($body -> data -> children)){
+								$children = $body -> data -> children;
+								if(!empty($children[0] -> data -> score)){
+									$shareCountTransient['reddit'] = $children[0] -> data -> score;
+								}
+							}
+							break;
+						case 'delicious':
+							if(!empty($body[0] -> total_posts)){
+								$shareCountTransient['delicious'] = $body[0] -> total_posts;
+							}else{
+								$shareCountTransient['delicious'] = 0;
+							}
+							break;
+						case 'pinterest':
+							if(!empty($body -> count)){
+								$shareCountTransient['pinterest'] = $body -> count;
+							}else{
+								$shareCountTransient['pinterest'] = 0;
+							}
+							break;
+						case 'buffer':
+							if(!empty($body -> shares)){
+								$shareCountTransient['buffer'] = $body -> shares;
+							}else{
+								$shareCountTransient['buffer'] = 0;
+							}
+							break;
+						case 'stumbleupon':
+							if(!empty($body -> result) && isset( $body -> result -> views )){
+								$shareCountTransient['stumbleupon'] = $body -> result -> views;
+							}else{
+								$shareCountTransient['stumbleupon'] = 0;
+							}
+							break;
+						case 'google_plus':
+							if(!empty($body)){
+								$shareCountTransient['google_plus'] = (int) str_replace( '"', '', $body );
+							}else{
+								$shareCountTransient['google_plus'] = 0;
+							}
+							break;
+						case 'vkontakte':
+							if(!empty($body)){
+								$shareCountTransient['vkontakte'] = (int) str_replace(array('VK.Share.count(0, ', ');'), '', $body);
+							}else{
+								$shareCountTransient['vkontakte'] = 0;
+							}
+							break;
+					}
+				}
+			}  
+			$shareCountTransients[] = $shareCountTransient;
+		}
+		$shareCountTransientArray[] = $shareCountTransients;
+	}
+
+	$finalShareCountTransient = array();
+	for($i = 0; $i < count($targetUrlsArray[0]); $i++){
+		$finalShareCountTransient = $shareCountTransientArray[0][$i];
+		for($j = 1; $j < count($shareCountTransientArray); $j++){
+			foreach($finalShareCountTransient as $key => $val){
+				$finalShareCountTransient[$key] += $shareCountTransientArray[$j][$i][$key];
 			}
 		}
-		set_transient('heateor_ss_share_count_' . heateor_ss_get_share_count_transient_id($targetUrl), $shareCountTransient, $transientExpirationTime);
+		$responseData[$targetUrlsArray[0][$i]] = $finalShareCountTransient;
+		set_transient('heateor_ss_share_count_' . heateor_ss_get_share_count_transient_id($targetUrlsArray[0][$i]), $finalShareCountTransient, $transientExpirationTime);
 	}
+
 	do_action('heateor_ss_share_count_ajax_hook', $responseData);
-	the_champ_ajax_response(array('status' => 1, 'message' => $responseData));
+	
+	$ajaxResponse['status'] = 1;
+	$ajaxResponse['message'] = $responseData;
+	
+	the_champ_ajax_response($ajaxResponse);
 }
 
 add_action('wp_ajax_the_champ_sharing_count', 'the_champ_sharing_count');
 add_action('wp_ajax_nopriv_the_champ_sharing_count', 'the_champ_sharing_count');
+
+/**
+ * Save Facebook share counts in transient
+ */
+function the_champ_save_facebook_shares(){
+	if(isset($_GET['share_counts']) && is_array($_GET['share_counts']) && count($_GET['share_counts']) > 0){
+		$targetUrls = $_GET['share_counts'];
+		foreach($targetUrls as $k => $v){
+			$targetUrls[$k] = esc_attr(trim($v));
+		}
+	}else{
+		the_champ_ajax_response(array('status' => 0, 'message' => __('Invalid request')));
+	}
+	
+	global $theChampSharingOptions;
+
+	$multiplier = 60;
+	switch ( $theChampSharingOptions['share_count_cache_refresh_unit'] ) {
+		case 'seconds':
+			$multiplier = 1;
+			break;
+
+		case 'minutes':
+			$multiplier = 60;
+			break;
+		
+		case 'hours':
+			$multiplier = 3600;
+			break;
+
+		case 'days':
+			$multiplier = 3600*24;
+			break;
+
+		default:
+			$multiplier = 60;
+			break;
+	}
+	$transientExpirationTime = $multiplier * $theChampSharingOptions['share_count_cache_refresh_count'];
+	
+	foreach($targetUrls as $key => $value){
+		$transientId = heateor_ss_get_share_count_transient_id($key);
+		$shareCountTransient = get_transient('heateor_ss_share_count_' . $transientId);
+		if($shareCountTransient !== false){
+			$shareCountTransient['facebook'] = $value;
+			set_transient('heateor_ss_share_count_' . $transientId, $shareCountTransient, $transientExpirationTime);
+		}
+	}
+	die;
+}
+
+add_action('wp_ajax_the_champ_save_facebook_shares', 'the_champ_save_facebook_shares');
+add_action('wp_ajax_nopriv_the_champ_save_facebook_shares', 'the_champ_save_facebook_shares');
 
 /**
  * Get ID of the share count transient

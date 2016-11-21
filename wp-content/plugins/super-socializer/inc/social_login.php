@@ -96,7 +96,7 @@ function the_champ_login_user($userId, $profileData = array(), $socialId = '', $
 	$user = get_user_by('id', $userId);
 	$user = apply_filters('authenticate', $user, $user -> user_login, '');
 	if(is_wp_error($user)){
-		return;
+		return 0;
 	}
 	if($update && !get_user_meta($userId, 'thechamp_dontupdate_avatar', true)){
 		if(isset($profileData['avatar']) && $profileData['avatar'] != ''){
@@ -186,6 +186,7 @@ function the_champ_create_user($profileData, $verification = false){
 	}
 	$username = $userName;
 	$password = wp_generate_password();
+	
 	$userdata = array(
 		'user_login' => $username,
 		'user_pass' => $password,
@@ -199,6 +200,27 @@ function the_champ_create_user($profileData, $verification = false){
 		'user_url' => isset($profileData['link']) && $profileData['link'] != '' ? $profileData['link'] : '',
 		'role' => get_option('default_role')
 	);
+
+	if(in_array('theme-my-login/theme-my-login.php', apply_filters('active_plugins', get_option('active_plugins')))){
+		$tmlOptions = get_option('theme_my_login');
+		$tmlLoginType = isset($tmlOptions['login_type']) ? $tmlOptions['login_type'] : '';
+		if($tmlLoginType == 'email'){
+			$userdata = array(
+				'user_login' => $profileData['email'],
+				'user_pass' => $password,
+				'user_nicename' => $profileData['email'],
+				'user_email' => $profileData['email'],
+				'display_name' => $profileData['email'],
+				'nickname' => $profileData['email'],
+				'first_name' => $firstName,
+				'last_name' => $lastName,
+				'description' => isset($profileData['bio']) && $profileData['bio'] != '' ? $profileData['bio'] : '',
+				'user_url' => isset($profileData['link']) && $profileData['link'] != '' ? $profileData['link'] : '',
+				'role' => get_option('default_role')
+			);
+		}
+	}
+
 	$userId = wp_insert_user($userdata);
 	if(!is_wp_error($userId)){
 		if(isset($profileData['id']) && $profileData['id'] != ''){
@@ -213,10 +235,10 @@ function the_champ_create_user($profileData, $verification = false){
 		if(!empty($profileData['provider'])){
 			update_user_meta($userId, 'thechamp_provider', $profileData['provider']);
 		}
-		if(!$verification){
-			// send notification email
-			heateor_ss_new_user_notification($userId);
-		}
+		
+		// send notification email
+		heateor_ss_new_user_notification($userId);
+		
 		// insert profile data in BP XProfile table
 		global $theChampLoginOptions;
 		if(isset($theChampLoginOptions['xprofile_mapping']) && is_array($theChampLoginOptions['xprofile_mapping'])){
@@ -286,7 +308,7 @@ function the_champ_social_avatar($avatar, $avuser, $size, $default, $alt = '') {
 	return $avatar;
 }
 if(isset($theChampLoginOptions['avatar']) && $theChampLoginOptions['avatar'] == 1){
-	add_filter('get_avatar', 'the_champ_social_avatar', 10, 5);
+	add_filter('get_avatar', 'the_champ_social_avatar', 100000, 5);
 	add_filter('bp_core_fetch_avatar', 'the_champ_buddypress_avatar', 10, 2);
 }
 
@@ -333,7 +355,7 @@ function the_champ_format_profile_data($profileData, $provider){
 	$temp = array();
 	if($provider == 'twitter'){
 		$temp['id'] = isset($profileData -> id) ? $profileData -> id : '';
-	 	$temp['email'] = '';
+	 	$temp['email'] = isset($profileData -> email) ? $profileData -> email : '';
 		$temp['name'] = isset($profileData -> name) ? $profileData -> name : '';
 		$temp['username'] = isset($profileData -> screen_name) ? $profileData -> screen_name : '';
 		$temp['first_name'] = '';
@@ -411,7 +433,7 @@ function the_champ_format_profile_data($profileData, $provider){
 		$temp['first_name'] = isset($profileData['first_name']) ? $profileData['first_name'] : '';
 		$temp['last_name'] = isset($profileData['last_name']) ? $profileData['last_name'] : '';
 		$temp['bio'] = '';
-		$temp['link'] = '';
+		$temp['link'] = isset($profileData['uid']) ? 'https://vk.com/id' . $profileData['uid'] : '';
 		$temp['avatar'] = isset($profileData['photo']) ? $profileData['photo'] : '';
 		$temp['large_avatar'] = isset($profileData['photo_big']) ? $profileData['photo_big'] : '';
 	}elseif($provider == 'instagram'){
@@ -446,6 +468,7 @@ function the_champ_user_auth($profileData, $provider = 'facebook', $twitterRedir
 		$profileData = the_champ_format_profile_data($profileData, $provider);
 	}else{
 		$profileData['provider'] = 'facebook';
+		$profileData['bio'] = isset($profileData['about']) ? $profileData['about'] : '';
 		// social avatar url 
 		$profileData['avatar'] = "//graph.facebook.com/" . $profileData['id'] . "/picture?type=square";
 		$profileData['large_avatar'] = "//graph.facebook.com/" . $profileData['id'] . "/picture?type=large";
@@ -517,9 +540,11 @@ function the_champ_user_auth($profileData, $provider = 'facebook', $twitterRedir
 						);
 					}
 				}
-				the_champ_login_user($existingUser[0] -> ID, $profileData, $profileData['id'], true);
-				// if logging in first time after email verification
-				if(get_user_meta($existingUser[0] -> ID, 'thechamp_social_registration', true)){
+				$error = the_champ_login_user($existingUser[0] -> ID, $profileData, $profileData['id'], true);
+				if(isset($error) && $error === 0){
+					return array('status' => false, 'message' => 'inactive', 'url' => wp_login_url() . '?loggedout=true&hum=1');
+				}elseif(get_user_meta($existingUser[0] -> ID, 'thechamp_social_registration', true)){
+					// if logging in first time after email verification
 					delete_user_meta($existingUser[0] -> ID, 'thechamp_social_registration');
 					if(isset($theChampLoginOptions['register_redirection']) && $theChampLoginOptions['register_redirection'] == 'bp_profile'){
 						return array('status' => true, 'message' => 'register', 'url' => bp_core_get_user_domain($existingUser[0] -> ID));
@@ -538,7 +563,10 @@ function the_champ_user_auth($profileData, $provider = 'facebook', $twitterRedir
 			if(is_user_logged_in()){
 				return array('status' => false, 'message' => 'not linked');
 			}else{
-				the_champ_login_user($existingUserId, $profileData, $profileData['id'], true);
+				$error = the_champ_login_user($existingUserId, $profileData, $profileData['id'], true);
+				if(isset($error) && $error === 0){
+					return array('status' => false, 'message' => 'inactive', 'url' => wp_login_url() . '?loggedout=true&hum=1');
+				}
 				return array('status' => true, 'message' => '', 'url' => ($loginUrl == 'bp' ? bp_core_get_user_domain($existingUserId) : ''));
 			}
 		}
@@ -575,7 +603,10 @@ function the_champ_user_auth($profileData, $provider = 'facebook', $twitterRedir
 		// check if email exists in database
 		if(isset($profileData['email']) && $userId = email_exists($profileData['email'])){
 			// email exists in WP DB
-			the_champ_login_user($userId, $profileData, '', true);
+			$error = the_champ_login_user($userId, $profileData, '', true);
+			if(isset($error) && $error === 0){
+				return array('status' => false, 'message' => 'inactive', 'url' => wp_login_url() . '?loggedout=true&hum=1');
+			}
 			the_champ_link_account($profileData['id'], $profileData['provider'], $userId);
 			return array('status' => true, 'message' => '', 'url' => ($loginUrl == 'bp' ? bp_core_get_user_domain($userId) : ''));
 		}
@@ -588,8 +619,10 @@ function the_champ_user_auth($profileData, $provider = 'facebook', $twitterRedir
 	// register user
 	$userId = the_champ_create_user($profileData);
 	if($userId){
-		the_champ_login_user($userId, $profileData, $profileData['id'], false); 
-		if(isset($theChampLoginOptions['register_redirection']) && $theChampLoginOptions['register_redirection'] == 'bp_profile'){
+		$error = the_champ_login_user($userId, $profileData, $profileData['id'], false); 
+		if(isset($error) && $error === 0){
+			return array('status' => false, 'message' => 'inactive', 'url' => wp_login_url() . '?loggedout=true&hum=1');
+		}elseif(isset($theChampLoginOptions['register_redirection']) && $theChampLoginOptions['register_redirection'] == 'bp_profile'){
 			return array('status' => true, 'message' => 'register', 'url' => bp_core_get_user_domain($userId));
 		}else{
 			return array('status' => true, 'message' => 'register');
@@ -679,8 +712,10 @@ function the_champ_save_email(){
 						if($userId && !$verify){
 							// login user
 							$tempData['askemail'] = 1;
-							the_champ_login_user($userId, $tempData, $tempData['id']);
-							if(isset($theChampLoginOptions['register_redirection']) && $theChampLoginOptions['register_redirection'] == 'same' && isset($tempData['twitter_redirect'])){
+							$error = the_champ_login_user($userId, $tempData, $tempData['id']);
+							if(isset($error) && $error === 0){
+								the_champ_ajax_response(array('status' => false, 'message' => 'inactive', 'url' => wp_login_url() . '?loggedout=true&hum=1'));
+							}elseif(isset($theChampLoginOptions['register_redirection']) && $theChampLoginOptions['register_redirection'] == 'same' && isset($tempData['twitter_redirect'])){
 								the_champ_ajax_response(array('status' => 1, 'message' => array('response' => 'success', 'url' => $tempData['twitter_redirect'])));
 							}elseif(isset($theChampLoginOptions['register_redirection']) && $theChampLoginOptions['register_redirection'] == 'bp_profile'){
 								the_champ_ajax_response(array('status' => 1, 'message' => array('response' => 'success', 'url' => bp_core_get_user_domain($userId))));

@@ -23,12 +23,19 @@ function the_champ_sharing_shortcode($params){
 			return;
 		}
 		global $post;
-		if($url){
+		$customUrl = apply_filters('heateor_ss_custom_share_url', '', $post);
+		if($customUrl){
+			$targetUrl = $customUrl;
+			$postId = 0;
+		}elseif($url){
 			$targetUrl = $url;
 			$postId = 0;
 		}elseif(is_front_page()){
 			$targetUrl = home_url();
 			$postId = 0;
+		}elseif(isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']){
+			$targetUrl = html_entity_decode(esc_url(the_champ_get_http().$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]));
+			$postId = $post -> ID;
 		}elseif(get_permalink($post -> ID)){
 			$targetUrl = get_permalink($post -> ID);
 			$postId = $post -> ID;
@@ -50,7 +57,9 @@ function the_champ_sharing_shortcode($params){
 		}elseif($right){
 			$alignmentOffset = $right;
 		}
-		$html = '<div class="the_champ_sharing_container the_champ_'.$type.'_sharing' . ( $type == 'vertical' && isset( $theChampSharingOptions['hide_mobile_sharing'] ) ? ' the_champ_hide_sharing' : '' ) . ( $type == 'vertical' && isset( $theChampSharingOptions['bottom_mobile_sharing'] ) ? ' the_champ_bottom_sharing' : '' ) . '" ss-offset="' . $alignmentOffset . '" super-socializer-data-href="'.$targetUrl.'" ';
+		$shareCountTransientId = heateor_ss_get_share_count_transient_id($targetUrl);
+		$cachedShareCount = heateor_ss_get_cached_share_count($shareCountTransientId);
+		$html = '<div class="the_champ_sharing_container the_champ_'.$type.'_sharing' . ( $type == 'vertical' && isset( $theChampSharingOptions['hide_mobile_sharing'] ) ? ' the_champ_hide_sharing' : '' ) . ( $type == 'vertical' && isset( $theChampSharingOptions['bottom_mobile_sharing'] ) ? ' the_champ_bottom_sharing' : '' ) . '" ss-offset="' . $alignmentOffset . '" super-socializer-data-href="'.$targetUrl.'" ' . ( $cachedShareCount === false ? "" : 'super-socializer-no-counts="1" ' );
 		$verticalOffsets = '';
 		if($type == 'vertical'){
 			$verticalOffsets = $align . ': '.$$align.'px; top: '.$top.'px;width:' . ((isset($theChampSharingOptions['vertical_sharing_size']) ? $theChampSharingOptions['vertical_sharing_size'] : '35') + 4) . "px;";
@@ -67,9 +76,9 @@ function the_champ_sharing_shortcode($params){
 		if( $type == 'horizontal' && $title != '' ) {
 			$html .= '<div style="font-weight:bold">' . ucfirst( $title ) . '</div>';
 		}
-		$html .= the_champ_prepare_sharing_html($shortUrl == '' ? $targetUrl : $shortUrl, $type, $count, $total_shares == 'ON' ? 1 : 0, '');
+		$html .= the_champ_prepare_sharing_html($shortUrl == '' ? $targetUrl : $shortUrl, $type, $count, $total_shares == 'ON' ? 1 : 0, $shareCountTransientId);
 		$html .= '</div>';
-		if($count || $total_shares == 'ON'){
+		if(($count || $total_shares == 'ON') && $cachedShareCount === false){
 			$html .= '<script>theChampLoadEvent(
 		function(){
 			// sharing counts
@@ -104,12 +113,19 @@ function the_champ_counter_shortcode($params){
 			return;
 		}
 		global $post;
-		if($url){
+		$customUrl = apply_filters('heateor_ss_custom_share_url', '', $post);
+		if($customUrl){
+			$targetUrl = $customUrl;
+			$postId = 0;
+		}elseif($url){
 			$targetUrl = $url;
 			$postId = 0;
 		}elseif(is_front_page()){
 			$targetUrl = home_url();
 			$postId = 0;
+		}elseif(isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING']){
+			$targetUrl = html_entity_decode(esc_url(the_champ_get_http().$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]));
+			$postId = $post -> ID;
 		}elseif(get_permalink($post -> ID)){
 			$targetUrl = get_permalink($post -> ID);
 			$postId = $post -> ID;
@@ -218,7 +234,7 @@ function the_champ_fb_commenting_shortcode($params){
     $html .= ' data-numposts="' . $num_posts . '"';
     $html .= ' data-width="' . ($width == '' ? '100%' : $width) . '"';
     $html .= ' ></div></div><script type="text/javascript" src="//connect.facebook.net/' . $language . '/sdk.js
-    "></script><script>FB.init({xfbml:1,version: "v2.5"});</script>';
+    "></script><script>FB.init({xfbml:1,version: "v2.8"});</script>';
 	return $html;
 }
 add_shortcode('TheChamp-FB-Comments', 'the_champ_fb_commenting_shortcode');
