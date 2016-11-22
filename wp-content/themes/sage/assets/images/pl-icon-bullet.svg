@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 39 (31667) - http://www.bohemiancoding.com/sketch -->
+    <title>3AE20825-94BF-473C-BD2D-BCFF5A0E26D0</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#55B8B8" offset="0%"></stop>
+            <stop stop-color="#89D0BB" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="pl-icon-bullet">
+            <g id="Group-3">
+                <g>
+                    <path d="M25.9804217,12.9900756 C25.9804217,20.1641732 20.2347349,25.9802463 13.146759,25.9802463 C6.05909639,25.9802463 0.313096386,20.1641732 0.313096386,12.9900756 C0.313096386,5.81597805 6.05909639,-9.51219512e-05 13.146759,-9.51219512e-05 C20.2347349,-9.51219512e-05 25.9804217,5.81597805 25.9804217,12.9900756" id="Fill-1" fill="#F6F6F6"></path>
+                    <path d="M11.4341422,18.0501512 L7.12503373,13.6884927 C6.75038313,13.3092732 6.75038313,12.6947854 7.12503373,12.3155659 C7.49968434,11.9366634 8.10676867,11.9366634 8.48141928,12.3155659 L11.4341422,15.3042976 L17.8122867,8.84837073 C18.1869373,8.46946829 18.7940217,8.46946829 19.1686723,8.84837073 C19.5433229,9.22759024 19.5433229,9.84207805 19.1686723,10.2212976 L11.4341422,18.0501512 Z" id="Fill-4" fill="url(#linearGradient-1)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -2159,6 +2159,7 @@ form.comment-form label {
 #cta .btn.btn-default.btn-cta {
 	background-image: linear-gradient(to right, #55b8b8, #89d0bb);
 	color:white;
+	text-transform:uppercase;
 }
 #cta .btn.btn-default.btn-cta:hover,
 #cta .btn.btn-default.btn-cta:focus {
@@ -2173,6 +2174,10 @@ form.comment-form label {
 .form-cta .form-control, 
 .form-cta input[type=text] {
 	border: none;
+}
+.form-cta input[type=text]:focus,
+.form-cta input[type=email]:focus {
+	box-shadow:none;
 }
 .form-cta .btn-default {
 	background-color: transparent;
@@ -2409,6 +2414,343 @@ form.comment-form label {
 		margin-bottom:20px;
 	}
 }
+
+/*********************************************************
+|
+|  template-brand_submit.php
+|
+**********************************************************/
+.btn.btn-default.btn-submit {
+	background-image: linear-gradient(to right, #55b8b8, #89d0bb);
+	color:white;
+	border-radius: 50px;
+  border-color:transparent;
+  padding: 20px 30px;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+.btn.btn-default.btn-submit:hover,
+.btn.btn-default.btn-submit:focus {
+	background-color: #55b8b8;
+	background-image: none;
+}
+
+#template-brand_submit {background-color: white;padding-bottom: 75px;margin-bottom: -75px;}
+
+#template-brand_submit .mT {margin-top:60px;}
+#template-brand_submit .msT {margin-top:30px;}
+#template-brand_submit .mB {margin-bottom:60px;}
+#template-brand_submit .msB {margin-bottom:30px;}
+#template-brand_submit .pT {padding-top:60px;}
+#template-brand_submit .pB {padding-bottom:60px;}
+
+#template-brand_submit section#brand_price {
+	background-image: linear-gradient(to right, #55b8b8, #89d0bb);
+}
+#template-brand_submit .borderB {
+	border-bottom: solid 1px #ffffff;
+	padding-bottom: 60px;
+	margin-bottom: 60px;
+}
+#template-brand_submit .white-text {
+	color:#fff;
+}
+#template-brand_submit #brand_price h1 {
+	font-weight: normal;
+	color:#fff;
+	margin-top: 0;
+  margin-bottom: 20px;
+}
+#template-brand_submit #brand_price h3 {
+	color:#fff;
+}
+#template-brand_submit #brand_price .priceList ul {
+	padding-left:0;
+}
+#template-brand_submit #brand_price .priceList li {
+	background-image: url('../images/pl-icon-bullet.svg');
+	background-repeat:no-repeat;
+	background-position:left top;
+	list-style: none;
+	padding:0px 0 15px 40px;
+}
+#template-brand_submit #brand_price .well {
+	background-color:#f5f6f6;
+	height: 210px;
+	border-radius: 5px;
+	border: none;
+	box-shadow: none;
+	padding: 43px 19px 19px 19px;
+}
+#template-brand_submit #brand_price .well h3 {
+	color:#55b8b8;
+	font-size: 50px;
+}
+#template-brand_submit #brand_price .well p {
+	color:#55b8b8;
+}
+#template-brand_submit #brand_price .well p strong {
+	color:#bbbbbb;
+}
+#template-brand_submit #brand_price .well.recommended {
+	background-color:#44a9a9;
+	padding: 19px 19px 19px 19px;
+}
+#template-brand_submit #brand_price .well.recommended h3,
+#template-brand_submit #brand_price .well.recommended p,
+#template-brand_submit #brand_price .well.recommended p strong {
+	color:#fff;
+}
+#template-brand_submit #brand_price .well.recommended .badge {
+	border-radius: 50px;
+  background-color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  color:#5ea5a7;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  margin-top:-66px;
+}
+#template-brand_submit #brand_price .companyLogo img {
+	width:180px;
+	height:auto;
+	padding:10px;
+}
+#template-brand_submit #submit_form h2 {
+	color:#45494e;
+}
+@media screen and (min-width: 780px) and (max-width: 998px) {
+	#template-brand_submit #brand_price .well h3 {
+	font-size: 35px;
+	}
+}
+@media (min-width: 998px) {
+	#template-brand_submit #brand_price .well h3 {
+	font-size: 50px;
+	}
+}
+@media (max-width: 780px) {
+	#template-brand_submit .text-sm-center,
+	#template-brand_submit #submit_form h2 {
+		text-align:center;
+	}
+}
+
+/*form*/
+#template-brand_submit #submit_form .form-control,
+#template-brand_submit #submit_form input[type=text],
+#template-brand_submit #submit_form input[type=password] {
+	border: none;
+	height: 70px;
+	font-size: 18px;
+	background-color: white;
+}
+#template-brand_submit #submit_form textarea.form-control {
+	height: 100px;
+}
+#template-brand_submit #submit_form input[type=text]:focus,
+#template-brand_submit #submit_form input[type=email]:focus,
+#template-brand_submit #submit_form input[type=password]:focus,
+#template-brand_submit #submit_form textarea.form-control:focus,
+#template-brand_submit #submit_form select.form-control:focus {
+	box-shadow:none;
+}
+#template-brand_submit #submit_form select {color:#999;}
+#template-brand_submit #submit_form textarea.form-control {
+	padding: 24px 12px;
+}
+#template-brand_submit #submit_form .form-group {
+	border:1px solid #ddd;
+	border-top:none;
+	margin-bottom: 0;
+}
+#template-brand_submit #submit_form .form-Box .row {
+	margin-right: 0;
+    margin-left: 0;
+}
+#template-brand_submit #submit_form .form-Box .row:nth-child(1) {
+	border-top:1px solid #ddd;
+}
+#template-brand_submit #submit_form .saveTxt {
+	color:#55b8b8;
+}
+#template-brand_submit #submit_form .saveTxt p small {
+	color:#bbbbbb;
+	font-size:14px;
+}
+#template-brand_submit #submit_form .saveTxt p small a {
+	color:#bbbbbb;
+	text-decoration:underline;
+}
+#template-brand_submit #submit_form .payment_price {
+	font-size: 24px;
+	color:#55b8b8;
+  font-weight: bold;
+	padding: 10px 30px;
+	display: inline-block;
+}
+#template-brand_submit #submit_form .form-Tag .tag-group {
+	display:inline-block;
+	margin-bottom:15px;
+}
+#template-brand_submit #submit_form .form-Tag input {
+    position: absolute;
+    left: -99999999999px;
+}
+#template-brand_submit #submit_form .form-Tag label.category {
+	border-radius: 50px;
+  border: solid 1px #dddddd;
+  padding:14px 30px;
+  font-weight:normal;
+  font-size: 12px;
+  color:#999;
+  text-transform:uppercase;
+}
+#template-brand_submit #submit_form .form-Tag input:checked+label {
+	border: solid 1px #55b8b8;
+  color:#55b8b8;
+}
+#template-brand_submit #submit_form .form-Tag label.category:hover{cursor:pointer;}
+@media (min-width: 780px) {
+	#template-brand_submit #submit_form .form-group {
+		border-right:none;
+	}
+	#template-brand_submit #submit_form .form-Box .row .form-group:nth-last-child(1) {
+		border-right:1px solid #ddd;
+	}
+}
+@media (max-width: 780px) {
+	#template-brand_submit #submit_form .form-Box .row {
+			margin: 0 20px;
+	}
+}
+
+/*********************************************************
+|
+|  template-brand_thankyou.php
+|
+**********************************************************/
+#template-brand_thankyou .mT {margin-top:60px;}
+#template-brand_thankyou .msT {margin-top:30px;}
+#template-brand_thankyou .mB {margin-bottom:60px;}
+#template-brand_thankyou .msB {margin-bottom:30px;}
+#template-brand_thankyou .pT {padding-top:60px;}
+#template-brand_thankyou .pB {padding-bottom:60px;}
+
+#template-brand_thankyou .btn.btn-default.btn-cta {
+    background-image: linear-gradient(to right, #55b8b8, #89d0bb);
+    color: white;
+    text-transform:uppercase;
+}
+#template-brand_thankyou .btn.btn-default.btn-cta:hover,
+#template-brand_thankyou .btn.btn-default.btn-cta:focus {
+	background-color: #55b8b8;
+	background-image: none;
+}
+
+#template-brand_thankyou .whats-next ol {
+  list-style: none;
+  counter-reset: miigle-counter;
+  padding-left: 0;
+}
+#template-brand_thankyou .whats-next li {
+  counter-increment: miigle-counter;
+  margin: 0.25rem 0.25rem 1rem 0.25rem;
+}
+#template-brand_thankyou .whats-next li::before {
+  content: counter(miigle-counter);
+  background-image: linear-gradient(to right, #55b8b8, #89d0bb);
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  display: inline-block;
+  line-height: 2.4rem;
+  color: white;
+  text-align: center;
+  margin-right: 1rem;
+}
+
+#template-brand_thankyou .card {
+	position:relative;
+	height:100px;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  box-shadow: 0 10px 20px 0 rgba(226, 191, 185, 0.5);
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+#template-brand_thankyou .card p {
+	font-size: 30px;
+  color:#fff;
+  z-index:100;
+}
+#template-brand_thankyou h1 {
+	color: #55b8b8;
+	font-size: 25px;
+	font-weight:normal;
+}
+#template-brand_thankyou h2 {
+	margin-bottom:30px;
+	font-size: 25px;
+  font-weight: normal;
+  color: #45494e;
+}
+
+#template-brand_thankyou .carousel .carousel-control {
+	background-image:none;
+	width: 15px;
+	font-size: 50px;
+	color: #c1cace;
+	text-shadow: none;
+	opacity:1;
+}
+#template-brand_thankyou .carousel .carousel-control:hover,
+#template-brand_thankyou .carousel .carousel-control:focus {
+	color: #55b8b8;
+}
+#template-brand_thankyou .carousel .left.carousel-control {
+	text-align: left;
+}
+#template-brand_thankyou .carousel .right.carousel-control {
+	text-align: right;
+}
+
+@media (min-width: 780px) {
+	#template-brand_thankyou .carousel .left.carousel-control {
+		left: -3%;
+	}
+	#template-brand_thankyou .carousel .right.carousel-control {
+		right: -3%;
+	}
+}
+
+@media (min-width: 780px) {
+	#template-brand_thankyou .flexRow {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+  }
+}
+@media (max-width: 480px) {
+	#template-brand_thankyou .card p {
+		font-size: 24px;
+	}
+}
+@media (max-width: 780px) {
+	#template-brand_thankyou .text-sm-center {
+		text-align:center;
+	}
+	#template-brand_thankyou .text-sm-center li {
+		text-align:left;
+	}
+	#template-brand_thankyou .card {
+		margin-bottom:20px;
+	}
+}
+
 
 /*********************************************************
 |

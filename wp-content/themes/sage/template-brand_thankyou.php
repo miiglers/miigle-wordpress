@@ -1,15 +1,46 @@
 <?php
 /**
- * Template Name: Brand Detail
+ * Template Name: Brand Thank You
  */
  
 $user = wp_get_current_user();
 ?>
 
-<div id="template-brand_detail">
+<div id="template-brand_thankyou">
+  
+ 	<section id="brand_thankyou" class="mT mB"> 
+   	<div class="container"> 
+			<div class="row flexRow mB">        
+				<div class="col-sm-1 text-sm-center">
+					<img src="<?= get_template_directory_uri() ?>/assets/images/pl-icon-success.png">
+				</div>
+				<div class="col-sm-8 text-sm-center">
+        	<? the_field('bt_page_heading'); ?>
+        </div>
+        <div class="col-sm-3 text-sm-center">
+        	<a class="btn btn-default btn-cta" href="<? the_field('bt_thank_you_cta_link'); ?>"><? the_field('bt_thank_you_cta_link_text'); ?></a>
+        </div>
+			</div>
+			
+				<hr>
+			
+			<div class="row mB mT">        
+				<div class="col-sm-12 whats-next text-sm-center">
+        	<? the_field('bt_whats_next_content'); ?>
+        </div>
+			</div>	
+			
+				<hr>
+		</div>
+  </section>
   
   <section id="brand_scroll" class="hidden-xs">
 		<div class="container">
+			<div class="row">        
+				<div class="col-sm-12 text-sm-center">
+        	<? the_field('bt_explore_categories_content'); ?>
+        </div>
+			</div>	
 			<div class="row">				
 				<div class="col-sm-12 mB">
         	<div id="myCarousel" class="carousel slide">                
@@ -125,42 +156,15 @@ $user = wp_get_current_user();
        	</div>
       </div>
     </div>
-   </section><!-- /#brand_scroll for Desktop -->   
-   
-   <section id="brand_detail"> 
-   	<div class="container"> 
-      <div class="row mB"> 
-        <!-- brand detail title section-->
-				<div class="col-sm-12 text-center">
-        	<h1>Beauty</h1>
-        	<p>57 brands</p>
-        </div>				
-			</div>
-			<!-- brand -->
-			<div class="row flexRow borderB">        
-				<div class="col-sm-9 text-sm-center">
-        	<h3>Alabama Chanin <span class="badge"><img src="<?= get_template_directory_uri() ?>/assets/images/pl-badge.png" alt="badge"></span></h3>
-        	<p>Made in USA. Uses 100% organic cotton sourced responsibly.</p>
-        </div>	
-        <div class="col-sm-3 text-center">
-        	<a href="#" class="btn btn-default btn-cta">VISIT WEBSITE</a>
-        </div>
-			</div>
-  		<!-- brand -->
-			<div class="row flexRow borderB">        
-				<div class="col-sm-9 text-sm-center">
-        	<h3>Amour Vert <!--<span class="badge"><img src="<?= get_template_directory_uri() ?>/assets/images/pl-badge.png" alt="badge"></span>--></h3>
-        	<p>Phasellus ultricies semper justo eget semper. Morbi cursus ullamcorper hendrerit. Aliquam dictum orci eu sapien blandit.</p>
-        </div>	
-        <div class="col-sm-3 text-center">
-        	<a href="#" class="btn btn-default btn-cta">CLAIM THIS</a>
-        </div>
-			</div>  	
-  	</div>
-  </section>
+   </section><!-- /#brand_scroll for Desktop -->
   
-  <section id="brand_list" class="visible-xs mT">
+  	<section id="brand_list" class="visible-xs mT">
 		<div class="container">
+			<div class="row mT">        
+				<div class="col-sm-12 text-sm-center">
+        	<? the_field('bt_explore_categories_content'); ?>
+        </div>
+			</div>	
 			<div class="row">
 				<div class="col-xs-6">
 					<div class="card" style="background-image:url('<?= get_template_directory_uri() ?>/assets/images/brand-accessories.png');">
