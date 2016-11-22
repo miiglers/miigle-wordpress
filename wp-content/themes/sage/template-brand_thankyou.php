@@ -15,7 +15,7 @@ $user = wp_get_current_user();
 					<img src="<?= get_template_directory_uri() ?>/assets/images/pl-icon-success.png">
 				</div>
 				<div class="col-sm-8 text-sm-center">
-        	<? the_field('bt_page_heading'); ?>
+        	<?php the_field('bt_page_heading'); ?>
         </div>
         <div class="col-sm-3 text-sm-center">
         	<a class="btn btn-default btn-cta" href="<? the_field('bt_thank_you_cta_link'); ?>"><? the_field('bt_thank_you_cta_link_text'); ?></a>
@@ -26,7 +26,7 @@ $user = wp_get_current_user();
 			
 			<div class="row mB mT">        
 				<div class="col-sm-12 whats-next text-sm-center">
-        	<? the_field('bt_whats_next_content'); ?>
+        	<?php the_field('bt_whats_next_content'); ?>
         </div>
 			</div>	
 			
@@ -38,7 +38,7 @@ $user = wp_get_current_user();
 		<div class="container">
 			<div class="row">        
 				<div class="col-sm-12 text-sm-center">
-        	<? the_field('bt_explore_categories_content'); ?>
+        	<?php the_field('bt_explore_categories_content'); ?>
         </div>
 			</div>	
 			<div class="row">				
@@ -162,7 +162,7 @@ $user = wp_get_current_user();
 		<div class="container">
 			<div class="row mT">        
 				<div class="col-sm-12 text-sm-center">
-        	<? the_field('bt_explore_categories_content'); ?>
+        	<?php the_field('bt_explore_categories_content'); ?>
         </div>
 			</div>	
 			<div class="row">
