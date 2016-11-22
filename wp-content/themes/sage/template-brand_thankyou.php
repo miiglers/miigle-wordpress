@@ -18,7 +18,7 @@ $user = wp_get_current_user();
         	<?php the_field('bt_page_heading'); ?>
         </div>
         <div class="col-sm-3 text-sm-center">
-        	<a class="btn btn-default btn-cta" href="<? the_field('bt_thank_you_cta_link'); ?>"><? the_field('bt_thank_you_cta_link_text'); ?></a>
+        	<a class="btn btn-default btn-cta" href="<?php the_field('bt_thank_you_cta_link'); ?>"><?php the_field('bt_thank_you_cta_link_text'); ?></a>
         </div>
 			</div>
 			
