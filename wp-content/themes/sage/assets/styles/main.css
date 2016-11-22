@@ -2412,6 +2412,168 @@ form.comment-form label {
 
 /*********************************************************
 |
+|  template-brand_submit.php
+|
+**********************************************************/
+.btn.btn-default.btn-submit {
+	background-image: linear-gradient(to right, #55b8b8, #89d0bb);
+	color:white;
+	border-radius: 50px;
+  border-color:transparent;
+  padding: 20px 30px;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+.btn.btn-default.btn-submit:hover,
+.btn.btn-default.btn-submit:focus {
+	background-color: #55b8b8;
+	background-image: none;
+}
+
+#template-brand_submit {background-color: white;padding-bottom: 75px;margin-bottom: -75px;}
+
+#template-brand_submit .mT {margin-top:60px;}
+#template-brand_submit .msT {margin-top:30px;}
+#template-brand_submit .mB {margin-bottom:60px;}
+#template-brand_submit .msB {margin-bottom:30px;}
+#template-brand_submit .pT {padding-top:60px;}
+#template-brand_submit .pB {padding-bottom:60px;}
+
+#template-brand_submit section#brand_price {
+	background-image: linear-gradient(to right, #55b8b8, #89d0bb);
+}
+#template-brand_submit .borderB {
+	border-bottom: solid 1px #ffffff;
+	padding-bottom: 60px;
+	margin-bottom: 60px;
+}
+#template-brand_submit .white-text {
+	color:#fff;
+}
+#template-brand_submit #brand_price h1 {
+	font-weight: normal;
+	color:#fff;
+	margin-top: 0;
+  margin-bottom: 20px;
+}
+#template-brand_submit #brand_price h3 {
+	color:#fff;
+}
+#template-brand_submit #brand_price .priceList ul {
+	padding-left:0;
+}
+#template-brand_submit #brand_price .priceList li {
+	background-image: url('../images/pl-icon-bullet.svg');
+	background-repeat:no-repeat;
+	background-position:left top;
+	list-style: none;
+	padding:0px 0 15px 40px;
+}
+#template-brand_submit #brand_price .well {
+	background-color:#f5f6f6;
+	height: 210px;
+	border-radius: 5px;
+	border: none;
+	box-shadow: none;
+	padding: 43px 19px 19px 19px;
+}
+#template-brand_submit #brand_price .well h3 {
+	color:#55b8b8;
+	font-size: 50px;
+}
+#template-brand_submit #brand_price .well p {
+	color:#55b8b8;
+}
+#template-brand_submit #brand_price .well p strong {
+	color:#bbbbbb;
+}
+#template-brand_submit #brand_price .well.recommended {
+	background-color:#44a9a9;
+	padding: 19px 19px 19px 19px;
+}
+#template-brand_submit #brand_price .well.recommended h3,
+#template-brand_submit #brand_price .well.recommended p,
+#template-brand_submit #brand_price .well.recommended p strong {
+	color:#fff;
+}
+#template-brand_submit #brand_price .well.recommended .badge {
+	border-radius: 50px;
+  background-color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  color:#5ea5a7;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  margin-top:-66px;
+}
+
+#template-brand_submit #submit_form h2 {
+	color:#45494e;
+	margin-bottom:30px;
+}
+@media screen and (min-width: 780px) and (max-width: 998px) {
+	#template-brand_submit #brand_price .well h3 {
+	font-size: 35px;
+	}
+}
+@media (min-width: 998px) {
+	#template-brand_submit #brand_price .well h3 {
+	font-size: 50px;
+	}
+}
+@media (max-width: 780px) {
+	#template-brand_submit .text-sm-center,
+	#template-brand_submit #submit_form h2 {
+		text-align:center;
+	}
+}
+
+/*form*/
+#template-brand_submit #submit_form .form-control,
+#template-brand_submit #submit_form input[type=text],
+#template-brand_submit #submit_form input[type=password] {
+	border: none;
+	height: 70px;
+	font-size: 18px;
+	background-color: white;
+}
+#template-brand_submit #submit_form input[type=text]:focus,
+#template-brand_submit #submit_form input[type=email]:focus,
+#template-brand_submit #submit_form input[type=password]:focus,
+#template-brand_submit #submit_form textarea.form-control:focus {
+	box-shadow:none;
+}
+#template-brand_submit #submit_form textarea.form-control {
+	padding: 24px 12px;
+}
+#template-brand_submit #submit_form .form-group {
+	border:1px solid #ddd;
+	border-top:none;
+	margin-bottom: 0;
+}
+#template-brand_submit #submit_form .form-Box .row:nth-child(1) {
+	border-top:1px solid #ddd;
+}
+#template-brand_submit #submit_form .saveTxt {
+	color:#55b8b8;
+}
+@media (min-width: 780px) {
+	#template-brand_submit #submit_form .form-group {
+		border-right:none;
+	}
+	#template-brand_submit #submit_form .form-Box .row .form-group:nth-last-child(1) {
+		border-right:1px solid #ddd;
+	}
+}
+@media (max-width: 780px) {
+	#template-brand_submit #submit_form .form-Box .row {
+			margin: 0 20px;
+	}
+}
+
+
+/*********************************************************
+|
 |  template-how_it_works.php
 |
 **********************************************************/
