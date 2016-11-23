@@ -93,10 +93,10 @@ $user = wp_get_current_user();
 										</div>
 									</div>
 									<div class="col-sm-3">
-										<div class="card" style="background-image:url('<?= get_template_directory_uri() ?>/assets/images/brand-jewlery.png');">
-											<div class="mask jewlery"></div>
-											<p>Jewlery</p>
-											<a href="https://miigle.com/category/jewlery?products"><div class="mask"></div></a>
+										<div class="card" style="background-image:url('<?= get_template_directory_uri() ?>/assets/images/brand-jewelry.png');">
+											<div class="mask jewelry"></div>
+											<p>Jewelry</p>
+											<a href="https://miigle.com/category/jewelry?products"><div class="mask"></div></a>
 										</div>
 									</div>
 									<div class="col-sm-3">
@@ -226,10 +226,10 @@ $user = wp_get_current_user();
 					</div>
 				</div>
 				<div class="col-xs-6">
-					<div class="card" style="background-image:url('<?= get_template_directory_uri() ?>/assets/images/brand-jewlery.png');">
-						<div class="mask jewlery"></div>
-						<p>Jewlery</p>
-						<a href="https://miigle.com/category/jewlery?products"><div class="mask"></div></a>
+					<div class="card" style="background-image:url('<?= get_template_directory_uri() ?>/assets/images/brand-jewelry.png');">
+						<div class="mask jewelry"></div>
+						<p>Jewelry</p>
+						<a href="https://miigle.com/category/jewelry?products"><div class="mask"></div></a>
 					</div>
 				</div>
 				<div class="col-xs-6">
