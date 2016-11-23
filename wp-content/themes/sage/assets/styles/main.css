@@ -2208,7 +2208,7 @@ form.comment-form label {
 .mask.foods {background-color: rgba(130, 90, 170, 0.8);border-radius: 3px;}
 .mask.shoes {background-color: rgba(27, 69, 115, 0.8);border-radius: 3px;}
 .mask.health {background-color: rgba(199, 45, 26, 0.7);border-radius: 3px;}
-.mask.jewlery {background-color: rgba(193, 107, 56, 0.7);border-radius: 3px;}
+.mask.jewelry {background-color: rgba(193, 107, 56, 0.7);border-radius: 3px;}
 .mask.pets {background-color: rgba(95, 66, 55, 0.7);border-radius: 3px;}
 .mask.home {background-color: rgba(158, 131, 83, 0.8);border-radius: 3px;}
 .card:hover .mask,
