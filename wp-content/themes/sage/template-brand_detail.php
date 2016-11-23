@@ -32,10 +32,10 @@ $user = wp_get_current_user();
 										</div>
 									</div>
 									<div class="col-sm-3">
-										<div class="card" style="background-image:url('<?= get_template_directory_uri() ?>/assets/images/brand-clothings.png');">
-											<div class="mask clothings"></div>
-											<p>Clothings</p>
-											<a href="https://miigle.com/category/clothings?products"><div class="mask"></div></a>
+										<div class="card" style="background-image:url('<?= get_template_directory_uri() ?>/assets/images/brand-clothing.png');">
+											<div class="mask clothing"></div>
+											<p>Clothing</p>
+											<a href="https://miigle.com/category/clothing?products"><div class="mask"></div></a>
 										</div>
 									</div>
 									<div class="col-sm-3">
@@ -177,10 +177,10 @@ $user = wp_get_current_user();
 					</div>
 				</div>
 				<div class="col-xs-6">
-					<div class="card" style="background-image:url('<?= get_template_directory_uri() ?>/assets/images/brand-clothings.png');">
-						<div class="mask clothings"></div>
-						<p>Clothings</p>
-						<a href="https://miigle.com/category/clothings?products"><div class="mask"></div></a>
+					<div class="card" style="background-image:url('<?= get_template_directory_uri() ?>/assets/images/brand-clothing.png');">
+						<div class="mask clothing"></div>
+						<p>Clothing</p>
+						<a href="https://miigle.com/category/clothing?products"><div class="mask"></div></a>
 					</div>
 				</div>
 				<div class="col-xs-6">

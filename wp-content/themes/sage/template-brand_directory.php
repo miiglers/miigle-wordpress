@@ -58,9 +58,9 @@
 									</div>
 								</div>
 								<div class="col-sm-6">
-									<div class="card" style="background-image:url('<?= get_template_directory_uri() ?>/assets/images/brand-clothings.png');">
-										<div class="mask clothings"></div>
-										<p>Clothings</p>
+									<div class="card" style="background-image:url('<?= get_template_directory_uri() ?>/assets/images/brand-clothing.png');">
+										<div class="mask clothing"></div>
+										<p>Clothing</p>
 										<a href="https://miigle.com/category/clothing?products"><div class="mask"></div></a>
 									</div>
 								</div>
@@ -144,12 +144,13 @@
 				<div id="sideCol" class="col-lg-4 divider">
           
           <div class="widgetBox text-sm-center">
+          	<?php the_field('bd_cta_section_content'); ?> 
+          </div>
+          
+          <div class="widgetBox text-sm-center">
 						<?php the_field('bd_social_widget_content'); ?>	         	
 						<br>
-						<p><a href="#" class="btn btn-default btn-cta">EMAIL THIS PAGE</a></p>
-						<p><a href="#" class="btn btn-default btn-cta">TWEET THIS PAGE</a></p>
-						<p><a href="#" class="btn btn-default btn-cta">SHARE ON FACEBOOK</a></p>
-						<p><a href="#" class="btn btn-default btn-cta">BOOKMARK THIS PAGE</a></p>
+						<?php echo do_shortcode('[TheChamp-Sharing]') ?>
 					</div>
 					
 					<div class="widgetBox text-sm-center">
@@ -167,7 +168,7 @@
 				<!-- /. side section-->
 			
 			</div>			
-				<hr>		
+				<hr>
 		</div>
   </section>
   

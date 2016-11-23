@@ -146,8 +146,8 @@ form.comment-form textarea {
   background: none;
   border: 1px solid white;
   border-radius: 5px;
-  color: white;
-  -webkit-text-fill-color: #fff !important;
+  color: #999;
+  -webkit-text-fill-color: #999 !important;
 }
 .mc4wp-form input::placeholder {
   color: white;
@@ -159,8 +159,8 @@ form.comment-form textarea {
   font-weight: 600;
 }
 #splash .mc4wp-form .btn:hover {
-  background: #f1f1f1;
-  color: #55b7b8;
+  background: transparent;
+  color: #2a404d;
 }
 #splash .mc4wp-form .col {
   padding-left: 8px;
@@ -2187,8 +2187,8 @@ form.comment-form label {
 }
 .form-cta .btn-default:hover,
 .form-cta .btn-default:focus {
-	background-color: #55b8b8;
-  color:white;
+	background: transparent;
+  color: #2a404d;
 }
 
 .mask {
@@ -2204,7 +2204,7 @@ form.comment-form label {
 .mask.electronics {background-color: rgba(194, 94, 51, 0.7);border-radius: 3px;}
 .mask.gifts {background-color: rgba(79, 198, 150, 0.7);border-radius: 3px;}
 .mask.kids {background-color: rgba(126, 180, 199, 0.8);border-radius: 3px;}
-.mask.clothings {background-color: rgba(233, 158, 74, 0.8);border-radius: 3px;}
+.mask.clothing {background-color: rgba(233, 158, 74, 0.8);border-radius: 3px;}
 .mask.foods {background-color: rgba(130, 90, 170, 0.8);border-radius: 3px;}
 .mask.shoes {background-color: rgba(27, 69, 115, 0.8);border-radius: 3px;}
 .mask.health {background-color: rgba(199, 45, 26, 0.7);border-radius: 3px;}
@@ -2301,6 +2301,7 @@ form.comment-form label {
 	padding-bottom:60px;
 	margin-bottom:60px;
 }
+#template-brand_directory #sideCol .the_champ_horizontal_sharing .theChampSharing {border-color: #f5f6f6;}
 
 @media (max-width: 780px) {
 	#template-brand_directory .text-sm-center {
