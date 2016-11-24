@@ -2156,13 +2156,13 @@ form.comment-form label {
   border-color:#55b8b8;
   color:#fff;
 }
-#cta .btn.btn-default.btn-cta {
+.cta-widget .btn.btn-default.btn-cta {
 	background-image: linear-gradient(to right, #55b8b8, #89d0bb);
 	color:white;
 	text-transform:uppercase;
 }
-#cta .btn.btn-default.btn-cta:hover,
-#cta .btn.btn-default.btn-cta:focus {
+.cta-widget .btn.btn-default.btn-cta:hover,
+.cta-widget .btn.btn-default.btn-cta:focus {
 	background-color: #55b8b8;
 	background-image: none;
 }

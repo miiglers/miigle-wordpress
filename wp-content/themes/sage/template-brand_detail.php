@@ -3,7 +3,14 @@
  * Template Name: Brand Detail
  */
  
-$user = wp_get_current_user();
+use Miigle\Models\Product;
+use Miigle\Models\Brand;
+use Miigle\Models\User;
+
+//$sort = 'new';
+//$categories = Product\get_categories();
+//$is_brands = (isset($_GET['brands']) || is_post_type_archive('mgl_brand'));
+
 ?>
 
 <div id="template-brand_detail">
@@ -132,10 +139,13 @@ $user = wp_get_current_user();
       <div class="row mB"> 
         <!-- brand detail title section-->
 				<div class="col-sm-12 text-center">
-        	<h1>Beauty</h1>
+        	<h1><?php the_title(); ?></h1>
         	<p>57 brands</p>
         </div>				
 			</div>
+      <?php //require_once(locate_template('templates/brand/content-archive.php')); ?>
+      
+			
 			<!-- brand -->
 			<div class="row flexRow borderB">        
 				<div class="col-sm-9 text-sm-center">
@@ -155,7 +165,10 @@ $user = wp_get_current_user();
         <div class="col-sm-3 text-center">
         	<a href="#" class="btn btn-default btn-cta">CLAIM THIS</a>
         </div>
-			</div>  	
+			</div>
+			
+			 	
+  	
   	</div>
   </section>
   
