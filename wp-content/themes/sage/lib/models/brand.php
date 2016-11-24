@@ -63,7 +63,45 @@ function register_meta() {
     'id'         => $prefix . 'url',
     'type'       => 'text_url'
   ));
-
+  
+  // Directory Listing
+  $cmb->add_field(array(
+    'name'       => __('Show in Directory Listing?', 'cmb2'),
+    'desc'       => __('YES', 'cmb2'),
+    'id'         => $prefix . 'brand_show',
+    'type'       => 'checkbox'
+  ));
+  
+  // Paid Brand
+  $cmb->add_field(array(
+    'name'       => __('Paid Brand?', 'cmb2'),
+    'desc'       => __('YES (Badge apply)', 'cmb2'),
+    'id'         => $prefix . 'brand_paid',
+    'type'       => 'checkbox'
+  ));
+  
+  // CTA button
+  $cmb->add_field(array(
+    'name'       => __('Select Button', 'cmb2'),
+    'desc'       => __('', 'cmb2'),
+    'id'         => $prefix . 'brand_cta',
+    'type'       => 'select',
+    'show_option_none' => false,
+    'default'          => 'claim',
+    'options'          => array(
+        'website' => __( 'VISIT WEBSITE', 'cmb2' ),
+        'claim'   => __( 'CLAIM THIS', 'cmb2' ),
+    ),
+  ));
+  
+  // Social Impact
+  $cmb->add_field(array(
+    'name'       => __('Social Impact Text', 'cmb2'),
+    'desc'       => __('Max 140 characters', 'cmb2'),
+    'id'         => $prefix . 'brand_impact',
+    'type'       => 'textarea'
+  ));
+  
 }
 
 /**

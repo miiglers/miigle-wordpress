@@ -143,7 +143,7 @@
 				<!-- side section-->
 				<div id="sideCol" class="col-lg-4 divider">
           
-          <div class="widgetBox text-sm-center">
+          <div class="widgetBox text-sm-center cta-widget">
           	<?php the_field('bd_cta_section_content'); ?> 
           </div>
           
@@ -155,13 +155,6 @@
 					
 					<div class="widgetBox text-sm-center">
 						<?php the_field('bd_newsletter_form_widget_content'); ?>
-						<br>
-						<div class="input-group form-cta">
-							<input type="text" class="form-control" placeholder="Enter your email">
-							<span class="input-group-btn">
-								<button class="btn btn-default" type="button">SUBMIT</button>
-							</span>
-						</div>
 					</div>
 					
 				</div>
@@ -172,7 +165,7 @@
 		</div>
   </section>
   
-  <section id="cta">
+  <section class="cta-widget">
   	<div class="container">
   		<div class="row">				
 				<div class="col-sm-10 col-sm-offset-1 text-center">
