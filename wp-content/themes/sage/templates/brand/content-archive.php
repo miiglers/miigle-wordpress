@@ -1,22 +1,14 @@
 <div class="templates brand" id="content-archive">
   <?php while (have_posts()) : the_post(); ?>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-4 text-center">
-          <a href="<?php the_permalink(); ?>">
-            <img src="<?php the_post_thumbnail_url(); ?>" class="logo img-responsive" />
-          </a>
-          <!--
-          <div class="prod-meta">
-            <a href="#" class="btn btn-profile trend">Rising Star</a>
-          </div>-->
+    <!-- brand -->
+			<div class="row flexRow borderB">        
+				<div class="col-sm-9 text-sm-center">
+        	<h3><?php the_title(); ?> <span class="badge"><img src="<?= get_template_directory_uri() ?>/assets/images/pl-badge.png" alt="badge"></span></h3>
+        	<p>Made in USA. Uses 100% organic cotton sourced responsibly.</p>
+        </div>	
+        <div class="col-sm-3 text-center">
+        	<a href="#" class="btn btn-default btn-cta">VISIT WEBSITE</a>
         </div>
-        <div class="col-md-8">
-          <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-          <p><?php the_excerpt(); ?></p>
-          <!--<p><a href="http://productname.com">productname.com</a></p> -->
-        </div>
-      </div>
-    </div>
+			</div>
   <?php endwhile; ?>
 </div>
