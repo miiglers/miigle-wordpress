@@ -2,15 +2,6 @@
 /**
  * Template Name: Brand Detail
  */
- 
-use Miigle\Models\Product;
-use Miigle\Models\Brand;
-use Miigle\Models\User;
-
-//$sort = 'new';
-//$categories = Product\get_categories();
-//$is_brands = (isset($_GET['brands']) || is_post_type_archive('mgl_brand'));
-
 ?>
 
 <div id="template-brand_detail">
@@ -134,42 +125,39 @@ use Miigle\Models\User;
     </div>
    </section><!-- /#brand_scroll for Desktop -->   
    
+   <?php require_once(locate_template('archive-mgl_brand.php')); ?>
+   
    <section id="brand_detail"> 
    	<div class="container"> 
       <div class="row mB"> 
         <!-- brand detail title section-->
 				<div class="col-sm-12 text-center">
-        	<h1><?php the_title(); ?></h1>
+        	<h1>Beauty</h1>
         	<p>57 brands</p>
         </div>				
 			</div>
-      <?php //require_once(locate_template('templates/brand/content-archive.php')); ?>
-      
 			
-			<!-- brand -->
-			<div class="row flexRow borderB">        
-				<div class="col-sm-9 text-sm-center">
-        	<h3>Alabama Chanin <span class="badge"><img src="<?= get_template_directory_uri() ?>/assets/images/pl-badge.png" alt="badge"></span></h3>
-        	<p>Made in USA. Uses 100% organic cotton sourced responsibly.</p>
-        </div>	
-        <div class="col-sm-3 text-center">
-        	<a href="#" class="btn btn-default btn-cta">VISIT WEBSITE</a>
-        </div>
-			</div>
-  		<!-- brand -->
-			<div class="row flexRow borderB">        
-				<div class="col-sm-9 text-sm-center">
-        	<h3>Amour Vert <!--<span class="badge"><img src="<?= get_template_directory_uri() ?>/assets/images/pl-badge.png" alt="badge"></span>--></h3>
-        	<p>Phasellus ultricies semper justo eget semper. Morbi cursus ullamcorper hendrerit. Aliquam dictum orci eu sapien blandit.</p>
-        </div>	
-        <div class="col-sm-3 text-center">
-        	<a href="#" class="btn btn-default btn-cta">CLAIM THIS</a>
-        </div>
-			</div>
-			
-			 	
-  	
-  	</div>
+				<!-- brand -->
+				<div class="row flexRow borderB">        
+					<div class="col-sm-9 text-sm-center">
+						<h3>Alabama Chanin <span class="badge"><img src="<?= get_template_directory_uri() ?>/assets/images/pl-badge.png" alt="badge"></span></h3>
+						<p>Made in USA. Uses 100% organic cotton sourced responsibly.</p>
+					</div>	
+					<div class="col-sm-3 text-center">
+						<a href="#" class="btn btn-default btn-cta">VISIT WEBSITE</a>
+					</div>
+				</div>
+				<!-- brand -->
+				<div class="row flexRow borderB">        
+					<div class="col-sm-9 text-sm-center">
+						<h3>Amour Vert </h3>
+					</div>	
+					<div class="col-sm-3 text-center">
+						<a href="#" class="btn btn-default btn-cta">CLAIM THIS</a>
+					</div>
+				</div>
+		
+		</div>
   </section>
   
   <section id="brand_list" class="visible-xs mT">
