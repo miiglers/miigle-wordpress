@@ -8,7 +8,7 @@
       <img class="entry-thumb img-responsive" src="<?php the_post_thumbnail_url(); ?>">
     <?php endif; ?>
     <?php the_excerpt(); ?>
-    <p>
+    <p class="text-right">
       <a href="<?php the_permalink(); ?>" class="btn btn-default">Read more <i class="fa fa-arrow-right"></i></a>
     </p>
   </div>

@@ -143,31 +143,38 @@ use Miigle\Models\User;
         	<p>57 brands</p>
         </div>				
 			</div>
-      <?php //require_once(locate_template('templates/brand/content-archive.php')); ?>
       
-			
-			<!-- brand -->
+      <!-- brand -->
 			<div class="row flexRow borderB">        
-				<div class="col-sm-9 text-sm-center">
+				<div class="col-sm-8 text-sm-center">
         	<h3>Alabama Chanin <span class="badge"><img src="<?= get_template_directory_uri() ?>/assets/images/pl-badge.png" alt="badge"></span></h3>
         	<p>Made in USA. Uses 100% organic cotton sourced responsibly.</p>
         </div>	
-        <div class="col-sm-3 text-center">
+        <div class="col-sm-4 text-right">
         	<a href="#" class="btn btn-default btn-cta">VISIT WEBSITE</a>
         </div>
 			</div>
   		<!-- brand -->
 			<div class="row flexRow borderB">        
-				<div class="col-sm-9 text-sm-center">
+				<div class="col-sm-8 text-sm-center">
         	<h3>Amour Vert <!--<span class="badge"><img src="<?= get_template_directory_uri() ?>/assets/images/pl-badge.png" alt="badge"></span>--></h3>
-        	<p>Phasellus ultricies semper justo eget semper. Morbi cursus ullamcorper hendrerit. Aliquam dictum orci eu sapien blandit.</p>
+        	<!--<p>Phasellus ultricies semper justo eget semper. Morbi cursus ullamcorper hendrerit. Aliquam dictum orci eu sapien blandit.</p>-->
         </div>	
-        <div class="col-sm-3 text-center">
+        <div class="col-sm-4 text-right">
         	<a href="#" class="btn btn-default btn-cta">CLAIM THIS</a>
         </div>
 			</div>
-			
-			 	
+			<!-- brand -->
+			<div class="row flexRow borderB">        
+				<div class="col-sm-8 text-sm-center">
+        	<h3>Alabama Chanin <span class="badge"><img src="<?= get_template_directory_uri() ?>/assets/images/pl-badge.png" alt="badge"></span></h3>
+        	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed quam ligula. In pellentesque volutpat erat, a ultrices leo pretium sed Lorem</p>
+        </div>	
+        <div class="col-sm-4 text-right">
+        	<a href="#" class="btn btn-default btn-cta">CLAIM THIS</a>
+        	<a href="#" class="btn btn-default btn-cta">VISIT WEBSITE</a>
+        </div>
+			</div>			 	
   	
   	</div>
   </section>

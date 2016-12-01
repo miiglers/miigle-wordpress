@@ -655,6 +655,72 @@ section.page-video {
 
 /*********************************************************
 |
+|  template-homepage.php
+|
+**********************************************************/
+#homepage .btn.btn-default.btn-cta {background-image: linear-gradient(76deg, #83cbb4, #55b8b8);color: white;text-transform: uppercase;border-radius: 5px;background-color: #55b8b8;border-color: #55b8b8;}
+#homepage .btn.btn-default.btn-cta:hover,
+#homepage .btn.btn-default.btn-cta:focus {background-image:none;background-color: #55b8b8;}
+#homepage .btn.btn-default.btn-cta.btn-lg {padding: 15px 30px;}
+.btn.btn-badge {position:relative;}
+.btn.btn-badge .badge {
+    position: absolute;
+    top: 42px;
+    right: 64px;
+}
+.btn-default.btn-badge .badge {
+    color: #fff;
+    background-color: transparent;
+    font-weight: 300;
+}
+
+#homepage section#splash {background-size:cover;}
+#homepage section#splash h1 {font-size:50px;font-weight: 300;color:#fff;margin-bottom:20px;}
+#homepage section#splash p.lead {color:#83cbb4;letter-spacing: 2.5px;font-weight: 600;font-size:25px;margin-bottom:30px;}
+#homepage section#cta-bar {background-image: linear-gradient(to left, #55b8b8, #83cbb4);padding:40px 0;color:#fff;}
+#homepage section#cta-bar p {margin-bottom:0;}
+#homepage section#brands {background: #fff;padding: 100px 0;overflow: hidden;}
+#homepage section#contact {padding: 100px 0;}
+#homepage section#contact form {margin-top:100px;}
+
+#homepage section#brands .featured_brand {margin-top:30px;}
+#homepage section#brands .scroll_pane .brand {height: 400px;width: 256px;position: relative;text-align: center;display: inline-block;margin: 0 30px 30px 0;white-space: normal;}
+#homepage section#brands .scroll-pane .brand img,
+#homepage section#brands .scroll_pane .brand img.brand_logo {margin:0 auto 30px auto;width:100%; max-width:256px;height:auto;max-height:100%;}
+#homepage section#brands .scroll_pane .brand h4,
+#homepage section#brands .scroll_pane .brand h4.brand_name {font-weight:bold;color:#2A414D;}
+#homepage section#brands .scroll_pane .brand h4 a {color:#2A414D;}
+
+@media (min-width: 933px) {
+	#homepage section#splash {height:592px;padding-top: 200px;}
+}
+@media (min-width: 780px) {
+	#homepage .flexRow {display: flex;align-items: center;justify-content: center;}
+	#homepage section#brands .scroll_pane .brand {text-align: left;}
+}
+
+/*
+jScrollPane CSS
+*/
+#homepage section#brands .scroll_pane {width: 100%;height: 450px;overflow: visible !important;white-space: nowrap;outline: none;}
+.horizontal-only {height: auto;max-height: 450px;}
+.jspContainer {overflow: visible;position: relative;outline: 0 none;-webkit-overflow-scrolling: touch;}
+.jspPane {position: absolute;}
+.jspVerticalBar {position: absolute;top: 0;right: 0;width: 16px;height: 100%;background: red;display:none !important;}
+.jspHorizontalBar {position: absolute;bottom: 0;left: 0;width: 100%;height: 4px;border-radius: 50px;background: none;}
+.jspCap,
+.jspCorner {display: none;}
+.jspHorizontalBar .jspCap {float: left;}
+.jspTrack {background: rgba(46,61,73,0.1);border-radius: 50px;position: relative;}
+.jspDrag {background: #55b7b8;height: 10px;position: relative;top: 0;left: 0;cursor: pointer;border-radius: 50px;}
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag {float: left;/*height: 100%;*/}
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner {margin: 0 -3px 0 0;}
+
+/*********************************************************
+|
 |  archive-mgl_product.php
 |
 **********************************************************/
@@ -2358,6 +2424,7 @@ form.comment-form label {
 	text-transform:uppercase;
 }
 #template-brand_detail section#brand_detail h3 {margin-top:0;}
+#template-brand_detail .btn.btn-default.btn-cta {margin:5px 0;}
 
 #template-brand_detail .carousel .carousel-control {
 	background-image:none;
@@ -2408,7 +2475,8 @@ form.comment-form label {
 	}
 }
 @media (max-width: 780px) {
-	#template-brand_detail .text-sm-center {
+	#template-brand_detail .text-sm-center,
+	#template-brand_detail .text-right {
 		text-align:center;
 	}
 	#template-brand_detail .card {

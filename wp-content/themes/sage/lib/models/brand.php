@@ -89,8 +89,9 @@ function register_meta() {
     'show_option_none' => false,
     'default'          => 'claim',
     'options'          => array(
-        'website' => __( 'VISIT WEBSITE', 'cmb2' ),
         'claim'   => __( 'CLAIM THIS', 'cmb2' ),
+        'website' => __( 'VISIT WEBSITE', 'cmb2' ),
+        'both'   => __( 'Both', 'cmb2' )
     ),
   ));
   
