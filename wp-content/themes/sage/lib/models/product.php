@@ -7,6 +7,7 @@ use Miigle\Models\User;
 
 add_action( 'init', __NAMESPACE__ . '\\register' );
 add_action( 'cmb2_admin_init', __NAMESPACE__ . '\\register_meta' );
+add_action( 'rest_api_init', __NAMESPACE__ . '\\api_register_meta' );
 add_action( 'pre_get_posts', __NAMESPACE__ . '\\pre_get_posts' );
 add_action( 'save_post', __NAMESPACE__ . '\\save_post', 99, 3 );
 
@@ -142,6 +143,90 @@ function register_meta() {
 		// 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
 	) );
 
+}
+
+function api_register_meta() {
+	$prefix = '_mgl_product_';
+
+	register_rest_field(
+		'mgl_product',
+		$prefix . 'brand_id',
+		array(
+			'get_callback'    => __NAMESPACE__ . '\\get_miigle_slug',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
+
+	register_rest_field(
+		'mgl_product',
+		$prefix . 'brand_name',
+		array(
+			'get_callback'    => __NAMESPACE__ . '\\get_miigle_slug',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
+
+	register_rest_field(
+		'mgl_product',
+		$prefix . 'brand_url',
+		array(
+			'get_callback'    => __NAMESPACE__ . '\\get_miigle_slug',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
+
+	register_rest_field(
+		'mgl_product',
+		$prefix . 'url',
+		array(
+			'get_callback'    => __NAMESPACE__ . '\\get_miigle_slug',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
+
+	register_rest_field(
+		'mgl_product',
+		$prefix . 'upvotes',
+		array(
+			'get_callback'    => __NAMESPACE__ . '\\get_miigle_slug',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
+
+	register_rest_field(
+		'mgl_product',
+		$prefix . 'price',
+		array(
+			'get_callback'    => __NAMESPACE__ . '\\get_miigle_slug',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
+
+	register_rest_field(
+		'mgl_product',
+		$prefix . 'author_comment',
+		array(
+			'get_callback'    => __NAMESPACE__ . '\\get_miigle_slug',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
+
+	register_rest_field(
+		'mgl_product',
+		$prefix . 'image_gallery',
+		array(
+			'get_callback'    => __NAMESPACE__ . '\\get_image_gallery',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
 }
 
 /**
@@ -363,10 +448,23 @@ function downvote( $post_id, $user_id ) {
 }
 
 /**
- * Get the image gallery
+ * Get the value of the "_mgl_product_image_gallery" field
+ *
+ * @param array $object Details of current post.
+ * @param string $field_name Name of field.
+ * @param WP_REST_Request $request Current request
+ *
+ * @return mixed
  */
-function get_image_gallery( $post_id ) {
-	return get_post_meta( $post_id, '_mgl_product_image_gallery', true );
+function get_image_gallery( $object, $field_name, $request ) {
+	$media_array = get_post_meta( $object['id'], $field_name, true );
+
+	for ( $i = 0; $i < count( $media_array ); $i ++ ) {
+		$attachement_meta['media_details'] = wp_get_attachment_metadata( $media_array[ $i ]['image_id'] );
+		$media_array[ $i ]                 = array_merge( $media_array[ $i ], $attachement_meta );
+	}
+
+	return $media_array;
 }
 
 /**
@@ -411,4 +509,17 @@ function get_categories( $post_id = false, $hide_empty = true ) {
 			'hide_empty' => $hide_empty,
 		) );
 	}
+}
+
+/**
+ * Get the value of the "_mgl_product_image_gallery" field
+ *
+ * @param array $object Details of current post.
+ * @param string $field_name Name of field.
+ * @param WP_REST_Request $request Current request
+ *
+ * @return mixed
+ */
+function get_miigle_slug( $object, $field_name, $request ) {
+	return get_post_meta( $object['id'], $field_name, true );
 }
