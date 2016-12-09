@@ -512,7 +512,7 @@ function get_categories( $post_id = false, $hide_empty = true ) {
 }
 
 /**
- * Get the value of the "_mgl_product_image_gallery" field
+ * Get the value of the "slug" field
  *
  * @param array $object Details of current post.
  * @param string $field_name Name of field.

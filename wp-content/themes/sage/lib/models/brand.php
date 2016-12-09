@@ -6,6 +6,7 @@ use Miigle\Models\Model;
 
 add_action( 'init', __NAMESPACE__ . '\\register' );
 add_action( 'cmb2_admin_init', __NAMESPACE__ . '\\register_meta' );
+add_action( 'rest_api_init', __NAMESPACE__ . '\\api_register_meta' );
 add_action( 'pre_get_posts', __NAMESPACE__ . '\\pre_get_posts' );
 
 /**
@@ -66,6 +67,20 @@ function register_meta() {
 		'type' => 'text_url'
 	) );
 
+}
+
+function api_register_meta() {
+	$prefix = '_mgl_brand_';
+
+	register_rest_field(
+		'mgl_brand',
+		$prefix . 'url',
+		array(
+			'get_callback'    => __NAMESPACE__ . '\\get_miigle_slug',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
 }
 
 /**
@@ -158,4 +173,17 @@ function downvote( $post_id, $user_id ) {
  */
 function get_url( $post_id ) {
 	return get_post_meta( $post_id, '_mgl_brand_url', true );
+}
+
+/**
+ * Get the value of the "slug" field
+ *
+ * @param array $object Details of current post.
+ * @param string $field_name Name of field.
+ * @param WP_REST_Request $request Current request
+ *
+ * @return mixed
+ */
+function get_miigle_slug( $object, $field_name, $request ) {
+	return get_post_meta( $object['id'], $field_name, true );
 }
