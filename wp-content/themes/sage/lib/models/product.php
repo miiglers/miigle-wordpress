@@ -173,7 +173,7 @@ function api_register_meta() {
 		$prefix . 'brand_url',
 		array(
 			'get_callback'    => __NAMESPACE__ . '\\get_miigle_slug',
-			'update_callback' => null,
+			'update_callback' => __NAMESPACE__ . '\\update_miigle_slug',
 			'schema'          => null,
 		)
 	);
@@ -183,7 +183,7 @@ function api_register_meta() {
 		$prefix . 'url',
 		array(
 			'get_callback'    => __NAMESPACE__ . '\\get_miigle_slug',
-			'update_callback' => null,
+			'update_callback' => __NAMESPACE__ . '\\update_miigle_slug',
 			'schema'          => null,
 		)
 	);
@@ -522,4 +522,23 @@ function get_categories( $post_id = false, $hide_empty = true ) {
  */
 function get_miigle_slug( $object, $field_name, $request ) {
 	return get_post_meta( $object['id'], $field_name, true );
+}
+
+/**
+ * Handler for updating custom field data.
+ *
+ * @since 0.1.0
+ *
+ * @param mixed $value The value of the field
+ * @param object $object The object from the response
+ * @param string $field_name Name of field
+ *
+ * @return bool|int
+ */
+function update_miigle_slug( $value, $object, $field_name ) {
+	if ( ! $value || ! is_string( $value ) ) {
+		return 'Missing value';
+	}
+
+	return update_post_meta( $object->ID, $field_name, strip_tags( $value ) );
 }
