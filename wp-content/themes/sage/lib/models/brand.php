@@ -119,6 +119,46 @@ function api_register_meta() {
 			'schema'          => null,
 		)
 	);
+
+	register_rest_field(
+		'mgl_brand',
+		$prefix . 'brand_show',
+		array(
+			'get_callback'    => __NAMESPACE__ . '\\get_miigle_slug',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
+
+	register_rest_field(
+		'mgl_brand',
+		$prefix . 'brand_paid',
+		array(
+			'get_callback'    => __NAMESPACE__ . '\\get_miigle_slug',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
+
+	register_rest_field(
+		'mgl_brand',
+		$prefix . 'brand_cta',
+		array(
+			'get_callback'    => __NAMESPACE__ . '\\get_miigle_slug',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
+
+	register_rest_field(
+		'mgl_brand',
+		$prefix . 'brand_impact',
+		array(
+			'get_callback'    => __NAMESPACE__ . '\\get_miigle_slug',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
 }
 
 /**
