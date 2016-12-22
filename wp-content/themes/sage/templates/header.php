@@ -46,6 +46,12 @@ $mgl_current_user = User\current();
         <?php if(!is_user_logged_in()): ?>
           <!--<li><a href="<?= home_url() ?>/about">About</a></li>
           <li><a href="<?= home_url() ?>/how-it-works">How it Works</a></li>-->
+          
+          <!-- \\For Brand Directory NAV\\ -->
+          <!--<li class="cta-widget"><a href="<?= home_url() ?>/brand-submit-page" class="btn btn-default btn-cta">SUBMIT YOUR BRAND</a></li>-->
+        	<!--<li><a href="<?= home_url() ?>/contact" class="btn btn-default btn-cta">CONTACT US</a></li>-->
+          <!-- //For Brand Directory NAV // -->
+          
         <?php endif; ?>
         <li><a href="<?= home_url() ?>/about">About</a></li>
         <?php if(is_front_page()): ?>

@@ -2,8 +2,11 @@
 /**
  * Template Name: Brand Directory
  */
- 
-$user = wp_get_current_user();
+
+//use Miigle\Models\User;
+//use Miigle\Models\Brand;
+
+//$mgl_current_user = User\current();
 ?>
 
 <div id="template-brand_directory">
@@ -14,10 +17,14 @@ $user = wp_get_current_user();
 				
 				<!-- main section-->
 				<div id="mainCol" class="col-lg-8 divider">
-        	<?php the_field('page_heading'); ?>        	
+        	<div class="text-sm-center">
+        		<?php the_field('bd_page_heading'); ?>
+        	</div>       	
 					
 					<div class="browseWrapper mT">
-						<?php the_field('browse_heading'); ?>
+						<div class="text-sm-center">
+							<?php the_field('bd_browse_heading'); ?>
+						</div>
 						
 						<div class="btn-group btn-group-justified msT brand-btn" role="group" aria-label="brand-filter">
 							<div class="btn-group" role="group">
@@ -51,9 +58,9 @@ $user = wp_get_current_user();
 									</div>
 								</div>
 								<div class="col-sm-6">
-									<div class="card" style="background-image:url('<?= get_template_directory_uri() ?>/assets/images/brand-clothings.png');">
-										<div class="mask clothings"></div>
-										<p>Clothings</p>
+									<div class="card" style="background-image:url('<?= get_template_directory_uri() ?>/assets/images/brand-clothing.png');">
+										<div class="mask clothing"></div>
+										<p>Clothing</p>
 										<a href="https://miigle.com/category/clothing?products"><div class="mask"></div></a>
 									</div>
 								</div>
@@ -100,10 +107,10 @@ $user = wp_get_current_user();
 									</div>
 								</div>
 								<div class="col-sm-6">
-									<div class="card" style="background-image:url('<?= get_template_directory_uri() ?>/assets/images/brand-jewlery.png');">
-										<div class="mask jewlery"></div>
-										<p>Jewlery</p>
-										<a href="https://miigle.com/category/jewlery?products"><div class="mask"></div></a>
+									<div class="card" style="background-image:url('<?= get_template_directory_uri() ?>/assets/images/brand-jewelry.png');">
+										<div class="mask jewelry"></div>
+										<p>Jewelry</p>
+										<a href="https://miigle.com/category/jewelry?products"><div class="mask"></div></a>
 									</div>
 								</div>	
 								<div class="col-sm-6">
@@ -136,39 +143,33 @@ $user = wp_get_current_user();
 				<!-- side section-->
 				<div id="sideCol" class="col-lg-4 divider">
           
-          <div class="widgetBox">
-						<?php the_field('social_widget_content'); ?>	         	
+          <div class="widgetBox text-sm-center cta-widget">
+          	<?php the_field('bd_cta_section_content'); ?> 
+          </div>
+          
+          <div class="widgetBox text-sm-center">
+						<?php the_field('bd_social_widget_content'); ?>	         	
 						<br>
-						<p><a href="#" class="btn btn-default btn-cta">EMAIL THIS PAGE</a></p>
-						<p><a href="#" class="btn btn-default btn-cta">TWEET THIS PAGE</a></p>
-						<p><a href="#" class="btn btn-default btn-cta">SHARE ON FACEBOOK</a></p>
-						<p><a href="#" class="btn btn-default btn-cta">BOOKMARK THIS PAGE</a></p>
+						<?php echo do_shortcode('[TheChamp-Sharing]') ?>
 					</div>
 					
-					<div class="widgetBox">
-						<?php the_field('newsletter_form_widget_content'); ?>
-						<br>
-						<div class="input-group form-cta">
-							<input type="text" class="form-control" placeholder="Enter your email">
-							<span class="input-group-btn">
-								<button class="btn btn-default" type="button">SUBMIT</button>
-							</span>
-						</div>
+					<div class="widgetBox text-sm-center">
+						<?php the_field('bd_newsletter_form_widget_content'); ?>
 					</div>
 					
 				</div>
 				<!-- /. side section-->
 			
 			</div>			
-				<hr>		
+				<hr>
 		</div>
   </section>
   
-  <section id="cta">
+  <section class="cta-widget">
   	<div class="container">
   		<div class="row">				
 				<div class="col-sm-10 col-sm-offset-1 text-center">
-        	<?php the_field('cta_section_content'); ?>        						
+        	<?php the_field('bd_cta_section_content'); ?>        						
 				</div>
 			</div>
   	</div>
